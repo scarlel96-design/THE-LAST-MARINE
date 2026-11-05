@@ -1,0 +1,21 @@
+* text=auto
+*.sh text eol=lf
+*.ts text eol=lf
+*.mjs text eol=lf
+*.py text eol=lf
+*.scx binary
+*.wav binary
+baseline/WO-UI-02/*.ts -text
+baseline/WO-PROD-01/*.ts -text
+WO-PROD-02/baseline/*.ts -text
+WO-PROD-02/reports/rollback-copy.ts -text
+WO-PROD-02/DIFF.patch text eol=lf
+WO-PROD-02/**/*.json text eol=lf
+WO-PROD-02/**/*.log text eol=lf
+WO-PROD-02/*.md text eol=lf
+WO-PROD-02/*.txt text eol=lf
+src/m01/content.json text eol=lf
+src/m02/content.json text eol=lf
+WO-PROD-02-HOTFIX/baseline/*.ts -text
+WO-PROD-02-HOTFIX/reports/rollback-copy.ts -text
+WO-PROD-02-HOTFIX/DIFF.patch text eol=lf
