@@ -1,0 +1,86 @@
+{
+  "scenario": "F10 opens in-game menu; Escape closes menu",
+  "sample_count_each": 1,
+  "same_process": 63164,
+  "same_client_resolution": [
+    1280,
+    960
+  ],
+  "computer_use": {
+    "started": "2026-11-04T16:20:04.018Z",
+    "tool_calls": 2,
+    "captures": 2,
+    "inputs": 2,
+    "retries": 0,
+    "input_failures": 0,
+    "steps": [
+      {
+        "input_ms": 1309.9183000000194,
+        "capture_and_state_ms": 1361.7407000000821
+      },
+      {
+        "input_ms": 232.1023999999743,
+        "capture_and_state_ms": 1238.2588000000687
+      }
+    ],
+    "ended": "2026-11-04T16:20:20.821Z",
+    "elapsed_s": 16.77036380000005,
+    "observed": "PASS: menu visible after F10; menu absent and top counts 3/2 after Escape"
+  },
+  "local": {
+    "schema": 1,
+    "scenario": "menu-roundtrip",
+    "started_utc": "2026-11-04T16:36:45.321268+00:00",
+    "cases": [
+      {
+        "id": "menu-open",
+        "started_utc": "2026-11-04T16:36:45.324637+00:00",
+        "status": "PASS",
+        "ended_utc": "2026-11-04T16:36:45.606125+00:00",
+        "elapsed_s": 0.2815
+      },
+      {
+        "id": "menu-close",
+        "started_utc": "2026-11-04T16:36:45.607093+00:00",
+        "status": "PASS",
+        "ended_utc": "2026-11-04T16:36:45.869588+00:00",
+        "elapsed_s": 0.2625
+      }
+    ],
+    "scope": "Actual visible states only. Input delivery is not functional PASS.",
+    "ai_tool_calls": 1,
+    "ai_decisions_inside_run": 0,
+    "retries": 0,
+    "ended_utc": "2026-11-04T16:36:45.878261+00:00",
+    "elapsed_s": 0.557,
+    "captures": 2,
+    "inputs": 2,
+    "input_delivery_failures": 0,
+    "timing": {
+      "capture_s": 0.1200773999444209,
+      "ocr_s": 0,
+      "input_s": 0.3540991999907419
+    },
+    "counts": {
+      "PASS": 2,
+      "FAIL": 0,
+      "SKIP": 0,
+      "NOT RUN": 0
+    },
+    "status": "PASS"
+  },
+  "measured_orchestration_tool_calls": {
+    "computer_use": 2,
+    "local": 1
+  },
+  "elapsed_reduction_percent": 96.67866477649103,
+  "cua_instrumented_action_and_capture_s": 4.142020200000145,
+  "scope": "CUA elapsed includes between-call orchestration. Local elapsed excludes Python launch and tool transport. These are observed scenario windows, not matched whole-tool latency.",
+  "ai_inference_time": "NOT separately measurable. Between-call residual includes orchestration, transport, scheduling, and inference.",
+  "capture_count_change": 0,
+  "input_failures_each": 0,
+  "retries_each": 0,
+  "quality": "CUA screenshots were visually reviewed. Local menu state used blue-panel metrics calibrated from the actual menu. Gameplay validity was not benchmarked.",
+  "historical_field_note": "Earlier run JSON used ai_tool_calls=1 as an invocation label. Current runner records local_invocations instead.",
+  "measured_version": "Development version before source_snapshot and already-held input check. Final-version live benchmark NOT RUN."
+}

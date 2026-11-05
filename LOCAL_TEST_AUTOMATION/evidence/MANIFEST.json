@@ -1,0 +1,58 @@
+[
+  {
+    "path": "01-diagnostic-ready.png",
+    "sha256": "ef993abbd7e40f90965260c30ee7eb17d3eabd730dc71b914370a7a8d93a11b7",
+    "raw_path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\local-selected.bmp",
+    "raw_sha256": "7d700beb449413fed06c3e24d21b8079a939cf58babd0b18bb0f58b7e8149f0a",
+    "conversion": "Lossless BMP pixel copy to PNG"
+  },
+  {
+    "path": "02-selected-native-card.png",
+    "sha256": "ad619bdeff2020896d618739cfa5fc15c6bda8bab1cfa286ed5c3ababc02fa0e",
+    "raw_path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\native-hit-selected.bmp",
+    "raw_sha256": "f6db4f2856d47743d66bba471e576ec1f4f60acf7b662038a4cd425f6690316b",
+    "conversion": "Lossless BMP pixel copy to PNG"
+  },
+  {
+    "path": "03-menu-open.png",
+    "sha256": "f2edfbe23c56131e2ca005df022bc5cf9b15581e436e6ec9d016f67940e3b2cb",
+    "raw_path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final-pass\\001-menu-open.bmp",
+    "raw_sha256": "90363aef15e5ee3387b123f0480390dd911641b651af90f93bb4183806633e56",
+    "conversion": "Lossless BMP pixel copy to PNG"
+  },
+  {
+    "path": "04-menu-closed.png",
+    "sha256": "36ea0a0a770414931e724622b2ee729241027ed15d50afcd68912261b86b126e",
+    "raw_path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final-pass\\002-menu-close.bmp",
+    "raw_sha256": "bbc520857a84d506bd7a3a56c729fc5e92d7a6d2a186bce98fa89a4362fde6ab",
+    "conversion": "Lossless BMP pixel copy to PNG"
+  },
+  {
+    "path": "05-W-result.png",
+    "sha256": "aa0197c240b7dc35738f0e796973d9f6c9c55baf307555bac982a36475d44319",
+    "raw_path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\007-W-diagnostic-consumption.bmp",
+    "raw_sha256": "8767ff84ef453ef137276cf16f23fbf3c74f3448ba1f3ccad422274b3c3d9418",
+    "conversion": "Lossless BMP pixel copy to PNG"
+  },
+  {
+    "path": "06-R-result.png",
+    "sha256": "003d707d2967c694024cef97e31d77edc1cf9aa1c01d069d705f53f24b74ed61",
+    "raw_path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\014-R-installation-consumption-only.bmp",
+    "raw_sha256": "e67a51613482637cd8a4778466810bb222c5e191f9967186a66852acf498cd30",
+    "conversion": "Lossless BMP pixel copy to PNG"
+  },
+  {
+    "path": "07-R-cooldown-ocr-failure.png",
+    "sha256": "9ffbb713c9c47eb65aa69f73347e9cb38d17b345012c144b7b58cd8730237901",
+    "raw_path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\016-R-cooldown.bmp",
+    "raw_sha256": "4c95a4f9a11d26a2e25ec2d9f2305fbfee917251599a09e35427957086f7f71a",
+    "conversion": "Lossless BMP pixel copy to PNG"
+  },
+  {
+    "path": "08-native-Q-before-exit.png",
+    "sha256": "5f5c21b5c795221b545e59d58fa228affb21fdf8112804564b7564e0ca8a7e12",
+    "raw_path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\native-card-01\\005-Q-native-hotkey.bmp",
+    "raw_sha256": "c7cce1cb4ebeb1bcbae7c1f686eede8fa689f0d3aa7f31f7831e1cfb568ea6cf",
+    "conversion": "Lossless BMP pixel copy to PNG"
+  }
+]

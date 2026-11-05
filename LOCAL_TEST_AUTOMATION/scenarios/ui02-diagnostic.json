@@ -1,0 +1,194 @@
+{
+  "schema": 1,
+  "name": "ui02-diagnostic",
+  "environment": "offline-local",
+  "cases": [
+    {
+      "id": "checkpoint-initial",
+      "steps": [
+        {
+          "op": "key",
+          "key": "F9"
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "canonical inventory",
+            "restored"
+          ],
+          "timeout": 5
+        }
+      ]
+    },
+    {
+      "id": "native-guard",
+      "steps": [
+        {
+          "op": "key",
+          "key": "V"
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "transport=true",
+            "ready=true"
+          ],
+          "timeout": 5
+        }
+      ]
+    },
+    {
+      "id": "Q-diagnostic-key",
+      "steps": [
+        {
+          "op": "key",
+          "key": "F7"
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "active",
+            "movement cancels"
+          ],
+          "timeout": 5
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "ended",
+            "base",
+            "restored"
+          ],
+          "timeout": 12
+        }
+      ]
+    },
+    {
+      "id": "W-diagnostic-consumption",
+      "steps": [
+        {
+          "op": "key",
+          "key": "D"
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "TEST DAMAGE",
+            "HP=[1I][0O]"
+          ],
+          "timeout": 5
+        },
+        {
+          "op": "key",
+          "key": "F8"
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "completed",
+            "k[il]ts=2"
+          ],
+          "timeout": 8
+        },
+        {
+          "op": "capture"
+        }
+      ]
+    },
+    {
+      "id": "W-cooldown",
+      "steps": [
+        {
+          "op": "key",
+          "key": "F8"
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "BLOCKED",
+            "W cooldown"
+          ],
+          "timeout": 5
+        }
+      ]
+    },
+    {
+      "id": "R-installation-consumption-only",
+      "steps": [
+        {
+          "op": "key",
+          "key": "R"
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "R TEST installed",
+            "one explosive consumed",
+            "NO COMBAT EFFECT"
+          ],
+          "timeout": 8
+        },
+        {
+          "op": "capture"
+        }
+      ]
+    },
+    {
+      "id": "R-cooldown",
+      "steps": [
+        {
+          "op": "key",
+          "key": "R"
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "R cooldown"
+          ],
+          "timeout": 5
+        }
+      ]
+    },
+    {
+      "id": "checkpoint-after-consumption",
+      "steps": [
+        {
+          "op": "key",
+          "key": "F9"
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "canonical inventory",
+            "restored"
+          ],
+          "timeout": 5
+        },
+        {
+          "op": "capture"
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "status": "SKIP",
+      "reason": "E is not implemented in this isolated map"
+    },
+    {
+      "id": "R-combat-effect",
+      "status": "SKIP",
+      "reason": "R implements installation consumption only"
+    },
+    {
+      "id": "mission-progression",
+      "status": "NOT RUN",
+      "reason": "This skill laboratory has no full mission start/end objectives"
+    }
+  ],
+  "ocr_rect": [
+    0,
+    0.4,
+    1,
+    0.24
+  ]
+}

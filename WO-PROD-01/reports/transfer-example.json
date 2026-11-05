@@ -1,0 +1,61 @@
+{
+  "state": {
+    "schemaVersion": 1,
+    "sourceMission": 1,
+    "targetMission": 2,
+    "people": {
+      "mara": "unknown",
+      "wren": "unknown",
+      "ella": "unknown"
+    },
+    "choices": {
+      "route": 0,
+      "soldiers": 0,
+      "civilians": 0
+    },
+    "equipmentFlags": 3,
+    "hero": {
+      "weaponTier": 0,
+      "armorTier": 0,
+      "experienceTier": 1
+    },
+    "intelFlags": 3,
+    "milestoneFlags": 7,
+    "bonus": {
+      "materials": 10,
+      "parts": 0,
+      "medicalKits": 5,
+      "explosives": 0,
+      "earlyWarning": 0
+    }
+  },
+  "m02": {
+    "schemaVersion": 1,
+    "missionId": 2,
+    "hero": {
+      "weaponTier": 0,
+      "armorTier": 0,
+      "experienceTier": 1
+    },
+    "people": {
+      "mara": "unknown",
+      "wren": "unknown",
+      "ella": "unknown"
+    },
+    "inventory": {
+      "materials": 30,
+      "specialParts": 0,
+      "medicalKits": 5,
+      "explosives": 0
+    },
+    "records": {
+      "milestoneFlags": 7,
+      "intelFlags": 3
+    },
+    "support": {
+      "earlyWarning": 0,
+      "civilianSupplyRoute": false
+    },
+    "liveValidation": "NOT RUN"
+  }
+}

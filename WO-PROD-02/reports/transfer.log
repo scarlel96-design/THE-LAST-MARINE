@@ -1,0 +1,25 @@
+✔ Host codec matches the simulator minimum completion vector (6.233ms)
+✔ Named survivors and bounded choices round trip (4.4324ms)
+✔ Single decimal transcription errors are detected (1.1058ms)
+✔ Unsupported versions, missions, and malformed groups are rejected (0.4282ms)
+✔ Reserved fields cannot bypass validation with a recomputed checksum (0.5686ms)
+✔ Incomplete or inconsistent M01 completion is rejected (0.3938ms)
+✔ Invalid inventory and inherited property names are rejected (1.6288ms)
+✔ M02 host adapter separates supply bonuses from equipment and records (0.629ms)
+✔ M01 v1 is preserved byte-for-byte for known codes (4.5352ms)
+✔ default M02 starts with fixed supplies and no presumed survival (0.4492ms)
+✔ M02 carried setup preserves people, choices, gear, intel and all stocks (1.7039ms)
+✔ unconfirmed and lost contacts stay distinct (0.4592ms)
+✔ invalid carry rejects rather than silently becoming new game (0.6178ms)
+✔ bad CLI code fails before reading the installation (173.2011ms)
+✔ M03 codec roundtrips the mandatory path and all inventory fields (0.8684ms)
+✔ M03 retains optional M02 records and M01 actor outcomes (0.6207ms)
+✔ M03 rejects missing mandatory records, overflow and tampered codes (0.4579ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 413.292

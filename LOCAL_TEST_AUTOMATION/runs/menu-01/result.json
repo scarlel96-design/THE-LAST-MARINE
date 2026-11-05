@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "scenario": "menu-roundtrip",
+  "started_utc": "2026-11-04T16:18:55.799223+00:00",
+  "cases": [
+    {
+      "id": "menu-open",
+      "started_utc": "2026-11-04T16:18:55.802897+00:00",
+      "status": "FAIL",
+      "reason": "State assertion timed out: ['게임.*메뉴', '임무.*종료']",
+      "ended_utc": "2026-11-04T16:19:02.682799+00:00",
+      "elapsed_s": 6.8799
+    },
+    {
+      "id": "menu-close",
+      "started_utc": "2026-11-04T16:19:02.683467+00:00",
+      "status": "NOT RUN",
+      "reason": "Earlier required state failed",
+      "ended_utc": "2026-11-04T16:19:02.683481+00:00",
+      "elapsed_s": 0.0
+    }
+  ],
+  "scope": "Actual visible states only. Input delivery is not functional PASS.",
+  "ai_tool_calls": 1,
+  "ai_decisions_inside_run": 0,
+  "retries": 0,
+  "ended_utc": "2026-11-04T16:19:02.744432+00:00",
+  "elapsed_s": 6.9453,
+  "captures": 9,
+  "inputs": 1,
+  "input_delivery_failures": 0,
+  "timing": {
+    "capture_s": 0.5783290998660959,
+    "ocr_s": 3.5985586000606418,
+    "input_s": 0.18640419997973368
+  },
+  "counts": {
+    "PASS": 0,
+    "FAIL": 1,
+    "SKIP": 0,
+    "NOT RUN": 1
+  },
+  "status": "FAIL"
+}

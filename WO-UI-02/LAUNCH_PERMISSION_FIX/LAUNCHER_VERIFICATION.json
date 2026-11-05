@@ -1,0 +1,96 @@
+{
+  "verdict": "PARTIAL",
+  "branch": "codex/wo-ui-02",
+  "changed_field": "Dedicated launcher uses -launch with UseShellExecute=false; no elevation verb; rejects elevated callers and RUNASADMIN; reuses a matching game process",
+  "paths": {
+    "MODIFIED_FILE": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-02\\LAUNCH_PERMISSION_FIX\\START_TLM.ps1",
+    "DIFF_FILE": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-02\\LAUNCH_PERMISSION_FIX\\LAUNCHER.diff",
+    "VERIFICATION": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-02\\LAUNCH_PERMISSION_FIX\\LAUNCHER_VERIFICATION.json",
+    "ROLLBACK": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-02\\LAUNCH_PERMISSION_FIX\\ROLLBACK_LAUNCHER.sh"
+  },
+  "BASELINE": {
+    "command": "Get-Process -Name StarCraft,consent",
+    "input": "existing launch session",
+    "literal_result": "StarCraft PID 66192 and consent PID 27152 were present; cancelling consent returned access denied",
+    "cancel_command": "Stop-Process -Id 27152 -Force -ErrorAction Stop",
+    "cancel_exit_status": 1,
+    "ui_validation": "NOT RUN"
+  },
+  "MODIFIED": {
+    "command": "& '.\\outputs\\The-Last-Marine\\WO-UI-02\\LAUNCH_PERMISSION_FIX\\START_TLM.ps1'",
+    "input": "standard-user host; no arguments",
+    "stdout_result": {
+      "status": "STARTED",
+      "pids": [
+        66512
+      ],
+      "arguments": "-launch",
+      "useShellExecute": false,
+      "elevationVerb": null,
+      "uiValidation": "NOT RUN"
+    },
+    "exit_status": 0,
+    "fresh_cmd_test": {
+      "launcher": {
+        "status": "STARTED",
+        "pids": [
+          4956
+        ],
+        "executable": "C:\\Program Files (x86)\\StarCraft\\x86_64\\StarCraft.exe",
+        "arguments": "-launch",
+        "useShellExecute": false,
+        "elevationVerb": null,
+        "uiValidation": "NOT RUN"
+      },
+      "exitStatus": 0,
+      "beforeConsentIds": [
+        27152
+      ],
+      "afterConsentIds": [
+        27152
+      ],
+      "newConsentIds": [],
+      "executableHashBefore": "CE3AB05DC9A6AA35418947E5D95E19651AD6FBCD5E2C1856CD729C5B7C31281C",
+      "executableHashAfter": "CE3AB05DC9A6AA35418947E5D95E19651AD6FBCD5E2C1856CD729C5B7C31281C",
+      "oldPidAbsent": true,
+      "firstAttempt": "Exit-race guard rejected an unreadable terminating process; exit 1. Retried after confirming process absence."
+    },
+    "repeat_command": "& '.\\outputs\\The-Last-Marine\\WO-UI-02\\LAUNCH_PERMISSION_FIX\\START_TLM.ps1'",
+    "repeat_result": "ALREADY_RUNNING; pids=[66512]",
+    "repeat_exit_status": 0,
+    "current_integrity": {
+      "scope": "Read-only integrity labels; no input or security setting changed",
+      "processes": [
+        {
+          "pid": 66512,
+          "integrity_rid": 8192,
+          "ui_access": false,
+          "integrity": "MEDIUM"
+        },
+        {
+          "pid": 61180,
+          "integrity_rid": 8192,
+          "ui_access": false,
+          "integrity": "MEDIUM"
+        }
+      ]
+    }
+  },
+  "ROLLBACK": {
+    "command": "& 'C:\\Program Files\\Git\\bin\\bash.exe' --noprofile --norc outputs/The-Last-Marine/WO-UI-02/LAUNCH_PERMISSION_FIX/ROLLBACK_LAUNCHER.sh work/ui02-launcher-rollback",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\ui02-launcher-rollback",
+    "stdout": "ROLLBACK: launcher copies removed; game and Windows settings unchanged\nROLLBACK_VERIFY: PASS; original launcher retained",
+    "exit_status": 0,
+    "restored_status": "PASS: the two new launcher files are absent from the test copy; the delivered launcher remains present",
+    "restored_behavior": "Original game executable and Windows settings remain unchanged. The old consent prompt is still present. UI validation is NOT RUN."
+  },
+  "current_blocker": "Existing consent PID 27152 remains; cancellation is access denied; no unattended dismissal route is verified with the exposed controls.",
+  "windows_policy_observed": {
+    "EnableLUA": 1,
+    "PromptOnSecureDesktop": 0,
+    "ConsentPromptBehaviorAdmin": 5,
+    "ConsentPromptBehaviorUser": 3
+  },
+  "policy_changes": "NONE",
+  "rollback_test_scope": "Launcher copies only; not a restored live desktop session"
+}

@@ -1,0 +1,8 @@
+{
+  "command": "<USERPROFILE>\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -X utf8 <USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\verify_preservation.py",
+  "cwd": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2",
+  "input": "none",
+  "stdout": "BASELINE: source/map/client hashes unchanged; tracked local runner absent at d1bdc31\n",
+  "stderr": "",
+  "exit_status": 0
+}

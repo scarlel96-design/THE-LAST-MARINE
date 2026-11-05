@@ -1,0 +1,171 @@
+--- baseline\WO-UI-02\pre-pause-native-main.ts
++++ src/native-ui/main.ts
+@@ -1,12 +1,12 @@
+ import { program, first, unitsOf, createUnit, killUnitAt, moveUnit, centerView,
+-  print, keyPressed, nextFrame, stats, units, orders, playWav, P1, P2, P3, locations, setResources, ui, deaths, setMemory, u32, i32, UnitType, memory } from "trigscript";
++  print, keyPressed, nextFrame, stats, units, orders, playWav, P1, P2, P3, locations, setResources, deaths, setMemory, u32, memory } from "trigscript";
+ import { now, SECOND } from "trigscript/timers";
+ 
+ // Build variants replace this constant before compilation.
+ const SKILL_LAB = true;
+ 
+ program(async () => {
+-// Generated isolated probe. Use tools/prepare-native-ui.py to regenerate.
++// Maintain this isolated probe directly. The initial generator is obsolete.
+ function copyFirst1539_0() {
+   setMemory(421085680, "set", 0);
+   if (memory(421024360, 10, 1, 1)) setMemory(421085680, "add", 1);
+@@ -1735,11 +1735,90 @@
+   if (memory(421024444, 10, 2147483648, 2147483648)) setMemory(421085740, "add", 2147483648);
+ 
+ }
++// Preserve the original resource offsets before changing their labels.
++function saveResourceNameOffsets() {
++  setMemory(421085780, "set", 0);
++  if (memory(421022872, 10, 1, 1)) setMemory(421085780, "add", 1);
++  if (memory(421022872, 10, 2, 2)) setMemory(421085780, "add", 2);
++  if (memory(421022872, 10, 4, 4)) setMemory(421085780, "add", 4);
++  if (memory(421022872, 10, 8, 8)) setMemory(421085780, "add", 8);
++  if (memory(421022872, 10, 16, 16)) setMemory(421085780, "add", 16);
++  if (memory(421022872, 10, 32, 32)) setMemory(421085780, "add", 32);
++  if (memory(421022872, 10, 64, 64)) setMemory(421085780, "add", 64);
++  if (memory(421022872, 10, 128, 128)) setMemory(421085780, "add", 128);
++  if (memory(421022872, 10, 256, 256)) setMemory(421085780, "add", 256);
++  if (memory(421022872, 10, 512, 512)) setMemory(421085780, "add", 512);
++  if (memory(421022872, 10, 1024, 1024)) setMemory(421085780, "add", 1024);
++  if (memory(421022872, 10, 2048, 2048)) setMemory(421085780, "add", 2048);
++  if (memory(421022872, 10, 4096, 4096)) setMemory(421085780, "add", 4096);
++  if (memory(421022872, 10, 8192, 8192)) setMemory(421085780, "add", 8192);
++  if (memory(421022872, 10, 16384, 16384)) setMemory(421085780, "add", 16384);
++  if (memory(421022872, 10, 32768, 32768)) setMemory(421085780, "add", 32768);
++  if (memory(421022872, 10, 65536, 65536)) setMemory(421085780, "add", 65536);
++  if (memory(421022872, 10, 131072, 131072)) setMemory(421085780, "add", 131072);
++  if (memory(421022872, 10, 262144, 262144)) setMemory(421085780, "add", 262144);
++  if (memory(421022872, 10, 524288, 524288)) setMemory(421085780, "add", 524288);
++  if (memory(421022872, 10, 1048576, 1048576)) setMemory(421085780, "add", 1048576);
++  if (memory(421022872, 10, 2097152, 2097152)) setMemory(421085780, "add", 2097152);
++  if (memory(421022872, 10, 4194304, 4194304)) setMemory(421085780, "add", 4194304);
++  if (memory(421022872, 10, 8388608, 8388608)) setMemory(421085780, "add", 8388608);
++  if (memory(421022872, 10, 16777216, 16777216)) setMemory(421085780, "add", 16777216);
++  if (memory(421022872, 10, 33554432, 33554432)) setMemory(421085780, "add", 33554432);
++  if (memory(421022872, 10, 67108864, 67108864)) setMemory(421085780, "add", 67108864);
++  if (memory(421022872, 10, 134217728, 134217728)) setMemory(421085780, "add", 134217728);
++  if (memory(421022872, 10, 268435456, 268435456)) setMemory(421085780, "add", 268435456);
++  if (memory(421022872, 10, 536870912, 536870912)) setMemory(421085780, "add", 536870912);
++  if (memory(421022872, 10, 1073741824, 1073741824)) setMemory(421085780, "add", 1073741824);
++  if (memory(421022872, 10, 2147483648, 2147483648)) setMemory(421085780, "add", 2147483648);
++}
++function restoreResourceNameOffsets() {
++  setMemory(421022872, "set", 0);
++  if (memory(421085780, 10, 1, 1)) setMemory(421022872, "add", 1);
++  if (memory(421085780, 10, 2, 2)) setMemory(421022872, "add", 2);
++  if (memory(421085780, 10, 4, 4)) setMemory(421022872, "add", 4);
++  if (memory(421085780, 10, 8, 8)) setMemory(421022872, "add", 8);
++  if (memory(421085780, 10, 16, 16)) setMemory(421022872, "add", 16);
++  if (memory(421085780, 10, 32, 32)) setMemory(421022872, "add", 32);
++  if (memory(421085780, 10, 64, 64)) setMemory(421022872, "add", 64);
++  if (memory(421085780, 10, 128, 128)) setMemory(421022872, "add", 128);
++  if (memory(421085780, 10, 256, 256)) setMemory(421022872, "add", 256);
++  if (memory(421085780, 10, 512, 512)) setMemory(421022872, "add", 512);
++  if (memory(421085780, 10, 1024, 1024)) setMemory(421022872, "add", 1024);
++  if (memory(421085780, 10, 2048, 2048)) setMemory(421022872, "add", 2048);
++  if (memory(421085780, 10, 4096, 4096)) setMemory(421022872, "add", 4096);
++  if (memory(421085780, 10, 8192, 8192)) setMemory(421022872, "add", 8192);
++  if (memory(421085780, 10, 16384, 16384)) setMemory(421022872, "add", 16384);
++  if (memory(421085780, 10, 32768, 32768)) setMemory(421022872, "add", 32768);
++  if (memory(421085780, 10, 65536, 65536)) setMemory(421022872, "add", 65536);
++  if (memory(421085780, 10, 131072, 131072)) setMemory(421022872, "add", 131072);
++  if (memory(421085780, 10, 262144, 262144)) setMemory(421022872, "add", 262144);
++  if (memory(421085780, 10, 524288, 524288)) setMemory(421022872, "add", 524288);
++  if (memory(421085780, 10, 1048576, 1048576)) setMemory(421022872, "add", 1048576);
++  if (memory(421085780, 10, 2097152, 2097152)) setMemory(421022872, "add", 2097152);
++  if (memory(421085780, 10, 4194304, 4194304)) setMemory(421022872, "add", 4194304);
++  if (memory(421085780, 10, 8388608, 8388608)) setMemory(421022872, "add", 8388608);
++  if (memory(421085780, 10, 16777216, 16777216)) setMemory(421022872, "add", 16777216);
++  if (memory(421085780, 10, 33554432, 33554432)) setMemory(421022872, "add", 33554432);
++  if (memory(421085780, 10, 67108864, 67108864)) setMemory(421022872, "add", 67108864);
++  if (memory(421085780, 10, 134217728, 134217728)) setMemory(421022872, "add", 134217728);
++  if (memory(421085780, 10, 268435456, 268435456)) setMemory(421022872, "add", 268435456);
++  if (memory(421085780, 10, 536870912, 536870912)) setMemory(421022872, "add", 536870912);
++  if (memory(421085780, 10, 1073741824, 1073741824)) setMemory(421022872, "add", 1073741824);
++  if (memory(421085780, 10, 2147483648, 2147483648)) setMemory(421022872, "add", 2147483648);
++}
++// require.dat has a 0x46C-byte header. Native offsets start after that header.
++// The first unit terminator is word 6 within the 1096-byte unit region.
++let nativeTransportReady = false;
++if (memory(0x514184, 10, 65535, 65535)) {
++  setMemory(0x660a70 + 92 * 2, "set", 393222);
++  setMemory(0x663888 + 92 * 2, "set", 0);
++  setMemory(0x65fd00 + 92 * 2, "set", 0);
++  nativeTransportReady = true;
++} else { print("NATIVE TRANSPORT GUARD | unit terminator differs"); }
+ let nativeUiReady = false;
+ const tblPointer = deaths(339379 as any, units.TerranMarine);
+ const tblHead = u32(deaths(103803071 as any, units.TerranMarine));
+ const tblCount = tblHead & 65535;
+-let tblMax = 0;
+ let tailClear = true;
+ function nativeGuard0():boolean { let okay=true;
+ if ((!memory(421021284, 1, 63799, 65535) || !memory(421021284, 1, 4181131264, 4294901760))) okay = false;
+@@ -2828,7 +2907,11 @@
+ if (!nativeGuard12()) offsetsClear=false;
+ if (!nativeGuard13()) offsetsClear=false;
+ if (!nativeGuard14()) offsetsClear=false;
+-if (tblPointer == 421021280 && (tblCount == 1539 || tblCount == 1547 || tblCount == 1551) && (tblHead >>> 16) == (tblCount + 1) * 2 && offsetsClear && tailClear) {
++// Copy at most 64 bytes from the first string. Reject a longer first entry.
++const firstOffset = tblHead >>> 16;
++const secondOffset = u32(deaths(103803072 as any, units.TerranMarine)) & 65535;
++const firstStringFits = secondOffset >= firstOffset + 4 && secondOffset <= firstOffset + 64;
++if (nativeTransportReady && firstStringFits && tblPointer == 421021280 && (tblCount == 1539 || tblCount == 1547 || tblCount == 1551) && (tblHead >>> 16) == (tblCount + 1) * 2 && offsetsClear && tailClear) {
+  if (tblCount == 1539) {
+   copyFirst1539_0();
+   copyFirst1539_1();
+@@ -2981,23 +3064,21 @@
+  setMemory(421085416, "set", 2515316111);
+  setMemory(421085420, "set", 2306925245);
+  setMemory(421085424, "set", 0);
++ saveResourceNameOffsets();
+  setMemory(421022872, "set", 4202756608);
+  setMemory(5343448, "set", 8);
+  setMemory(5343452, "set", 429474760);
+  nativeUiReady = true;
+  print("NATIVE UI READY | hover top resources | Q/W native card");
+ } else { print(`NATIVE UI GUARD | count=${tblCount} offsets=${offsetsClear} clear=${tailClear} ptr=${tblPointer}`); }
+-setMemory(6687528, "set", 37487164);
+   // Stock labels isolate button transport from native TBL allocation.
+-if (!nativeUiReady) {
++if (!nativeUiReady && nativeTransportReady) {
+  setMemory(429474896,"set",582);
+  setMemory(429474916,"set",669);
+  setMemory(5343448,"set",8);
+  setMemory(5343452,"set",429474760);
+  print("BUTTON TRANSPORT TEST | stock labels | final labels pending");
+ }
+-setMemory(0x663888+92*2,"set",0);
+-setMemory(0x65fd00+92*2,"set",0);
+ let sceneState = 1;
+   let checkpoint = 0;
+   let stage = 0;
+@@ -3033,7 +3114,6 @@
+   let castY = 0;
+   let baseArmor = 0;
+   let retryAt = 0;
+-  let hudAt = 0;
+   let epoch = now();
+   let hero = first({ owner: P1, type: units.JimRaynorMarine });
+   stats(units.JimRaynorMarine).armor = 0;
+@@ -3063,12 +3143,13 @@
+     const retry = keyPressed(P1, "F9");
+     const rPress = keyPressed(P1, "R") || keyPressed(P1, "L");
+     const damageProbe = keyPressed(P1, "D");
+-    if (keyPressed(P1, "V")) print(`NATIVE DIAG count=${tblCount} first=${tblHead >>> 16} ptr=${tblPointer} offsets=${offsetsClear} tail=${tailClear} ready=${nativeUiReady}`);
++    if (keyPressed(P1, "V")) print(`NATIVE DIAG count=${tblCount} first=${tblHead >>> 16} ptr=${tblPointer} offsets=${offsetsClear} tail=${tailClear} firstFits=${firstStringFits} transport=${nativeTransportReady} ready=${nativeUiReady}`);
+     const commandProbe = keyPressed(P1, "C");
+     if (damageProbe && hero && mode == 0) { hero.hp = 10; report("TEST DAMAGE | HP=10"); }
+     if (commandProbe && mode == 0 && qUntil == 0 && wUntil == 0 && rUntil == 0) {
+       campaignKits = kits;
+       campaignExplosives = explosives;
++      if (nativeUiReady) restoreResourceNameOffsets();
+       mode = 1;
+       setResources(P1, "set", 500, "ore");
+       setResources(P1, "set", 250, "gas");

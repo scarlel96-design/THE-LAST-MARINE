@@ -1,0 +1,4 @@
+__pycache__/
+runs/**/*.bmp
+runs/**/*.crop.png
+GIT_STATE.json

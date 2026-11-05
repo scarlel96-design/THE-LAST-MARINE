@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "scenario": "ui02-diagnostic",
+  "started_utc": "2026-11-04T16:25:57.357824+00:00",
+  "cases": [
+    {
+      "id": "checkpoint-initial",
+      "started_utc": "2026-11-04T16:25:57.361459+00:00",
+      "status": "FAIL",
+      "reason": "OCR: Requested OCR language is not installed: en-US",
+      "ended_utc": "2026-11-04T16:25:58.669898+00:00",
+      "elapsed_s": 1.3084
+    },
+    {
+      "id": "native-guard",
+      "started_utc": "2026-11-04T16:25:58.671169+00:00",
+      "status": "NOT RUN",
+      "reason": "Earlier required state failed",
+      "ended_utc": "2026-11-04T16:25:58.671196+00:00",
+      "elapsed_s": 0.0
+    },
+    {
+      "id": "Q-diagnostic-key",
+      "started_utc": "2026-11-04T16:25:58.671953+00:00",
+      "status": "NOT RUN",
+      "reason": "Earlier required state failed",
+      "ended_utc": "2026-11-04T16:25:58.671970+00:00",
+      "elapsed_s": 0.0
+    },
+    {
+      "id": "W-diagnostic-consumption",
+      "started_utc": "2026-11-04T16:25:58.672587+00:00",
+      "status": "NOT RUN",
+      "reason": "Earlier required state failed",
+      "ended_utc": "2026-11-04T16:25:58.672600+00:00",
+      "elapsed_s": 0.0
+    },
+    {
+      "id": "W-cooldown",
+      "started_utc": "2026-11-04T16:25:58.673258+00:00",
+      "status": "NOT RUN",
+      "reason": "Earlier required state failed",
+      "ended_utc": "2026-11-04T16:25:58.673269+00:00",
+      "elapsed_s": 0.0
+    },
+    {
+      "id": "R-installation-consumption-only",
+      "started_utc": "2026-11-04T16:25:58.673841+00:00",
+      "status": "NOT RUN",
+      "reason": "Earlier required state failed",
+      "ended_utc": "2026-11-04T16:25:58.673852+00:00",
+      "elapsed_s": 0.0
+    },
+    {
+      "id": "R-cooldown",
+      "started_utc": "2026-11-04T16:25:58.674487+00:00",
+      "status": "NOT RUN",
+      "reason": "Earlier required state failed",
+      "ended_utc": "2026-11-04T16:25:58.674499+00:00",
+      "elapsed_s": 0.0
+    },
+    {
+      "id": "checkpoint-after-consumption",
+      "started_utc": "2026-11-04T16:25:58.675262+00:00",
+      "status": "NOT RUN",
+      "reason": "Earlier required state failed",
+      "ended_utc": "2026-11-04T16:25:58.675283+00:00",
+      "elapsed_s": 0.0
+    },
+    {
+      "id": "E",
+      "started_utc": "2026-11-04T16:25:58.675919+00:00",
+      "status": "SKIP",
+      "reason": "E is not implemented in this isolated map",
+      "ended_utc": "2026-11-04T16:25:58.675931+00:00",
+      "elapsed_s": 0.0
+    },
+    {
+      "id": "R-combat-effect",
+      "started_utc": "2026-11-04T16:25:58.676491+00:00",
+      "status": "SKIP",
+      "reason": "R implements installation consumption only",
+      "ended_utc": "2026-11-04T16:25:58.676504+00:00",
+      "elapsed_s": 0.0
+    },
+    {
+      "id": "mission-progression",
+      "started_utc": "2026-11-04T16:25:58.677012+00:00",
+      "status": "NOT RUN",
+      "reason": "This skill laboratory has no full mission start/end objectives",
+      "ended_utc": "2026-11-04T16:25:58.677022+00:00",
+      "elapsed_s": 0.0
+    }
+  ],
+  "scope": "Actual visible states only. Input delivery is not functional PASS.",
+  "ai_tool_calls": 1,
+  "ai_decisions_inside_run": 0,
+  "retries": 0,
+  "ended_utc": "2026-11-04T16:25:58.726839+00:00",
+  "elapsed_s": 1.3691,
+  "captures": 2,
+  "inputs": 1,
+  "input_delivery_failures": 0,
+  "timing": {
+    "capture_s": 0.1206828000722453,
+    "ocr_s": 0.9599171000299975,
+    "input_s": 0.1821281000156887
+  },
+  "counts": {
+    "PASS": 0,
+    "FAIL": 1,
+    "SKIP": 2,
+    "NOT RUN": 8
+  },
+  "status": "FAIL"
+}

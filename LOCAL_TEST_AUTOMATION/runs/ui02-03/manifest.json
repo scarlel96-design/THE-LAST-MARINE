@@ -1,0 +1,23 @@
+{
+  "001-checkpoint-initial.bmp": "d8603510d7bd0be74cd31070425dd4c9055abe3b44093ec0135bb1dd9111da5e",
+  "001-checkpoint-initial.bmp.crop.png": "52b7176aee0f2ca6c4683d824da64e7449a2f7f34d4455f0b880d03533ddaf28",
+  "002-native-guard.bmp": "552f2eb220c18b93998e4a23853e80f15a2c189e682b27994c458d262acd3072",
+  "002-native-guard.bmp.crop.png": "684e7115738730aa059a2f92668b7849f1de19a476c0fcde0d4dd51992a7dcfa",
+  "003-Q-diagnostic-key.bmp": "c731549133550cf87fc775d0d30f9dad4cca2c6fbe324efea95eaa07f0a57e28",
+  "003-Q-diagnostic-key.bmp.crop.png": "4ea07a7a0f941943a7c4508f5e1934d9e2f8e7c6356fd5cedc0ac7a4191a95fc",
+  "004-Q-diagnostic-key.bmp": "c731549133550cf87fc775d0d30f9dad4cca2c6fbe324efea95eaa07f0a57e28",
+  "004-Q-diagnostic-key.bmp.crop.png": "4ea07a7a0f941943a7c4508f5e1934d9e2f8e7c6356fd5cedc0ac7a4191a95fc",
+  "005-Q-diagnostic-key.bmp": "b77cb022d30630d07fa067b01caf99a4fc8c8e1025ceddacd2d9212e0d326532",
+  "005-Q-diagnostic-key.bmp.crop.png": "902b2e254934d63b436dc21f1ee0b37101091218d314ca98f07e81e297210e88",
+  "006-Q-diagnostic-key.bmp": "4334cdf19bb806b83205f8fe70bd41f65c0fbc5b9f473e22438770d8a203c3e7",
+  "006-Q-diagnostic-key.bmp.crop.png": "3c3b7fd7f06803183307e558b97e5522ba29854d98c6dfc5c38003e4658aa056",
+  "007-Q-diagnostic-key.bmp": "4334cdf19bb806b83205f8fe70bd41f65c0fbc5b9f473e22438770d8a203c3e7",
+  "007-Q-diagnostic-key.bmp.crop.png": "3c3b7fd7f06803183307e558b97e5522ba29854d98c6dfc5c38003e4658aa056",
+  "008-Q-diagnostic-key.bmp": "7a69f24188c1d3697947e5f9dbb4b6342e691dc1d49f09cf3bc1327495ca50fa",
+  "008-Q-diagnostic-key.bmp.crop.png": "0af1ec336a81103d29169082275267aef4fe1152619104340a3618488d21fd6a",
+  "009-Q-diagnostic-key.bmp": "bf255903edaf2cc07ec575403ccd0176f5068d89f66108d032f6c07d5e4f4321",
+  "009-Q-diagnostic-key.bmp.crop.png": "9c5c014c1e662ff690a373e6cb8f4d62a7ea64185e56a27f1b7a1d0fbd87d542",
+  "010-Q-diagnostic-key-failure.bmp": "bf255903edaf2cc07ec575403ccd0176f5068d89f66108d032f6c07d5e4f4321",
+  "events.jsonl": "cf09d797e5630bd46d00d9bc7f2bb8911fb89bada0113dece03717e904ac70ba",
+  "result.json": "4b20b8226cf0875b05780480be6fbbb5f5202f68ebecaebe7384569c5e4defdd"
+}

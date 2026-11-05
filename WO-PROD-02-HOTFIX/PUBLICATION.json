@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/scarlel96-design/THE-LAST-MARINE",
+  "localSourceCommit": "8c43a85a031ec711426e22e173e459094aa5b7ad",
+  "publicBranch": "codex/m01-start-fix",
+  "publicCommit": "eeab1f0a68a51b460be2a6d7fd15a3fee6fce945",
+  "publicTree": "1d95d42d805baef51b320f6f8817018f7386ae3b",
+  "verifiedFiles": 26,
+  "verifiedScx": 4,
+  "defaultBranchHeadUnchanged": "c950b4d7d180bc8af23a6a3c75d17d3416bdfd5a",
+  "publication": "VERIFIED",
+  "releaseExport": "tools/export-public-release.py",
+  "liveGame": "NOT RUN"
+}

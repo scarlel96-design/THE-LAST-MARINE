@@ -1,0 +1,86 @@
+{
+  "work_order": "WO-UI-01",
+  "verdict": "BLOCKED",
+  "feature_complete": false,
+  "branch": "codex/wo-ui-01",
+  "parent_commit": "431be0927b27a2f8a232e0e671c4bf665d312436",
+  "changed_fields": [
+    "kits/explosives resource projection",
+    "R installation-only consumption",
+    "mode and campaign consumable snapshots",
+    "diagnostic ui.lines",
+    "checkpoint hero reuse"
+  ],
+  "paths": {
+    "MODIFIED_FILE": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\src\\resource-ui\\main.ts",
+    "DIFF_FILE": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-01\\DIFF.patch",
+    "VERIFICATION": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-01\\VERIFICATION.txt",
+    "ROLLBACK": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-01\\ROLLBACK.sh"
+  },
+  "original_sha256": "ef180356f9c53254ebdbac9a18ea9c1985418b95ddde52b58a72bf23ec0aa1c9",
+  "modified_sha256": "93f98bc452e2fed63afee5bb3be79aaf648b4add176fea71d89a8d94aae76795",
+  "original_source_unchanged": true,
+  "modified_file_remains_changed": true,
+  "BASELINE": {
+    "command": "node outputs/The-Last-Marine/tools/build.mjs",
+    "cwd": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\src\\poc\\main.ts",
+    "stdout": "COLLAPSE_90S_POC: 15 PASS / 0 FAIL\nCOLLAPSE_90S_POC: BUILT 246883 bytes; SCX reopened; 67 trigger records\nSKILL_POC: 15 PASS / 0 FAIL\nSKILL_POC: BUILT 246068 bytes; SCX reopened; 67 trigger records",
+    "exit_status": 0
+  },
+  "MODIFIED": {
+    "command": "node outputs/The-Last-Marine/tools/build-resource-ui.mjs",
+    "cwd": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\src\\resource-ui\\main.ts",
+    "stdout": "RESOURCE_UI_POC: 26 PASS / 0 FAIL\nRESOURCE_UI_POC: BUILT 328060 bytes; SCX reopened; 67 trigger records",
+    "exit_status": 0
+  },
+  "ROLLBACK": {
+    "command": "\"C:/Program Files/Git/bin/bash.exe\" --noprofile --norc -c 'chmod +x outputs/The-Last-Marine/WO-UI-01/ROLLBACK.sh && outputs/The-Last-Marine/WO-UI-01/ROLLBACK.sh work/resource-ui-rollback-sh.ts'",
+    "cwd": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\resource-ui-rollback-sh.ts",
+    "stdout": "ROLLBACK: legacy Q/W source bytes restored",
+    "exit_status": 0,
+    "restored_sha256": "ef180356f9c53254ebdbac9a18ea9c1985418b95ddde52b58a72bf23ec0aa1c9"
+  },
+  "native_rollback": {
+    "command": "pwsh -NoProfile -File outputs/The-Last-Marine/WO-UI-01/ROLLBACK.ps1 -Target work/resource-ui-rollback-test.ts",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\resource-ui-rollback-test.ts",
+    "stdout": "ROLLBACK: legacy Q/W source bytes restored",
+    "exit_status": 0
+  },
+  "RESTORED": {
+    "command": "node outputs/The-Last-Marine/tools/build-resource-ui.mjs work/resource-ui-rollback-test.ts",
+    "cwd": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\resource-ui-rollback-test.ts",
+    "stdout": "RESOURCE_UI_ROLLBACK: 15 PASS / 0 FAIL\nRESOURCE_UI_ROLLBACK: BUILT 246018 bytes; SCX reopened; 67 trigger records",
+    "exit_status": 0,
+    "behavior": "legacy skill-lab regression suite passed on restored source; resource UI/R additions removed"
+  },
+  "map": {
+    "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-01\\RESOURCE_UI_POC.scx",
+    "bytes": 328060,
+    "sha256": "80b0f154afae522756d8528f347622b25850b96e4226c1e78c8e6b26f71f8746",
+    "game_copy_sha256": "80b0f154afae522756d8528f347622b25850b96e4226c1e78c8e6b26f71f8746"
+  },
+  "live": {
+    "environment": "StarCraft: Remastered 1.23.10.13515 / UMS / tlmpoc",
+    "screenshots": 7,
+    "W": "3/2 -> 2/2; W completed kits=2",
+    "R": "2/2 -> 2/1; post-checkpoint two installations reach 3/0; further R blocked at zero",
+    "checkpoint": "top counters 3/2 and live hero; stale diagnostic text observed",
+    "RTS": "500/250 production resource display observed; internal snapshot verified only by simulator",
+    "icons": "FAIL: unchanged mineral/gas graphics",
+    "top_slot_names": "FAIL: Korean names only in text area",
+    "native_skill_tooltips": "NOT IMPLEMENTED",
+    "multi_resolution_scale": "NOT RUN",
+    "W_empty_or_interrupt_in_game": "NOT RUN",
+    "key_reliability": "UNCONFIRMED: repeated short inputs needed",
+    "final_game_state": "F10 menu, paused"
+  },
+  "previous_failures": [
+    "F4/F5/F6 were rejected by the supported Key type; replaced with C/D/L.",
+    "Copy into game Maps initially denied by workspace boundary; approved execution copied one new map and verified its hash."
+  ],
+  "screenshots_manifest": "SCREENSHOTS_MANIFEST.json"
+}

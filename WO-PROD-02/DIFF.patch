@@ -1,0 +1,82 @@
+diff --git a/src/m01/content.json b/src/m01/content.json
+index 812f9ae..d28473b 100644
+--- a/src/m01/content.json
++++ b/src/m01/content.json
+@@ -61 +61,6 @@
+-  [45,"control",0,"탄약고 피격 경보. 남쪽 차폐벽으로 대피하라. 정비조 응답은 없다."]
++  [45,"control",0,"탄약고 피격 경보. 남쪽 차폐벽으로 대피하라. 정비조 응답은 없다."],
++  [46,"control",0,"베일 하사 전사 확인. 후미 방어조는 내부 벙커로 후퇴하라."],
++  [47,"control",0,"렌 기술병 전사 확인. 남은 정비기록은 중계소로 전송한다."],
++  [48,"control",0,"모로 연락 두절. 대피 인원은 통로에 도착한 사람만 집계한다."],
++  [49,"control",0,"외곽 돌파. 감시초소 쪽 저글링도 내부 방어선으로 방향을 바꿨다."],
++  [50,"control",0,"내부 방어조는 착륙장까지 후퇴하라. 대피 인원은 지하 통로로 안내한다."]
+diff --git a/src/m01/layout.mjs b/src/m01/layout.mjs
+index a9219bd..c07ccc0 100644
+--- a/src/m01/layout.mjs
++++ b/src/m01/layout.mjs
+@@ -38,2 +38,2 @@ put('ammo-depot',109,2,'Ammo',0,0,{footprint:[3,2]});
+-put('dropship',11,2,'Inbound');
+-put('hospital',112,2,'Medical',-160,-96,{footprint:[3,2]});
++put('dropship',11,2,'Inbound',0,0,{air:true});
++put('hospital',112,2,'Medical',-160,-96,{footprint:[3,2],hpPercent:45});
+@@ -66 +66,5 @@ for(const [at,offsets] of [
+-for(const name of ['Armory','Outpost','Soldiers','Civilians','Workshop','Medical','Settlement','Relay','Supply','Archive','Salvage','Restricted','NorthRoute','SouthRoute','Exit']) {
++put('quarters-academy',112,2,'Barracks',-320,-48,{footprint:[3,2]});
++put('landing-control',124,2,'Evac',192,80,{footprint:[2,2]});
++put('refuge-clinic',112,11,'Civilians',0,128,{footprint:[3,2]});
++put('relay-backup',109,11,'Relay',-192,80,{footprint:[3,2],hpPercent:48});
++for(const name of ['Armory','Outpost','MaraStart','WrenStart','Soldiers','Civilians','Workshop','Evac','Shelter','Medical','Settlement','Relay','Supply','Archive','Salvage','Restricted','NorthRoute','SouthRoute','Exit']) {
+@@ -70 +74,3 @@ export const encounterBudget={outer:18,inner:20,depot:14,survival:20,total:72};
+-export const routeChecks=[['Barracks','Armory'],['Armory','Outpost'],['Outpost','Outer'],['Outer','Inner'],['Inner','Soldiers'],['Soldiers','Evac'],['Workshop','Shelter'],['Shelter','Medical'],['Medical','Settlement'],['Settlement','Relay'],['Relay','Supply'],['Supply','Exit']];
++export const routeChecks=[['Barracks','Armory'],['Armory','Outpost'],['Outpost','Outer'],['Outer','Inner'],['Inner','Soldiers'],['Soldiers','Evac'],['Workshop','Shelter'],['Shelter','Medical'],['Medical','Settlement'],['Settlement','Relay'],['Relay','Supply'],['Supply','Exit'],
++ ['OuterReserve','Outpost'],['OuterReserve','Outer'],['InnerReserve','Inner'],['DepotReserve','Shelter'],
++ ['MaraStart','Evac'],['WrenStart','Evac'],['Civilians','Evac'],['Evac','Shelter'],['Relay','Archive'],['Medical','Salvage'],['Relay','NorthRoute'],['Relay','SouthRoute'],['Supply','Restricted']];
+diff --git a/src/m01/main.ts b/src/m01/main.ts
+index 3dd12ae..c5d2845 100644
+--- a/src/m01/main.ts
++++ b/src/m01/main.ts
+@@ -146 +146 @@ program(async () => {
+-      cameraOwner=id; cameraUntil=now()+2*SECOND;
++      cameraOwner=id; cameraUntil=now()+SECOND;
+@@ -151,0 +152,7 @@ program(async () => {
++  function assaultOuter() {
++    for (const foe of unitsOf(P2,{type:units.ZergZergling})) {
++      if (foe.x<1376) foe.order("attack",locations.Outpost);
++      else foe.order("attack",locations.Outer);
++    }
++    for (const ally of unitsOf(P3,{type:units.TerranMarine,at:locations.Outer})) ally.order("attack",locations.Outer);
++  }
+@@ -215 +222 @@ program(async () => {
+-    if (cameraOwner>0 && frame>=cameraUntil) {
++    if (cameraOwner>0 && (frame>=cameraUntil || interact || qPress || wPress)) {
+@@ -236,3 +243,3 @@ program(async () => {
+-      if (maraState==0 && !mara) { maraState=2; maraMoving=false; save(); }
+-      if (wrenState==0 && !wren) { wrenState=2; wrenMoving=false; save(); }
+-      if (ellaState==0 && !ella) { ellaState=2; save(); }
++      if (maraState==0 && !mara) { maraState=2; maraMoving=false; radio(46); save(); }
++      if (wrenState==0 && !wren) { wrenState=2; wrenMoving=false; radio(47); save(); }
++      if (ellaState==0 && !ella) { ellaState=2; radio(48); save(); }
+@@ -288 +295 @@ program(async () => {
+-        if (!outerIssued) { outerIssued=true; for (const foe of unitsOf(P2,{type:units.ZergZergling})) foe.order("attack",locations.Outer); }
++        if (!outerIssued) { outerIssued=true; assaultOuter(); }
+@@ -291,0 +299,4 @@ program(async () => {
++          if (outerOutcome==1) {
++            for (const foe of unitsOf(P2,{type:units.ZergZergling})) foe.order("attack",locations.Inner);
++            radio(49);
++          }
+@@ -296 +307,5 @@ program(async () => {
+-        if (!innerIssued) { innerIssued=true; for (const foe of unitsOf(P6,{type:units.ZergHydralisk})) foe.order("attack",locations.Inner); }
++        if (!innerIssued) {
++          innerIssued=true;
++          for (const foe of unitsOf(P6,{type:units.ZergHydralisk})) foe.order("attack",locations.Inner);
++          for (const ally of unitsOf(P3,{type:units.TerranMarine,at:locations.Inner})) ally.order("attack",locations.Inner);
++        }
+@@ -299 +314,4 @@ program(async () => {
+-      else if (phase==4 && bring(P1,units.JimRaynorMarine,locations.Evac,">=",1) && (!inner || inner.hp<inner.maxHp-70 || count(P6,units.ZergHydralisk)==0)) advance(5,2);
++      else if (phase==4 && bring(P1,units.JimRaynorMarine,locations.Evac,">=",1) && (!inner || inner.hp<inner.maxHp-70 || count(P6,units.ZergHydralisk)==0)) {
++        for (const ally of unitsOf(P3,{type:units.TerranMarine,at:locations.Inner})) ally.order("move",locations.Evac);
++        radio(50); advance(5,2);
++      }
+@@ -375 +393 @@ program(async () => {
+-        if (phase==2) for (const foe of unitsOf(P2,{type:units.ZergZergling})) foe.order("attack",locations.Outer);
++        if (phase==2) assaultOuter();

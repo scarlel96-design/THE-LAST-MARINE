@@ -1,0 +1,21 @@
+{
+  "started": "2026-11-04T16:20:04.018Z",
+  "tool_calls": 2,
+  "captures": 2,
+  "inputs": 2,
+  "retries": 0,
+  "input_failures": 0,
+  "steps": [
+    {
+      "input_ms": 1309.9183000000194,
+      "capture_and_state_ms": 1361.7407000000821
+    },
+    {
+      "input_ms": 232.1023999999743,
+      "capture_and_state_ms": 1238.2588000000687
+    }
+  ],
+  "ended": "2026-11-04T16:20:20.821Z",
+  "elapsed_s": 16.77036380000005,
+  "observed": "PASS: menu visible after F10; menu absent and top counts 3/2 after Escape"
+}

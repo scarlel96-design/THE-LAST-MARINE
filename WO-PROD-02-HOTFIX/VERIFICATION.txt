@@ -1,0 +1,50 @@
+M01 start fix / codex/wo-prod-02-start-fix
+Baseline: db16369d4e6be7006f425c889307d718f79ae03b
+Changed fields: native reciprocal alliances, one-time opening hero selection, manual J focus, no automatic camera actions.
+MODIFIED_FILE=<USERPROFILE>/Documents/Codex/2026-11-03/starcraft-the-last-marine-v1-0-2/outputs/The-Last-Marine/src/m01/main.ts
+DIFF_FILE=<USERPROFILE>/Documents/Codex/2026-11-03/starcraft-the-last-marine-v1-0-2/outputs/The-Last-Marine/WO-PROD-02-HOTFIX/DIFF.patch
+VERIFICATION=<USERPROFILE>/Documents/Codex/2026-11-03/starcraft-the-last-marine-v1-0-2/outputs/The-Last-Marine/WO-PROD-02-HOTFIX/VERIFICATION.txt
+ROLLBACK=<USERPROFILE>/Documents/Codex/2026-11-03/starcraft-the-last-marine-v1-0-2/outputs/The-Last-Marine/WO-PROD-02-HOTFIX/ROLLBACK.sh
+Baseline M01 runtime SHA-256: 6f1817576a919bd45c3ceee710513262bcf6cb522f0e99dbad07b0ec3670364e
+Active M01 runtime SHA-256: 54a85431e70374a167dcdc5f3ee3486d51b355abc9fd14eec6f28bca45e6d319
+Built M01 SCX SHA-256: 46ad3e3fcc8b8876263ab8e5b3569f74db6784f0ed9e665bc4039e3941457f91
+
+BASELINE
+Command: python -X utf8 outputs/The-Last-Marine/tools/verify-production.py --baseline
+Input: WO-PROD-02 baseline template and protected paths.
+Literal output: BASELINE: M01 template hash and five protected paths match
+Exit status: 0
+Command: node --test outputs/The-Last-Marine/tests/m01-transfer.test.mjs
+Input: original M01 v1 codec and test vectors.
+Literal result: tests 8; pass 8; fail 0.
+Exit status: 0
+
+MODIFIED
+Command: node outputs/The-Last-Marine/tools/build-production.mjs --m01-only --opening-fix > outputs/The-Last-Marine/WO-PROD-02-HOTFIX/reports/build.log 2>&1
+Input: M01 runtime, unchanged placement and terrain plans, 34 source simulation cases.
+Literal output:
+M01_NORTH_RIDGE_START_FIX TERRAIN: 2 elevation levels; 25 routes; 1317 restricted tiles
+M01_NORTH_RIDGE_START_FIX SOURCE: 34 PASS / 0 FAIL
+M01_NORTH_RIDGE_START_FIX BUILD: 192x192; 151 placed units; 694097 bytes; SCX and briefing reopened; LIVE NOT RUN
+OPENING: sole human P1; P1 hero; P3 barracks; 24 native ally stances; control map without EUD
+Exit status: 0
+
+Command: node outputs/The-Last-Marine/tools/verify-m01-opening.mjs
+Input: exact reported SCX baseline and three new SCX files.
+Literal output:
+BEFORE: P1 hero and P1 human were already correct; 0 native alliance actions
+AFTER: 3 SCX reopened; terrain and unit placements unchanged; 24 native ally stances; control map uses only alliances and text
+Exit status: 0
+
+ROLLBACK
+Preparation: copy the active M01 template to reports/rollback-copy.ts.
+Command: & 'outputs/The-Last-Marine/WO-PROD-02-HOTFIX/ROLLBACK.ps1' 'outputs/The-Last-Marine/WO-PROD-02-HOTFIX/reports/rollback-copy.ts'
+Input: disposable copy and the original preserved template.
+Literal output: ROLLBACK: original M01 opening restored in disposable copy; active fix unchanged
+Exit status: 0
+Restored status: original SHA-256 matches on the copy. Active modified source and the original live map remain unchanged by rollback.
+Restored game behavior: NOT RUN.
+ROLLBACK.sh is executable in Git and uses the same tested Python restore routine as the PowerShell entry point.
+
+Live observation: user reported selection, friendly targeting and camera symptoms on the prior SCX.
+Live verification of the revised SCX: NOT RUN.

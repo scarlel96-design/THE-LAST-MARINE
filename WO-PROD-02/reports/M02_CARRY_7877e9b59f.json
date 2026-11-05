@@ -1,0 +1,373 @@
+{
+  "label": "M02_CARRY_7877e9b59f",
+  "status": "BUILT AND REOPENED",
+  "live": "NOT RUN",
+  "sourceSha256": "40e89d0900b7af6496f1a9705ade0fb6034affedb9ab434f0d7418f9819b20cd",
+  "templateSha256": "197b6bb1037ee4f7f5cc5b42d03f28969f4516c0125c0495f923f5c5d8343280",
+  "terrain": {
+    "types": {
+      "2": 41892,
+      "3": 1184,
+      "4": 320,
+      "5": 1044,
+      "6": 80,
+      "14": 1648,
+      "15": 440,
+      "20": 88,
+      "22": 256,
+      "27": 1520,
+      "28": 344,
+      "34": 748,
+      "35": 612
+    },
+    "heights": {
+      "0": 48441,
+      "1": 1735
+    },
+    "cliffFlagTiles": 0,
+    "viewFlagTiles": 0,
+    "blockedTiles": 2396,
+    "routes": [
+      {
+        "from": "Entry",
+        "to": "Wreck",
+        "steps": 41
+      },
+      {
+        "from": "Wreck",
+        "to": "Reactor",
+        "steps": 53
+      },
+      {
+        "from": "Reactor",
+        "to": "Depot",
+        "steps": 31
+      },
+      {
+        "from": "Depot",
+        "to": "Motor",
+        "steps": 64
+      },
+      {
+        "from": "Depot",
+        "to": "Mineral",
+        "steps": 53
+      },
+      {
+        "from": "Mineral",
+        "to": "WestGate",
+        "steps": 30
+      },
+      {
+        "from": "WestGate",
+        "to": "Garrison",
+        "steps": 27
+      },
+      {
+        "from": "Motor",
+        "to": "EastGate",
+        "steps": 36
+      },
+      {
+        "from": "EastGate",
+        "to": "Drain",
+        "steps": 16
+      },
+      {
+        "from": "Drain",
+        "to": "Shelter",
+        "steps": 37
+      },
+      {
+        "from": "Garrison",
+        "to": "Watch",
+        "steps": 32
+      },
+      {
+        "from": "Garrison",
+        "to": "Reactor",
+        "steps": 33
+      },
+      {
+        "from": "WestLane",
+        "to": "WestGate",
+        "steps": 42
+      },
+      {
+        "from": "DrainLane",
+        "to": "EastGate",
+        "steps": 39
+      },
+      {
+        "from": "NorthLane",
+        "to": "Garrison",
+        "steps": 41
+      },
+      {
+        "from": "Garrison",
+        "to": "Relay",
+        "steps": 78
+      },
+      {
+        "from": "Relay",
+        "to": "Nest",
+        "steps": 56
+      },
+      {
+        "from": "NestLane",
+        "to": "Nest",
+        "steps": 28
+      },
+      {
+        "from": "Nest",
+        "to": "Extraction",
+        "steps": 40
+      },
+      {
+        "from": "WestLane",
+        "to": "Depot",
+        "steps": 65
+      },
+      {
+        "from": "NorthLane",
+        "to": "EastGate",
+        "steps": 61
+      },
+      {
+        "from": "WestLane",
+        "to": "Reactor",
+        "steps": 92
+      },
+      {
+        "from": "DrainLane",
+        "to": "Reactor",
+        "steps": 100
+      },
+      {
+        "from": "Watch",
+        "to": "NestLane",
+        "steps": 60
+      }
+    ],
+    "method": "All 16 VF4 minitiles walkable; one-tile structure clearance; four-neighbor reachability. Engine pathfinding NOT RUN."
+  },
+  "isom": {
+    "rects": 25088,
+    "mismatched": 0
+  },
+  "diagnostics": [],
+  "tests": {
+    "passed": 19,
+    "failed": 0,
+    "results": [
+      {
+        "id": "m02.test.ts::M02 start applies validated gear and inventory",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 intro skips only the camera",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 mandatory fuse requires interaction at the wreck",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 repair restores physical HP and activates only four scouts",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 depot needs scouts gone and deploys evacuated soldiers once",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 defensive wave waits for the longer inherited warning",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 sealing drain reroutes wave two and restored watch extends lead time",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 unchanged drain carries the second wave and cannot be sealed mid-raid",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 raids do not advance by timer or respawn after F9",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 brownout requires manual relay and current thermal equipment changes damage",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 third attack has two finite columns",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 loss of reactor is terminal, not a checkpoint award",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 surviving contacts change optional cache without duplication",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 motor support and upgrades debit only once per purchase",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 E stays locked before depot and cancels on movement",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 Q reverts on movement and W interruption preserves stock",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 hero death recovers one hero without restoring loot or enemies",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 counterattack requires ground travel, the hatchery and all guards",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m02.test.ts::M02 minimal path emits M03 v1 and wins once",
+        "status": "passed",
+        "message": null
+      }
+    ]
+  },
+  "maps": [
+    {
+      "name": "M02_CARRY_7877e9b59f_SOURCE.scx",
+      "kind": "SOURCE",
+      "bytes": 132769,
+      "sha256": "cf37b36c04593b7ad402504c742131af9c8980f770d38df2743175b05eb4ce05",
+      "triggers": 0
+    },
+    {
+      "name": "M02_CARRY_7877e9b59f.scx",
+      "kind": "PLAY",
+      "bytes": 443019,
+      "sha256": "9d3b08f02f4dd094db613e861238bc570ac871ad1d268c1373f97b54ffe680b7",
+      "triggers": 77
+    }
+  ],
+  "units": 34,
+  "encounterBudget": {
+    "scout": 4,
+    "west": 8,
+    "drain": 7,
+    "thirdNorth": 9,
+    "thirdFlank": 5,
+    "counter": 10,
+    "total": 43
+  },
+  "briefingLines": 5,
+  "radioLines": 31,
+  "members": 8,
+  "compiler": {
+    "warnings": [],
+    "stats": {
+      "runs": 1,
+      "runNames": [
+        "program 1 as P1"
+      ],
+      "graphTriggers": 11268,
+      "payloadBytes": 2725878,
+      "address": 421093800,
+      "mapTriggers": 0,
+      "mapTriggerCopies": 0,
+      "hyperTriggersLeftOut": 0,
+      "mapTriggersUnlisted": 0,
+      "startUpTriggers": 77,
+      "input": {
+        "keys": 13,
+        "mouse": false,
+        "syncs": 0,
+        "carrier": 58,
+        "ring": 6,
+        "rings": 1,
+        "humans": [
+          0
+        ],
+        "cuwp": 1,
+        "bits": 24
+      },
+      "stringsBefore": 38,
+      "stringsAfter": 99,
+      "players": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "entries": [
+        423777588,
+        423777716,
+        423777844,
+        423778408,
+        423778548,
+        423778688,
+        423779144,
+        423779276
+      ],
+      "stringsBytes": 7646
+    }
+  },
+  "start": {
+    "carried": true,
+    "legacyA": 21397,
+    "legacyB": 32431,
+    "route": 2,
+    "soldiers": 3,
+    "civilians": 5,
+    "mara": 1,
+    "wren": 1,
+    "ella": 1,
+    "weapon": 1,
+    "armor": 1,
+    "experience": 1,
+    "equipment": 7,
+    "intel": 7,
+    "materials": 45,
+    "parts": 2,
+    "kits": 5,
+    "explosives": 1,
+    "warning": 1
+  },
+  "tileset": {
+    "installedVersion": "1.23.10.13515",
+    "sha256": {
+      "cv5": "fe04afb2b483a7144b7f1c8fb6a06297d93eab2c034011069005c9ed1a6757da",
+      "vf4": "87f478ee1a1b19657ad1811e76ae372b658d14f026ff5f36e58f6bde968ec5d8",
+      "vr4": "6789f2ef4a2f3d87fa21c3b75d1a18d8080d9cae22abb9a0c5045f6a7fc804c3",
+      "vx4ex": "d22cb7a54e1e603a82c67a827c43115ecada1ec3a6fc1085769416dde08ef13e",
+      "wpe": "37736f2f738384e0668d7ff8bd658e540d02138e00f660d59b75fb5c5cb5a3ea"
+    }
+  }
+}

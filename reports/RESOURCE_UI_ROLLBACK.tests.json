@@ -1,0 +1,1345 @@
+{
+  "variant": "RESOURCE_UI_ROLLBACK",
+  "diagnostics": [],
+  "tests": {
+    "list": [
+      {
+        "id": "poc.test.ts::Q grants armor and restores it after six seconds",
+        "kind": "test",
+        "name": "Q grants armor and restores it after six seconds",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 3,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::Q repeated input does not restart the active skill",
+        "kind": "test",
+        "name": "Q repeated input does not restart the active skill",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 10,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::Q cooldown rejects a second use",
+        "kind": "test",
+        "name": "Q cooldown rejects a second use",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 17,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::movement cancels brace",
+        "kind": "test",
+        "name": "movement cancels brace",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 21,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::W unlock and successful heal consume exactly one kit",
+        "kind": "test",
+        "name": "W unlock and successful heal consume exactly one kit",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 28,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::movement interrupts W without resource or cooldown loss",
+        "kind": "test",
+        "name": "movement interrupts W without resource or cooldown loss",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 40,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::five damage interrupts W without consuming a kit",
+        "kind": "test",
+        "name": "five damage interrupts W without consuming a kit",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 49,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::death clears effects and reconstructs checkpoint",
+        "kind": "test",
+        "name": "death clears effects and reconstructs checkpoint",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 59,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::scene skip finalizes once and releases the camera",
+        "kind": "test",
+        "name": "scene skip finalizes once and releases the camera",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 67,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::missing NPC and off-route hero do not prevent skip recovery",
+        "kind": "test",
+        "name": "missing NPC and off-route hero do not prevent skip recovery",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 75,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::watchdog reports recovery instead of successful combat",
+        "kind": "test",
+        "name": "watchdog reports recovery instead of successful combat",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 83,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::F7 and F8 provide alternative skill keys",
+        "kind": "test",
+        "name": "F7 and F8 provide alternative skill keys",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 90,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::W remains locked before the survival transition",
+        "kind": "test",
+        "name": "W remains locked before the survival transition",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 98,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::empty inventory rejects W without underflow",
+        "kind": "test",
+        "name": "empty inventory rejects W without underflow",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 107,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::midpoint skip uses the same canonical state",
+        "kind": "test",
+        "name": "midpoint skip uses the same canonical state",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 122,
+        "mode": "run"
+      }
+    ],
+    "results": [
+      {
+        "id": "poc.test.ts::Q grants armor and restores it after six seconds",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q active | armor +2 | movement cancels",
+          "Q/F7 brace 13s | W/F8 first aid unlocked 0s | kits 3",
+          "Q ended | base armor restored"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Q active | armor +2 | movement cancels",
+            "file": "main.ts",
+            "line": 179
+          },
+          {
+            "frame": 122,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 13s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 150,
+            "player": 0,
+            "text": "Display Text Message — Q ended | base armor restored",
+            "file": "main.ts",
+            "line": 153
+          }
+        ],
+        "frames": 152,
+        "ms": 48
+      },
+      {
+        "id": "poc.test.ts::Q repeated input does not restart the active skill",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q active | armor +2 | movement cancels",
+          "BLOCKED: another skill active"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Q active | armor +2 | movement cancels",
+            "file": "main.ts",
+            "line": 179
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Display Text Message — BLOCKED: another skill active",
+            "file": "main.ts",
+            "line": 170
+          }
+        ],
+        "frames": 9,
+        "ms": 18
+      },
+      {
+        "id": "poc.test.ts::Q cooldown rejects a second use",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q active | armor +2 | movement cancels",
+          "Q/F7 brace 13s | W/F8 first aid unlocked 0s | kits 3",
+          "Q ended | base armor restored",
+          "BLOCKED: Q cooldown"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Q active | armor +2 | movement cancels",
+            "file": "main.ts",
+            "line": 179
+          },
+          {
+            "frame": 122,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 13s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 150,
+            "player": 0,
+            "text": "Display Text Message — Q ended | base armor restored",
+            "file": "main.ts",
+            "line": 153
+          },
+          {
+            "frame": 156,
+            "player": 0,
+            "text": "Display Text Message — BLOCKED: Q cooldown",
+            "file": "main.ts",
+            "line": 173
+          }
+        ],
+        "frames": 157,
+        "ms": 21
+      },
+      {
+        "id": "poc.test.ts::movement cancels brace",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q active | armor +2 | movement cancels",
+          "Q ended | base armor restored"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Q active | armor +2 | movement cancels",
+            "file": "main.ts",
+            "line": 179
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Display Text Message — Q ended | base armor restored",
+            "file": "main.ts",
+            "line": 153
+          }
+        ],
+        "frames": 9,
+        "ms": 4
+      },
+      {
+        "id": "poc.test.ts::W unlock and successful heal consume exactly one kit",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "W casting | 3 seconds | movement or 5 damage interrupts",
+          "W completed | kits=2",
+          "BLOCKED: W cooldown"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — W casting | 3 seconds | movement or 5 damage interrupts",
+            "file": "main.ts",
+            "line": 192
+          },
+          {
+            "frame": 78,
+            "player": 0,
+            "text": "Display Text Message — W completed | kits=2",
+            "file": "main.ts",
+            "line": 164
+          },
+          {
+            "frame": 82,
+            "player": 0,
+            "text": "Display Text Message — BLOCKED: W cooldown",
+            "file": "main.ts",
+            "line": 184
+          }
+        ],
+        "frames": 83,
+        "ms": 19
+      },
+      {
+        "id": "poc.test.ts::movement interrupts W without resource or cooldown loss",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "W casting | 3 seconds | movement or 5 damage interrupts",
+          "W interrupted | no kit or cooldown consumed"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — W casting | 3 seconds | movement or 5 damage interrupts",
+            "file": "main.ts",
+            "line": 192
+          },
+          {
+            "frame": 16,
+            "player": 0,
+            "text": "Display Text Message — W interrupted | no kit or cooldown consumed",
+            "file": "main.ts",
+            "line": 158
+          }
+        ],
+        "frames": 17,
+        "ms": 4
+      },
+      {
+        "id": "poc.test.ts::five damage interrupts W without consuming a kit",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "W casting | 3 seconds | movement or 5 damage interrupts",
+          "W interrupted | no kit or cooldown consumed"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — W casting | 3 seconds | movement or 5 damage interrupts",
+            "file": "main.ts",
+            "line": 192
+          },
+          {
+            "frame": 16,
+            "player": 0,
+            "text": "Display Text Message — W interrupted | no kit or cooldown consumed",
+            "file": "main.ts",
+            "line": 158
+          }
+        ],
+        "frames": 17,
+        "ms": 5
+      },
+      {
+        "id": "poc.test.ts::death clears effects and reconstructs checkpoint",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q active | armor +2 | movement cancels",
+          "HERO DOWN | checkpoint recovery in 3 seconds",
+          "CHECKPOINT | canonical inventory and skill state restored"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Q active | armor +2 | movement cancels",
+            "file": "main.ts",
+            "line": 179
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Display Text Message — HERO DOWN | checkpoint recovery in 3 seconds",
+            "file": "main.ts",
+            "line": 58
+          },
+          {
+            "frame": 80,
+            "player": 0,
+            "text": "Create Unit",
+            "file": "main.ts",
+            "line": 63
+          },
+          {
+            "frame": 80,
+            "player": 0,
+            "text": "Display Text Message — CHECKPOINT | canonical inventory and skill state restored",
+            "file": "main.ts",
+            "line": 74
+          }
+        ],
+        "frames": 84,
+        "ms": 13
+      },
+      {
+        "id": "poc.test.ts::scene skip finalizes once and releases the camera",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          }
+        ],
+        "frames": 11,
+        "ms": 5
+      },
+      {
+        "id": "poc.test.ts::missing NPC and off-route hero do not prevent skip recovery",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          }
+        ],
+        "frames": 8,
+        "ms": 4
+      },
+      {
+        "id": "poc.test.ts::watchdog reports recovery instead of successful combat",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 122,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 242,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 362,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 482,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 602,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 722,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 842,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 962,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1082,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1202,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1322,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1442,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1562,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1682,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1802,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1922,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2042,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2162,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2282,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2402,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2522,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2642,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          }
+        ],
+        "frames": 2705,
+        "ms": 152
+      },
+      {
+        "id": "poc.test.ts::F7 and F8 provide alternative skill keys",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q active | armor +2 | movement cancels",
+          "Q/F7 brace 13s | W/F8 first aid unlocked 0s | kits 3",
+          "Q ended | base armor restored",
+          "W casting | 3 seconds | movement or 5 damage interrupts"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Q active | armor +2 | movement cancels",
+            "file": "main.ts",
+            "line": 179
+          },
+          {
+            "frame": 122,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 13s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 150,
+            "player": 0,
+            "text": "Display Text Message — Q ended | base armor restored",
+            "file": "main.ts",
+            "line": 153
+          },
+          {
+            "frame": 154,
+            "player": 0,
+            "text": "Display Text Message — W casting | 3 seconds | movement or 5 damage interrupts",
+            "file": "main.ts",
+            "line": 192
+          }
+        ],
+        "frames": 155,
+        "ms": 16
+      },
+      {
+        "id": "poc.test.ts::W remains locked before the survival transition",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          }
+        ],
+        "frames": 5,
+        "ms": 4
+      },
+      {
+        "id": "poc.test.ts::empty inventory rejects W without underflow",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "W casting | 3 seconds | movement or 5 damage interrupts",
+          "W completed | kits=2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 38s | kits 2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 33s | kits 2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 28s | kits 2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 23s | kits 2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 18s | kits 2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 13s | kits 2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 8s | kits 2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 3s | kits 2",
+          "W casting | 3 seconds | movement or 5 damage interrupts",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 2",
+          "W completed | kits=1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 36s | kits 1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 31s | kits 1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 26s | kits 1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 21s | kits 1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 16s | kits 1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 11s | kits 1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 6s | kits 1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 1s | kits 1",
+          "W casting | 3 seconds | movement or 5 damage interrupts",
+          "W completed | kits=0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 39s | kits 0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 34s | kits 0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 29s | kits 0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 24s | kits 0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 19s | kits 0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 14s | kits 0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 9s | kits 0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 4s | kits 0",
+          "BLOCKED: no medical kits"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — W casting | 3 seconds | movement or 5 damage interrupts",
+            "file": "main.ts",
+            "line": 192
+          },
+          {
+            "frame": 78,
+            "player": 0,
+            "text": "Display Text Message — W completed | kits=2",
+            "file": "main.ts",
+            "line": 164
+          },
+          {
+            "frame": 122,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 38s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 242,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 33s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 362,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 28s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 482,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 23s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 602,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 18s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 722,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 13s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 842,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 8s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 962,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 3s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1043,
+            "player": 0,
+            "text": "Display Text Message — W casting | 3 seconds | movement or 5 damage interrupts",
+            "file": "main.ts",
+            "line": 192
+          },
+          {
+            "frame": 1082,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1115,
+            "player": 0,
+            "text": "Display Text Message — W completed | kits=1",
+            "file": "main.ts",
+            "line": 164
+          },
+          {
+            "frame": 1202,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 36s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1322,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 31s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1442,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 26s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1562,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 21s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1682,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 16s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1802,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 11s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1922,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 6s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2042,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 1s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2080,
+            "player": 0,
+            "text": "Display Text Message — W casting | 3 seconds | movement or 5 damage interrupts",
+            "file": "main.ts",
+            "line": 192
+          },
+          {
+            "frame": 2152,
+            "player": 0,
+            "text": "Display Text Message — W completed | kits=0",
+            "file": "main.ts",
+            "line": 164
+          },
+          {
+            "frame": 2162,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 39s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2282,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 34s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2402,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 29s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2522,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 24s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2642,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 19s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2762,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 14s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2882,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 9s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 3002,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 4s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 3117,
+            "player": 0,
+            "text": "Display Text Message — BLOCKED: no medical kits",
+            "file": "main.ts",
+            "line": 183
+          }
+        ],
+        "frames": 3118,
+        "ms": 127
+      },
+      {
+        "id": "poc.test.ts::midpoint skip uses the same canonical state",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 122,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 242,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 362,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 482,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 602,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 722,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 842,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 962,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          }
+        ],
+        "frames": 1003,
+        "ms": 38
+      }
+    ],
+    "only": [],
+    "ms": 479
+  }
+}

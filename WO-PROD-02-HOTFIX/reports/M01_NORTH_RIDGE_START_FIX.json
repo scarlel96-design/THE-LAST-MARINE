@@ -1,0 +1,446 @@
+{
+  "label": "M01_NORTH_RIDGE_START_FIX",
+  "status": "BUILT AND REOPENED",
+  "live": "NOT RUN",
+  "sourceSha256": "5e4035059811691f27165e1334120141fa395f830d1bf7e75e7db4c6211df8ed",
+  "templateSha256": "54a85431e70374a167dcdc5f3ee3486d51b355abc9fd14eec6f28bca45e6d319",
+  "terrain": {
+    "types": {
+      "2": 31188,
+      "3": 576,
+      "4": 80,
+      "5": 468,
+      "6": 96,
+      "14": 1600,
+      "15": 128,
+      "20": 144,
+      "22": 88,
+      "27": 1480,
+      "28": 160,
+      "34": 512,
+      "35": 344
+    },
+    "heights": {
+      "0": 35913,
+      "1": 951
+    },
+    "cliffFlagTiles": 0,
+    "viewFlagTiles": 0,
+    "blockedTiles": 1317,
+    "routes": [
+      {
+        "from": "Barracks",
+        "to": "Armory",
+        "steps": 36
+      },
+      {
+        "from": "Armory",
+        "to": "Outpost",
+        "steps": 68
+      },
+      {
+        "from": "Outpost",
+        "to": "Outer",
+        "steps": 26
+      },
+      {
+        "from": "Outer",
+        "to": "Inner",
+        "steps": 32
+      },
+      {
+        "from": "Inner",
+        "to": "Soldiers",
+        "steps": 24
+      },
+      {
+        "from": "Soldiers",
+        "to": "Evac",
+        "steps": 34
+      },
+      {
+        "from": "Workshop",
+        "to": "Shelter",
+        "steps": 20
+      },
+      {
+        "from": "Shelter",
+        "to": "Medical",
+        "steps": 143
+      },
+      {
+        "from": "Medical",
+        "to": "Settlement",
+        "steps": 40
+      },
+      {
+        "from": "Settlement",
+        "to": "Relay",
+        "steps": 36
+      },
+      {
+        "from": "Relay",
+        "to": "Supply",
+        "steps": 67
+      },
+      {
+        "from": "Supply",
+        "to": "Exit",
+        "steps": 32
+      },
+      {
+        "from": "OuterReserve",
+        "to": "Outpost",
+        "steps": 35
+      },
+      {
+        "from": "OuterReserve",
+        "to": "Outer",
+        "steps": 43
+      },
+      {
+        "from": "InnerReserve",
+        "to": "Inner",
+        "steps": 41
+      },
+      {
+        "from": "DepotReserve",
+        "to": "Shelter",
+        "steps": 58
+      },
+      {
+        "from": "MaraStart",
+        "to": "Evac",
+        "steps": 64
+      },
+      {
+        "from": "WrenStart",
+        "to": "Evac",
+        "steps": 48
+      },
+      {
+        "from": "Civilians",
+        "to": "Evac",
+        "steps": 24
+      },
+      {
+        "from": "Evac",
+        "to": "Shelter",
+        "steps": 26
+      },
+      {
+        "from": "Relay",
+        "to": "Archive",
+        "steps": 35
+      },
+      {
+        "from": "Medical",
+        "to": "Salvage",
+        "steps": 35
+      },
+      {
+        "from": "Relay",
+        "to": "NorthRoute",
+        "steps": 39
+      },
+      {
+        "from": "Relay",
+        "to": "SouthRoute",
+        "steps": 33
+      },
+      {
+        "from": "Supply",
+        "to": "Restricted",
+        "steps": 40
+      }
+    ],
+    "method": "All 16 VF4 minitiles walkable; one-tile structure clearance; four-neighbor reachability. Engine pathfinding NOT RUN."
+  },
+  "isom": {
+    "rects": 18432,
+    "mismatched": 0
+  },
+  "diagnostics": [],
+  "tests": {
+    "passed": 34,
+    "failed": 0,
+    "results": [
+      {
+        "id": "m01.test.ts::M01 starts with routine duty and locked medical skill",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 interaction requires the hero at the objective",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 attack order is finite and cannot finish from a timer alone",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 exterior victory has a separate withdrawal outcome",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 structural damage drives a breached withdrawal",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 normal collapse requires both movement and physical wreck states",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 skip reaches canonical survival without rescue awards",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 rescue needs actor arrival and records it once",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 lost actor cannot receive a rescue award",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 medical supplies are a single committed transaction",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 successful W consumes one kit and persists that cost",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 interrupted W consumes neither inventory nor cooldown",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 Q restores armor and retains independent cooldown",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 optional records and salvage cannot duplicate after checkpoint",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 route choice is exclusive and persisted",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 mandatory path completes with no optional rewards",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 permanent upgrades charge once and survive restoration",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 death recovery keeps committed inventory without duplicating the hero",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 all evacuation groups credit actual arrivals without counting Ella twice",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 enemy pursuit beyond a facility cannot falsely clear that facility",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 W damage interrupt does not spend a kit",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 empty kits block W and top counters follow committed inventory",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 armor and Q restore the permanent level after completion",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 inaccessible transport reorders without awarding progress on a timer",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 transfer values match the host codec minimum path vector",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 locked E and R preserve inventory and do not create combat effects",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 result stays readable until an explicit ending confirmation",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 optional campaign outcomes combine with mandatory completion",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 idle journal and F9 do not create continuously repeated text",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 attack follows an outer breach and defenders withdraw",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 reports actor death without granting rescue credit",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 opening, breach, skip and recovery never recenter the camera automatically",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 J focuses once and leaves the mission state unchanged",
+        "status": "passed",
+        "message": null
+      },
+      {
+        "id": "m01.test.ts::M01 opening has one human hero and the command buildings belong to the garrison",
+        "status": "passed",
+        "message": null
+      }
+    ]
+  },
+  "opening": {
+    "humanSlot": 1,
+    "heroOwner": 1,
+    "startingBarracksOwner": 3,
+    "nativeTriggers": 8,
+    "allianceActions": 24,
+    "automaticCameraActions": 0
+  },
+  "maps": [
+    {
+      "name": "M01_NORTH_RIDGE_START_FIX_SOURCE.scx",
+      "kind": "SOURCE",
+      "bytes": 116977,
+      "sha256": "a9bec95f4696f2be3f9abc7258c9b5545e30efcf30018efc35194e38cf7f9b42",
+      "triggers": 8
+    },
+    {
+      "name": "M01_NORTH_RIDGE_START_FIX.scx",
+      "kind": "PLAY",
+      "bytes": 694097,
+      "sha256": "46ad3e3fcc8b8876263ab8e5b3569f74db6784f0ed9e665bc4039e3941457f91",
+      "triggers": 85
+    },
+    {
+      "name": "M01_CONTROL_CHECK.scx",
+      "kind": "CONTROL",
+      "bytes": 60690,
+      "sha256": "99596a5600270d80fc11feed6ad6643f2427eaf0aad0f89c4eddb17ea325fb29",
+      "triggers": 9
+    }
+  ],
+  "units": 151,
+  "encounterBudget": {
+    "outer": 18,
+    "inner": 20,
+    "depot": 14,
+    "survival": 20,
+    "total": 72
+  },
+  "briefingLines": 4,
+  "radioLines": 50,
+  "members": 7,
+  "compiler": {
+    "warnings": [],
+    "stats": {
+      "runs": 1,
+      "runNames": [
+        "program 1 as P1"
+      ],
+      "graphTriggers": 21823,
+      "payloadBytes": 5164659,
+      "address": 421097268,
+      "mapTriggers": 0,
+      "mapTriggerCopies": 0,
+      "hyperTriggersLeftOut": 0,
+      "mapTriggersUnlisted": 0,
+      "startUpTriggers": 77,
+      "input": {
+        "keys": 14,
+        "mouse": false,
+        "syncs": 0,
+        "carrier": 58,
+        "ring": 6,
+        "rings": 1,
+        "humans": [
+          0
+        ],
+        "cuwp": 1,
+        "bits": 24
+      },
+      "stringsBefore": 51,
+      "stringsAfter": 141,
+      "players": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "entries": [
+        426211192,
+        426211332,
+        426211460,
+        426212016,
+        426212152,
+        426212296,
+        426212752,
+        426212880
+      ],
+      "stringsBytes": 11113
+    }
+  },
+  "start": null,
+  "tileset": {
+    "installedVersion": "1.23.10.13515",
+    "sha256": {
+      "cv5": "fe04afb2b483a7144b7f1c8fb6a06297d93eab2c034011069005c9ed1a6757da",
+      "vf4": "87f478ee1a1b19657ad1811e76ae372b658d14f026ff5f36e58f6bde968ec5d8",
+      "vr4": "6789f2ef4a2f3d87fa21c3b75d1a18d8080d9cae22abb9a0c5045f6a7fc804c3",
+      "vx4ex": "d22cb7a54e1e603a82c67a827c43115ecada1ec3a6fc1085769416dde08ef13e",
+      "wpe": "37736f2f738384e0668d7ff8bd658e540d02138e00f660d59b75fb5c5cb5a3ea"
+    }
+  }
+}

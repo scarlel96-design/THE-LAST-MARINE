@@ -1,0 +1,55 @@
+{
+  "stats": {
+    "runs": 1,
+    "runNames": [
+      "program 1 as P1"
+    ],
+    "graphTriggers": 7731,
+    "payloadBytes": 1827621,
+    "address": 421087844,
+    "mapTriggers": 0,
+    "mapTriggerCopies": 0,
+    "hyperTriggersLeftOut": 0,
+    "mapTriggersUnlisted": 0,
+    "startUpTriggers": 67,
+    "input": {
+      "keys": 6,
+      "mouse": false,
+      "syncs": 0,
+      "carrier": 58,
+      "ring": 6,
+      "rings": 1,
+      "humans": [
+        0
+      ],
+      "cuwp": 1,
+      "bits": 20
+    },
+    "stringsBefore": 14,
+    "stringsAfter": 46,
+    "players": [
+      0,
+      1,
+      2
+    ],
+    "entries": [
+      422886252,
+      422886392,
+      422886532
+    ],
+    "stringsBytes": 1691
+  },
+  "lines": [
+    "1 placed unit with a figure's flag at odds with the figure: made to agree (UNIT)",
+    "input: 6 keys, 0 sync slots; carriers of type 58, 6 a ring, 1 rings, for players 1; unit-properties slot 1; 20 bits a value",
+    "1 run (program 1 as P1), 7731 triggers of the programs, payload 1827621 bytes at 0x19194a64, 0 triggers of the map's own (0 copies), start-up 67 triggers, 32 strings added"
+  ],
+  "warnings": [],
+  "bytes": 246018,
+  "readBack": {
+    "width": 64,
+    "height": 64,
+    "units": 2,
+    "triggers": 67
+  }
+}

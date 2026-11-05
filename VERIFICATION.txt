@@ -1,0 +1,89 @@
+{
+  "changed_field": "docs/WORK_ORDER.md: 현재 단계",
+  "before": "Phase 1 시작 전",
+  "after": "Phase 1 기술 검증 중",
+  "original_sha256": "c015b5afe4a78d18699bb4651353e2cdd32f14784339a62574e73e0661dba7c3",
+  "modified_sha256": "c1eef035b2c42f06604811f74a256be618d45f001a0482705c1e891dec0da4af",
+  "BASELINE": {
+    "command": "<USERPROFILE>\\AppData\\Local\\Programs\\Python\\Python314\\python.exe <USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\tools\\check-state.py <USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\baseline\\WORK_ORDER.md",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\baseline\\WORK_ORDER.md",
+    "stdout": "PHASE=NOT_STARTED",
+    "stderr": "",
+    "exit_status": 0
+  },
+  "MODIFIED": {
+    "command": "<USERPROFILE>\\AppData\\Local\\Programs\\Python\\Python314\\python.exe <USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\tools\\check-state.py <USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\docs\\WORK_ORDER.md",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\docs\\WORK_ORDER.md",
+    "stdout": "PHASE=TECHNICAL_VALIDATION",
+    "stderr": "",
+    "exit_status": 0
+  },
+  "ROLLBACK": {
+    "command": "pwsh -NoProfile -File <USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\ROLLBACK.ps1 -Target <USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\rollback-final.md",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\rollback-final.md",
+    "stdout": "ROLLBACK: original bytes restored",
+    "stderr": "",
+    "exit_status": 0
+  },
+  "RESTORED": {
+    "command": "<USERPROFILE>\\AppData\\Local\\Programs\\Python\\Python314\\python.exe <USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\tools\\check-state.py <USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\rollback-final.md",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\rollback-final.md",
+    "stdout": "PHASE=NOT_STARTED",
+    "stderr": "",
+    "exit_status": 0
+  },
+  "bash_rollback": {
+    "command": "\"C:\\Program Files\\Git\\bin\\bash.exe\" --noprofile --norc -c \"chmod +x outputs/The-Last-Marine/ROLLBACK.sh && outputs/The-Last-Marine/ROLLBACK.sh work/rollback-copy-sh.md\"",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\rollback-copy-sh.md",
+    "stdout": "ROLLBACK: original bytes restored",
+    "exit_status": 0,
+    "sha256": "c015b5afe4a78d18699bb4651353e2cdd32f14784339a62574e73e0661dba7c3"
+  },
+  "baseline_behavior_restored": true,
+  "modified_file_remains_changed": true,
+  "paths": {
+    "MODIFIED_FILE": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\docs\\WORK_ORDER.md",
+    "DIFF_FILE": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\DIFF.patch",
+    "VERIFICATION": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\VERIFICATION.txt",
+    "ROLLBACK": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\ROLLBACK.sh"
+  },
+  "build_command": "node outputs/The-Last-Marine/tools/build.mjs",
+  "build_exit_status": 0,
+  "maps": [
+    {
+      "map": "COLLAPSE_90S_POC",
+      "passed": 15,
+      "failed": 0,
+      "bytes": 246883,
+      "sha256": "6c7c87e282eb1d3b39af58c09c5e2426c04cd17236213f1a6fc014f14716f908",
+      "readBack": {
+        "width": 64,
+        "height": 64,
+        "units": 37,
+        "triggers": 67
+      }
+    },
+    {
+      "map": "SKILL_POC",
+      "passed": 15,
+      "failed": 0,
+      "bytes": 246068,
+      "sha256": "a5f91c35fc6cd6f993db5f9b40d8e4091be3266144e763952d8c2c90916eca1f",
+      "readBack": {
+        "width": 64,
+        "height": 64,
+        "units": 2,
+        "triggers": 67
+      }
+    }
+  ],
+  "game": "PARTIAL: SKILL_POC UMS loaded; unit selection/movement, Q messages, W healing/kit/cooldown observed; input reliability and F9 hero persistence need investigation",
+  "previous_failures": [
+    "Git clone network failed in restricted execution; source fetched with approved execution.",
+    "Node type stripping failed at private declare(); TypeScript loader fixed it.",
+    "Initial compile caught action argument counts and readonly simulator fixture fields; corrected.",
+    "Initial restricted Bash exit -1073741502; approved Bash rollback exited 0.",
+    "Physical Escape stop response cleared on retry; actual game UI interaction succeeded."
+  ],
+  "game_evidence": "reports/LIVE_UI_RETRY.md"
+}

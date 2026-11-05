@@ -1,0 +1,5487 @@
+{
+  "variant": "COLLAPSE_90S_POC",
+  "diagnostics": [],
+  "tests": {
+    "list": [
+      {
+        "id": "poc.test.ts::Q grants armor and restores it after six seconds",
+        "kind": "test",
+        "name": "Q grants armor and restores it after six seconds",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 3,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::Q repeated input does not restart the active skill",
+        "kind": "test",
+        "name": "Q repeated input does not restart the active skill",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 10,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::Q cooldown rejects a second use",
+        "kind": "test",
+        "name": "Q cooldown rejects a second use",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 17,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::movement cancels brace",
+        "kind": "test",
+        "name": "movement cancels brace",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 21,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::W unlock and successful heal consume exactly one kit",
+        "kind": "test",
+        "name": "W unlock and successful heal consume exactly one kit",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 28,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::movement interrupts W without resource or cooldown loss",
+        "kind": "test",
+        "name": "movement interrupts W without resource or cooldown loss",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 40,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::five damage interrupts W without consuming a kit",
+        "kind": "test",
+        "name": "five damage interrupts W without consuming a kit",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 49,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::death clears effects and reconstructs checkpoint",
+        "kind": "test",
+        "name": "death clears effects and reconstructs checkpoint",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 59,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::scene skip finalizes once and releases the camera",
+        "kind": "test",
+        "name": "scene skip finalizes once and releases the camera",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 67,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::missing NPC and off-route hero do not prevent skip recovery",
+        "kind": "test",
+        "name": "missing NPC and off-route hero do not prevent skip recovery",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 75,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::watchdog reports recovery instead of successful combat",
+        "kind": "test",
+        "name": "watchdog reports recovery instead of successful combat",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 83,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::F7 and F8 provide alternative skill keys",
+        "kind": "test",
+        "name": "F7 and F8 provide alternative skill keys",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 90,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::W remains locked before the survival transition",
+        "kind": "test",
+        "name": "W remains locked before the survival transition",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 98,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::empty inventory rejects W without underflow",
+        "kind": "test",
+        "name": "empty inventory rejects W without underflow",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 107,
+        "mode": "run"
+      },
+      {
+        "id": "poc.test.ts::midpoint skip uses the same canonical state",
+        "kind": "test",
+        "name": "midpoint skip uses the same canonical state",
+        "path": [],
+        "file": "poc.test.ts",
+        "line": 122,
+        "mode": "run"
+      }
+    ],
+    "results": [
+      {
+        "id": "poc.test.ts::Q grants armor and restores it after six seconds",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q active | armor +2 | movement cancels",
+          "Q/F7 brace 13s | W/F8 first aid locked 0s | kits 3",
+          "Q ended | base armor restored"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Q active | armor +2 | movement cancels",
+            "file": "main.ts",
+            "line": 179
+          },
+          {
+            "frame": 122,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 13s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 150,
+            "player": 0,
+            "text": "Display Text Message — Q ended | base armor restored",
+            "file": "main.ts",
+            "line": 153
+          }
+        ],
+        "frames": 152,
+        "ms": 80
+      },
+      {
+        "id": "poc.test.ts::Q repeated input does not restart the active skill",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q active | armor +2 | movement cancels",
+          "BLOCKED: another skill active"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Q active | armor +2 | movement cancels",
+            "file": "main.ts",
+            "line": 179
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Display Text Message — BLOCKED: another skill active",
+            "file": "main.ts",
+            "line": 170
+          }
+        ],
+        "frames": 9,
+        "ms": 8
+      },
+      {
+        "id": "poc.test.ts::Q cooldown rejects a second use",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q active | armor +2 | movement cancels",
+          "Q/F7 brace 13s | W/F8 first aid locked 0s | kits 3",
+          "Q ended | base armor restored",
+          "BLOCKED: Q cooldown"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Q active | armor +2 | movement cancels",
+            "file": "main.ts",
+            "line": 179
+          },
+          {
+            "frame": 122,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 13s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 150,
+            "player": 0,
+            "text": "Display Text Message — Q ended | base armor restored",
+            "file": "main.ts",
+            "line": 153
+          },
+          {
+            "frame": 156,
+            "player": 0,
+            "text": "Display Text Message — BLOCKED: Q cooldown",
+            "file": "main.ts",
+            "line": 173
+          }
+        ],
+        "frames": 157,
+        "ms": 29
+      },
+      {
+        "id": "poc.test.ts::movement cancels brace",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q active | armor +2 | movement cancels",
+          "Q ended | base armor restored"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Q active | armor +2 | movement cancels",
+            "file": "main.ts",
+            "line": 179
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Display Text Message — Q ended | base armor restored",
+            "file": "main.ts",
+            "line": 153
+          }
+        ],
+        "frames": 9,
+        "ms": 6
+      },
+      {
+        "id": "poc.test.ts::W unlock and successful heal consume exactly one kit",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "SURVIVAL READY | scene=4 completions=1",
+          "Recover at the supply refuge. W/F8 is now unlocked.",
+          "W casting | 3 seconds | movement or 5 damage interrupts",
+          "W completed | kits=2",
+          "BLOCKED: W cooldown"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 127
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 128
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 129
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Remove Unit — unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 130
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Remove Unit — unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 131
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Move Unit",
+            "file": "main.ts",
+            "line": 132
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 144
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — SURVIVAL READY | scene=4 completions=1",
+            "file": "main.ts",
+            "line": 145
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Recover at the supply refuge. W/F8 is now unlocked.",
+            "file": "main.ts",
+            "line": 146
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Display Text Message — W casting | 3 seconds | movement or 5 damage interrupts",
+            "file": "main.ts",
+            "line": 192
+          },
+          {
+            "frame": 80,
+            "player": 0,
+            "text": "Display Text Message — W completed | kits=2",
+            "file": "main.ts",
+            "line": 164
+          },
+          {
+            "frame": 84,
+            "player": 0,
+            "text": "Display Text Message — BLOCKED: W cooldown",
+            "file": "main.ts",
+            "line": 184
+          }
+        ],
+        "frames": 85,
+        "ms": 18
+      },
+      {
+        "id": "poc.test.ts::movement interrupts W without resource or cooldown loss",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "SURVIVAL READY | scene=4 completions=1",
+          "Recover at the supply refuge. W/F8 is now unlocked.",
+          "W casting | 3 seconds | movement or 5 damage interrupts",
+          "W interrupted | no kit or cooldown consumed"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 127
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 128
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 129
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Remove Unit — unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 130
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Remove Unit — unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 131
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Move Unit",
+            "file": "main.ts",
+            "line": 132
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 144
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — SURVIVAL READY | scene=4 completions=1",
+            "file": "main.ts",
+            "line": 145
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Recover at the supply refuge. W/F8 is now unlocked.",
+            "file": "main.ts",
+            "line": 146
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Display Text Message — W casting | 3 seconds | movement or 5 damage interrupts",
+            "file": "main.ts",
+            "line": 192
+          },
+          {
+            "frame": 18,
+            "player": 0,
+            "text": "Display Text Message — W interrupted | no kit or cooldown consumed",
+            "file": "main.ts",
+            "line": 158
+          }
+        ],
+        "frames": 19,
+        "ms": 7
+      },
+      {
+        "id": "poc.test.ts::five damage interrupts W without consuming a kit",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "SURVIVAL READY | scene=4 completions=1",
+          "Recover at the supply refuge. W/F8 is now unlocked.",
+          "W casting | 3 seconds | movement or 5 damage interrupts",
+          "W interrupted | no kit or cooldown consumed"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 127
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 128
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 129
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Remove Unit — unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 130
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Remove Unit — unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 131
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Move Unit",
+            "file": "main.ts",
+            "line": 132
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 144
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — SURVIVAL READY | scene=4 completions=1",
+            "file": "main.ts",
+            "line": 145
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Recover at the supply refuge. W/F8 is now unlocked.",
+            "file": "main.ts",
+            "line": 146
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Display Text Message — W casting | 3 seconds | movement or 5 damage interrupts",
+            "file": "main.ts",
+            "line": 192
+          },
+          {
+            "frame": 18,
+            "player": 0,
+            "text": "Display Text Message — W interrupted | no kit or cooldown consumed",
+            "file": "main.ts",
+            "line": 158
+          }
+        ],
+        "frames": 19,
+        "ms": 5
+      },
+      {
+        "id": "poc.test.ts::death clears effects and reconstructs checkpoint",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q active | armor +2 | movement cancels",
+          "HERO DOWN | checkpoint recovery in 3 seconds",
+          "SURVIVAL READY | scene=5 completions=1",
+          "Recover at the supply refuge. W/F8 is now unlocked.",
+          "CHECKPOINT | canonical inventory and skill state restored"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Q active | armor +2 | movement cancels",
+            "file": "main.ts",
+            "line": 179
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Display Text Message — HERO DOWN | checkpoint recovery in 3 seconds",
+            "file": "main.ts",
+            "line": 58
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 127
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 128
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 129
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Remove Unit — unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 130
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Remove Unit — unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 131
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 144
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Display Text Message — SURVIVAL READY | scene=5 completions=1",
+            "file": "main.ts",
+            "line": 145
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Display Text Message — Recover at the supply refuge. W/F8 is now unlocked.",
+            "file": "main.ts",
+            "line": 146
+          },
+          {
+            "frame": 80,
+            "player": 0,
+            "text": "Create Unit",
+            "file": "main.ts",
+            "line": 63
+          },
+          {
+            "frame": 80,
+            "player": 0,
+            "text": "Display Text Message — CHECKPOINT | canonical inventory and skill state restored",
+            "file": "main.ts",
+            "line": 74
+          }
+        ],
+        "frames": 84,
+        "ms": 12
+      },
+      {
+        "id": "poc.test.ts::scene skip finalizes once and releases the camera",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "SURVIVAL READY | scene=4 completions=1",
+          "Recover at the supply refuge. W/F8 is now unlocked."
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 127
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 128
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 129
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Remove Unit — unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 130
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Remove Unit — unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 131
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Move Unit",
+            "file": "main.ts",
+            "line": 132
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 144
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — SURVIVAL READY | scene=4 completions=1",
+            "file": "main.ts",
+            "line": 145
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Recover at the supply refuge. W/F8 is now unlocked.",
+            "file": "main.ts",
+            "line": 146
+          }
+        ],
+        "frames": 11,
+        "ms": 5
+      },
+      {
+        "id": "poc.test.ts::missing NPC and off-route hero do not prevent skip recovery",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "SURVIVAL READY | scene=4 completions=1",
+          "Recover at the supply refuge. W/F8 is now unlocked."
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 127
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 128
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 129
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Remove Unit — unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 130
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Move Unit",
+            "file": "main.ts",
+            "line": 132
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 144
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — SURVIVAL READY | scene=4 completions=1",
+            "file": "main.ts",
+            "line": 145
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Recover at the supply refuge. W/F8 is now unlocked.",
+            "file": "main.ts",
+            "line": 146
+          }
+        ],
+        "frames": 8,
+        "ms": 4
+      },
+      {
+        "id": "poc.test.ts::watchdog reports recovery instead of successful combat",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "[15] OUTPOST: Movement beyond the wire... signal lost.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "[30] CONTROL: Northern contact. Hold the bunker approach.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "SURVIVAL READY | scene=5 completions=1",
+          "Recover at the supply refuge. W/F8 is now unlocked.",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 3"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 122,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 242,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 362,
+            "player": 0,
+            "text": "Display Text Message — [15] OUTPOST: Movement beyond the wire... signal lost.",
+            "file": "main.ts",
+            "line": 84
+          },
+          {
+            "frame": 362,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 482,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 602,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 722,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 88
+          },
+          {
+            "frame": 722,
+            "player": 0,
+            "text": "Display Text Message — [30] CONTROL: Northern contact. Hold the bunker approach.",
+            "file": "main.ts",
+            "line": 89
+          },
+          {
+            "frame": 722,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 842,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 962,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1082,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1202,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1322,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1442,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1442,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1443,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1444,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1445,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1446,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1447,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1448,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1449,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1450,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1451,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1452,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1453,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1454,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1455,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1456,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1457,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1458,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1459,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1460,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1461,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1462,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1463,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1464,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1465,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1466,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1467,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1468,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1469,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1470,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1471,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1472,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1473,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1474,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1475,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1476,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1477,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1478,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1479,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1480,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1481,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1482,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1483,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1484,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1485,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1486,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1487,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1488,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1489,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1490,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1491,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1492,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1493,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1494,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1495,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1496,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1497,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1498,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1499,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1500,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1501,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1502,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1503,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1504,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1505,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1506,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1507,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1508,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1509,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1510,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1511,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1512,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1513,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1514,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1515,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1516,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1517,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1518,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1519,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1520,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1521,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1522,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1523,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1524,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1525,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1526,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1527,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1528,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1529,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1530,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1531,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1532,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1533,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1534,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1535,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1536,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1537,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1538,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1539,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1540,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1541,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1542,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1543,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1544,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1545,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1546,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1547,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1548,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1549,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1550,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1551,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1552,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1553,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1554,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1555,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1556,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1557,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1558,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1559,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1560,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1561,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1562,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1562,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1563,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1564,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1565,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1566,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1567,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1568,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1569,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1570,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1571,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1572,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1573,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1574,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1575,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1576,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1577,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1578,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1579,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1580,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1581,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1582,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1583,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1584,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1585,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1586,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1587,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1588,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1589,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1590,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1591,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1592,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1593,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1594,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1595,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1596,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1597,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1598,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1599,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1600,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1601,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1602,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1603,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1604,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1605,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1606,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1607,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1608,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1609,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1610,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1611,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1612,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1613,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1614,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1615,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1616,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1617,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1618,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1619,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1620,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1621,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1622,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1623,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1624,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1625,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1626,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1627,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1628,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1629,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1630,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1631,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1632,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1633,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1634,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1635,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1636,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1637,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1638,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1639,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1640,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1641,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1642,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1643,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1644,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1645,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1646,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1647,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1648,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1649,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1650,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1651,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1652,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1653,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1654,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1655,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1656,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1657,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1658,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1659,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1660,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1661,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1662,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1663,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1664,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1665,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1666,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1667,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1668,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1669,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1670,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1671,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1672,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1673,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1674,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1675,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1676,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1677,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1678,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1679,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1680,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1681,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1682,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1682,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1683,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1684,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1685,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1686,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1687,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1688,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1689,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1690,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1691,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1692,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1693,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1694,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1695,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1696,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1697,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1698,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1699,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1700,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1701,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1702,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1703,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1704,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1705,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1706,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1707,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1708,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1709,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1710,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1711,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1712,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1713,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1714,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1715,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1716,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1717,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1718,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1719,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1720,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1721,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1722,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1723,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1724,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1725,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1726,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1727,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1728,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1729,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1730,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1731,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1732,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1733,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1734,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1735,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1736,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1737,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1738,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1739,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1740,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1741,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1742,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1743,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1744,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1745,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1746,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1747,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1748,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1749,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1750,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1751,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1752,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1753,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1754,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1755,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1756,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1757,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1758,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1759,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1760,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1761,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1762,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1763,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1764,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1765,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1766,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1767,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1768,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1769,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1770,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1771,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1772,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1773,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1774,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1775,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1776,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1777,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1778,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1779,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1780,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1781,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1782,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1783,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1784,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1785,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1786,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1787,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1788,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1789,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1790,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1791,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1792,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1793,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1794,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1795,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1796,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1797,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1798,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1799,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1800,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1801,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1802,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1802,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1803,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1804,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1805,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1806,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1807,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1808,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1809,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1810,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1811,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1812,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1813,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1814,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1815,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1816,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1817,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1818,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1819,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1820,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1821,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1822,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1823,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1824,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1825,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1826,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1827,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1828,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1829,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1830,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1831,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1832,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1833,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1834,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1835,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1836,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1837,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1838,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1839,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1840,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1841,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1842,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1843,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1844,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1845,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1846,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1847,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1848,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1849,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1850,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1851,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1852,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1853,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1854,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1855,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1856,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1857,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1858,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1859,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1860,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1861,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1862,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1863,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1864,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1865,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1866,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1867,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1868,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1869,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1870,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1871,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1872,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1873,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1874,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1875,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1876,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1877,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1878,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1879,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1880,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1881,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1882,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1883,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1884,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1885,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1886,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1887,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1888,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1889,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1890,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1891,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1892,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1893,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1894,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1895,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1896,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1897,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1898,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1899,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1900,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1901,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1902,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1903,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1904,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1905,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1906,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1907,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1908,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1909,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1910,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1911,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1912,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1913,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1914,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1915,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1916,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1917,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          },
+          {
+            "frame": 1918,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 101
+          }
+        ],
+        "frames": 2705,
+        "ms": 290
+      },
+      {
+        "id": "poc.test.ts::F7 and F8 provide alternative skill keys",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q active | armor +2 | movement cancels",
+          "Q/F7 brace 13s | W/F8 first aid locked 0s | kits 3",
+          "Q ended | base armor restored",
+          "SURVIVAL READY | scene=4 completions=1",
+          "Recover at the supply refuge. W/F8 is now unlocked.",
+          "W casting | 3 seconds | movement or 5 damage interrupts"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Q active | armor +2 | movement cancels",
+            "file": "main.ts",
+            "line": 179
+          },
+          {
+            "frame": 122,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 13s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 150,
+            "player": 0,
+            "text": "Display Text Message — Q ended | base armor restored",
+            "file": "main.ts",
+            "line": 153
+          },
+          {
+            "frame": 154,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 127
+          },
+          {
+            "frame": 154,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 128
+          },
+          {
+            "frame": 154,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 129
+          },
+          {
+            "frame": 154,
+            "player": 0,
+            "text": "Remove Unit — unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 130
+          },
+          {
+            "frame": 154,
+            "player": 0,
+            "text": "Remove Unit — unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 131
+          },
+          {
+            "frame": 154,
+            "player": 0,
+            "text": "Move Unit",
+            "file": "main.ts",
+            "line": 132
+          },
+          {
+            "frame": 154,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 144
+          },
+          {
+            "frame": 154,
+            "player": 0,
+            "text": "Display Text Message — SURVIVAL READY | scene=4 completions=1",
+            "file": "main.ts",
+            "line": 145
+          },
+          {
+            "frame": 154,
+            "player": 0,
+            "text": "Display Text Message — Recover at the supply refuge. W/F8 is now unlocked.",
+            "file": "main.ts",
+            "line": 146
+          },
+          {
+            "frame": 156,
+            "player": 0,
+            "text": "Display Text Message — W casting | 3 seconds | movement or 5 damage interrupts",
+            "file": "main.ts",
+            "line": 192
+          }
+        ],
+        "frames": 157,
+        "ms": 14
+      },
+      {
+        "id": "poc.test.ts::W remains locked before the survival transition",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "BLOCKED: W locked"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — BLOCKED: W locked",
+            "file": "main.ts",
+            "line": 182
+          }
+        ],
+        "frames": 7,
+        "ms": 6
+      },
+      {
+        "id": "poc.test.ts::empty inventory rejects W without underflow",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "SURVIVAL READY | scene=4 completions=1",
+          "Recover at the supply refuge. W/F8 is now unlocked.",
+          "W casting | 3 seconds | movement or 5 damage interrupts",
+          "W completed | kits=2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 38s | kits 2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 33s | kits 2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 28s | kits 2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 23s | kits 2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 18s | kits 2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 13s | kits 2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 8s | kits 2",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 3s | kits 2",
+          "W casting | 3 seconds | movement or 5 damage interrupts",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 2",
+          "W completed | kits=1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 36s | kits 1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 31s | kits 1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 26s | kits 1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 21s | kits 1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 16s | kits 1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 11s | kits 1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 6s | kits 1",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 1s | kits 1",
+          "W casting | 3 seconds | movement or 5 damage interrupts",
+          "W completed | kits=0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 39s | kits 0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 34s | kits 0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 29s | kits 0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 24s | kits 0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 19s | kits 0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 14s | kits 0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 9s | kits 0",
+          "Q/F7 brace 0s | W/F8 first aid unlocked 4s | kits 0",
+          "BLOCKED: no medical kits"
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 127
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 128
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 129
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Remove Unit — unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 130
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Remove Unit — unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 131
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Move Unit",
+            "file": "main.ts",
+            "line": 132
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 144
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — SURVIVAL READY | scene=4 completions=1",
+            "file": "main.ts",
+            "line": 145
+          },
+          {
+            "frame": 6,
+            "player": 0,
+            "text": "Display Text Message — Recover at the supply refuge. W/F8 is now unlocked.",
+            "file": "main.ts",
+            "line": 146
+          },
+          {
+            "frame": 8,
+            "player": 0,
+            "text": "Display Text Message — W casting | 3 seconds | movement or 5 damage interrupts",
+            "file": "main.ts",
+            "line": 192
+          },
+          {
+            "frame": 80,
+            "player": 0,
+            "text": "Display Text Message — W completed | kits=2",
+            "file": "main.ts",
+            "line": 164
+          },
+          {
+            "frame": 122,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 38s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 242,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 33s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 362,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 28s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 482,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 23s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 602,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 18s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 722,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 13s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 842,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 8s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 962,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 3s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1045,
+            "player": 0,
+            "text": "Display Text Message — W casting | 3 seconds | movement or 5 damage interrupts",
+            "file": "main.ts",
+            "line": 192
+          },
+          {
+            "frame": 1082,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 0s | kits 2",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1117,
+            "player": 0,
+            "text": "Display Text Message — W completed | kits=1",
+            "file": "main.ts",
+            "line": 164
+          },
+          {
+            "frame": 1202,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 36s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1322,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 31s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1442,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 26s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1562,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 21s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1682,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 16s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1802,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 11s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1922,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 6s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2042,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 1s | kits 1",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2082,
+            "player": 0,
+            "text": "Display Text Message — W casting | 3 seconds | movement or 5 damage interrupts",
+            "file": "main.ts",
+            "line": 192
+          },
+          {
+            "frame": 2154,
+            "player": 0,
+            "text": "Display Text Message — W completed | kits=0",
+            "file": "main.ts",
+            "line": 164
+          },
+          {
+            "frame": 2162,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 39s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2282,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 34s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2402,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 29s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2522,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 24s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2642,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 19s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2762,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 14s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 2882,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 9s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 3002,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid unlocked 4s | kits 0",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 3119,
+            "player": 0,
+            "text": "Display Text Message — BLOCKED: no medical kits",
+            "file": "main.ts",
+            "line": 183
+          }
+        ],
+        "frames": 3120,
+        "ms": 178
+      },
+      {
+        "id": "poc.test.ts::midpoint skip uses the same canonical state",
+        "status": "passed",
+        "printed": [
+          "THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+          "[00] CONTROL: Routine watch. Check the northern perimeter.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "[15] OUTPOST: Movement beyond the wire... signal lost.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "[30] CONTROL: Northern contact. Hold the bunker approach.",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+          "SURVIVAL READY | scene=4 completions=1",
+          "Recover at the supply refuge. W/F8 is now unlocked."
+        ],
+        "events": [
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 38
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint",
+            "file": "main.ts",
+            "line": 39
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Order — move: unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 79
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — [00] CONTROL: Routine watch. Check the northern perimeter.",
+            "file": "main.ts",
+            "line": 80
+          },
+          {
+            "frame": 2,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 122,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 242,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 362,
+            "player": 0,
+            "text": "Display Text Message — [15] OUTPOST: Movement beyond the wire... signal lost.",
+            "file": "main.ts",
+            "line": 84
+          },
+          {
+            "frame": 362,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 482,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 602,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 722,
+            "player": 0,
+            "text": "Order — attack: unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 88
+          },
+          {
+            "frame": 722,
+            "player": 0,
+            "text": "Display Text Message — [30] CONTROL: Northern contact. Hold the bunker approach.",
+            "file": "main.ts",
+            "line": 89
+          },
+          {
+            "frame": 722,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 842,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 962,
+            "player": 0,
+            "text": "Display Text Message — Q/F7 brace 0s | W/F8 first aid locked 0s | kits 3",
+            "file": "main.ts",
+            "line": 199
+          },
+          {
+            "frame": 1001,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 127
+          },
+          {
+            "frame": 1001,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 128
+          },
+          {
+            "frame": 1001,
+            "player": 0,
+            "text": "Kill Unit At Location",
+            "file": "main.ts",
+            "line": 129
+          },
+          {
+            "frame": 1001,
+            "player": 0,
+            "text": "Remove Unit — unit 1695 (type 37, P2)",
+            "file": "main.ts",
+            "line": 130
+          },
+          {
+            "frame": 1001,
+            "player": 0,
+            "text": "Remove Unit — unit 1696 (type 0, P3)",
+            "file": "main.ts",
+            "line": 131
+          },
+          {
+            "frame": 1001,
+            "player": 0,
+            "text": "Move Unit",
+            "file": "main.ts",
+            "line": 132
+          },
+          {
+            "frame": 1001,
+            "player": 0,
+            "text": "Center View",
+            "file": "main.ts",
+            "line": 144
+          },
+          {
+            "frame": 1001,
+            "player": 0,
+            "text": "Display Text Message — SURVIVAL READY | scene=4 completions=1",
+            "file": "main.ts",
+            "line": 145
+          },
+          {
+            "frame": 1001,
+            "player": 0,
+            "text": "Display Text Message — Recover at the supply refuge. W/F8 is now unlocked.",
+            "file": "main.ts",
+            "line": 146
+          }
+        ],
+        "frames": 1003,
+        "ms": 61
+      }
+    ],
+    "only": [],
+    "ms": 727
+  }
+}

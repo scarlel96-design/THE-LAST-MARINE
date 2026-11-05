@@ -1,0 +1,308 @@
+{
+  "work_order": "WO-UI-02",
+  "verdict": "PARTIAL",
+  "testing": "RESUMED; LIVE INPUT NOT REFLECTED AT MAP SELECTION",
+  "branch": "codex/wo-ui-02",
+  "baseline_branch": "codex/wo-ui-01",
+  "parent_commit": "28f5fcd55c5a1e372ed5c2bb66a8d9dc00ab3040",
+  "changed_fields": [
+    "probe unit requirement relative index 572 -> 6",
+    "requirement terminator guard",
+    "first string copy boundary",
+    "resource name offset backup and RTS restore",
+    "future build evidence hashes"
+  ],
+  "paths": {
+    "MODIFIED_FILE": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\src\\native-ui\\main.ts",
+    "DIFF_FILE": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-02\\DIFF.patch",
+    "VERIFICATION": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-02\\VERIFICATION.txt",
+    "ROLLBACK": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-02\\ROLLBACK.sh"
+  },
+  "hashes": {
+    "baseline_ui01": "93f98bc452e2fed63afee5bb3be79aaf648b4add176fea71d89a8d94aae76795",
+    "pre_pause_source": "7e6c15b3de23d6efa68bcfee03bc87c61c9ce0cceefde5140c0ee2a79bfb381b",
+    "current_source": "f1ab2fdd94fcb265c4621d3ad7d949905205d0cee96e9cf95735868e180f50fe",
+    "pre_pause_map": "e4edfb31efe3dae7ad457000f27f611b901248aebfae9d4bb0faa3ba6e4648c8",
+    "current_map": "809daf00164bf8f7319d9303473a421aa25278f94a3b4f4e726d330e05b6c038"
+  },
+  "BASELINE": {
+    "command": "node outputs/The-Last-Marine/tools/build-native-ui.mjs --test-only outputs/The-Last-Marine/baseline/WO-UI-02/main.ts UI02_BASELINE --tests outputs/The-Last-Marine/baseline/WO-UI-02/state.test.ts",
+    "cwd": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\baseline\\WO-UI-02\\main.ts",
+    "tests": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\baseline\\WO-UI-02\\state.test.ts",
+    "stdout": "UI02_BASELINE: 26 PASS / 0 FAIL",
+    "exit_status": 0
+  },
+  "MODIFIED": {
+    "command": "node outputs/The-Last-Marine/tools/build-native-ui.mjs --test-only outputs/The-Last-Marine/src/native-ui/main.ts UI02_PROTOCOL",
+    "cwd": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\src\\native-ui\\main.ts",
+    "source_sha256": "f1ab2fdd94fcb265c4621d3ad7d949905205d0cee96e9cf95735868e180f50fe",
+    "stdout": "UI02_PROTOCOL: 36 PASS / 0 FAIL",
+    "exit_status": 0,
+    "scope": "Simulator: skill state, consumption, checkpoint, RTS split, injected queue slots. Native UI callbacks and TBL writes are not simulated by these tests."
+  },
+  "ROLLBACK": {
+    "command": "& 'C:\\Program Files\\Git\\bin\\bash.exe' --noprofile --norc outputs/The-Last-Marine/WO-UI-02/ROLLBACK.sh work/ui02-rollback-current.ts resource-ui",
+    "cwd": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\ui02-rollback-current.ts",
+    "stdout": "ROLLBACK: resource-ui source bytes restored",
+    "exit_status": 0,
+    "restored_sha256": "93f98bc452e2fed63afee5bb3be79aaf648b4add176fea71d89a8d94aae76795",
+    "restored_status": "PASS: snapshot bytes match",
+    "test_command": "node outputs/The-Last-Marine/tools/build-native-ui.mjs --test-only work/ui02-rollback-current.ts UI02_ROLLBACK --tests outputs/The-Last-Marine/baseline/WO-UI-02/state.test.ts",
+    "test_stdout": "UI02_ROLLBACK: 26 PASS / 0 FAIL",
+    "test_exit_status": 0,
+    "restored_behavior": "PASS: 26 simulator checks. Live restored-game behavior NOT RUN.",
+    "initial_shell_failure": "NtCreateDirectoryObject 0xC0000022; exit -1073741502. Same script succeeded after execution approval."
+  },
+  "original_ui01_source_hash": "93f98bc452e2fed63afee5bb3be79aaf648b4add176fea71d89a8d94aae76795",
+  "modified_file_remains_changed": true,
+  "live_map_sha256": "809daf00164bf8f7319d9303473a421aa25278f94a3b4f4e726d330e05b6c038",
+  "live_observation": "Current map visible in TLM_Phase1. Click [603,429] and Down twice did not select a map. Current map launch and feature checks NOT RUN.",
+  "post_pause_game_input": "Attempted through cua_repl; selection unchanged. Screenshots 04 and 05.",
+  "post_pause_tests": "36 modified protocol checks; 26 restored baseline checks",
+  "post_pause_map_build": "494967 bytes; reopened 64x64; 67 trigger records",
+  "git_commit": "See outputs/WO-UI-02_GIT_STATE.json for the saved local checkpoint. No remote publication.",
+  "historical_modified": {
+    "scope": "HISTORICAL_PRE_PAUSE_ONLY",
+    "command": "node outputs/The-Last-Marine/tools/build-native-ui.mjs",
+    "cwd": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\baseline\\WO-UI-02\\pre-pause-native-main.ts",
+    "source_sha256": "7e6c15b3de23d6efa68bcfee03bc87c61c9ce0cceefde5140c0ee2a79bfb381b",
+    "stdout": "NATIVE_UI_PROBE: 26 PASS / 0 FAIL\nNATIVE_UI_PROBE: BUILT 490623 bytes; SCX reopened; 67 trigger records",
+    "exit_status": 0,
+    "limitation": "The historical input used src/native-ui/main.ts before the pause snapshot was saved. Current edits are NOT RUN."
+  },
+  "CURRENT_BUILD": {
+    "command": "node outputs/The-Last-Marine/tools/build-native-ui.mjs",
+    "cwd": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\src\\native-ui\\main.ts",
+    "stdout": "NATIVE_UI_PROBE: 26 PASS / 0 FAIL\nNATIVE_UI_PROBE: BUILT 494967 bytes; SCX reopened; 67 trigger records",
+    "exit_status": 0,
+    "map_sha256": "809daf00164bf8f7319d9303473a421aa25278f94a3b4f4e726d330e05b6c038",
+    "note": "Built before ten queue protocol tests were added. Runtime source did not change."
+  },
+  "input_diagnostics": {
+    "scope": "Read-only integrity labels; no input or security setting changed",
+    "processes": [
+      {
+        "pid": 7176,
+        "integrity_rid": 12288,
+        "ui_access": false,
+        "integrity": "HIGH"
+      },
+      {
+        "pid": 9864,
+        "integrity_rid": 8192,
+        "ui_access": false,
+        "integrity": "MEDIUM"
+      },
+      {
+        "pid": 19720,
+        "integrity_rid": 8192,
+        "ui_access": false,
+        "integrity": "MEDIUM"
+      }
+    ]
+  },
+  "input_diagnostic_command": "python work/read_ui02_process_integrity.py",
+  "input_diagnostic_exit_status": 0,
+  "live_blocker": "Observed HIGH game versus MEDIUM helpers; UIAccess false for all. UIPI input blocking is the supported explanation. A successful equal-integrity comparison has NOT RUN.",
+  "historical_baseline": {
+    "scope": "HISTORICAL_PRE_PAUSE",
+    "command": "node tools/build-resource-ui.mjs",
+    "cwd": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine",
+    "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\src\\resource-ui\\main.ts",
+    "stdout": "RESOURCE_UI_POC: 26 PASS / 0 FAIL\nRESOURCE_UI_POC: BUILT 328060 bytes; SCX reopened; 67 trigger records",
+    "exit_status": 0
+  },
+  "reproducibility": "The baseline suite is preserved separately. Native queue tests require native-ui source. --tests selects the matching suite.",
+  "current_test_evidence": {
+    "UI02_BASELINE": {
+      "sourcePath": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\baseline\\WO-UI-02\\main.ts",
+      "sourceSha256": "93f98bc452e2fed63afee5bb3be79aaf648b4add176fea71d89a8d94aae76795",
+      "testsPath": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\baseline\\WO-UI-02\\state.test.ts",
+      "testsSha256": "67ccfd65861a8e888526cf6a8ba2fa66c44c53bb10d02f0262886cf7316d0416",
+      "builderSha256": "1ce036032c23090799238457a93d4ff23004cb8b3f7cd3f5b9193bcd4c759cd2",
+      "validationScope": "Simulator diagnostic keys and injected queue fields only. Native callbacks, Q/W hotkeys, TBL writes, and top UI require live validation."
+    },
+    "UI02_PROTOCOL": {
+      "sourcePath": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\src\\native-ui\\main.ts",
+      "sourceSha256": "f1ab2fdd94fcb265c4621d3ad7d949905205d0cee96e9cf95735868e180f50fe",
+      "testsPath": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\tests\\native-ui.test.ts",
+      "testsSha256": "8f2ad9ade87990ac2e67476392555e67215b372da79006b6c5a4a0947e53cae4",
+      "builderSha256": "1ce036032c23090799238457a93d4ff23004cb8b3f7cd3f5b9193bcd4c759cd2",
+      "validationScope": "Simulator diagnostic keys and injected queue fields only. Native callbacks, Q/W hotkeys, TBL writes, and top UI require live validation."
+    },
+    "UI02_ROLLBACK": {
+      "sourcePath": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\ui02-rollback-current.ts",
+      "sourceSha256": "93f98bc452e2fed63afee5bb3be79aaf648b4add176fea71d89a8d94aae76795",
+      "testsPath": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\baseline\\WO-UI-02\\state.test.ts",
+      "testsSha256": "67ccfd65861a8e888526cf6a8ba2fa66c44c53bb10d02f0262886cf7316d0416",
+      "builderSha256": "1ce036032c23090799238457a93d4ff23004cb8b3f7cd3f5b9193bcd4c759cd2",
+      "validationScope": "Simulator diagnostic keys and injected queue fields only. Native callbacks, Q/W hotkeys, TBL writes, and top UI require live validation."
+    }
+  },
+  "launch_permission_fix": {
+    "changed_field": "StarCraft.exe compatibility RUNASADMIN: checked -> unchecked; applied",
+    "scope": "Launch setting only; runtime source and map unchanged",
+    "readback": {
+      "target": "C:\\Program Files (x86)\\StarCraft\\x86_64\\StarCraft.exe",
+      "layers": [
+        {
+          "key": "HKCU:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers",
+          "flags": null
+        },
+        {
+          "key": "HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers",
+          "flags": null
+        }
+      ],
+      "sha256": "CE3AB05DC9A6AA35418947E5D95E19651AD6FBCD5E2C1856CD729C5B7C31281C",
+      "processes": [
+        {
+          "Id": 7176,
+          "ProcessName": "StarCraft",
+          "Responding": true
+        }
+      ]
+    },
+    "game_exit": "PASS: old PID 7176 absent",
+    "relaunch": "PASS: PID 66192 MEDIUM; main menu displayed",
+    "live_retest": "NOT RUN: previous elevation prompt remains",
+    "tool_error": "Computer Use app approval timed out",
+    "evidence_directory": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-02\\LAUNCH_PERMISSION_FIX",
+    "relaunch_session": {
+      "status": "PARTIAL",
+      "old_game_exit": {
+        "pid": 7176,
+        "result": "GAME_EXIT: PID 7176 terminated; process absent",
+        "exit_status": 0
+      },
+      "launch_attempts": [
+        {
+          "method": "cua.computer.launch_app",
+          "result": "computer-use request timed out: launch_app; pending elevation dialog appeared",
+          "pending_consent_pid": 27152
+        },
+        {
+          "method": "ProcessStartInfo; UseShellExecute=false; no arguments",
+          "pid": 24552,
+          "result": "Battle.net launcher error dialog; instance terminated before retry"
+        },
+        {
+          "method": "ProcessStartInfo; UseShellExecute=false; Arguments=-launch",
+          "pid": 66192,
+          "result": "Brood War window 13308556; main menu displayed; MEDIUM integrity RID 8192",
+          "exit_status": 0
+        }
+      ],
+      "pending_prompt_cancel": {
+        "cua_result": "failed to activate captured window",
+        "process_cleanup_result": "Stop-Process consent (27152): access denied",
+        "exit_status": 1
+      },
+      "manifest": "requestedExecutionLevel=asInvoker; uiAccess=false",
+      "compatibility": "RUNASADMIN absent in HKCU/HKLM; Registry32 and Registry64 views",
+      "runtime_inputs": "NOT RUN: old elevation confirmation remains over the new game",
+      "next": "Dismiss old elevation request with No; test the new MEDIUM game menu and UI02 map"
+    }
+  },
+  "unattended_launcher_solution": {
+    "verdict": "PARTIAL",
+    "branch": "codex/wo-ui-02",
+    "changed_field": "Dedicated launcher uses -launch with UseShellExecute=false; no elevation verb; rejects elevated callers and RUNASADMIN; reuses a matching game process",
+    "paths": {
+      "MODIFIED_FILE": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-02\\LAUNCH_PERMISSION_FIX\\START_TLM.ps1",
+      "DIFF_FILE": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-02\\LAUNCH_PERMISSION_FIX\\LAUNCHER.diff",
+      "VERIFICATION": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-02\\LAUNCH_PERMISSION_FIX\\LAUNCHER_VERIFICATION.json",
+      "ROLLBACK": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-UI-02\\LAUNCH_PERMISSION_FIX\\ROLLBACK_LAUNCHER.sh"
+    },
+    "BASELINE": {
+      "command": "Get-Process -Name StarCraft,consent",
+      "input": "existing launch session",
+      "literal_result": "StarCraft PID 66192 and consent PID 27152 were present; cancelling consent returned access denied",
+      "cancel_command": "Stop-Process -Id 27152 -Force -ErrorAction Stop",
+      "cancel_exit_status": 1,
+      "ui_validation": "NOT RUN"
+    },
+    "MODIFIED": {
+      "command": "& '.\\outputs\\The-Last-Marine\\WO-UI-02\\LAUNCH_PERMISSION_FIX\\START_TLM.ps1'",
+      "input": "standard-user host; no arguments",
+      "stdout_result": {
+        "status": "STARTED",
+        "pids": [
+          66512
+        ],
+        "arguments": "-launch",
+        "useShellExecute": false,
+        "elevationVerb": null,
+        "uiValidation": "NOT RUN"
+      },
+      "exit_status": 0,
+      "fresh_cmd_test": {
+        "launcher": {
+          "status": "STARTED",
+          "pids": [
+            4956
+          ],
+          "executable": "C:\\Program Files (x86)\\StarCraft\\x86_64\\StarCraft.exe",
+          "arguments": "-launch",
+          "useShellExecute": false,
+          "elevationVerb": null,
+          "uiValidation": "NOT RUN"
+        },
+        "exitStatus": 0,
+        "beforeConsentIds": [
+          27152
+        ],
+        "afterConsentIds": [
+          27152
+        ],
+        "newConsentIds": [],
+        "executableHashBefore": "CE3AB05DC9A6AA35418947E5D95E19651AD6FBCD5E2C1856CD729C5B7C31281C",
+        "executableHashAfter": "CE3AB05DC9A6AA35418947E5D95E19651AD6FBCD5E2C1856CD729C5B7C31281C",
+        "oldPidAbsent": true,
+        "firstAttempt": "Exit-race guard rejected an unreadable terminating process; exit 1. Retried after confirming process absence."
+      },
+      "repeat_command": "& '.\\outputs\\The-Last-Marine\\WO-UI-02\\LAUNCH_PERMISSION_FIX\\START_TLM.ps1'",
+      "repeat_result": "ALREADY_RUNNING; pids=[66512]",
+      "repeat_exit_status": 0,
+      "current_integrity": {
+        "scope": "Read-only integrity labels; no input or security setting changed",
+        "processes": [
+          {
+            "pid": 66512,
+            "integrity_rid": 8192,
+            "ui_access": false,
+            "integrity": "MEDIUM"
+          },
+          {
+            "pid": 61180,
+            "integrity_rid": 8192,
+            "ui_access": false,
+            "integrity": "MEDIUM"
+          }
+        ]
+      }
+    },
+    "ROLLBACK": {
+      "command": "& 'C:\\Program Files\\Git\\bin\\bash.exe' --noprofile --norc outputs/The-Last-Marine/WO-UI-02/LAUNCH_PERMISSION_FIX/ROLLBACK_LAUNCHER.sh work/ui02-launcher-rollback",
+      "input": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\ui02-launcher-rollback",
+      "stdout": "ROLLBACK: launcher copies removed; game and Windows settings unchanged\nROLLBACK_VERIFY: PASS; original launcher retained",
+      "exit_status": 0,
+      "restored_status": "PASS: the two new launcher files are absent from the test copy; the delivered launcher remains present",
+      "restored_behavior": "Original game executable and Windows settings remain unchanged. The old consent prompt is still present. UI validation is NOT RUN."
+    },
+    "current_blocker": "Existing consent PID 27152 remains; cancellation is access denied; no unattended dismissal route is verified with the exposed controls.",
+    "windows_policy_observed": {
+      "EnableLUA": 1,
+      "PromptOnSecureDesktop": 0,
+      "ConsentPromptBehaviorAdmin": 5,
+      "ConsentPromptBehaviorUser": 3
+    },
+    "policy_changes": "NONE",
+    "rollback_test_scope": "Launcher copies only; not a restored live desktop session"
+  }
+}

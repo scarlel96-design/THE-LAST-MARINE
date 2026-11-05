@@ -1,0 +1,52 @@
+{
+  "scm_js_commit": "f4fe24e7519096c2cdd9c1af887f9340317d7af7",
+  "trigscript_commit": "40243398aeb04fcf2893aabb420a3cba92f0d3ac",
+  "files": [
+    {
+      "repository": "scm-js",
+      "path": "docs/chk-format.md",
+      "sha256": "8054acf32750caf9318881e9f55f32fce56111718732fd56e3767103ec4bb248"
+    },
+    {
+      "repository": "scm-js",
+      "path": "src/formats/chk/create.ts",
+      "sha256": "8011daee171b1c88d496bb87da5c5d5b5cd90775f5be67c335dcb7dfec64a28b"
+    },
+    {
+      "repository": "plugin-trigscript",
+      "path": "compiler/declarations.ts",
+      "sha256": "0655c09a76683009e60f15d71a61e69f6f2bbfe00b4d500bf2a4c0271f54d921"
+    },
+    {
+      "repository": "plugin-trigscript",
+      "path": "compiler/jsx.ts",
+      "sha256": "8a9caa954f9a038efc51e9f3582bdbcd128d1904794b68e034acea33bd3c1999"
+    },
+    {
+      "repository": "plugin-trigscript",
+      "path": "compiler/tables.ts",
+      "sha256": "61da37865bff726d772120c21a45cb1f24dadb4d45eb37dc4b42b92898cf49fa"
+    },
+    {
+      "repository": "plugin-trigscript",
+      "path": "compiler/input.ts",
+      "sha256": "258df9556419fd10ba523420ee3ad751b6ec30c4eef73328e02e870bd57899c8"
+    },
+    {
+      "repository": "plugin-trigscript",
+      "path": "stdlib/ui.tsx",
+      "sha256": "34597cf3f335f899235def2ba568bd98390cdbcc770c5880209a7939801b782f"
+    },
+    {
+      "repository": "plugin-trigscript",
+      "path": "stdlib/screen.tsx",
+      "sha256": "941850df51a5077b58357bf145df18a999f48dd4cb7fb8c6342c56fd03c2eacb"
+    },
+    {
+      "repository": "plugin-trigscript",
+      "path": "probes/snake.tsx",
+      "sha256": "98bdac4cf82c92c818f79ed4a9fe27eb8173c7af9b39bd985f12886cfa85eeab"
+    }
+  ],
+  "negative_scope": "No top-resource icon/name binding in reviewed public API and CHK fields; not a proof about every possible tool."
+}

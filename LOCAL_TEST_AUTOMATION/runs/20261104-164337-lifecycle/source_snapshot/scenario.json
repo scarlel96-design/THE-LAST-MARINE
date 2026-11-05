@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "name": "lifecycle",
+  "environment": "offline-local",
+  "cases": [
+    {
+      "id": "game-main-menu",
+      "steps": [
+        {
+          "op": "wait",
+          "expect": [
+            "싱글",
+            "플레이어"
+          ],
+          "timeout": 15
+        },
+        {
+          "op": "capture"
+        }
+      ]
+    },
+    {
+      "id": "map-entry",
+      "status": "NOT RUN",
+      "reason": "Automatic navigation states need calibration on the target profile. Current UI02 map exited after native Q."
+    },
+    {
+      "id": "briefing",
+      "status": "NOT RUN",
+      "reason": "Automatic briefing assertion is not calibrated. Manual Computer Use reached briefing in this session."
+    },
+    {
+      "id": "mission-start-end",
+      "status": "NOT RUN",
+      "reason": "The isolated skill map has no complete mission objectives"
+    }
+  ]
+}

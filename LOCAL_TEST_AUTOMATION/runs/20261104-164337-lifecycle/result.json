@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "scenario": "lifecycle",
+  "started_utc": "2026-11-04T16:43:38.810331+00:00",
+  "cases": [
+    {
+      "id": "game-main-menu",
+      "started_utc": "2026-11-04T16:43:38.833608+00:00",
+      "status": "FAIL",
+      "reason": "Game lost foreground focus",
+      "failure_capture_error": "Game lost foreground focus",
+      "ended_utc": "2026-11-04T16:43:42.123068+00:00",
+      "elapsed_s": 3.2895
+    },
+    {
+      "id": "map-entry",
+      "started_utc": "2026-11-04T16:43:42.125076+00:00",
+      "status": "NOT RUN",
+      "reason": "Automatic navigation states need calibration on the target profile. Current UI02 map exited after native Q.",
+      "ended_utc": "2026-11-04T16:43:42.125186+00:00",
+      "elapsed_s": 0.0001
+    },
+    {
+      "id": "briefing",
+      "started_utc": "2026-11-04T16:43:42.126978+00:00",
+      "status": "NOT RUN",
+      "reason": "Automatic briefing assertion is not calibrated. Manual Computer Use reached briefing in this session.",
+      "ended_utc": "2026-11-04T16:43:42.127008+00:00",
+      "elapsed_s": 0.0
+    },
+    {
+      "id": "mission-start-end",
+      "started_utc": "2026-11-04T16:43:42.128420+00:00",
+      "status": "NOT RUN",
+      "reason": "The isolated skill map has no complete mission objectives",
+      "ended_utc": "2026-11-04T16:43:42.128465+00:00",
+      "elapsed_s": 0.0
+    }
+  ],
+  "scope": "Actual visible states only. Input delivery is not functional PASS.",
+  "local_invocations": 1,
+  "ai_decisions_inside_run": 0,
+  "retries": 0,
+  "game_pid": 32716,
+  "ended_utc": "2026-11-04T16:43:42.245039+00:00",
+  "elapsed_s": 3.4349,
+  "captures": 2,
+  "inputs": 0,
+  "input_delivery_failures": 0,
+  "timing": {
+    "capture_s": 0.144565699971281,
+    "ocr_s": 2.7228908999823034,
+    "input_s": 0
+  },
+  "counts": {
+    "PASS": 0,
+    "FAIL": 1,
+    "SKIP": 0,
+    "NOT RUN": 3
+  },
+  "status": "FAIL"
+}

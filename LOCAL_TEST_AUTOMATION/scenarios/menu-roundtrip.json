@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "name": "menu-roundtrip",
+  "environment": "offline-local",
+  "cases": [
+    {"id": "menu-open", "steps": [
+      {"op": "key", "key": "F10"},
+      {"op": "wait", "visual":{"rect":[0.29,0.065,0.42,0.59],"blue_min":0.8,"nonblack_min":0.8}, "timeout": 6}
+    ]},
+    {"id": "menu-close", "steps": [
+      {"op": "key", "key": "ESC"},
+      {"op": "wait", "visual":{"rect":[0.29,0.065,0.42,0.59],"blue_max":0.03,"nonblack_min":0.8}, "timeout": 6}
+    ]}
+  ]
+}

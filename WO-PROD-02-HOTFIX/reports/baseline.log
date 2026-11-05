@@ -1,0 +1,16 @@
+✔ Host codec matches the simulator minimum completion vector (9.8408ms)
+✔ Named survivors and bounded choices round trip (10.7223ms)
+✔ Single decimal transcription errors are detected (2.1045ms)
+✔ Unsupported versions, missions, and malformed groups are rejected (1.2413ms)
+✔ Reserved fields cannot bypass validation with a recomputed checksum (3.0757ms)
+✔ Incomplete or inconsistent M01 completion is rejected (0.9109ms)
+✔ Invalid inventory and inherited property names are rejected (2.9388ms)
+✔ M02 host adapter separates supply bonuses from equipment and records (0.7755ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 436.2671

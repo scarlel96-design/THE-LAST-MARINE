@@ -1,0 +1,13 @@
+{
+  "source_path": "<USERPROFILE>\\AppData\\Local\\Temp\\BlizzardError\\2026-11-05 01.39.09\\Report.txt",
+  "observed_game_pid": 63164,
+  "native_map_sha256": "809daf00164bf8f7319d9303473a421aa25278f94a3b4f4e726d330e05b6c038",
+  "build": "<Game.Build>13515 (2e031d5be4)",
+  "exception": "ACCESS_VIOLATION",
+  "report_created_local": "2026-11-05 01:39:09 +09:00",
+  "sequence": "Native Q active was captured before game PID/window disappearance. BlizzardError then appeared.",
+  "root_cause": "UNCONFIRMED. This is temporal evidence, not a specific callback fault diagnosis.",
+  "upload": "No error report or dump was submitted.",
+  "report_sha256": "574b99196c775956ffa7297c57de3c729ab5c52894ec2a328a280e718867ac8c",
+  "native_source_sha256": "f1ab2fdd94fcb265c4621d3ad7d949905205d0cee96e9cf95735868e180f50fe"
+}

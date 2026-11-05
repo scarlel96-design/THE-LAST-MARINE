@@ -1,0 +1,99 @@
+{
+  "tableBase": 421021280,
+  "reservedRegion": [
+    63800,
+    64864
+  ],
+  "nativeLabels": [
+    796,
+    797
+  ],
+  "newButtonStrings": "count+1, count+2",
+  "heroButtonSet": 20,
+  "buttonPointer": 429474760,
+  "positions": {
+    "Q": 8,
+    "W": 9
+  },
+  "commandTokens": [
+    92,
+    93
+  ],
+  "alwaysRequirementIndex": 6,
+  "upstreamCompiler": "UNCHANGED",
+  "queueAdapter": "isolated loader, CUnit 0x98/0x9c/0xa0/0xa4",
+  "originalButtons": [
+    [
+      1,
+      228,
+      4358864,
+      4342848,
+      0,
+      0,
+      664,
+      0
+    ],
+    [
+      2,
+      229,
+      4358864,
+      4338672,
+      0,
+      0,
+      665,
+      0
+    ],
+    [
+      3,
+      230,
+      4362032,
+      4342656,
+      0,
+      0,
+      666,
+      0
+    ],
+    [
+      4,
+      254,
+      4358864,
+      4342080,
+      0,
+      0,
+      667,
+      0
+    ],
+    [
+      5,
+      255,
+      4358864,
+      4338544,
+      0,
+      0,
+      668,
+      0
+    ],
+    [
+      7,
+      237,
+      4363488,
+      4338896,
+      0,
+      0,
+      334,
+      346
+    ]
+  ],
+  "requireFileHeaderBytes": 1132,
+  "requireUnitRegionBytes": 1096,
+  "previousIncorrectFileWordIndex": 572,
+  "requirementGuardAddress": "0x514184",
+  "supportedStringCounts": [
+    1539,
+    1547,
+    1551
+  ],
+  "resourceNameOffsetBackup": 64500,
+  "sourceStatus": "BUILT; 36 SIMULATOR CHECKS PASSED; CURRENT LIVE FEATURES NOT RUN",
+  "nativeLabelsBinding": "796/797 are candidate stat_txt IDs; upper UI binding remains unverified"
+}

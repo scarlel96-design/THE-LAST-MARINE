@@ -1,0 +1,62 @@
+[
+  {
+    "file": "01_guarded_default_card.jpg",
+    "sha256": "5420e1daefbc0b06e3f8cdfdb5c3f7ee9008c201ebb8bf183a3a0d3ab1f32629",
+    "bytes": 290266,
+    "captureSize": [
+      2048,
+      1152
+    ],
+    "scope": "Historical real game capture, before pause"
+  },
+  {
+    "file": "02_native_card_probe.jpg",
+    "sha256": "ac77fe89f359f321fb2dcec1e48aa39a23cdef13c800df9d84079f2a19c799da",
+    "bytes": 291528,
+    "captureSize": [
+      2048,
+      1152
+    ],
+    "scope": "Historical real game capture, before pause"
+  },
+  {
+    "file": "03_native_string_diagnostics.jpg",
+    "sha256": "258348145d7e93c837ba0c23a368d4a6695748ca297d7df102af74b70ffd0ffa",
+    "bytes": 300496,
+    "captureSize": [
+      2048,
+      1152
+    ],
+    "scope": "Historical real game capture, before pause"
+  },
+  {
+    "file": "04_resume_map_selection.png",
+    "sha256": "1266a8d6ad9a2251c384c2860c9aeaf985b7e1207ddacf4b9a7c4dea3662f83f",
+    "bytes": 384751,
+    "captureSize": [
+      2048,
+      1152
+    ],
+    "scope": "Current real game map selection; no feature PASS implied"
+  },
+  {
+    "file": "05_after_selection_inputs.png",
+    "sha256": "7955a83b6955386ff0c7965924c1deb34b5b522c1c47ed3f31d9f1511ed6a1b7",
+    "bytes": 384716,
+    "captureSize": [
+      2048,
+      1152
+    ],
+    "scope": "Current real game map selection; no feature PASS implied"
+  },
+  {
+    "file": "06_after_reconnect.png",
+    "sha256": "7955a83b6955386ff0c7965924c1deb34b5b522c1c47ed3f31d9f1511ed6a1b7",
+    "bytes": 384716,
+    "captureSize": [
+      2048,
+      1152
+    ],
+    "scope": "Current real game after input reconnect; map still unselected"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "scope": "Read-only integrity labels; no input or security setting changed",
+  "processes": [
+    {
+      "pid": 4956,
+      "integrity_rid": 8192,
+      "ui_access": false,
+      "integrity": "MEDIUM"
+    },
+    {
+      "pid": 61180,
+      "integrity_rid": 8192,
+      "ui_access": false,
+      "integrity": "MEDIUM"
+    }
+  ]
+}

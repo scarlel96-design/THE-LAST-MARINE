@@ -1,0 +1,1563 @@
+{
+  "status": "PASS",
+  "files_reopened": 311,
+  "run_manifest_entries_verified": 259,
+  "diff_check_exit": 0,
+  "files": [
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\.gitattributes",
+      "bytes": 72,
+      "sha256": "308a40fa1d89ae5ea4390b4c9b46a0108b09f171f07898f25d451fa0c69c4e9f"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\.gitignore",
+      "bytes": 61,
+      "sha256": "2ba2f496459bfe9c6d250211e9415adbc7fc01e21d9a3b1739292ca15b53e7ee"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\CRASH_EVIDENCE.json",
+      "bytes": 828,
+      "sha256": "5b01095828be67f54b159e147df4aac864ec6a074534d08ccfd4173cfa08f5e9"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\DIFF.patch",
+      "bytes": 52925,
+      "sha256": "5e61fdb89f0bdcc04a44bf467935c2af43e74eb0d1b376c9caea738290ce4128"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\FINAL_REPORT.md",
+      "bytes": 8826,
+      "sha256": "41211b206918afd6fc32a8043f081866fec0263ec834ece42cbe832cf3f7acc9"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\ocr.ps1",
+      "bytes": 3505,
+      "sha256": "0b31735bd624cf6956ad442933777b9b0ac68cad5f07a190de7e664bdcb0eeba"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\PERFORMANCE_COMPARISON.json",
+      "bytes": 2983,
+      "sha256": "9faa797890cd48ddffd1891eb804ff82fec4ac50da88af446281cdfd4014c9e9"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\README.md",
+      "bytes": 6242,
+      "sha256": "ae4cf178ff35b604d645feecd552d6a28cf49758ea7aae6d0b77ecd8e693e28d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\rollback.py",
+      "bytes": 870,
+      "sha256": "659f0138d7f13814898edafd54c487409c4bf39bee888e4dddd41f5e45636e09"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\ROLLBACK.sh",
+      "bytes": 222,
+      "sha256": "5869e2be50706d6f668ed48b1b5d8d8619bd746c61fb8a63e7dab1f359623950"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\ROLLBACK_MANIFEST.json",
+      "bytes": 439,
+      "sha256": "52c8e9c31596f6dafb686d6cf0383421ccc90071f747acf75cc1b315a66e16bf"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runner.py",
+      "bytes": 10170,
+      "sha256": "1552262988cb541c9624c7ef946df86501cfa01380ad74f1b92ef9df4975f524"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\START_LOCAL_TESTS.ps1",
+      "bytes": 1233,
+      "sha256": "eff810cef3b6f8f7474680e4373678c9481cd3a1a086590b39d59610d5ace9b6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\VERIFICATION.txt",
+      "bytes": 5397,
+      "sha256": "59a02a42555e97e9307def346bfafe5c80e415670d0e2025b49afba0aec46cfc"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\verify_preservation.py",
+      "bytes": 1071,
+      "sha256": "35828462b498567f62740f4107301e6a3ce0f59aec9ba06fbbe21decaed895dd"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\vision.py",
+      "bytes": 1748,
+      "sha256": "105a532eb97489d3a9f0ab638862601e49af472e30ac9ac4f9010ee5261ed561"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\win32_host.py",
+      "bytes": 13955,
+      "sha256": "61b9452e214c96ce86bd22493df355e1732fed13ad48146c2f02f0d1ca756f92"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\evidence\\01-diagnostic-ready.png",
+      "bytes": 1103611,
+      "sha256": "ef993abbd7e40f90965260c30ee7eb17d3eabd730dc71b914370a7a8d93a11b7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\evidence\\02-selected-native-card.png",
+      "bytes": 1196726,
+      "sha256": "ad619bdeff2020896d618739cfa5fc15c6bda8bab1cfa286ed5c3ababc02fa0e"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\evidence\\03-menu-open.png",
+      "bytes": 1283386,
+      "sha256": "f2edfbe23c56131e2ca005df022bc5cf9b15581e436e6ec9d016f67940e3b2cb"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\evidence\\04-menu-closed.png",
+      "bytes": 1200361,
+      "sha256": "36ea0a0a770414931e724622b2ee729241027ed15d50afcd68912261b86b126e"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\evidence\\05-W-result.png",
+      "bytes": 1226989,
+      "sha256": "aa0197c240b7dc35738f0e796973d9f6c9c55baf307555bac982a36475d44319"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\evidence\\06-R-result.png",
+      "bytes": 1241207,
+      "sha256": "003d707d2967c694024cef97e31d77edc1cf9aa1c01d069d705f53f24b74ed61"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\evidence\\07-R-cooldown-ocr-failure.png",
+      "bytes": 1237763,
+      "sha256": "9ffbb713c9c47eb65aa69f73347e9cb38d17b345012c144b7b58cd8730237901"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\evidence\\08-native-Q-before-exit.png",
+      "bytes": 1227337,
+      "sha256": "5f5c21b5c795221b545e59d58fa228affb21fdf8112804564b7564e0ca8a7e12"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\evidence\\MANIFEST.json",
+      "bytes": 3627,
+      "sha256": "5c7f8c75e2f6625773c8d2b821dc8e0fadb917933dc3edfc78c2720e8afbf056"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\scenarios\\lifecycle.json",
+      "bytes": 626,
+      "sha256": "de1c67ea4d740d50f4a53181a26c2df71769c63c06f3c2e29cd251fee24c865b"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\scenarios\\menu-roundtrip.json",
+      "bytes": 477,
+      "sha256": "e0c3afc8dbb969718f84175f71943d7a534a94afa6c86225e067b3b74fc17a72"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\scenarios\\native-card.json",
+      "bytes": 2014,
+      "sha256": "546033f25da0d0ffc2516a885f2a97ffe22b6e8ad04043517408ce6829e9b199"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\scenarios\\ui02-consumption.json",
+      "bytes": 2854,
+      "sha256": "509cd0b74bbe3ee3235bd2839b02a8439ecc61701fe13bd5c9056043d0c1daaa"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\scenarios\\ui02-diagnostic.json",
+      "bytes": 3643,
+      "sha256": "236a1e4a3d804bd60a4299c58ab1f064dab5d53643008f2cb3595d6bf8daeadf"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\scenarios\\ui02-remaining-gates.json",
+      "bytes": 1946,
+      "sha256": "a6de3dd966754e37b8aaceeca0d41032aaca9e1509f4237ca9ead1222b3cfe9c"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\tests\\test_runner.py",
+      "bytes": 5314,
+      "sha256": "764726b6d54da59892e26ec59e7ed11a200832729956ff593dff521117e4288c"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\validation\\BASELINE.json",
+      "bytes": 513,
+      "sha256": "6ea06826377f697eec863ef126b5cef6966e505210c392a84a2a2453e46bdfb7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\validation\\MODIFIED.json",
+      "bytes": 2289,
+      "sha256": "ef64ba553d134826ae1053f890f7b7e395f9c39036845915218934e97681cd62"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\validation\\RESTORED.json",
+      "bytes": 513,
+      "sha256": "6ea06826377f697eec863ef126b5cef6966e505210c392a84a2a2453e46bdfb7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\validation\\ROLLBACK.json",
+      "bytes": 587,
+      "sha256": "e453696f8ca181d29eba0dd0c87a7464df3303ff3ae2e39fbb45ed195590eaea"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\20261104-164337-lifecycle\\001-game-main-menu.bmp",
+      "bytes": 4915254,
+      "sha256": "7d5c2142956dbc6a715057e20806948a676795d6ef2e6970a9e9d1114f276d0a"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\20261104-164337-lifecycle\\002-game-main-menu.bmp",
+      "bytes": 4915254,
+      "sha256": "7d5c2142956dbc6a715057e20806948a676795d6ef2e6970a9e9d1114f276d0a"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\20261104-164337-lifecycle\\events.jsonl",
+      "bytes": 1670,
+      "sha256": "613288724ba4ce93ce0dcabea22a4542eeda36cdc25b14680122bc3b8802cd1e"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\20261104-164337-lifecycle\\manifest.json",
+      "bytes": 883,
+      "sha256": "2cd7bf9559067ee52af750740921f8b474cd592141c30aac2e84ff4a7ef90ae6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\20261104-164337-lifecycle\\result.json",
+      "bytes": 1944,
+      "sha256": "c5e0c26df9429f29bab6eb17432cf3e5fed72f529df1dc55df41cce862167870"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\001-checkpoint-initial.bmp",
+      "bytes": 4915254,
+      "sha256": "6b9d75d0502ef2d67a160c77cd0cb3ac7bf2f21943cb08083533fc650cb3e830"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\001-checkpoint-initial.bmp.crop.png",
+      "bytes": 379176,
+      "sha256": "9ed63eb171bdb5303e9bffc995a5a277932bcddb303e2a818b4c47ed7b92ef2f"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\002-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "3745921aa5dd836c69bdd9451fc779ef5274f1d42327b72ddd1a5eb654c4feea"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\002-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 384345,
+      "sha256": "a48daf1f7fa42a0598a01853aad28f4c04db4aff463f877f24fa89c00bb84573"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\003-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "3bc2351d9716d2d370090c67bb31060db98bae175a1c5578b12b612884c6e34c"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\003-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 407800,
+      "sha256": "83408af2d62ac482a8418d743ef01545fb65e199b839db789e06a9b19e5843d7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\004-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "3bc2351d9716d2d370090c67bb31060db98bae175a1c5578b12b612884c6e34c"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\004-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 407800,
+      "sha256": "83408af2d62ac482a8418d743ef01545fb65e199b839db789e06a9b19e5843d7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\005-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "3bc2351d9716d2d370090c67bb31060db98bae175a1c5578b12b612884c6e34c"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\005-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 407800,
+      "sha256": "83408af2d62ac482a8418d743ef01545fb65e199b839db789e06a9b19e5843d7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\006-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "53d73e268b5fc9b10c7b16b20cbfb2116838b5b206ff6ea2f5e79c4be4dcb9ff"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\006-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 384507,
+      "sha256": "2511dfd2844c12fa3e4e2fc8e9d115ed6a9e6cffb8d80d67c6899bdb67498dd8"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\007-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "c9902e609d913038aa153583bca15f11c0e1a4fa47467cb729f04f38db4706a2"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\007-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 390077,
+      "sha256": "1d9aa0186f3f6312273f01ad2f3352cc10a39d819eebb1c67c0c4bc547472e31"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\008-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "dbc312ace3ba475d7b8d5eb4137243b8fbce92fe6e8ffadf1109eba4e1f0eb36"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\008-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 384151,
+      "sha256": "5f34032995291e0894dc9b8affafcfb9f3e649d945f8dbdfd9f7201ad54a5cab"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\009-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "54f93796a98a960d204c864e1bd884f3cca1770dbdee629dd1ca01a5b6d14b7e"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\009-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 361537,
+      "sha256": "433883abf7b9c5f1c1c23a4e09405d512cfe2f44b093042a50dca6a6ada6fe09"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\010-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "ae122ad7c8822326585397424cb06028c312cecc8997b30ebcb0edc48730e9b7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\010-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 361567,
+      "sha256": "28b2b5fa43aef16ec8396cbc17f45a999548e78824a25d408d6071f77db029fe"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\011-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "ae122ad7c8822326585397424cb06028c312cecc8997b30ebcb0edc48730e9b7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\011-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 361567,
+      "sha256": "28b2b5fa43aef16ec8396cbc17f45a999548e78824a25d408d6071f77db029fe"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\012-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "ae122ad7c8822326585397424cb06028c312cecc8997b30ebcb0edc48730e9b7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\012-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 361567,
+      "sha256": "28b2b5fa43aef16ec8396cbc17f45a999548e78824a25d408d6071f77db029fe"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\013-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "f03a0b0df739fea9db3a5a4df9afdf99be45f24f8f3dea252b7ad59833eafbe8"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\013-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 356767,
+      "sha256": "906f49e7f7f9b37c51b54a8b45a3d0394d70a911a0a069044fdc8e21b4bc60b8"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\014-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "f03a0b0df739fea9db3a5a4df9afdf99be45f24f8f3dea252b7ad59833eafbe8"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\014-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 356767,
+      "sha256": "906f49e7f7f9b37c51b54a8b45a3d0394d70a911a0a069044fdc8e21b4bc60b8"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\015-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "f03a0b0df739fea9db3a5a4df9afdf99be45f24f8f3dea252b7ad59833eafbe8"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\015-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 356767,
+      "sha256": "906f49e7f7f9b37c51b54a8b45a3d0394d70a911a0a069044fdc8e21b4bc60b8"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\016-W-diagnostic-consumption-failure.bmp",
+      "bytes": 4915254,
+      "sha256": "f03a0b0df739fea9db3a5a4df9afdf99be45f24f8f3dea252b7ad59833eafbe8"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\events.jsonl",
+      "bytes": 8857,
+      "sha256": "c77c13c2b51bfc501973174f78a71cabdd3f2fea2043b13008cacfbc3bed574d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\manifest.json",
+      "bytes": 3626,
+      "sha256": "4b638cd3a5182dc35629a960f14843c6d48b624557fdf555f02ba416aebdadad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-01\\result.json",
+      "bytes": 3076,
+      "sha256": "676f14b23cdad05ffda916b44ba9fe3b210a5abab368d179eef0ba9db051aef5"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\001-checkpoint-initial.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\001-checkpoint-initial.bmp.crop.png",
+      "bytes": 459396,
+      "sha256": "c747a7abbf452aca47c685e6b978b5840b6fb4a3553361cf1e11a1f5120d6dac"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\002-checkpoint-initial.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\002-checkpoint-initial.bmp.crop.png",
+      "bytes": 459396,
+      "sha256": "c747a7abbf452aca47c685e6b978b5840b6fb4a3553361cf1e11a1f5120d6dac"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\003-checkpoint-initial.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\003-checkpoint-initial.bmp.crop.png",
+      "bytes": 459396,
+      "sha256": "c747a7abbf452aca47c685e6b978b5840b6fb4a3553361cf1e11a1f5120d6dac"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\004-checkpoint-initial.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\004-checkpoint-initial.bmp.crop.png",
+      "bytes": 459396,
+      "sha256": "c747a7abbf452aca47c685e6b978b5840b6fb4a3553361cf1e11a1f5120d6dac"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\005-checkpoint-initial.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\005-checkpoint-initial.bmp.crop.png",
+      "bytes": 459396,
+      "sha256": "c747a7abbf452aca47c685e6b978b5840b6fb4a3553361cf1e11a1f5120d6dac"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\006-checkpoint-initial.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\006-checkpoint-initial.bmp.crop.png",
+      "bytes": 459396,
+      "sha256": "c747a7abbf452aca47c685e6b978b5840b6fb4a3553361cf1e11a1f5120d6dac"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\007-checkpoint-initial.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\007-checkpoint-initial.bmp.crop.png",
+      "bytes": 459396,
+      "sha256": "c747a7abbf452aca47c685e6b978b5840b6fb4a3553361cf1e11a1f5120d6dac"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\008-checkpoint-initial-failure.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\events.jsonl",
+      "bytes": 5104,
+      "sha256": "02406b64dbe5709ef99c70f07b1230e842b6976e4f89edf2aa32894d1e2f70f3"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\manifest.json",
+      "bytes": 1764,
+      "sha256": "2c7badc3d85057a5bebb5568a021084a11214120a9eda63925a166a11a3f2eff"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-02\\result.json",
+      "bytes": 3137,
+      "sha256": "e78200b41c16ca519c3e2abb4d119d8c5d020eb98f435ab83dec5c83a7012c0e"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\001-checkpoint-initial.bmp",
+      "bytes": 4915254,
+      "sha256": "ec51e3525767c39608ada7443fff2a72de835751de3fb804caa1d3eee6e79a5f"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\001-checkpoint-initial.bmp.crop.png",
+      "bytes": 406768,
+      "sha256": "484a38a77b967a2d935182b864732ebb37d1165a85f6b702f1d8cd6618f83c0f"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\002-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "ef24c01467a7ba037051753d81227edd297dd357a2d39bb21762a7c973acc551"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\002-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 409706,
+      "sha256": "b7a268310356835f642112b9a3169fae545787d78f98b04176ed2789fa51b3e5"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\003-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "bec25fcf37dcec7c2459dd8f4199e82238a15d43c620969526c46bb4007d16c0"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\003-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 431326,
+      "sha256": "17da3d0d4b6d688d276dd1b9bded9a0260d18bb4a96fea3cec676df55bf5d539"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\004-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "3f4a242b446306bb1b410c8fd4929511266b941c5fe90e7383ec778548a7d26b"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\004-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 431289,
+      "sha256": "c016c95a2516bbf80d7b513c3b76221e291bae3739c47325060166fad66cf787"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\005-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "37141387317d01f9d572612935a4c051c48f6e2ff24627275c53a870eccca941"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\005-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 411165,
+      "sha256": "d3f25bc8cd0658ef3f082b70543dd520c9059a7d990a9430c92488443523e380"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\006-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "37141387317d01f9d572612935a4c051c48f6e2ff24627275c53a870eccca941"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\006-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 411165,
+      "sha256": "d3f25bc8cd0658ef3f082b70543dd520c9059a7d990a9430c92488443523e380"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\007-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "8767ff84ef453ef137276cf16f23fbf3c74f3448ba1f3ccad422274b3c3d9418"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\007-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 414513,
+      "sha256": "e8f7cd88103932a5ec67a83e600a2b1dcc301b80700e148ed4d4d352dd5ad8ac"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\008-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "d8eafc476e719d5d892dcf0e642f59f66b34997d00fec6c2d5def6c22f58c8d0"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\009-W-cooldown.bmp",
+      "bytes": 4915254,
+      "sha256": "b1f81a6ebff004c676b53d878531057bde751171ba5cb923d548ef0cc4094f77"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\009-W-cooldown.bmp.crop.png",
+      "bytes": 412712,
+      "sha256": "6a525fcbdbb01474c8f25b56fd065dab83c6feeb07961b8727ce84fbf844b61f"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\010-R-installation-consumption-only.bmp",
+      "bytes": 4915254,
+      "sha256": "b20cdf2c2d3737b8ed616cf74094b2a928c2a5041b4133625eb915c1ada86fc2"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\010-R-installation-consumption-only.bmp.crop.png",
+      "bytes": 411884,
+      "sha256": "78285a6cc1b0d738141ac42fffa21a780364bbdbf30d536b4305b7381de067c7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\011-R-installation-consumption-only.bmp",
+      "bytes": 4915254,
+      "sha256": "b20cdf2c2d3737b8ed616cf74094b2a928c2a5041b4133625eb915c1ada86fc2"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\011-R-installation-consumption-only.bmp.crop.png",
+      "bytes": 411884,
+      "sha256": "78285a6cc1b0d738141ac42fffa21a780364bbdbf30d536b4305b7381de067c7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\012-R-installation-consumption-only.bmp",
+      "bytes": 4915254,
+      "sha256": "b20cdf2c2d3737b8ed616cf74094b2a928c2a5041b4133625eb915c1ada86fc2"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\012-R-installation-consumption-only.bmp.crop.png",
+      "bytes": 411884,
+      "sha256": "78285a6cc1b0d738141ac42fffa21a780364bbdbf30d536b4305b7381de067c7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\013-R-installation-consumption-only.bmp",
+      "bytes": 4915254,
+      "sha256": "b20cdf2c2d3737b8ed616cf74094b2a928c2a5041b4133625eb915c1ada86fc2"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\013-R-installation-consumption-only.bmp.crop.png",
+      "bytes": 411884,
+      "sha256": "78285a6cc1b0d738141ac42fffa21a780364bbdbf30d536b4305b7381de067c7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\014-R-installation-consumption-only.bmp",
+      "bytes": 4915254,
+      "sha256": "e67a51613482637cd8a4778466810bb222c5e191f9967186a66852acf498cd30"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\014-R-installation-consumption-only.bmp.crop.png",
+      "bytes": 432072,
+      "sha256": "515b081756d163a59a104eda9b8174dcb9257c7ddb7ba179405659a30c6c8e7e"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\015-R-installation-consumption-only.bmp",
+      "bytes": 4915254,
+      "sha256": "3dd851530997dc0738297540e7f33ddd945fc4dacc32dbb1ef9777b472a9e438"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\016-R-cooldown.bmp",
+      "bytes": 4915254,
+      "sha256": "4c95a4f9a11d26a2e25ec2d9f2305fbfee917251599a09e35427957086f7f71a"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\016-R-cooldown.bmp.crop.png",
+      "bytes": 427457,
+      "sha256": "ce166a57955f1f0b8f5df76b14c4c02ddbc4f2fa6cf3615a6e90e6e6e61e836c"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\017-R-cooldown.bmp",
+      "bytes": 4915254,
+      "sha256": "f603a8b097970322868f0dd95974e13075f53fd179f6b69b9b37cda37562b13f"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\017-R-cooldown.bmp.crop.png",
+      "bytes": 409107,
+      "sha256": "0e5545d4552544a9336c1721ee48a71c73bd20c9b3f4a8fbc3668bad60fe4527"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\018-R-cooldown.bmp",
+      "bytes": 4915254,
+      "sha256": "f603a8b097970322868f0dd95974e13075f53fd179f6b69b9b37cda37562b13f"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\018-R-cooldown.bmp.crop.png",
+      "bytes": 409107,
+      "sha256": "0e5545d4552544a9336c1721ee48a71c73bd20c9b3f4a8fbc3668bad60fe4527"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\019-R-cooldown.bmp",
+      "bytes": 4915254,
+      "sha256": "f603a8b097970322868f0dd95974e13075f53fd179f6b69b9b37cda37562b13f"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\019-R-cooldown.bmp.crop.png",
+      "bytes": 409107,
+      "sha256": "0e5545d4552544a9336c1721ee48a71c73bd20c9b3f4a8fbc3668bad60fe4527"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\020-R-cooldown.bmp",
+      "bytes": 4915254,
+      "sha256": "f603a8b097970322868f0dd95974e13075f53fd179f6b69b9b37cda37562b13f"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\020-R-cooldown.bmp.crop.png",
+      "bytes": 409107,
+      "sha256": "0e5545d4552544a9336c1721ee48a71c73bd20c9b3f4a8fbc3668bad60fe4527"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\021-R-cooldown.bmp",
+      "bytes": 4915254,
+      "sha256": "efad0d72dfe1118ea733808f499f6709392c8ed4e2eedb6a172a95974aa9c9fa"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\021-R-cooldown.bmp.crop.png",
+      "bytes": 388977,
+      "sha256": "9c583604942e43c40bb8b825d8b81343d6e3bafa24679b5567291737e977aa46"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\022-R-cooldown.bmp",
+      "bytes": 4915254,
+      "sha256": "f3b5d81012a9a216597d6ea3442974a862ba7b3a68bd3e811eb5f4afbfb6ddbf"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\022-R-cooldown.bmp.crop.png",
+      "bytes": 384504,
+      "sha256": "2ca5edd2b74e271b3a1a40e1b183b6aafea94acd04d72610456876ec7037c359"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\023-R-cooldown.bmp",
+      "bytes": 4915254,
+      "sha256": "f3b5d81012a9a216597d6ea3442974a862ba7b3a68bd3e811eb5f4afbfb6ddbf"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\023-R-cooldown.bmp.crop.png",
+      "bytes": 384504,
+      "sha256": "2ca5edd2b74e271b3a1a40e1b183b6aafea94acd04d72610456876ec7037c359"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\024-R-cooldown-failure.bmp",
+      "bytes": 4915254,
+      "sha256": "f3b5d81012a9a216597d6ea3442974a862ba7b3a68bd3e811eb5f4afbfb6ddbf"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\events.jsonl",
+      "bytes": 13599,
+      "sha256": "7f436c1b278de2419b667fc1d66609825ceaca5d769e1bb4c0531172a6d06ac8"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\manifest.json",
+      "bytes": 4989,
+      "sha256": "b28216c52dd239416086857fb4ff30afed0a9db2fc2720924c48e797afd7f89c"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\consumption-03\\result.json",
+      "bytes": 2915,
+      "sha256": "de8dd193a333953f77b7a95fda8bcde5778d8a29c201ceceafcac5fcaca5ea32"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-01\\001-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "9df8be7e12ac30de16edf29560f7f2db8eb32137eed37267226158339b88b0e5"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-01\\002-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "9df8be7e12ac30de16edf29560f7f2db8eb32137eed37267226158339b88b0e5"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-01\\003-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "9df8be7e12ac30de16edf29560f7f2db8eb32137eed37267226158339b88b0e5"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-01\\004-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "9df8be7e12ac30de16edf29560f7f2db8eb32137eed37267226158339b88b0e5"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-01\\005-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "9df8be7e12ac30de16edf29560f7f2db8eb32137eed37267226158339b88b0e5"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-01\\006-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "9df8be7e12ac30de16edf29560f7f2db8eb32137eed37267226158339b88b0e5"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-01\\007-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "9df8be7e12ac30de16edf29560f7f2db8eb32137eed37267226158339b88b0e5"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-01\\008-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "9df8be7e12ac30de16edf29560f7f2db8eb32137eed37267226158339b88b0e5"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-01\\009-menu-open-failure.bmp",
+      "bytes": 4915254,
+      "sha256": "9df8be7e12ac30de16edf29560f7f2db8eb32137eed37267226158339b88b0e5"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-01\\events.jsonl",
+      "bytes": 4675,
+      "sha256": "c41c881c4b4292030c9a60ef492cf8d06be0159c31ad57845909e405af5597d6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-01\\manifest.json",
+      "bytes": 1014,
+      "sha256": "d6ef55075cce02c9dd7c68a078fc18515f1e1b6e4e23ee284c6cccf134e78dfc"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-01\\result.json",
+      "bytes": 1211,
+      "sha256": "839ca70573b339c6228df702260634079e85ea1468cea1b25fc81d0255d1e0cc"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\001-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "9df8be7e12ac30de16edf29560f7f2db8eb32137eed37267226158339b88b0e5"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\002-menu-close.bmp",
+      "bytes": 4915254,
+      "sha256": "53cbae1d60c297d4afddb9964858fd585afe77629a6d109891222cdf1b6ca7d6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\002-menu-close.bmp.crop.png",
+      "bytes": 62302,
+      "sha256": "e5118312f5841f382594301c1d53db0c6ab8e103180b78f4664a3104754b106d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\003-menu-close.bmp",
+      "bytes": 4915254,
+      "sha256": "53cbae1d60c297d4afddb9964858fd585afe77629a6d109891222cdf1b6ca7d6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\003-menu-close.bmp.crop.png",
+      "bytes": 62302,
+      "sha256": "e5118312f5841f382594301c1d53db0c6ab8e103180b78f4664a3104754b106d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\004-menu-close.bmp",
+      "bytes": 4915254,
+      "sha256": "53cbae1d60c297d4afddb9964858fd585afe77629a6d109891222cdf1b6ca7d6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\004-menu-close.bmp.crop.png",
+      "bytes": 62302,
+      "sha256": "e5118312f5841f382594301c1d53db0c6ab8e103180b78f4664a3104754b106d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\005-menu-close.bmp",
+      "bytes": 4915254,
+      "sha256": "53cbae1d60c297d4afddb9964858fd585afe77629a6d109891222cdf1b6ca7d6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\005-menu-close.bmp.crop.png",
+      "bytes": 62302,
+      "sha256": "e5118312f5841f382594301c1d53db0c6ab8e103180b78f4664a3104754b106d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\006-menu-close.bmp",
+      "bytes": 4915254,
+      "sha256": "53cbae1d60c297d4afddb9964858fd585afe77629a6d109891222cdf1b6ca7d6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\006-menu-close.bmp.crop.png",
+      "bytes": 62302,
+      "sha256": "e5118312f5841f382594301c1d53db0c6ab8e103180b78f4664a3104754b106d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\007-menu-close.bmp",
+      "bytes": 4915254,
+      "sha256": "53cbae1d60c297d4afddb9964858fd585afe77629a6d109891222cdf1b6ca7d6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\007-menu-close.bmp.crop.png",
+      "bytes": 62302,
+      "sha256": "e5118312f5841f382594301c1d53db0c6ab8e103180b78f4664a3104754b106d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\008-menu-close.bmp",
+      "bytes": 4915254,
+      "sha256": "53cbae1d60c297d4afddb9964858fd585afe77629a6d109891222cdf1b6ca7d6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\008-menu-close.bmp.crop.png",
+      "bytes": 62302,
+      "sha256": "e5118312f5841f382594301c1d53db0c6ab8e103180b78f4664a3104754b106d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\009-menu-close.bmp",
+      "bytes": 4915254,
+      "sha256": "53cbae1d60c297d4afddb9964858fd585afe77629a6d109891222cdf1b6ca7d6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\009-menu-close.bmp.crop.png",
+      "bytes": 62302,
+      "sha256": "e5118312f5841f382594301c1d53db0c6ab8e103180b78f4664a3104754b106d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\010-menu-close.bmp",
+      "bytes": 4915254,
+      "sha256": "53cbae1d60c297d4afddb9964858fd585afe77629a6d109891222cdf1b6ca7d6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\010-menu-close.bmp.crop.png",
+      "bytes": 62302,
+      "sha256": "e5118312f5841f382594301c1d53db0c6ab8e103180b78f4664a3104754b106d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\011-menu-close.bmp",
+      "bytes": 4915254,
+      "sha256": "53cbae1d60c297d4afddb9964858fd585afe77629a6d109891222cdf1b6ca7d6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\011-menu-close.bmp.crop.png",
+      "bytes": 62302,
+      "sha256": "e5118312f5841f382594301c1d53db0c6ab8e103180b78f4664a3104754b106d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\012-menu-close.bmp",
+      "bytes": 4915254,
+      "sha256": "53cbae1d60c297d4afddb9964858fd585afe77629a6d109891222cdf1b6ca7d6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\012-menu-close.bmp.crop.png",
+      "bytes": 62302,
+      "sha256": "e5118312f5841f382594301c1d53db0c6ab8e103180b78f4664a3104754b106d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\013-menu-close.bmp",
+      "bytes": 4915254,
+      "sha256": "4b537f4eaf6792242d25856ded7c9b78a9eba0f6eedb27cd770d817165503963"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\013-menu-close.bmp.crop.png",
+      "bytes": 62302,
+      "sha256": "e5118312f5841f382594301c1d53db0c6ab8e103180b78f4664a3104754b106d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\014-menu-close.bmp",
+      "bytes": 4915254,
+      "sha256": "53cbae1d60c297d4afddb9964858fd585afe77629a6d109891222cdf1b6ca7d6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\014-menu-close.bmp.crop.png",
+      "bytes": 62302,
+      "sha256": "e5118312f5841f382594301c1d53db0c6ab8e103180b78f4664a3104754b106d"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\015-menu-close-failure.bmp",
+      "bytes": 4915254,
+      "sha256": "53cbae1d60c297d4afddb9964858fd585afe77629a6d109891222cdf1b6ca7d6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\events.jsonl",
+      "bytes": 4271,
+      "sha256": "1b14618ae8caf0a121ac3333fbbe4aaaac5216136be529c10f2e697b73177a90"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\manifest.json",
+      "bytes": 2906,
+      "sha256": "6a5c20c3c9af2ab1f247c5d6906fd8e7c2af2d201ed9845d4a4bcb851a7c0228"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-02\\result.json",
+      "bytes": 1135,
+      "sha256": "1dc557f15a69f4fc00bb36aa9fc0dd32d9a8a3fd7af919bb4d4dde41b6fb68be"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final\\001-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final\\002-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final\\003-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final\\004-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final\\005-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final\\006-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final\\007-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final\\008-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final\\009-menu-open-failure.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final\\events.jsonl",
+      "bytes": 4647,
+      "sha256": "52dca8dec89fd479a73487b4f8817b3776b2f34cf0af471448611af20e609f62"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final\\manifest.json",
+      "bytes": 1014,
+      "sha256": "bfa92f169b8853d1fb66dff09d7fc96a528af81f827126071d99f98131eadfe2"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final\\result.json",
+      "bytes": 1216,
+      "sha256": "ffae3b3403282bc6dc60d30932fcdf594b8687a98335813740142aa9ddd80c8a"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final-pass\\001-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "90363aef15e5ee3387b123f0480390dd911641b651af90f93bb4183806633e56"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final-pass\\002-menu-close.bmp",
+      "bytes": 4915254,
+      "sha256": "bbc520857a84d506bd7a3a56c729fc5e92d7a6d2a186bce98fa89a4362fde6ab"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final-pass\\events.jsonl",
+      "bytes": 2222,
+      "sha256": "f9882939a17495b6b878e6a4c59327dc26768d38e4dbbe607bfab16cb4337003"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final-pass\\manifest.json",
+      "bytes": 363,
+      "sha256": "574c0622b80104054fd44f21da25ccd55284bb1e81638ea92a0d8c944ea24842"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-final-pass\\result.json",
+      "bytes": 1058,
+      "sha256": "397def7c5ea65d1ad5385cd936b8a6eaf5b6df30176f76f7758b19980fb82957"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-verified\\001-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-verified\\002-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-verified\\003-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-verified\\004-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-verified\\005-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-verified\\006-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-verified\\007-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-verified\\008-menu-open.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-verified\\009-menu-open-failure.bmp",
+      "bytes": 4915254,
+      "sha256": "fea013a76a9dac44eebf70652945227cf475deefb47a5d08bdb7c9fdcc123cad"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-verified\\events.jsonl",
+      "bytes": 4648,
+      "sha256": "02e05f0e6b7ae78a6b00d5235a078dd2e26b27fb68744ab4fd925f62480fc12c"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-verified\\manifest.json",
+      "bytes": 1014,
+      "sha256": "43bf741c113450eca8682fbd692451c0a7a9448e299f61204637c4c76d22ad26"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\menu-verified\\result.json",
+      "bytes": 1218,
+      "sha256": "8cf7d4b5a2f1f82d2e7f8786588d47ec4ff44af3172a317cf185acde4b155715"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\native-card-01\\001-checkpoint-before-card.bmp",
+      "bytes": 4915254,
+      "sha256": "b2ee901e58fc9528ec0c599d07386ab9aa37c0c885147fb8788b6c4f5a1bce9b"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\native-card-01\\002-select-marine.bmp",
+      "bytes": 4915254,
+      "sha256": "bd77bac985255386491291b8be39fbc5378c23ed42d82b31fe6608b37509935f"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\native-card-01\\003-select-marine.bmp",
+      "bytes": 4915254,
+      "sha256": "964bd3cafcfab00ef21cf94e611adae0cf197e2272b0bd1b1b1f17d5e8d59e01"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\native-card-01\\004-Q-native-hotkey.bmp",
+      "bytes": 4915254,
+      "sha256": "c7cce1cb4ebeb1bcbae7c1f686eede8fa689f0d3aa7f31f7831e1cfb568ea6cf"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\native-card-01\\005-Q-native-hotkey.bmp",
+      "bytes": 4915254,
+      "sha256": "c7cce1cb4ebeb1bcbae7c1f686eede8fa689f0d3aa7f31f7831e1cfb568ea6cf"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\native-card-01\\events.jsonl",
+      "bytes": 4879,
+      "sha256": "b1f92fa62dfb1e2936fa19097ef4dba6984f1681b023ee126b4038cd69ce3fdf"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\native-card-01\\manifest.json",
+      "bytes": 671,
+      "sha256": "c4d27a9b7f4e5eb6680c14871a015356864b24c1785e41c62bdb746406edc120"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\native-card-01\\result.json",
+      "bytes": 1681,
+      "sha256": "8afd5fda7038b4fa633dc9a49a66d7cd881a6450f75a153c4f06d5026e332a3c"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-01\\001-checkpoint-initial.bmp",
+      "bytes": 4915254,
+      "sha256": "605f199f921914856ca3721dad6b6ccf69de44e98774dfe55aaa0747795abdcc"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-01\\002-native-guard.bmp",
+      "bytes": 4915254,
+      "sha256": "1efe1f14e9bf7f9c76ce6b75e9c95ba7086c22917c1927301299f590420be9b2"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-01\\003-native-guard.bmp",
+      "bytes": 4915254,
+      "sha256": "aaeecb232abc9457c8e57d253d88a05fcd6d056035d7199ba9aa2be557b64ac4"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-01\\003-native-guard.bmp.crop.png",
+      "bytes": 422762,
+      "sha256": "a10bb88e91c6231c41fc7f0968a898909e3a686ba6371bd76bd5bd7bc3ff45d0"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-01\\004-native-guard.bmp",
+      "bytes": 4915254,
+      "sha256": "39276b69a5018586167ee9be095b6c8233327a96a1d8a7e3361edef55b2fe091"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-01\\005-native-guard.bmp",
+      "bytes": 4915254,
+      "sha256": "026367a26dbb9cad37261829621b49e135eeb9c7bfaa71754db558adc67b804a"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-01\\006-native-guard.bmp",
+      "bytes": 4915254,
+      "sha256": "026367a26dbb9cad37261829621b49e135eeb9c7bfaa71754db558adc67b804a"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-01\\007-native-guard.bmp",
+      "bytes": 4915254,
+      "sha256": "026367a26dbb9cad37261829621b49e135eeb9c7bfaa71754db558adc67b804a"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-01\\008-native-guard.bmp",
+      "bytes": 4915254,
+      "sha256": "026367a26dbb9cad37261829621b49e135eeb9c7bfaa71754db558adc67b804a"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-01\\009-native-guard-failure.bmp",
+      "bytes": 4915254,
+      "sha256": "026367a26dbb9cad37261829621b49e135eeb9c7bfaa71754db558adc67b804a"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-01\\events.jsonl",
+      "bytes": 7544,
+      "sha256": "a9f43bf7529da4fcab1eadf00e0f1f68abbff4a731f238ee93f306de6bcb6f76"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-01\\manifest.json",
+      "bytes": 1047,
+      "sha256": "6b9b8999fe11d1fd74fc3a94bf824fe84b8412508101623599b5a33cbe931b00"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-01\\result.json",
+      "bytes": 3604,
+      "sha256": "6dba18941233ec81f2999ea652940acfa79294931788906bc4c33a127b56093c"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-02\\001-checkpoint-initial.bmp",
+      "bytes": 4915254,
+      "sha256": "1f3f33965aefbe0a5448a47d84cc021c04063018acc38793a333844bdc36e2d0"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-02\\002-checkpoint-initial-failure.bmp",
+      "bytes": 4915254,
+      "sha256": "1f3f33965aefbe0a5448a47d84cc021c04063018acc38793a333844bdc36e2d0"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-02\\events.jsonl",
+      "bytes": 3590,
+      "sha256": "1aca9936fc08996c55e79d96bfd91883dad72a141ef418b1b26c2ca404dcf0f3"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-02\\manifest.json",
+      "bytes": 388,
+      "sha256": "90365753d69f641eb6ab552e8d50b0b849f528a41625caab594f5ffc9ec5b1e2"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-02\\result.json",
+      "bytes": 3648,
+      "sha256": "060496fb0bf1d3ec17410551919d96dbe727bf7602dc78380ba17d196451a2e9"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\001-checkpoint-initial.bmp",
+      "bytes": 4915254,
+      "sha256": "d8603510d7bd0be74cd31070425dd4c9055abe3b44093ec0135bb1dd9111da5e"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\001-checkpoint-initial.bmp.crop.png",
+      "bytes": 379469,
+      "sha256": "52b7176aee0f2ca6c4683d824da64e7449a2f7f34d4455f0b880d03533ddaf28"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\002-native-guard.bmp",
+      "bytes": 4915254,
+      "sha256": "552f2eb220c18b93998e4a23853e80f15a2c189e682b27994c458d262acd3072"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\002-native-guard.bmp.crop.png",
+      "bytes": 421428,
+      "sha256": "684e7115738730aa059a2f92668b7849f1de19a476c0fcde0d4dd51992a7dcfa"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\003-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "c731549133550cf87fc775d0d30f9dad4cca2c6fbe324efea95eaa07f0a57e28"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\003-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 436121,
+      "sha256": "4ea07a7a0f941943a7c4508f5e1934d9e2f8e7c6356fd5cedc0ac7a4191a95fc"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\004-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "c731549133550cf87fc775d0d30f9dad4cca2c6fbe324efea95eaa07f0a57e28"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\004-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 436121,
+      "sha256": "4ea07a7a0f941943a7c4508f5e1934d9e2f8e7c6356fd5cedc0ac7a4191a95fc"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\005-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "b77cb022d30630d07fa067b01caf99a4fc8c8e1025ceddacd2d9212e0d326532"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\005-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 411764,
+      "sha256": "902b2e254934d63b436dc21f1ee0b37101091218d314ca98f07e81e297210e88"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\006-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "4334cdf19bb806b83205f8fe70bd41f65c0fbc5b9f473e22438770d8a203c3e7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\006-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 411561,
+      "sha256": "3c3b7fd7f06803183307e558b97e5522ba29854d98c6dfc5c38003e4658aa056"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\007-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "4334cdf19bb806b83205f8fe70bd41f65c0fbc5b9f473e22438770d8a203c3e7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\007-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 411561,
+      "sha256": "3c3b7fd7f06803183307e558b97e5522ba29854d98c6dfc5c38003e4658aa056"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\008-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "7a69f24188c1d3697947e5f9dbb4b6342e691dc1d49f09cf3bc1327495ca50fa"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\008-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 398040,
+      "sha256": "0af1ec336a81103d29169082275267aef4fe1152619104340a3618488d21fd6a"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\009-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "bf255903edaf2cc07ec575403ccd0176f5068d89f66108d032f6c07d5e4f4321"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\009-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 398291,
+      "sha256": "9c5c014c1e662ff690a373e6cb8f4d62a7ea64185e56a27f1b7a1d0fbd87d542"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\010-Q-diagnostic-key-failure.bmp",
+      "bytes": 4915254,
+      "sha256": "bf255903edaf2cc07ec575403ccd0176f5068d89f66108d032f6c07d5e4f4321"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\events.jsonl",
+      "bytes": 8914,
+      "sha256": "cf09d797e5630bd46d00d9bc7f2bb8911fb89bada0113dece03717e904ac70ba"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\manifest.json",
+      "bytes": 2144,
+      "sha256": "916489fec20c9314bdeb6703e541f3f9dae0fa67d64db4fc787992fe37241721"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-03\\result.json",
+      "bytes": 3545,
+      "sha256": "4b20b8226cf0875b05780480be6fbbb5f5202f68ebecaebe7384569c5e4defdd"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\001-checkpoint-initial.bmp",
+      "bytes": 4915254,
+      "sha256": "77faa2019d7a48e1b13ba23156eb709475ca2252cc2ed596518118904fded4a6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\001-checkpoint-initial.bmp.crop.png",
+      "bytes": 380677,
+      "sha256": "e5d751a04611068ad101d518e2b5f83359c50ee25712b144ecd6fdea7a6501cb"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\002-native-guard.bmp",
+      "bytes": 4915254,
+      "sha256": "df274c4dadc273de0674695570e563574e717457b4b532858cde804ac5a93fdb"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\002-native-guard.bmp.crop.png",
+      "bytes": 422504,
+      "sha256": "ab66087e324a0ae34ea179d40da5dd74cf045590253858f1c2005b6bd20267e4"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\003-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "a2c18ee65be359747ac017dfa28870b29f4d1ba60646577a69e2d2563e734791"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\003-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 437196,
+      "sha256": "e45cefbdce4494d9643bbae602e8838bd9e3fea5c96ca33cc4268e0942fcf774"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\004-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "a2c18ee65be359747ac017dfa28870b29f4d1ba60646577a69e2d2563e734791"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\004-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 437196,
+      "sha256": "e45cefbdce4494d9643bbae602e8838bd9e3fea5c96ca33cc4268e0942fcf774"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\005-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "0102347b2778393ebad77ef26df1250980fabe5780d1e8fb87b1ecd20123abc8"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\005-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 412827,
+      "sha256": "82f814b27cd50783bf617f1c37951eef8159626069dc3a60e190d590a2a77821"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\006-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "0102347b2778393ebad77ef26df1250980fabe5780d1e8fb87b1ecd20123abc8"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\006-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 412827,
+      "sha256": "82f814b27cd50783bf617f1c37951eef8159626069dc3a60e190d590a2a77821"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\007-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "0102347b2778393ebad77ef26df1250980fabe5780d1e8fb87b1ecd20123abc8"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\007-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 412827,
+      "sha256": "82f814b27cd50783bf617f1c37951eef8159626069dc3a60e190d590a2a77821"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\008-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "318fbece7b648bf2bcdc759ac310729a5e4cb747ff4ad0e7b371dd6b80923d34"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\008-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 399359,
+      "sha256": "3425e97ad5d18438f6659b49717b1ce6769e2dc79ff4be9621657b7a81500b3a"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\009-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "318fbece7b648bf2bcdc759ac310729a5e4cb747ff4ad0e7b371dd6b80923d34"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\009-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 399359,
+      "sha256": "3425e97ad5d18438f6659b49717b1ce6769e2dc79ff4be9621657b7a81500b3a"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\010-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "318fbece7b648bf2bcdc759ac310729a5e4cb747ff4ad0e7b371dd6b80923d34"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\010-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 399359,
+      "sha256": "3425e97ad5d18438f6659b49717b1ce6769e2dc79ff4be9621657b7a81500b3a"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\011-Q-diagnostic-key.bmp",
+      "bytes": 4915254,
+      "sha256": "2870fe7d15caa2a917eaf7a1fd24f640b9c828736db73ad21fc8a388d2671ebe"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\011-Q-diagnostic-key.bmp.crop.png",
+      "bytes": 411686,
+      "sha256": "ea9354eb43dbd7bad2811a9503ab48f43fa37490cfa76be04c0e49e30ab65e5e"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\012-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "789c5a6eff6448a9c4477a38d9714bf1afbfd06c75a78aaa1fddf14dd776d9c3"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\012-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 372540,
+      "sha256": "1fa48c11de09096ea55604eec9a5bccfc6add4784541825ea33459cc6b0b62dc"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\013-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "789c5a6eff6448a9c4477a38d9714bf1afbfd06c75a78aaa1fddf14dd776d9c3"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\013-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 372540,
+      "sha256": "1fa48c11de09096ea55604eec9a5bccfc6add4784541825ea33459cc6b0b62dc"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\014-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "789c5a6eff6448a9c4477a38d9714bf1afbfd06c75a78aaa1fddf14dd776d9c3"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\014-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 372540,
+      "sha256": "1fa48c11de09096ea55604eec9a5bccfc6add4784541825ea33459cc6b0b62dc"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\015-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "bfa8839722811ac1aa251af882a6ed57b05de2869ba30818fa3d4edc74466dd2"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\015-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 372910,
+      "sha256": "31fa092a387b447ed8c560ec3daa6a5cf3d38d63384cacf2e32782bbb20e1024"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\016-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "5bb95bc9d2ab847221f141861a86c3e171567c2b79701fbde45d49d9087b8d6f"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\016-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 363523,
+      "sha256": "47c670860182b52ac87cdd38e7791ba11321f9d683d0664d749c6e84fd61b5ff"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\017-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "5f843a132deb655bc34d0e9f051a92780df15bd7f6630d5370fbd7d2aa1e0edf"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\017-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 363716,
+      "sha256": "17230c641f080e087b026c9a9390cb68b8aeb4909a38377c27c10c86b9136971"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\018-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "f223d175a439801fefa729ad535ff9557575468e7cb40aedd05d38da48738fc7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\018-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 358050,
+      "sha256": "a453e36af17aefbd64a1f259a1ce83fc8815d8722dbf3dc1da94611563009fb6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\019-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "f223d175a439801fefa729ad535ff9557575468e7cb40aedd05d38da48738fc7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\019-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 358050,
+      "sha256": "a453e36af17aefbd64a1f259a1ce83fc8815d8722dbf3dc1da94611563009fb6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\020-W-diagnostic-consumption.bmp",
+      "bytes": 4915254,
+      "sha256": "f223d175a439801fefa729ad535ff9557575468e7cb40aedd05d38da48738fc7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\020-W-diagnostic-consumption.bmp.crop.png",
+      "bytes": 358050,
+      "sha256": "a453e36af17aefbd64a1f259a1ce83fc8815d8722dbf3dc1da94611563009fb6"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\021-W-diagnostic-consumption-failure.bmp",
+      "bytes": 4915254,
+      "sha256": "f223d175a439801fefa729ad535ff9557575468e7cb40aedd05d38da48738fc7"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\events.jsonl",
+      "bytes": 13509,
+      "sha256": "c1f804d85be2e091a81fe8b90da0dcd66f7df055fb44b881ac93cab842dc9971"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\manifest.json",
+      "bytes": 4573,
+      "sha256": "aaed9b8cb6b1a160d87e52a061738d0972f32fdadbe92fccf828eeb23465ea00"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\ui02-04\\result.json",
+      "bytes": 3499,
+      "sha256": "424e50e532d6265c7c43b750e3118de3d4c721f1923532bedc9e95db15a8ba6a"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\20261104-164337-lifecycle\\source_snapshot\\ocr.ps1",
+      "bytes": 3505,
+      "sha256": "0b31735bd624cf6956ad442933777b9b0ac68cad5f07a190de7e664bdcb0eeba"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\20261104-164337-lifecycle\\source_snapshot\\runner.py",
+      "bytes": 9719,
+      "sha256": "2f38c798fa97ceddfcac9bed0dd7cefe01687bbc6439ef2b219daa963cb999e8"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\20261104-164337-lifecycle\\source_snapshot\\scenario.json",
+      "bytes": 921,
+      "sha256": "95a68503da9f70144bb5e33c0e3850cde9de0f86e9b0390d4e11e034d612c847"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\20261104-164337-lifecycle\\source_snapshot\\vision.py",
+      "bytes": 1748,
+      "sha256": "105a532eb97489d3a9f0ab638862601e49af472e30ac9ac4f9010ee5261ed561"
+    },
+    {
+      "path": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\runs\\20261104-164337-lifecycle\\source_snapshot\\win32_host.py",
+      "bytes": 13974,
+      "sha256": "0f2f404a46ba81883c8a5d88a9901bce81f7c23a5491dd26f82a5436fd02b1ba"
+    }
+  ]
+}

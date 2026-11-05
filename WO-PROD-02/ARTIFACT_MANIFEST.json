@@ -1,0 +1,206 @@
+{
+  "baseline": "c49752898df8d31570aa86dcd21b7af6efd50d67",
+  "live": "NOT RUN",
+  "files": [
+    {
+      "file": "src/campaign/terrain.mjs",
+      "bytes": 6124,
+      "sha256": "1a4603f1d6dbf033fe4fb87d53c3d6e63741c1750486f3966e8b88bdd4b009e6"
+    },
+    {
+      "file": "src/m01/campaign-transfer.mjs",
+      "bytes": 3932,
+      "sha256": "2f7fe20783a3deadc32031d7d772406dec4ea95a029356e7e717155f22ef76ad"
+    },
+    {
+      "file": "src/m01/content.json",
+      "bytes": 8061,
+      "sha256": "d9e5c36e8ab20cd521b165b5846b1c5e9074584a4bf19626b2b6645f1a1edde4"
+    },
+    {
+      "file": "src/m01/layout.mjs",
+      "bytes": 5133,
+      "sha256": "4098669d3fd4cbd42820e81c7559d3cc9e0acc8ba4d4f71cf9d39dc55ab462ca"
+    },
+    {
+      "file": "src/m01/main.ts",
+      "bytes": 24396,
+      "sha256": "6f1817576a919bd45c3ceee710513262bcf6cb522f0e99dbad07b0ec3670364e"
+    },
+    {
+      "file": "src/m02/content.json",
+      "bytes": 6763,
+      "sha256": "0ebab1c5040e34a22c6efc966715495b484f0d5ce73d0fbae6eaa44fee9b92f1"
+    },
+    {
+      "file": "src/m02/layout.mjs",
+      "bytes": 3365,
+      "sha256": "8c72bb7c96f1ac954f58af270fe4776704756365c2aa7f235705e1e7e21690d5"
+    },
+    {
+      "file": "src/m02/main.ts",
+      "bytes": 14102,
+      "sha256": "197b6bb1037ee4f7f5cc5b42d03f28969f4516c0125c0495f923f5c5d8343280"
+    },
+    {
+      "file": "src/m02/transfer.mjs",
+      "bytes": 2736,
+      "sha256": "94eff8e6c1eb4433aa719a315bac4b3e81eb4debf23f6667aaeef92056cb950d"
+    },
+    {
+      "file": "tests/m01-prod02.append.ts",
+      "bytes": 1095,
+      "sha256": "6c4ca18f0931de1d23347163ad0f8350dd9d211d96f8f42943715f3c7f51b203"
+    },
+    {
+      "file": "tests/m01.test.ts",
+      "bytes": 11855,
+      "sha256": "c6cac11e9c30dda31ea818baa2ddfea8e755142880a2dbe9068161dd8452adcf"
+    },
+    {
+      "file": "tests/m02.test.ts",
+      "bytes": 9737,
+      "sha256": "b6fa3e7a7065384363d717e0112763fb731430fe458e899bae12cf0c9844b43c"
+    },
+    {
+      "file": "tests/production-transfer.test.mjs",
+      "bytes": 3443,
+      "sha256": "1f53b71b2e0ee5046916a68b28799a3b349be3bd84d90016e0cb58cd875a157a"
+    },
+    {
+      "file": "tools/build-production.mjs",
+      "bytes": 15921,
+      "sha256": "7bbbbc61f8ef0ee3e86358881a2bfee92c7e4c487bd91ac4fca198547ba6ffad"
+    },
+    {
+      "file": "tools/production-code.mjs",
+      "bytes": 484,
+      "sha256": "46178c9f4c4299459aa4a1e2e784010c37124bbe1c9a063439044d49e9127558"
+    },
+    {
+      "file": "tools/verify-production.py",
+      "bytes": 2624,
+      "sha256": "b158abac386a61b4108a5914050d6de6f0db23bbd95c5f3bd5d02587548b840a"
+    },
+    {
+      "file": "WO-PROD-02/baseline/M01.runtime.ts",
+      "bytes": 23682,
+      "sha256": "e380ee7b241c51bbc33b01dbbef1eaf7bf4d260c38d62d3c3add9d8162b4cc08"
+    },
+    {
+      "file": "WO-PROD-02/DIFF.patch",
+      "bytes": 6021,
+      "sha256": "9d649d9cc080c7803baee1bea34670b690616ce7ebe13f8112ef16a6ba564b04"
+    },
+    {
+      "file": "WO-PROD-02/FINAL_REPORT.md",
+      "bytes": 9139,
+      "sha256": "d37ab8ae2452326b79db8c4f6522df3c9d30bcb452f56ef48b6bf393b387c773"
+    },
+    {
+      "file": "WO-PROD-02/generated/M01_NORTH_RIDGE.ts",
+      "bytes": 35085,
+      "sha256": "df6c192f5ff035b4817c402d27eb966994e4e42ff423f6cce97d81d927ce489d"
+    },
+    {
+      "file": "WO-PROD-02/generated/M02_CARRY_7877e9b59f.ts",
+      "bytes": 21305,
+      "sha256": "40e89d0900b7af6496f1a9705ade0fb6034affedb9ab434f0d7418f9819b20cd"
+    },
+    {
+      "file": "WO-PROD-02/generated/M02_ISOLATED_FRONT.ts",
+      "bytes": 21298,
+      "sha256": "b269873214607500cba59358f63ba0ea40c7f2015f051d100eceec71d806d4ff"
+    },
+    {
+      "file": "WO-PROD-02/maps/M01_NORTH_RIDGE.scx",
+      "bytes": 666621,
+      "sha256": "623598884471e2af5052254bccbea45642c450aab53b2acdac46d433309a812b"
+    },
+    {
+      "file": "WO-PROD-02/maps/M01_NORTH_RIDGE_SOURCE.scx",
+      "bytes": 116954,
+      "sha256": "cca65a28131121cf4a568fa9a8132d8efad8d2f52d8af705bb51260b67725208"
+    },
+    {
+      "file": "WO-PROD-02/maps/M02_CARRY_7877e9b59f.scx",
+      "bytes": 443019,
+      "sha256": "9d3b08f02f4dd094db613e861238bc570ac871ad1d268c1373f97b54ffe680b7"
+    },
+    {
+      "file": "WO-PROD-02/maps/M02_CARRY_7877e9b59f_SOURCE.scx",
+      "bytes": 132769,
+      "sha256": "cf37b36c04593b7ad402504c742131af9c8980f770d38df2743175b05eb4ce05"
+    },
+    {
+      "file": "WO-PROD-02/maps/M02_ISOLATED_FRONT.scx",
+      "bytes": 443740,
+      "sha256": "847e75da4a0eeb1c8c3c387d534531147ed3862f69b777347b03f990874deef7"
+    },
+    {
+      "file": "WO-PROD-02/maps/M02_ISOLATED_FRONT_SOURCE.scx",
+      "bytes": 132418,
+      "sha256": "17c0f1e1ccd025730c8d724e4c990d39c2e348d06d4bd36e646470a9f5dbb031"
+    },
+    {
+      "file": "WO-PROD-02/reports/baseline.log",
+      "bytes": 703,
+      "sha256": "785af083c4deb22c6dd5d67b10aa4c1bdbfc1638a1c79f48b37a113723c3bc84"
+    },
+    {
+      "file": "WO-PROD-02/reports/build.log",
+      "bytes": 691,
+      "sha256": "e011a6ec13b0d8c5a1d66ca0963b5467fb4458b61ff72e60d721a2c38c4527b4"
+    },
+    {
+      "file": "WO-PROD-02/reports/M01_NORTH_RIDGE.json",
+      "bytes": 10359,
+      "sha256": "34e997e9e7e270b54d3ccdbb1ac33ab364cc11ec0fd55e19d10bdd3bdd4fd453"
+    },
+    {
+      "file": "WO-PROD-02/reports/M02_CARRY_7877e9b59f.json",
+      "bytes": 8581,
+      "sha256": "9d42843a28a6c76af03049cc23510784e75d5f7be7d567d2734c57c70465276b"
+    },
+    {
+      "file": "WO-PROD-02/reports/M02_ISOLATED_FRONT.json",
+      "bytes": 8568,
+      "sha256": "f86d210d5d356008ced0631d3f3ba55b2b373782937220f79383434b3a5982b6"
+    },
+    {
+      "file": "WO-PROD-02/reports/rollback-copy.ts",
+      "bytes": 23682,
+      "sha256": "e380ee7b241c51bbc33b01dbbef1eaf7bf4d260c38d62d3c3add9d8162b4cc08"
+    },
+    {
+      "file": "WO-PROD-02/reports/rollback.log",
+      "bytes": 59,
+      "sha256": "a141d4ebb71ea88263561f6d54d490bbf740a26b508aa15002a388d0ea076500"
+    },
+    {
+      "file": "WO-PROD-02/reports/transfer.log",
+      "bytes": 1371,
+      "sha256": "14f7ff12cd1644d0d81ee529fea2f730d440f08224242006fd6ae620802d5b71"
+    },
+    {
+      "file": "WO-PROD-02/restore-copy.py",
+      "bytes": 997,
+      "sha256": "dc46388d28480bcd840d999ea9f74acaf5749ecbe39024be2d9a02d94a43139a"
+    },
+    {
+      "file": "WO-PROD-02/ROLLBACK.ps1",
+      "bytes": 139,
+      "sha256": "c4a4bb908ab77f4219085b153f9cb0efd80da83b838e290404868795e7bd583e"
+    },
+    {
+      "file": "WO-PROD-02/ROLLBACK.sh",
+      "bytes": 129,
+      "sha256": "47f40f48eb62688f15da085d98f0a035db2112b29d02ee76a2d568eee9fa7e9d"
+    },
+    {
+      "file": "WO-PROD-02/VERIFICATION.txt",
+      "bytes": 3651,
+      "sha256": "93dbdc38cb462e6b62242385c38a9d145ca0b2f464eb34a1f12663c58570e0db"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "file": "LIVE_RESOURCE_UI_SCREENSHOTS/01_initial_3_2.jpg",
+    "sha256": "6c7d1c902bd294c04c521b78434d037f8c003dd2b71886cea52e9bc8cb835904",
+    "bytes": 313601,
+    "width": 2048,
+    "height": 1152,
+    "source": "Computer Use sky.get_window_state; original returned screenshot bytes"
+  },
+  {
+    "file": "LIVE_RESOURCE_UI_SCREENSHOTS/02_w_completed_2_2.jpg",
+    "sha256": "157de0da7cb3bfab98a4ab34836c1967f8be3d11ead795ec3d9637fe38e4e4ea",
+    "bytes": 294222,
+    "width": 2048,
+    "height": 1152,
+    "source": "Computer Use sky.get_window_state; original returned screenshot bytes"
+  },
+  {
+    "file": "LIVE_RESOURCE_UI_SCREENSHOTS/03_r_installed_2_1.jpg",
+    "sha256": "5faffb0ef7831b127fbb23bbca8670eb7a791b1bbf73713bb0e4a8e67a0c3fae",
+    "bytes": 297881,
+    "width": 2048,
+    "height": 1152,
+    "source": "Computer Use sky.get_window_state; original returned screenshot bytes"
+  },
+  {
+    "file": "LIVE_RESOURCE_UI_SCREENSHOTS/04_checkpoint_transition_stale_text.jpg",
+    "sha256": "ccb225712e4f56a030476935ec1b2e051633185465661ca8975f75fc1f608c70",
+    "bytes": 296642,
+    "width": 2048,
+    "height": 1152,
+    "source": "Computer Use sky.get_window_state; original returned screenshot bytes"
+  },
+  {
+    "file": "LIVE_RESOURCE_UI_SCREENSHOTS/05_r_two_installations_3_0.jpg",
+    "sha256": "9352227757b656723e74bc2a7280f7b4ae43b21990e28a263d7166f3994b3313",
+    "bytes": 295890,
+    "width": 2048,
+    "height": 1152,
+    "source": "Computer Use sky.get_window_state; original returned screenshot bytes"
+  },
+  {
+    "file": "LIVE_RESOURCE_UI_SCREENSHOTS/06_r_empty_blocked_3_0.jpg",
+    "sha256": "928d69e02eebe62d693003c19b3c92e06e0c56d8bff82e08c87479e3113a496a",
+    "bytes": 292553,
+    "width": 2048,
+    "height": 1152,
+    "source": "Computer Use sky.get_window_state; original returned screenshot bytes"
+  },
+  {
+    "file": "LIVE_RESOURCE_UI_SCREENSHOTS/07_rts_500_250_text_flicker.jpg",
+    "sha256": "8a496e80e9fd9e4110d6326df73dfcf92bc65ef62a647c4a2fe1445f483c733f",
+    "bytes": 296504,
+    "width": 2048,
+    "height": 1152,
+    "source": "Computer Use sky.get_window_state; original returned screenshot bytes"
+  }
+]

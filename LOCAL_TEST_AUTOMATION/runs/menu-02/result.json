@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "scenario": "menu-roundtrip",
+  "started_utc": "2026-11-04T16:20:38.520046+00:00",
+  "cases": [
+    {
+      "id": "menu-open",
+      "started_utc": "2026-11-04T16:20:38.523887+00:00",
+      "status": "PASS",
+      "ended_utc": "2026-11-04T16:20:40.400382+00:00",
+      "elapsed_s": 1.8765
+    },
+    {
+      "id": "menu-close",
+      "started_utc": "2026-11-04T16:20:40.401062+00:00",
+      "status": "FAIL",
+      "reason": "State assertion timed out: ['3', '2']",
+      "ended_utc": "2026-11-04T16:20:46.760203+00:00",
+      "elapsed_s": 6.3591
+    }
+  ],
+  "scope": "Actual visible states only. Input delivery is not functional PASS.",
+  "ai_tool_calls": 1,
+  "ai_decisions_inside_run": 0,
+  "retries": 0,
+  "ended_utc": "2026-11-04T16:20:46.838782+00:00",
+  "elapsed_s": 8.3188,
+  "captures": 15,
+  "inputs": 2,
+  "input_delivery_failures": 0,
+  "timing": {
+    "capture_s": 0.9056340999668464,
+    "ocr_s": 2.6099979000282474,
+    "input_s": 0.3616509999264963
+  },
+  "counts": {
+    "PASS": 1,
+    "FAIL": 1,
+    "SKIP": 0,
+    "NOT RUN": 0
+  },
+  "status": "FAIL"
+}

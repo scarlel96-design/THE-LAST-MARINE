@@ -1,0 +1,48 @@
+WO-PROD-01 / PARTIAL
+Branch: codex/wo-prod-01
+Implementation commit: b1e1d2f18da0f51517eaa02c64e629445375f65c
+Changed branch/field: M01 phase 0 -> 15; actor arrival records; inventory journal; CampaignTransfer schemaVersion=1.
+MODIFIED_FILE=<USERPROFILE>\Documents\Codex\2026-11-03\starcraft-the-last-marine-v1-0-2\outputs\The-Last-Marine\src\m01\main.ts
+DIFF_FILE=<USERPROFILE>\Documents\Codex\2026-11-03\starcraft-the-last-marine-v1-0-2\outputs\The-Last-Marine\WO-PROD-01\DIFF.patch
+VERIFICATION=<USERPROFILE>\Documents\Codex\2026-11-03\starcraft-the-last-marine-v1-0-2\outputs\The-Last-Marine\WO-PROD-01\VERIFICATION.txt
+ROLLBACK=<USERPROFILE>\Documents\Codex\2026-11-03\starcraft-the-last-marine-v1-0-2\outputs\The-Last-Marine\WO-PROD-01\ROLLBACK.sh
+Original SHA256=93f98bc452e2fed63afee5bb3be79aaf648b4add176fea71d89a8d94aae76795
+Modified template SHA256=e380ee7b241c51bbc33b01dbbef1eaf7bf4d260c38d62d3c3add9d8162b4cc08
+Generated runtime SHA256=7cb09aae641ff0350309ba1e606c5d0a3d629f96882a391b0e0ed8c47ace8010
+SCX SHA256=93c14b2fdd8a2a1a8c814a0e31ff7c6109aa8a90c0f7b88e070669345d188deb
+Working directory for the exact commands below: <USERPROFILE>\Documents\Codex\2026-11-03\starcraft-the-last-marine-v1-0-2
+
+BASELINE
+Command: python -X utf8 outputs/The-Last-Marine/tools/verify-m01-preservation.py
+Input: existing source, UI probe map, runner files, baseline copy; no game process input.
+Literal output: BASELINE: 9 protected files unchanged
+Exit status: 0
+
+MODIFIED
+Command: node outputs/The-Last-Marine/tools/build-m01.mjs > outputs/The-Last-Marine/WO-PROD-01/reports/build.log 2>&1
+Input: src/m01/main.ts, content.json, layout.mjs, tests/m01.test.ts; existing scmJS/TrigScript.
+Literal output:
+M01 SOURCE: 29 PASS / 0 FAIL
+M01 BUILD: 192x192; 143 units; 72 finite enemies; 555269 bytes; 77 trigger records
+M01 STRUCTURE: briefing, sections, hero, finite budget, 12 blockout routes PASS; LIVE GAME NOT RUN
+Exit status: 0
+Command: node --test outputs/The-Last-Marine/tests/m01-transfer.test.mjs
+Input: tests/m01-transfer.test.mjs and src/m01/campaign-transfer.mjs.
+Literal result: tests 8; pass 8; fail 0; cancelled 0; skipped 0; todo 0.
+Exit status: 0
+
+ROLLBACK
+Preparation: copy MODIFIED_FILE to WO-PROD-01/reports/rollback-copy.ts.
+Command: & 'C:/Program Files/Git/bin/bash.exe' outputs/The-Last-Marine/WO-PROD-01/ROLLBACK.sh '<USERPROFILE>/Documents/Codex/2026-11-03/starcraft-the-last-marine-v1-0-2/outputs/The-Last-Marine/WO-PROD-01/reports/rollback-copy.ts'
+Input: disposable rollback-copy.ts; preserved original baseline/WO-PROD-01/main.ts.
+Literal output: ROLLBACK: original bytes restored; production source retained
+Exit status: 0
+Restored status: disposable copy SHA256 equals original SHA256; active M01 source remains modified.
+Restored behavior: original source bytes restored on the disposable copy. Restored game behavior: NOT RUN.
+Earlier rollback attempt: Git Bash named-object access returned 0xC0000022, exit 1.
+Second attempt: Get-FileHash was absent from the child PowerShell environment, exit 1.
+Correction: use .NET hashing and file copy. The same shell wrapper then returned exit 0.
+
+LIVE GAME: NOT RUN. No launcher, game window input, installed-map deployment, or client modification was used.
+The simulator does not move units, calculate combat, render UI, play audio, or validate engine pathfinding.
+No live compatibility or release GO is claimed.

@@ -1,0 +1,11 @@
+{
+  "001-game-main-menu.bmp": "7d5c2142956dbc6a715057e20806948a676795d6ef2e6970a9e9d1114f276d0a",
+  "002-game-main-menu.bmp": "7d5c2142956dbc6a715057e20806948a676795d6ef2e6970a9e9d1114f276d0a",
+  "events.jsonl": "613288724ba4ce93ce0dcabea22a4542eeda36cdc25b14680122bc3b8802cd1e",
+  "result.json": "c5e0c26df9429f29bab6eb17432cf3e5fed72f529df1dc55df41cce862167870",
+  "source_snapshot\\ocr.ps1": "0b31735bd624cf6956ad442933777b9b0ac68cad5f07a190de7e664bdcb0eeba",
+  "source_snapshot\\runner.py": "2f38c798fa97ceddfcac9bed0dd7cefe01687bbc6439ef2b219daa963cb999e8",
+  "source_snapshot\\scenario.json": "95a68503da9f70144bb5e33c0e3850cde9de0f86e9b0390d4e11e034d612c847",
+  "source_snapshot\\vision.py": "105a532eb97489d3a9f0ab638862601e49af472e30ac9ac4f9010ee5261ed561",
+  "source_snapshot\\win32_host.py": "0f2f404a46ba81883c8a5d88a9901bce81f7c23a5491dd26f82a5436fd02b1ba"
+}

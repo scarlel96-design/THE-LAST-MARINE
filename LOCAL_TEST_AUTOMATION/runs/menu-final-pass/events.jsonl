@@ -1,0 +1,12 @@
+{"time": "2026-11-04T16:36:45.324696+00:00", "case": "menu-open", "op": "key", "request": {"op": "key", "key": "F10"}}
+{"time": "2026-11-04T16:36:45.504694+00:00", "case": "menu-open", "op": "wait", "request": {"op": "wait", "visual": {"rect": [0.29, 0.065, 0.42, 0.59], "blue_min": 0.8, "nonblack_min": 0.8}, "timeout": 6}}
+{"time": "2026-11-04T16:36:45.569848+00:00", "case": "menu-open", "op": "observation", "file": "001-menu-open.bmp", "ocr": null}
+{"time": "2026-11-04T16:36:45.604135+00:00", "case": "menu-open", "op": "visual_metrics", "value": {"blue_fraction": 0.9602292768959436, "nonblack_fraction": 0.9995002939447384}}
+{"time": "2026-11-04T16:36:45.605094+00:00", "case": "menu-open", "op": "assertion", "status": "PASS", "expect": {"rect": [0.29, 0.065, 0.42, 0.59], "blue_min": 0.8, "nonblack_min": 0.8}, "elapsed_s": 0.09845690004294738, "observations": 1}
+{"time": "2026-11-04T16:36:45.606177+00:00", "case": "menu-open", "op": "case_result", "started_utc": "2026-11-04T16:36:45.324637+00:00", "status": "PASS", "ended_utc": "2026-11-04T16:36:45.606125+00:00", "elapsed_s": 0.2815}
+{"time": "2026-11-04T16:36:45.607157+00:00", "case": "menu-close", "op": "key", "request": {"op": "key", "key": "ESC"}}
+{"time": "2026-11-04T16:36:45.783177+00:00", "case": "menu-close", "op": "wait", "request": {"op": "wait", "visual": {"rect": [0.29, 0.065, 0.42, 0.59], "blue_max": 0.03, "nonblack_min": 0.8}, "timeout": 6}}
+{"time": "2026-11-04T16:36:45.842864+00:00", "case": "menu-close", "op": "observation", "file": "002-menu-close.bmp", "ocr": null}
+{"time": "2026-11-04T16:36:45.867159+00:00", "case": "menu-close", "op": "visual_metrics", "value": {"blue_fraction": 0.011346266901822458, "nonblack_fraction": 0.9994121105232217}}
+{"time": "2026-11-04T16:36:45.868590+00:00", "case": "menu-close", "op": "assertion", "status": "PASS", "expect": {"rect": [0.29, 0.065, 0.42, 0.59], "blue_max": 0.03, "nonblack_min": 0.8}, "elapsed_s": 0.0837226000148803, "observations": 1}
+{"time": "2026-11-04T16:36:45.869631+00:00", "case": "menu-close", "op": "case_result", "started_utc": "2026-11-04T16:36:45.607093+00:00", "status": "PASS", "ended_utc": "2026-11-04T16:36:45.869588+00:00", "elapsed_s": 0.2625}

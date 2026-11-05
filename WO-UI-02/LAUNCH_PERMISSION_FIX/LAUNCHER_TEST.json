@@ -1,0 +1,25 @@
+{
+  "launcher": {
+    "status": "STARTED",
+    "pids": [
+      4956
+    ],
+    "executable": "C:\\Program Files (x86)\\StarCraft\\x86_64\\StarCraft.exe",
+    "arguments": "-launch",
+    "useShellExecute": false,
+    "elevationVerb": null,
+    "uiValidation": "NOT RUN"
+  },
+  "exitStatus": 0,
+  "beforeConsentIds": [
+    27152
+  ],
+  "afterConsentIds": [
+    27152
+  ],
+  "newConsentIds": [],
+  "executableHashBefore": "CE3AB05DC9A6AA35418947E5D95E19651AD6FBCD5E2C1856CD729C5B7C31281C",
+  "executableHashAfter": "CE3AB05DC9A6AA35418947E5D95E19651AD6FBCD5E2C1856CD729C5B7C31281C",
+  "oldPidAbsent": true,
+  "firstAttempt": "Exit-race guard rejected an unreadable terminating process; exit 1. Retried after confirming process absence."
+}

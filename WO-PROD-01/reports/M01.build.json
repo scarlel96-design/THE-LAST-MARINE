@@ -1,0 +1,150 @@
+{
+  "status": "BUILT AND REOPENED",
+  "liveGame": "NOT RUN — WO-PROD-01 prohibits game execution and input automation",
+  "mapPath": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\WO-PROD-01\\maps\\M01_THE_LAST_SURVIVOR.scx",
+  "mapSha256": "93c14b2fdd8a2a1a8c814a0e31ff7c6109aa8a90c0f7b88e070669345d188deb",
+  "bytes": 555269,
+  "sourceSha256": "7cb09aae641ff0350309ba1e606c5d0a3d629f96882a391b0e0ed8c47ace8010",
+  "templateSha256": "e380ee7b241c51bbc33b01dbbef1eaf7bf4d260c38d62d3c3add9d8162b4cc08",
+  "contentSha256": "9b3482c287c5cf841c1273dc3db2cddc751a7883a9c2f115376b1ef486ae8089",
+  "dimensions": [
+    192,
+    192
+  ],
+  "placedUnits": 143,
+  "enemyCount": 72,
+  "encounterBudget": {
+    "outer": 18,
+    "inner": 20,
+    "depot": 14,
+    "survival": 20,
+    "total": 72
+  },
+  "briefingRecords": 1,
+  "briefingActions": 17,
+  "triggerRecords": 77,
+  "terrain": "Authored building-and-road blockout on passable Badlands dirt. Finished terrain art is incomplete. Engine pathfinding is NOT RUN.",
+  "archivedMembersVerified": 6,
+  "radioLines": 45,
+  "forceFlags": [
+    14,
+    10,
+    0,
+    0
+  ],
+  "blockoutRoutes": [
+    {
+      "from": "Barracks",
+      "to": "Armory",
+      "connected": true
+    },
+    {
+      "from": "Armory",
+      "to": "Outpost",
+      "connected": true
+    },
+    {
+      "from": "Outpost",
+      "to": "Outer",
+      "connected": true
+    },
+    {
+      "from": "Outer",
+      "to": "Inner",
+      "connected": true
+    },
+    {
+      "from": "Inner",
+      "to": "Soldiers",
+      "connected": true
+    },
+    {
+      "from": "Soldiers",
+      "to": "Evac",
+      "connected": true
+    },
+    {
+      "from": "Workshop",
+      "to": "Shelter",
+      "connected": true
+    },
+    {
+      "from": "Shelter",
+      "to": "Medical",
+      "connected": true
+    },
+    {
+      "from": "Medical",
+      "to": "Settlement",
+      "connected": true
+    },
+    {
+      "from": "Settlement",
+      "to": "Relay",
+      "connected": true
+    },
+    {
+      "from": "Relay",
+      "to": "Supply",
+      "connected": true
+    },
+    {
+      "from": "Supply",
+      "to": "Exit",
+      "connected": true
+    }
+  ],
+  "compilerStats": {
+    "runs": 1,
+    "runNames": [
+      "program 1 as P1"
+    ],
+    "graphTriggers": 18279,
+    "payloadBytes": 4418044,
+    "address": 421096716,
+    "mapTriggers": 0,
+    "mapTriggerCopies": 0,
+    "hyperTriggersLeftOut": 0,
+    "mapTriggersUnlisted": 0,
+    "startUpTriggers": 77,
+    "input": {
+      "keys": 13,
+      "mouse": false,
+      "syncs": 0,
+      "carrier": 58,
+      "ring": 6,
+      "rings": 1,
+      "humans": [
+        0
+      ],
+      "cuwp": 1,
+      "bits": 24
+    },
+    "stringsBefore": 51,
+    "stringsAfter": 136,
+    "players": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "entries": [
+      425468124,
+      425468252,
+      425468380,
+      425468852,
+      425469348,
+      425469476,
+      425469604,
+      425470460
+    ],
+    "stringsBytes": 10564
+  },
+  "compilerWarnings": [],
+  "toolchain": "Existing scmJS and TrigScript. No native-UI compiler adapter or client patch.",
+  "inputPolicy": "No game launcher, Computer Use, OS input, local live runner, or installed-map deployment was invoked."
+}

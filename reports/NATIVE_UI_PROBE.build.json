@@ -1,0 +1,64 @@
+{
+  "evidence": {
+    "sourcePath": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\src\\native-ui\\main.ts",
+    "sourceSha256": "f1ab2fdd94fcb265c4621d3ad7d949905205d0cee96e9cf95735868e180f50fe",
+    "testsSha256": "74f5511122db0116c795e5d6086ea5c82bcde893339a4c961d43a171c2a655a6",
+    "builderSha256": "eca29156e0a5436d87b66a1a0f75e9d545fb37ac79874609aa7126e8bb0e1046",
+    "validationScope": "Simulator state checks use F7/F8. Native clicks, Q/W hotkeys, and top UI require live validation."
+  },
+  "compiledSourceSha256": "f1ab2fdd94fcb265c4621d3ad7d949905205d0cee96e9cf95735868e180f50fe",
+  "mapSha256": "809daf00164bf8f7319d9303473a421aa25278f94a3b4f4e726d330e05b6c038",
+  "stats": {
+    "runs": 1,
+    "runNames": [
+      "program 1 as P1"
+    ],
+    "graphTriggers": 16021,
+    "payloadBytes": 3301519,
+    "address": 421091296,
+    "mapTriggers": 0,
+    "mapTriggerCopies": 0,
+    "hyperTriggersLeftOut": 0,
+    "mapTriggersUnlisted": 0,
+    "startUpTriggers": 67,
+    "input": {
+      "keys": 9,
+      "mouse": false,
+      "syncs": 0,
+      "carrier": 58,
+      "ring": 6,
+      "rings": 1,
+      "humans": [
+        0
+      ],
+      "cuwp": 1,
+      "bits": 20
+    },
+    "stringsBefore": 14,
+    "stringsAfter": 63,
+    "players": [
+      0,
+      1,
+      2
+    ],
+    "entries": [
+      424360736,
+      424360876,
+      424361016
+    ],
+    "stringsBytes": 5141
+  },
+  "lines": [
+    "1 placed unit with a figure's flag at odds with the figure: made to agree (UNIT)",
+    "input: 9 keys, 0 sync slots; carriers of type 58, 6 a ring, 1 rings, for players 1; unit-properties slot 1; 20 bits a value",
+    "1 run (program 1 as P1), 16021 triggers of the programs, payload 3301519 bytes at 0x191957e0, 0 triggers of the map's own (0 copies), start-up 67 triggers, 49 strings added"
+  ],
+  "warnings": [],
+  "bytes": 494967,
+  "readBack": {
+    "width": 64,
+    "height": 64,
+    "units": 2,
+    "triggers": 67
+  }
+}

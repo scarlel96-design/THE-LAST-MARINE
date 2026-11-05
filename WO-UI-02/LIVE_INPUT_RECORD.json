@@ -1,0 +1,69 @@
+{
+  "scope": "Historical actions reconstructed from observed tool calls before pause; not a raw input recorder.",
+  "client": "1.23.10.13515 / koKR / x86_64",
+  "live_map_sha256": "609b2cbcd731972dadd85b765308e6706514ede24f781524397904207e337357",
+  "actions": [
+    {
+      "input": "select hero, including double-click",
+      "observed": "Additional lower command card buttons displayed."
+    },
+    {
+      "input": "W button click; later five clicks",
+      "observed": "HP remained 30/40; top resources remained 3/2; no W cast notice observed."
+    },
+    {
+      "input": "W key repeated four times",
+      "observed": "Healing start and resource consumption were not observed."
+    },
+    {
+      "input": "V key repeated four times",
+      "observed": "NATIVE DIAG count=1539 first=3080 ptr=421021280 offsets=true tail=true ready=false"
+    }
+  ],
+  "input_latency_measurement": "NOT RUN",
+  "single_press_reliability": "UNVERIFIED",
+  "after_user_pause": "Testing resumed by user. See resume_session for current attempts.",
+  "resume_session": {
+    "target_window": 31462364,
+    "map_sha256": "809daf00164bf8f7319d9303473a421aa25278f94a3b4f4e726d330e05b6c038",
+    "actions": [
+      {
+        "input": "cua.getApp / getAXStateAndScreenshot",
+        "observed": "TLM_Phase1 map list. No map selected."
+      },
+      {
+        "input": "gameApp.click([603,429])",
+        "observed": "No map selected; details pane remains empty. Tool returned without error."
+      },
+      {
+        "input": "performSecondaryAction(0,'Raise'); pressKey('Down'); pressKey('Down')",
+        "observed": "Selection unchanged. Tool returned without error."
+      },
+      {
+        "input": "Rebind window; double-click [600,428]",
+        "observed": "Selection unchanged."
+      },
+      {
+        "input": "pressKey('alt+Return')",
+        "observed": "No visible mode change."
+      },
+      {
+        "input": "click(0); pressKey('Tab'); pressKey('Down')",
+        "observed": "Selection unchanged."
+      },
+      {
+        "input": "Reset cua_repl; rebind; double-click [602,428]; pressKey('Return')",
+        "observed": "Selection unchanged. Capture 06 saved."
+      }
+    ],
+    "cause": "Observed HIGH game versus MEDIUM helpers; UIAccess false for all. UIPI input blocking is the supported explanation. A successful equal-integrity comparison has NOT RUN.",
+    "feature_verdict": "NOT RUN; automation result does not establish a native skill failure.",
+    "evidence": [
+      "LIVE_UI_SCREENSHOTS/04_resume_map_selection.png",
+      "LIVE_UI_SCREENSHOTS/05_after_selection_inputs.png",
+      "LIVE_UI_SCREENSHOTS/06_after_reconnect.png"
+    ],
+    "diagnostics_file": "PROCESS_INPUT_DIAGNOSTICS.json",
+    "next_environment_condition": "Run the game at standard-user integrity, then verify input before feature checks."
+  }
+}

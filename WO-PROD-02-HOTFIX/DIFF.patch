@@ -1,0 +1,155 @@
+diff --git a/src/m01/main.ts b/src/m01/main.ts
+index c5d2845..0e0a1b2 100644
+--- a/src/m01/main.ts
++++ b/src/m01/main.ts
+@@ -2 +2 @@ import { program, first, unitsOf, countUnits as count, bring, createUnit, moveUn
+-  centerView, print, keyPressed, nextFrame, stats, units, upgrades, orders, playWav,
++  centerView, select, print, keyPressed, nextFrame, stats, units, upgrades, orders, playWav,
+@@ -17,2 +16,0 @@ program(async () => {
+-  let cameraOwner = 0;
+-  let cameraUntil = 0;
+@@ -110 +108 @@ program(async () => {
+-    print("Q/F7 방어 자세 | W/F8 긴급 지혈 | G 조사·구조 | U 소총·B 전투복 개량 | I 기록 | F9 복원");
++    print("Q/F7 방어 | W/F8 지혈 | G 조사 | U/B 개량 | I 기록 | J 해병 위치·선택 | F9 복원");
+@@ -123 +120,0 @@ program(async () => {
+-    cameraOwner=0; cameraUntil=0;
+@@ -141 +137,0 @@ program(async () => {
+-    if (hero) { hero.locate(locations.Focus); centerView(locations.Focus); }
+@@ -144,6 +140,5 @@ program(async () => {
+-  function shot(id:number) {
+-    if (cameraOwner==0) {
+-      cameraOwner=id; cameraUntil=now()+SECOND;
+-      if (id==1) centerView(locations.Outer);
+-      if (id==2) centerView(locations.Crash);
+-      if (id==3) centerView(locations.Ammo);
++  function focusHero() {
++    if (hero) {
++      select(P1,hero);
++      hero.locate(locations.Focus);
++      centerView(locations.Focus);
+@@ -183 +178 @@ program(async () => {
+-      advance(10,3); centerView(locations.Medical);
++      advance(10,3);
+@@ -200 +195,2 @@ program(async () => {
+-  save(); centerView(locations.Barracks);
++  if (hero) select(P1,hero);
++  save();
+@@ -222,4 +218 @@ program(async () => {
+-    if (cameraOwner>0 && (frame>=cameraUntil || interact || qPress || wPress)) {
+-      if (hero) { hero.locate(locations.Focus); centerView(locations.Focus); }
+-      cameraOwner=0;
+-    }
++    if (keyPressed(P1,"J")) focusHero();
+@@ -274 +267 @@ program(async () => {
+-      if (phase==0) { sceneState=1; radio(1); radio(2); setMissionObjectives("M01 마지막 생존자\n무기고 표식에서 G로 장비 확인. I로 현장 기록 확인."); if (wren) wren.order("patrol",locations.Workshop); }
++      if (phase==0) { sceneState=1; radio(1); radio(2); setMissionObjectives("M01 마지막 생존자\n무기고 표식에서 G. J: 해병 선택·위치 찾기. I: 현장 기록."); if (wren) wren.order("patrol",locations.Workshop); }
+@@ -303 +296 @@ program(async () => {
+-          shot(1); advance(3,1);
++          advance(3,1);
+@@ -327 +320 @@ program(async () => {
+-          dropshipCrashed=true; playWav("staredit\\wav\\tlm-blast.wav",750); shot(2); advance(7,2);
++          dropshipCrashed=true; playWav("staredit\\wav\\tlm-blast.wav",750); advance(7,2);
+@@ -333 +326 @@ program(async () => {
+-          ammoExploded=true; playWav("staredit\\wav\\tlm-blast.wav",750); shot(3); advance(8,2);
++          ammoExploded=true; playWav("staredit\\wav\\tlm-blast.wav",750); advance(8,2);
+diff --git a/tests/m01-prod02.append.ts b/tests/m01-prod02.append.ts
+index 2a2de6b..c3a5b60 100644
+--- a/tests/m01-prod02.append.ts
++++ b/tests/m01-prod02.append.ts
+@@ -19 +19,2 @@ test('M01 reports actor death without granting rescue credit',sim=>{
+-test('M01 field interaction releases the event camera early',sim=>{
++test('M01 opening, breach, skip and recovery never recenter the camera automatically',sim=>{
++ sim.frames(6).moveCamera(300,480);
+@@ -21,3 +22,16 @@ test('M01 field interaction releases the event camera early',sim=>{
+- expect(sim.program('m01').cameraOwner).toBe(1);
+- sim.press('G').frames(3);
+- expect(sim.program('m01').cameraOwner).toBe(0);
++ sim.press('Escape').frames(3).press('F9').frames(3);
++ expect(sim.program('m01').phase).toBe(10);
++ expect(sim.events.filter(e=>e.text.startsWith('Center View'))).toHaveLength(0);
++});
++test('M01 J focuses once and leaves the mission state unchanged',sim=>{
++ sim.frames(5).moveCamera(300,480).press('J').frames(40);
++ expect(sim.events.filter(e=>e.text.startsWith('Center View'))).toHaveLength(1);
++ expect(sim.program('m01').phase).toBe(0);
++ expect(sim.count(0,20)).toBe(1);
++});
++test('M01 opening has one human hero and the command buildings belong to the garrison',sim=>{
++ sim.frames(8);
++ expect(sim.count(0,20,locations.Barracks)).toBe(1);
++ expect(sim.count(2,106,locations.Barracks)).toBe(1);
++ expect(sim.count(2,111,locations.Barracks)).toBe(1);
++ expect(sim.count(1,37,locations.Barracks)).toBe(0);
+diff --git a/tools/build-production.mjs b/tools/build-production.mjs
+index 7edc376..06fc5af 100644
+--- a/tools/build-production.mjs
++++ b/tools/build-production.mjs
+@@ -10,0 +11 @@ import {resolveM02} from '../src/m02/transfer.mjs';
++import {openingAlliances,auditOpening} from '../src/campaign/opening-check.mjs';
+@@ -15 +16,3 @@ const options=args.filter((_,i)=>codeAt<0||(i!==codeAt&&i!==codeAt+1));
+-if((codeAt>=0&&!args[codeAt+1])||options.some(a=>!['--terrain-only','--m02-only','--m01-only','--carry-example'].includes(a))||
++const openingFix=options.includes('--opening-fix');
++if((codeAt>=0&&!args[codeAt+1])||options.some(a=>!['--terrain-only','--m02-only','--m01-only','--carry-example','--opening-fix'].includes(a))||
++   (openingFix&&!options.includes('--m01-only'))||
+@@ -17 +20 @@ if((codeAt>=0&&!args[codeAt+1])||options.some(a=>!['--terrain-only','--m02-only'
+-   (codeAt>=0&&options.includes('--carry-example')))throw Error('Usage: build-production.mjs [--m01-only|--m02-only] [--terrain-only] [--carry-example|--code CODE]');
++   (codeAt>=0&&options.includes('--carry-example')))throw Error('Usage: build-production.mjs [--m01-only|--m02-only] [--terrain-only] [--carry-example|--code CODE] [--opening-fix with --m01-only]');
+@@ -25 +28 @@ const editor=join(workspace,'work/scm-js'),plugin=join(workspace,'work/plugin-tr
+-const out=join(root,'WO-PROD-02');
++const out=join(root,openingFix?'WO-PROD-02-HOTFIX':'WO-PROD-02');
+@@ -54 +57,3 @@ const {makeUnit}=await load(join(editor,'src/editor/units.ts'));
+-const {emptyTrigger,emptyCondition,emptyAction,BriefingActionType:BA,ConditionType:CT}=await load(join(editor,'src/formats/chk/sections/triggers.ts'));
++const triggerApi=await load(join(editor,'src/formats/chk/sections/triggers.ts'));
++const {emptyTrigger,emptyCondition,emptyAction,BriefingActionType:BA,ConditionType:CT,encodeTriggers}=triggerApi;
++const {Sections}=await load(join(plugin,'compiler/backend/chk.ts'));
+@@ -79,2 +84,2 @@ function makeScenario(layout,brushes,mission,label,start){
+- const scn=createScenario({width,height,era:0,name:'THE LAST MARINE — '+data.mission+' '+data.title+(start?.carried?' (계승)':''),
+-  description:'WO-PROD-02 / Use Map Settings / Fastest. G 조사, I 기록. 게임 검증 NOT RUN.',...fill});
++ const scn=createScenario({width,height,era:0,name:'THE LAST MARINE — '+data.mission+' '+data.title+(openingFix?' (시작 수정판)':start?.carried?' (계승)':''),
++  description:openingFix?'Use Map Settings. 시작 수정판. G 조사, J 해병 선택·위치 찾기.':'WO-PROD-02 / Use Map Settings / Fastest. G 조사, I 기록. 게임 검증 NOT RUN.',...fill});
+@@ -166,0 +172,23 @@ async function build(mission,label,layout,brushes,start){
++ const prefix=openingFix?openingAlliances(triggerApi):[];
++ let playChk=built.chk,sourceChk=chk,controlChk;
++ if(openingFix){
++  const play=new Sections(built.chk),boot=play.all('TRIG');
++  const native=encodeTriggers(prefix);
++  // Prepend only. The compiler boot sequence still owns the last native trigger.
++  play.set('TRIG',Buffer.concat([native,boot]));
++  assert.deepEqual(Buffer.from(play.all('TRIG').subarray(native.length)),Buffer.from(boot));
++  playChk=play.bytes();
++  const originalSourceTriggers=scn.triggers;
++  scn.triggers=[...prefix,...originalSourceTriggers];
++  sourceChk=serializeScenario(scn);
++  const control=parseScenario(sourceChk);
++  const message=emptyTrigger();
++  message.players[0]=1;message.conditions.push({...emptyCondition(),type:CT.Always});
++  message.actions.push({...emptyAction(),type:triggerApi.ActionType.DisplayText,flags:4,text:internString(control,'조작 점검용 맵. 해병 선택과 화면 스크롤만 확인하세요. 임무 트리거와 단축키는 없습니다.')});
++  control.triggers=[...prefix,message];
++  const {markDirty}=await load(join(editor,'src/formats/chk/scenario.ts'));
++  control.nameIndex=internString(control,'TLM M01 — 조작 점검용');
++  markDirty(control,'SPRP');
++  markDirty(control,'TRIG');
++  controlChk=serializeScenario(control);
++ }
+@@ -178,3 +206,4 @@ async function build(mission,label,layout,brushes,start){
+- for(const [kind,raw] of [['SOURCE',chk],['PLAY',built.chk]]){
+-  const name=kind==='SOURCE'?label+'_SOURCE.scx':label+'.scx',path=join(files.maps,name);
+-  const bytes=await saveMap(raw,{extras,compress:'pkware',listfile:true});
++ for(const [kind,raw] of [['SOURCE',sourceChk],['PLAY',playChk],...(controlChk?[['CONTROL',controlChk]]:[])]){
++  const name=kind==='SOURCE'?label+'_SOURCE.scx':kind==='CONTROL'?'M01_CONTROL_CHECK.scx':label+'.scx',path=join(files.maps,name);
++  const archivedExtras=kind==='CONTROL'?new Map():extras;
++  const bytes=await saveMap(raw,{extras:archivedExtras,compress:'pkware',listfile:true});
+@@ -183 +212 @@ async function build(mission,label,layout,brushes,start){
+-  for(const [member,expected] of extras)assert.equal(sha(members.extras.get(member)),sha(expected),member);
++  for(const [member,expected] of archivedExtras)assert.equal(sha(members.extras.get(member)),sha(expected),member);
+@@ -193,0 +223,5 @@ async function build(mission,label,layout,brushes,start){
++  if(openingFix){
++   const site=locations.find(z=>z.name==='Barracks');
++   report.opening=auditOpening(parsed,site,prefix,triggerApi);
++   if(kind==='CONTROL')assert.equal(parsed.triggers.length,9,'Control map must not contain EUD startup');
++  }
+@@ -205,0 +240 @@ async function build(mission,label,layout,brushes,start){
++ if(openingFix)console.log('OPENING: sole human P1; P1 hero; P3 barracks; 24 native ally stances; control map without EUD');
+@@ -207 +242 @@ async function build(mission,label,layout,brushes,start){
+-if(!options.includes('--m02-only'))await build('m01','M01_NORTH_RIDGE',m01,M01_BRUSHES);
++if(!options.includes('--m02-only'))await build('m01',openingFix?'M01_NORTH_RIDGE_START_FIX':'M01_NORTH_RIDGE',m01,M01_BRUSHES);

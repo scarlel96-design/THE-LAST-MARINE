@@ -1,0 +1,55 @@
+WO-PROD-02 / PARTIAL
+Branch: codex/wo-prod-02
+Baseline: c49752898df8d31570aa86dcd21b7af6efd50d67
+Implementation: 7c90a88a3bb6834c045fcc0b8dcbf5580e7d91d1
+Changed fields: M01 terrain, assault orders, death radio and camera timing; M02 phases 0–11 and failures 90–91; M03 handoff v1.
+MODIFIED_FILE=<USERPROFILE>/Documents/Codex/2026-11-03/starcraft-the-last-marine-v1-0-2/outputs/The-Last-Marine/src/m01/main.ts
+DIFF_FILE=<USERPROFILE>/Documents/Codex/2026-11-03/starcraft-the-last-marine-v1-0-2/outputs/The-Last-Marine/WO-PROD-02/DIFF.patch
+VERIFICATION=<USERPROFILE>/Documents/Codex/2026-11-03/starcraft-the-last-marine-v1-0-2/outputs/The-Last-Marine/WO-PROD-02/VERIFICATION.txt
+ROLLBACK=<USERPROFILE>/Documents/Codex/2026-11-03/starcraft-the-last-marine-v1-0-2/outputs/The-Last-Marine/WO-PROD-02/ROLLBACK.sh
+Original M01 SHA-256: e380ee7b241c51bbc33b01dbbef1eaf7bf4d260c38d62d3c3add9d8162b4cc08
+Modified M01 SHA-256: 6f1817576a919bd45c3ceee710513262bcf6cb522f0e99dbad07b0ec3670364e
+
+Commands below use working directory:
+<USERPROFILE>/Documents/Codex/2026-11-03/starcraft-the-last-marine-v1-0-2
+
+BASELINE
+Command: python -X utf8 outputs/The-Last-Marine/tools/verify-production.py --baseline
+Input: preserved M01 template, base commit and five protected paths.
+Literal output: BASELINE: M01 template hash and five protected paths match
+Exit status: 0
+Command: node --test outputs/The-Last-Marine/tests/m01-transfer.test.mjs
+Input: unchanged M01 v1 test vectors and codec.
+Literal result: tests 8; pass 8; fail 0.
+Exit status: 0
+
+MODIFIED
+Command: node outputs/The-Last-Marine/tools/build-production.mjs --carry-example > outputs/The-Last-Marine/WO-PROD-02/reports/build.log 2>&1
+Input: M01, M02 normal start and M02 code TLM1-2:21397:32431:46361:2412; local Badlands tables.
+Literal output:
+M01_NORTH_RIDGE TERRAIN: 2 elevation levels; 25 routes; 1317 restricted tiles
+M01_NORTH_RIDGE SOURCE: 32 PASS / 0 FAIL
+M01_NORTH_RIDGE BUILD: 192x192; 151 placed units; 666621 bytes; SCX and briefing reopened; LIVE NOT RUN
+M02_ISOLATED_FRONT TERRAIN: 2 elevation levels; 24 routes; 2396 restricted tiles
+M02_ISOLATED_FRONT SOURCE: 19 PASS / 0 FAIL
+M02_ISOLATED_FRONT BUILD: 224x224; 34 placed units; 443740 bytes; SCX and briefing reopened; LIVE NOT RUN
+M02_CARRY_7877e9b59f TERRAIN: 2 elevation levels; 24 routes; 2396 restricted tiles
+M02_CARRY_7877e9b59f SOURCE: 19 PASS / 0 FAIL
+M02_CARRY_7877e9b59f BUILD: 224x224; 34 placed units; 443019 bytes; SCX and briefing reopened; LIVE NOT RUN
+Exit status: 0
+Command: node --test outputs/The-Last-Marine/tests/m01-transfer.test.mjs outputs/The-Last-Marine/tests/production-transfer.test.mjs
+Input: v1 identity, carry, reserved and bad CLI codes, M03 valid and invalid records.
+Literal result: tests 17; pass 17; fail 0.
+Exit status: 0
+
+ROLLBACK
+Preparation: copy the modified M01 template to the disposable reports/rollback-copy.ts.
+Command: & "outputs/The-Last-Marine/WO-PROD-02/ROLLBACK.ps1" "outputs/The-Last-Marine/WO-PROD-02/reports/rollback-copy.ts"
+Input: disposable copy and preserved original M01 template.
+Literal output: ROLLBACK: M01 baseline SHA-256 restored in disposable copy
+Exit status: 0
+Restored status: original bytes and SHA-256 on the disposable copy. Active M01 remains modified. Original game behavior: NOT RUN.
+ROLLBACK.sh calls the same restore-copy.py and is tracked as executable. Git Bash startup on this host returned 0xC0000022; tested the PowerShell entry point.
+Whole-package baseline remains on codex/wo-prod-01; switch branches with a clean worktree to view it.
+
+LIVE GAME: NOT RUN. No game process launch, screen control, input automation or installed-map deployment.

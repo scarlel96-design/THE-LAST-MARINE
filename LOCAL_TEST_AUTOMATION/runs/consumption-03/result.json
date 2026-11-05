@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "scenario": "ui02-consumption",
+  "started_utc": "2026-11-04T16:36:45.940247+00:00",
+  "cases": [
+    {
+      "id": "checkpoint-initial",
+      "started_utc": "2026-11-04T16:36:45.941786+00:00",
+      "status": "PASS",
+      "ended_utc": "2026-11-04T16:36:47.878208+00:00",
+      "elapsed_s": 1.9364
+    },
+    {
+      "id": "W-diagnostic-consumption",
+      "started_utc": "2026-11-04T16:36:47.879309+00:00",
+      "status": "PASS",
+      "ended_utc": "2026-11-04T16:36:52.197508+00:00",
+      "elapsed_s": 4.3182
+    },
+    {
+      "id": "W-cooldown",
+      "started_utc": "2026-11-04T16:36:52.198340+00:00",
+      "status": "PASS",
+      "ended_utc": "2026-11-04T16:36:52.798504+00:00",
+      "elapsed_s": 0.6002
+    },
+    {
+      "id": "R-installation-consumption-only",
+      "started_utc": "2026-11-04T16:36:52.799151+00:00",
+      "status": "PASS",
+      "ended_utc": "2026-11-04T16:36:56.469644+00:00",
+      "elapsed_s": 3.6705
+    },
+    {
+      "id": "R-cooldown",
+      "started_utc": "2026-11-04T16:36:56.470215+00:00",
+      "status": "FAIL",
+      "reason": "State assertion timed out: ['R cooldown']",
+      "ended_utc": "2026-11-04T16:37:01.960714+00:00",
+      "elapsed_s": 5.4905
+    },
+    {
+      "id": "checkpoint-after-consumption",
+      "started_utc": "2026-11-04T16:37:01.961537+00:00",
+      "status": "NOT RUN",
+      "reason": "Earlier required state failed",
+      "ended_utc": "2026-11-04T16:37:01.961554+00:00",
+      "elapsed_s": 0.0
+    },
+    {
+      "id": "E",
+      "started_utc": "2026-11-04T16:37:01.962249+00:00",
+      "status": "SKIP",
+      "reason": "E is not implemented in this isolated map",
+      "ended_utc": "2026-11-04T16:37:01.962265+00:00",
+      "elapsed_s": 0.0
+    },
+    {
+      "id": "R-combat-effect",
+      "started_utc": "2026-11-04T16:37:01.962984+00:00",
+      "status": "SKIP",
+      "reason": "R implements installation consumption only",
+      "ended_utc": "2026-11-04T16:37:01.962998+00:00",
+      "elapsed_s": 0.0
+    },
+    {
+      "id": "mission-progression",
+      "started_utc": "2026-11-04T16:37:01.963623+00:00",
+      "status": "NOT RUN",
+      "reason": "This skill laboratory has no full mission start/end objectives",
+      "ended_utc": "2026-11-04T16:37:01.963635+00:00",
+      "elapsed_s": 0.0
+    }
+  ],
+  "scope": "Actual visible states only. Input delivery is not functional PASS.",
+  "ai_tool_calls": 1,
+  "ai_decisions_inside_run": 0,
+  "retries": 0,
+  "ended_utc": "2026-11-04T16:37:02.044702+00:00",
+  "elapsed_s": 16.1045,
+  "captures": 24,
+  "inputs": 6,
+  "input_delivery_failures": 0,
+  "timing": {
+    "capture_s": 1.420234199904371,
+    "ocr_s": 8.165318099898286,
+    "input_s": 1.0570672000176273
+  },
+  "counts": {
+    "PASS": 4,
+    "FAIL": 1,
+    "SKIP": 2,
+    "NOT RUN": 2
+  },
+  "status": "FAIL"
+}

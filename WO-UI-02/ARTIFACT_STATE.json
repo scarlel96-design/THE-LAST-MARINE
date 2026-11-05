@@ -1,0 +1,15 @@
+{
+  "source_sha256": "f1ab2fdd94fcb265c4621d3ad7d949905205d0cee96e9cf95735868e180f50fe",
+  "pre_pause_source_sha256": "7e6c15b3de23d6efa68bcfee03bc87c61c9ce0cceefde5140c0ee2a79bfb381b",
+  "existing_map_sha256": "809daf00164bf8f7319d9303473a421aa25278f94a3b4f4e726d330e05b6c038",
+  "existing_map_bytes": 494967,
+  "map_includes_current_source_edits": true,
+  "current_source_build": "PASS: SCX reopened",
+  "historical_report_directory": "PRE_PAUSE_EVIDENCE",
+  "initial_generator": "work/prepare_native_ui.py is obsolete. Do not regenerate the reviewed source with it.",
+  "current_simulator_tests": "36 PASS / 0 FAIL",
+  "rollback": "26 PASS / 0 FAIL; hash restored",
+  "current_live_features": "PARTIAL: native card selection, Q hotkey activation, diagnostic W/R consumption and F9 observed; native Q followed by ACCESS_VIOLATION",
+  "latest_evidence": "../LOCAL_TEST_AUTOMATION/FINAL_REPORT.md",
+  "native_candidate_release": "NO-GO pending native Q crash diagnosis"
+}

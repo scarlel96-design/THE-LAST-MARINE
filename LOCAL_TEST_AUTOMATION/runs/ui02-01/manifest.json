@@ -1,0 +1,13 @@
+{
+  "001-checkpoint-initial.bmp": "605f199f921914856ca3721dad6b6ccf69de44e98774dfe55aaa0747795abdcc",
+  "002-native-guard.bmp": "1efe1f14e9bf7f9c76ce6b75e9c95ba7086c22917c1927301299f590420be9b2",
+  "003-native-guard.bmp": "aaeecb232abc9457c8e57d253d88a05fcd6d056035d7199ba9aa2be557b64ac4",
+  "004-native-guard.bmp": "39276b69a5018586167ee9be095b6c8233327a96a1d8a7e3361edef55b2fe091",
+  "005-native-guard.bmp": "026367a26dbb9cad37261829621b49e135eeb9c7bfaa71754db558adc67b804a",
+  "006-native-guard.bmp": "026367a26dbb9cad37261829621b49e135eeb9c7bfaa71754db558adc67b804a",
+  "007-native-guard.bmp": "026367a26dbb9cad37261829621b49e135eeb9c7bfaa71754db558adc67b804a",
+  "008-native-guard.bmp": "026367a26dbb9cad37261829621b49e135eeb9c7bfaa71754db558adc67b804a",
+  "009-native-guard-failure.bmp": "026367a26dbb9cad37261829621b49e135eeb9c7bfaa71754db558adc67b804a",
+  "events.jsonl": "a9f43bf7529da4fcab1eadf00e0f1f68abbff4a731f238ee93f306de6bcb6f76",
+  "result.json": "6dba18941233ec81f2999ea652940acfa79294931788906bc4c33a127b56093c"
+}

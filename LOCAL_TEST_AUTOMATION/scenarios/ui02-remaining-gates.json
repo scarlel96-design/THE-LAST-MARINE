@@ -1,0 +1,17 @@
+{
+ "schema":1,"name":"ui02-remaining-gates","environment":"offline-local",
+ "cases":[
+  {"id":"Q-native-click","status":"NOT RUN","reason":"Stop after the native Q hotkey produced ACCESS_VIOLATION. Resolve the P0 before further native commands.","steps":[{"op":"click","xy":[0.889,0.957]},{"op":"wait","expect":["active","movement cancels"],"timeout":5}]},
+  {"id":"W-native-click","status":"NOT RUN","reason":"Native command path requires P0 review before execution","steps":[{"op":"click","xy":[0.963,0.957]},{"op":"wait","expect":["completed","k[il]ts=2"],"timeout":8}]},
+  {"id":"medical-name-top-ui","status":"NOT RUN","reason":"TBL ready=true does not prove the top resource name. Screen control was turned off before this check."},
+  {"id":"explosive-name-top-ui","status":"NOT RUN","reason":"Top UI binding and Korean legibility remain unverified"},
+  {"id":"W-interruption","status":"NOT RUN","reason":"Diagnostic healing passed. Movement interruption needs a separate visible-state assertion."},
+  {"id":"empty-inventory","status":"NOT RUN","reason":"No zero-inventory live sequence was executed in this package"},
+  {"id":"checkpoint-counts-after-consumption","status":"NOT RUN","reason":"Initial F9 reset passed. Final post-consumption gate stopped after OCR failure."},
+  {"id":"RTS-resource-separation","status":"NOT RUN","reason":"Preserved existing logic. Current live C transition was not executed."},
+  {"id":"selection-change-and-locks","status":"NOT RUN","reason":"Single-hero selection passed. Other selection and lock states remain unverified."},
+  {"id":"resolution-and-Korean-regression","status":"NOT RUN","reason":"Captured 2048x1152 full-screen and 1280x960 client views. This is not a complete layout regression."},
+  {"id":"E-combat","status":"SKIP","reason":"E is not implemented in the isolated map"},
+  {"id":"R-combat","status":"SKIP","reason":"R is an installation-consumption test, without combat damage"}
+ ]
+}

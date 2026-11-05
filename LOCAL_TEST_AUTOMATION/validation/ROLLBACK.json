@@ -1,0 +1,8 @@
+{
+  "command": "\"C:\\Program Files\\Git\\bin\\bash.exe\" --noprofile --norc <USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\outputs\\The-Last-Marine\\LOCAL_TEST_AUTOMATION\\ROLLBACK.sh <USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2\\work\\local-runner-rollback-copy",
+  "cwd": "<USERPROFILE>\\Documents\\Codex\\2026-11-03\\starcraft-the-last-marine-v1-0-2",
+  "input": "none",
+  "stdout": "ROLLBACK: verified runner copy removed; original project artifacts retained\n",
+  "stderr": "",
+  "exit_status": 0
+}

@@ -1,0 +1,698 @@
+--- a/src/poc/main.ts
++++ b/src/resource-ui/main.ts
+@@ -2 +2 @@
+-  print, keyPressed, nextFrame, stats, units, orders, playWav, P1, P2, P3, locations } from "trigscript";
++  print, keyPressed, nextFrame, stats, units, orders, playWav, P1, P2, P3, locations, setResources, ui } from "trigscript";
+@@ -6 +6 @@
+-const SKILL_LAB = false;
++const SKILL_LAB = true;
+@@ -19,0 +20,21 @@
++  let explosives = 2;
++  let rUntil = 0;
++  let rReady = 0;
++  let installed = 0;
++  let rX = 0;
++  let rY = 0;
++  let mode = 0;
++  let campaignKits = 0;
++  let campaignExplosives = 0;
++  let qLeft = 0;
++  let wLeft = 0;
++  let rLeft = 0;
++  let notice = "RESOURCE UI DIAGNOSTIC: icons unchanged; not an approved replacement";
++  function report(text: string) { notice = text; print(text); }
++  ui.lines(P1, () => `WO-UI-01 진단용 | 아이콘 미교체 | UI 승인 전
++응급처치 키트 [W/F8] : ${kits}개 | 치료 성공 시 1개 소비
++전술 폭약 [R/L] : ${explosives}개 | 설치 성공 시 1개 소비
++Q ${qLeft}s | W ${wLeft}s | R ${rLeft}s | 설치 ${installed}회
++F9: 체크포인트 | D: 체력 10 시험 | C: RTS 전환 시험
++${mode == 0 ? "생존 모드: 상단 수량은 진단용 복사본" : "지휘 모드: 미네랄/가스는 생산 자원"}
++${notice}`);
+@@ -39 +60 @@
+-  print("THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint");
++  report("THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint");
+@@ -46,0 +68,12 @@
++    const rPress = keyPressed(P1, "R") || keyPressed(P1, "L");
++    const damageProbe = keyPressed(P1, "D");
++    const commandProbe = keyPressed(P1, "C");
++    if (damageProbe && hero && mode == 0) { hero.hp = 10; report("TEST DAMAGE | HP=10"); }
++    if (commandProbe && mode == 0 && qUntil == 0 && wUntil == 0 && rUntil == 0) {
++      campaignKits = kits;
++      campaignExplosives = explosives;
++      mode = 1;
++      setResources(P1, "set", 500, "ore");
++      setResources(P1, "set", 250, "gas");
++      report("RTS | inventory snapshot kept; production resources=500/250");
++    }
+@@ -58 +91 @@
+-        print("HERO DOWN | checkpoint recovery in 3 seconds");
++        report("HERO DOWN | checkpoint recovery in 3 seconds");
+@@ -62,3 +95,9 @@
+-      if (hero) hero.remove();
+-      createUnit(P1, units.JimRaynorMarine, 1, locations.Safe);
+-      hero = first({ owner: P1, type: units.JimRaynorMarine });
++      // Reuse a live hero; acquire a newly created hero after the next frame.
++      if (hero) {
++        moveUnit(P1, units.JimRaynorMarine, 1, locations.Anywhere, locations.Safe);
++      } else {
++        createUnit(P1, units.JimRaynorMarine, 1, locations.Safe);
++        await nextFrame();
++        hero = first({ owner: P1, type: units.JimRaynorMarine });
++      }
++      centerView(locations.Safe);
+@@ -66,0 +106,4 @@
++      explosives = 2;
++      rUntil = 0;
++      rReady = 0;
++      installed = 0;
+@@ -74 +117 @@
+-      print("CHECKPOINT | canonical inventory and skill state restored");
++      report("CHECKPOINT | canonical inventory and skill state restored");
+@@ -80 +123 @@
+-        print("[00] CONTROL: Routine watch. Check the northern perimeter.");
++        report("[00] CONTROL: Routine watch. Check the northern perimeter.");
+@@ -84 +127 @@
+-        print("[15] OUTPOST: Movement beyond the wire... signal lost.");
++        report("[15] OUTPOST: Movement beyond the wire... signal lost.");
+@@ -89 +132 @@
+-        print("[30] CONTROL: Northern contact. Hold the bunker approach.");
++        report("[30] CONTROL: Northern contact. Hold the bunker approach.");
+@@ -95 +138 @@
+-          print("[45] CONTROL: The outer line is breached. Fall back south.");
++          report("[45] CONTROL: The outer line is breached. Fall back south.");
+@@ -105 +148 @@
+-        print("[65] ENGINEER: Relay hit. Ammunition storage is burning.");
++        report("[65] ENGINEER: Relay hit. Ammunition storage is burning.");
+@@ -114 +157 @@
+-          print("[80] CONTROL: Storage detonation. Take cover!");
++          report("[80] CONTROL: Storage detonation. Take cover!");
+@@ -145,2 +188,2 @@
+-        print(`SURVIVAL READY | scene=${sceneState} completions=${completed}`);
+-        print("Recover at the supply refuge. W/F8 is now unlocked.");
++        report(`SURVIVAL READY | scene=${sceneState} completions=${completed}`);
++        report("Recover at the supply refuge. W/F8 is now unlocked.");
+@@ -153 +196 @@
+-      print("Q ended | base armor restored");
++      report("Q ended | base armor restored");
+@@ -158 +201 @@
+-        print("W interrupted | no kit or cooldown consumed");
++        report("W interrupted | no kit or cooldown consumed");
+@@ -164 +207 @@
+-        print(`W completed | kits=${kits}`);
++        report(`W completed | kits=${kits}`);
+@@ -168,0 +212 @@
++      else if (mode != 0) report("BLOCKED: command mode");
+@@ -170 +214 @@
+-      else if (qUntil > 0 || wUntil > 0) print("BLOCKED: another skill active");
++      else if (qUntil > 0 || wUntil > 0 || rUntil > 0) print("BLOCKED: another skill active");
+@@ -179 +223 @@
+-          print("Q active | armor +2 | movement cancels");
++          report("Q active | armor +2 | movement cancels");
+@@ -192,9 +236,36 @@
+-          print("W casting | 3 seconds | movement or 5 damage interrupts");
+-        }
+-      }
+-    }
+-    if (frame >= hudAt) {
+-      const qLeft = Math.max(0, Math.ceil((qReady - frame) / SECOND));
+-      const wLeft = Math.max(0, Math.ceil((wReady - frame) / SECOND));
+-      print(`Q/F7 brace ${qLeft}s | W/F8 first aid ${wUnlocked ? "unlocked" : "locked"} ${wLeft}s | kits ${kits}`);
+-      hudAt = frame + 5 * SECOND;
++          report("W casting | 3 seconds | movement or 5 damage interrupts");
++        }
++      }
++    }
++    // R tests installation consumption only. It applies no combat damage.
++    if (rUntil > 0) {
++      if (!hero || hero.speed > 0 || hero.orderId == orders.Move || hero.x != rX || hero.y != rY || forced) {
++        rUntil = 0;
++        report("R interrupted | no explosive or cooldown consumed");
++      } else if (frame >= rUntil) {
++        explosives--;
++        installed++;
++        rReady = frame + 60 * SECOND;
++        rUntil = 0;
++        report("R TEST installed | one explosive consumed | NO COMBAT EFFECT");
++      }
++    }
++    if (rPress) {
++      if (!hero || mode != 0 || forced || paused) report("BLOCKED: R state");
++      else if (qUntil > 0 || wUntil > 0 || rUntil > 0) report("BLOCKED: another skill active");
++      else if (explosives < 1) report("BLOCKED: no tactical explosives");
++      else if (frame < rReady) report("BLOCKED: R cooldown");
++      else if (hero.speed > 0 || hero.orderId == orders.Move) report("BLOCKED: stop moving before R");
++      else {
++        rX = hero.x;
++        rY = hero.y;
++        rUntil = frame + 3 * SECOND;
++        report("R TEST installing | 3 seconds | no combat damage");
++      }
++    }
++    qLeft = Math.max(0, Math.ceil((qReady - frame) / SECOND));
++    wLeft = Math.max(0, Math.ceil((wReady - frame) / SECOND));
++    rLeft = Math.max(0, Math.ceil((rReady - frame) / SECOND));
++    if (mode == 0) {
++      setResources(P1, "set", kits, "ore");
++      setResources(P1, "set", explosives, "gas");
+--- /dev/null
++++ b/tools/build-resource-ui.mjs
+@@ -0,0 +1,99 @@
++import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
++import { resolve, join } from 'node:path';
++import { pathToFileURL } from 'node:url';
++import { registerHooks, createRequire } from 'node:module';
++const root = resolve(import.meta.dirname, '..');
++const workspace = resolve(root, '../..');
++const editor = join(workspace, 'work/scm-js');
++const plugin = join(workspace, 'work/plugin-trigscript');
++await import(pathToFileURL(join(editor, 'scripts/lib/load-ts.mjs')));
++const require = createRequire(join(plugin, 'package.json'));
++const ts = require('typescript');
++registerHooks({load(url,context,next){
++ const result=next(url,context);
++ if(url.endsWith('.ts') && result.source) return {format:'module',source:ts.transpileModule(String(result.source),{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext}}).outputText};
++ return result;
++}});
++const load = (p) => import(pathToFileURL(p));
++const {compileScript} = await load(join(plugin,'compiler/compiler.ts'));
++const {scriptNames} = await load(join(plugin,'compiler/names.ts'));
++const {buildOwnMap,isRefused} = await load(join(plugin,'compiler/backend/build.ts'));
++const {defaultLib} = await load(join(plugin,'bundle/lib.mjs'));
++const {resolveStrings} = await load(join(plugin,'script.ts'));
++const {createScenario} = await load(join(editor,'src/formats/chk/create.ts'));
++const {serializeScenario,parseScenario,setMapVersion} = await load(join(editor,'src/formats/chk/scenario.ts'));
++const {saveMap,loadMap} = await load(join(editor,'src/formats/mpq/scm.ts'));
++const {internString} = await load(join(editor,'src/editor/settings.ts'));
++const {flatTerrain} = await load(join(editor,'src/formats/tileset/terrain.ts'));
++const {makeUnit} = await load(join(editor,'src/editor/units.ts'));
++const locations = [
++  ['Home',700,700,1100,1000], ['Outer',1100,400,1500,700],
++  ['Relay',1000,1000,1400,1300], ['Safe',500,1400,800,1600],
++  ['Focus',500,500,564,564], ['Spawn',1600,300,1850,600]
++];
++const names = scriptNames({locations:locations.map(([name],index)=>({index,name}))});
++const rollbackPath = process.argv[2];
++const source = readFileSync(rollbackPath ?? join(root,'src/resource-ui/main.ts'),'utf8');
++const testsPath = join(root,'tests/poc.test.ts');
++const testsText = readFileSync(testsPath,'utf8') + (rollbackPath ? '' : '\n' + readFileSync(join(root,'tests/resource-ui.test.ts'),'utf8'));
++const world = {
++ players:[0,1,2],computers:[1,2],forces:{0:0,1:1,2:0},
++ locations:Object.fromEntries(locations.map(([,left,top,right,bottom],i)=>[i+1,{left,top,right,bottom}])),
++ units:[{owner:0,type:20,x:900,y:800,hp:30,maxHp:40},{owner:2,type:125,x:1300,y:550,hp:350,maxHp:350},{owner:2,type:109,x:1200,y:1150,hp:250,maxHp:250},{owner:2,type:11,x:850,y:1250},{owner:2,type:0,x:1000,y:800},{owner:1,type:37,x:1700,y:450}],
++ unitStats:{20:{hp:40},125:{hp:350},109:{hp:250}}
++};
++let failures=0;
++for (const skillLab of [true]) {
++ const code=source.replace('const SKILL_LAB = false;',`const SKILL_LAB = ${skillLab};`);
++ const r=compileScript(ts,{'main.ts':code,'poc.test.ts':testsText},names,{lib:defaultLib(),tests:{world}});
++ const label=rollbackPath?'RESOURCE_UI_ROLLBACK':'RESOURCE_UI_POC';
++ mkdirSync(join(root,'reports'),{recursive:true});
++ writeFileSync(join(root,`reports/${label}.tests.json`),JSON.stringify({variant:label,diagnostics:r.diagnostics,tests:r.tests},null,2));
++ if(r.diagnostics.length){ console.error(JSON.stringify(r.diagnostics,null,2)); failures++;continue; }
++ const testFailures=r.tests?.results.filter(t=>t.status!=='passed')??[];
++ console.log(`${label}: ${r.tests?.results.filter(t=>t.status==='passed').length??0} PASS / ${testFailures.length} FAIL`);
++ for(const t of testFailures)console.error(`${t.id}: ${t.message}`);
++ if(testFailures.length){failures++;continue;}
++ const fill=flatTerrain(64,64,{id:2,group:2},null,()=>0,0);
++ const scn=createScenario({width:64,height:64,era:0,name:`TLM ${label}`,description:'WO-UI-01 DIAGNOSTIC ONLY. Icons unchanged. W/F8 R/L. No R combat effect.',...fill});
++ setMapVersion(scn,'remastered');
++ scn.playerTypes=[6,5,5,0,0,0,0,0,7,7,7,7];
++ scn.editorPlayerTypes=[...scn.playerTypes];
++ scn.playerRaces=[1,0,1,7,7,7,7,7,4,4,4,4];
++ scn.forces.playerForce=[0,1,0,2,2,2,2,2];
++ scn.forces.flags=[14,0,0,0];
++ for(const [i,[name,left,top,right,bottom]] of locations.entries())scn.locations[i]={nameIndex:internString(scn,name),left,top,right,bottom,elevationFlags:0};
++ let serial=1;
++ const place=(type,owner,x,y)=>scn.units.push(makeUnit(null,type,owner,x,y,serial++));
++ place(214,0,900,800);place(20,0,900,800);
++ if(!skillLab){
++   place(125,2,1300,550);place(109,2,1200,1150);place(11,2,850,1250);
++   place(111,2,600,650);place(112,2,600,950);
++   for(let i=0;i<5;i++)place(0,2,1000+i*32,800);
++   for(let i=0;i<20;i++)place(37,1,1650+(i%5)*32,350+Math.floor(i/5)*32);
++   for(let i=0;i<5;i++)place(38,1,1850,350+i*48);
++ }
++ scn.unitSettings.useDefault[20]=0;
++ scn.unitSettings.hitPoints[20]=40*256;
++ scn.unitSettings.armor[20]=0;
++ scn.unitSettings.weaponDamage[0]=6;
++ scn.unitSettings.weaponDamage[1]=6;
++ scn.unitSettings.nameIndex[20]=internString(scn,'Last Marine');
++ scn.triggers=resolveStrings(r,t=>internString(scn,t));
++ const chk=serializeScenario(scn);
++ const built=buildOwnMap({chk,compiled:{...r,triggers:[]},maps:true});
++ if(isRefused(built)){console.error(built.refused);failures++;continue;}
++ const extras=new Map([['trigscript\\main.ts',new TextEncoder().encode(code)],['staredit\\wav\\tlm-blast.wav',new Uint8Array(readFileSync(join(root,'assets/audio/tlm-blast.wav')))]]);
++ mkdirSync(join(root,'maps/source'),{recursive:true});
++ writeFileSync(join(root,`maps/source/${label}.scx`),await saveMap(chk,{extras,compress:'pkware',listfile:true}));
++ const bytes=await saveMap(built.chk,{extras,compress:'pkware',listfile:true});
++ mkdirSync(join(root,'maps/poc'),{recursive:true});
++ const out=join(root,`WO-UI-01/${label}.scx`);
++ writeFileSync(out,bytes);
++ const reopened=await loadMap(new Uint8Array(readFileSync(out)));
++ const parsed=parseScenario(reopened.chk);
++ if(parsed.width!==64||parsed.height!==64||!parsed.units.some(u=>u.unitId===20)||parsed.triggers.length===0)throw Error('SCX read-back failed');
++ writeFileSync(join(root,`reports/${label}.build.json`),JSON.stringify({stats:built.stats,lines:built.lines,warnings:built.warnings,bytes:bytes.length,readBack:{width:parsed.width,height:parsed.height,units:parsed.units.length,triggers:parsed.triggers.length}},null,2));
++ console.log(`${label}: BUILT ${bytes.length} bytes; SCX reopened; ${parsed.triggers.length} trigger records`);
++}
++process.exitCode=failures?1:0;
+--- /dev/null
++++ b/tests/resource-ui.test.ts
+@@ -0,0 +1,99 @@
++
++test('UI01 projects inventory into both resource slots', sim => {
++ sim.frames(5);
++ expect(sim.program('poc').kits).toBe(3);
++ expect(sim.program('poc').explosives).toBe(2);
++ expect(sim.resources(0).ore).toBe(3);
++ expect(sim.resources(0).gas).toBe(2);
++ expect(sim).toHavePrinted('응급처치 키트');
++ expect(sim).toHavePrinted('전술 폭약');
++});
++
++test('UI02 W leaves explosives unchanged', sim => {
++ sim.frames(5).press('W').frames(76);
++ expect(sim.program('poc').kits).toBe(2);
++ expect(sim.program('poc').explosives).toBe(2);
++ expect(sim.resources(0).ore).toBe(2);
++ expect(sim.resources(0).gas).toBe(2);
++});
++
++test('UI03 R consumes only after installation completes', sim => {
++ sim.frames(5).press('R').frames(10);
++ expect(sim.program('poc').explosives).toBe(2);
++ sim.frames(66);
++ expect(sim.program('poc').explosives).toBe(1);
++ expect(sim.program('poc').kits).toBe(3);
++ expect(sim.program('poc').installed).toBe(1);
++ expect(sim.resources(0).ore).toBe(3);
++ expect(sim.resources(0).gas).toBe(1);
++});
++
++test('UI04 repeated R never duplicates installation', sim => {
++ sim.frames(5).press('R').frames(10).press('R').frames(66).press('R').frames(2);
++ expect(sim.program('poc').explosives).toBe(1);
++ expect(sim.program('poc').installed).toBe(1);
++ expect(sim).toHavePrinted('BLOCKED: R cooldown');
++});
++
++test('UI05 movement cancels R without consumption or cooldown', sim => {
++ sim.frames(5).press('R').frames(10);
++ sim.move(sim.units({owner:0,type:20})[0],{x:950,y:800}).frames(2);
++ expect(sim.program('poc').explosives).toBe(2);
++ expect(sim.program('poc').rReady).toBe(0);
++ expect(sim.program('poc').rUntil).toBe(0);
++});
++
++test('UI06 empty explosives deny R without underflow', sim => {
++ sim.frames(5).press('R').frames(76).frames(1441).press('R').frames(76).frames(1441).press('R').frames(2);
++ expect(sim.program('poc').explosives).toBe(0);
++ expect(sim.program('poc').installed).toBe(2);
++ expect(sim).toHavePrinted('BLOCKED: no tactical explosives');
++});
++
++test('UI07 checkpoint restores both inventory values and cancels casts', sim => {
++ sim.frames(5).press('R').frames(76).press('W').frames(76).press('F9').frames(5);
++ expect(sim.program('poc').kits).toBe(3);
++ expect(sim.program('poc').explosives).toBe(2);
++ expect(sim.program('poc').wReady).toBe(0);
++ expect(sim.program('poc').rReady).toBe(0);
++ expect(sim.count(0,20)).toBe(1);
++ expect(sim.resources(0).ore).toBe(3);
++ expect(sim.resources(0).gas).toBe(2);
++});
++
++test('UI08 command transition snapshots consumables separately', sim => {
++ sim.frames(5).press('R').frames(76).press('W').frames(76).press('C').frames(5);
++ expect(sim.program('poc').mode).toBe(1);
++ expect(sim.program('poc').campaignKits).toBe(2);
++ expect(sim.program('poc').campaignExplosives).toBe(1);
++ expect(sim.resources(0).ore).toBe(500);
++ expect(sim.resources(0).gas).toBe(250);
++ sim.press('W').frames(76).press('R').frames(76);
++ expect(sim.program('poc').kits).toBe(2);
++ expect(sim.program('poc').explosives).toBe(1);
++ expect(sim.resources(0).ore).toBe(500);
++ expect(sim.resources(0).gas).toBe(250);
++});
++
++test('UI09 L alternative invokes R installation', sim => {
++ sim.frames(5).press('L').frames(76);
++ expect(sim.program('poc').installed).toBe(1);
++});
++
++test('UI10 command transition waits for active W', sim => {
++ sim.frames(5).press('W').frames(10).press('C').frames(2);
++ expect(sim.program('poc').mode).toBe(0);
++ expect(sim.program('poc').kits).toBe(3);
++ sim.frames(66);
++ expect(sim.program('poc').kits).toBe(2);
++});
++
++test('UI11 W and R share a cast lock but not cooldowns', sim => {
++ sim.frames(5).press('R').frames(10).press('W').frames(2);
++ expect(sim.program('poc').wUntil).toBe(0);
++ sim.frames(66).press('W').frames(76);
++ expect(sim.program('poc').kits).toBe(2);
++ expect(sim.program('poc').explosives).toBe(1);
++ expect(sim.program('poc').rReady).toBeGreaterThan(0);
++ expect(sim.program('poc').wReady).toBeGreaterThan(0);
++});
+--- /dev/null
++++ b/WO-UI-01/ROLLBACK.sh
+@@ -0,0 +1,7 @@
++#!/usr/bin/env bash
++set -euo pipefail
++root="$(cd -- "$(dirname -- "$0")" && pwd)"
++target="${1:-$root/../src/resource-ui/main.ts}"
++cp -- "$root/../baseline/WO-UI-01/main.ts" "$target"
++cmp -- "$root/../baseline/WO-UI-01/main.ts" "$target"
++printf '%s\n' 'ROLLBACK: legacy Q/W source bytes restored'
+--- /dev/null
++++ b/WO-UI-01/ROLLBACK.ps1
+@@ -0,0 +1,6 @@
++param([string]$Target = (Join-Path $PSScriptRoot '../src/resource-ui/main.ts'))
++$ErrorActionPreference = 'Stop'
++$baseline = Join-Path $PSScriptRoot '../baseline/WO-UI-01/main.ts'
++Copy-Item -LiteralPath $baseline -Destination $Target -Force
++if ((Get-FileHash -LiteralPath $baseline).Hash -ne (Get-FileHash -LiteralPath $Target).Hash) { throw 'Rollback hash mismatch' }
++Write-Output 'ROLLBACK: legacy Q/W source bytes restored'
+--- /dev/null
++++ b/WO-UI-01/CHANGELOG.md
+@@ -0,0 +1,24 @@
++# WO-UI-01 변경 이력
++
++기준 커밋: 431be0927b27a2f8a232e0e671c4bf665d312436.
++원본 Q/W 소스 SHA256: ef180356f9c53254ebdbac9a18ea9c1985418b95ddde52b58a72bf23ec0aa1c9.
++
++1. 원본 소스를 baseline/WO-UI-01/main.ts에 보존했다.
++2. src/resource-ui/main.ts에 별도 UI 진단 변형을 만들었다.
++3. kits와 explosives 기준 수량 및 생존 전용 자원 투영을 추가했다.
++4. W 완료 차감 계약을 유지했다. R 설치 소비 시험을 추가했다.
++5. R/W 공통 시전 잠금과 독립 쿨타임을 적용했다.
++6. F9의 살아 있는 해병 제거·즉시 재생성을 이동 방식으로 변경했다.
++7. 사망 복구는 생성 후 다음 프레임에 해병 참조를 찾는다.
++8. 고정 체크포인트에 키트 3개와 폭약 2개를 배정했다.
++9. C 전환 시 소모품 스냅샷을 보존하고 생산 자원을 별도로 설정했다.
++10. 한국어 이름·수량·소비 안내를 진단용 ui.lines에 표시했다.
++11. 신규 자동 검사 11건과 빌드·복원 검사를 추가했다.
++12. 실제 게임에서 소비·복원·부족 차단과 UI 실패 화면을 저장했다.
++
++초기 빌드에서 F4/F5/F6 사용을 컴파일러가 거절했다.
++공식 지원 키 C/D/L로 수정했다. 금지된 키를 강제로 활성화하지 않았다.
++최종 빌드의 진단 오류는 0건이다.
++원본 src/poc/main.ts와 기존 두 배포 맵은 변경하지 않았다.
++기존 두 tests.json의 실행 시간 값은 기준선 재실행으로 갱신됐다.
++게임 실행 파일·클라이언트 자산·사용자 설정은 변경하지 않았다.
+--- /dev/null
++++ b/WO-UI-01/FINAL_REPORT.md
+@@ -0,0 +1,47 @@
++# WO-UI-01 최종 작업 보고서
++
++판정: **BLOCKED**.
++자원 소비 시험 맵과 기술 조사를 작성했다. 필수 그래픽 UI의 완료 게이트는 미충족이다.
++
++## 확인한 결과
++
++실게임에서 W 성공 뒤 상단 A가 3→2로 감소했다.
++R 시험 설치 뒤 상단 B가 2→1로 감소했다.
++복원 후 R을 두 번 설치하면 B가 0이 됐다. 이후 입력은 부족 사유로 차단됐다.
++F9는 상단 3/2와 살아 있는 해병을 복원했다. 이전 텍스트 수량이 잠시 남았다.
++RTS 전환 시험은 생산 자원 500/250을 표시했다.
++한국어 이름은 읽을 수 있었다. 그러나 상단의 원래 그림은 그대로 남았다.
++진단 텍스트의 중복·소실·갱신 지연도 관찰했다.
++
++## 완료 판정을 막는 항목
++
++군용 의료 키트 그림과 군용 폭약 그림은 표시되지 않았다.
++상단 슬롯의 한국어 명칭도 구현되지 않았다.
++실제 스킬 버튼과 네이티브 툴팁은 미구현이다.
++다중 해상도·UI 배율, W 부족과 중단의 실게임 검사는 남아 있다.
++맵 전용의 동등 그래픽 대안은 검증·승인되지 않았다.
++따라서 숫자·채팅 이름만으로 GO 또는 CONDITIONAL GO를 부여하지 않는다.
++
++## 산출물
++
++- RESOURCE_UI_FEASIBILITY.md: 요청한 다섯 경로, 원문 근거, 대체안·위험 비교.
++- RESOURCE_UI_ARCHITECTURE.md: W/R 소비, 상태 소유권, 체크포인트, M01~M05 정책.
++- RESOURCE_UI_POC.scx: 추가 클라이언트 변경 없이 실행한 진단 맵.
++- RESOURCE_UI_TEST_RESULTS.md: 자동 검사와 실제 검사 및 실패·미검증 항목.
++- LIVE_RESOURCE_UI_SCREENSHOTS/: 수정하지 않은 실제 게임 화면 7장.
++- CHANGELOG.md, DIFF.patch, VERIFICATION.txt, ROLLBACK.sh, ROLLBACK.ps1.
++- ../src/resource-ui/main.ts, ../tests/resource-ui.test.ts, ../tools/build-resource-ui.mjs.
++
++기존 기준선은 30건 통과했다. 새 PoC는 26건 통과했다.
++복원한 별도 복사본은 기존 회귀 검사 15건을 통과했다.
++복원 검사는 새 수정 소스를 덮어쓰지 않았다. 원본과 수정본을 각각 보존했다.
++실제 게임 결과와 화면 해시는 TEST_RESULTS와 VERIFICATION을 기준으로 확인한다.
++R은 설치 소비만 구현했다. 전투 효과와 최종 스킬 완료를 주장하지 않는다.
++
++## 후속 결정
++
++문서화된 맵 전용 그래픽 UI 경로 또는 검증 가능한 새 도구가 다음 기술 의존성이다.
++클라이언트 자산 방식은 별도 제안으로 유지한다. 사용자 승인 없이 필수화하지 않는다.
++독립 패널을 제안할 때 그림·한국어·수량·기존 아이콘 혼동 해결을 함께 검증해야 한다.
++현재 진단 패널은 승인할 완성 대안이 아니다.
++Phase 1 전체와 WO-UI-01 기능 완료 판정은 계속 열어 둔다.
+--- /dev/null
++++ b/WO-UI-01/RESOURCE_UI_ARCHITECTURE.md
+@@ -0,0 +1,84 @@
++# WO-UI-01 자원 아키텍처
++
++상태: 소비 로직 PoC 구현. 최종 그래픽 UI는 BLOCKED.
++실제 제작 경로는 기존 scmJS 0.8.5와 TrigScript 4.1.0이다.
++
++## 상태 소유권
++
++|상태|역할|변경 주체|
++|---|---|---|
++|kits|응급처치 키트의 기준 수량|W 완료와 체크포인트|
++|explosives|전술 폭약의 기준 수량|R 시험 설치 완료와 체크포인트|
++|wReady / rReady|각 스킬의 다음 사용 시각|각 스킬 완료와 체크포인트|
++|wUntil / rUntil|현재 시전 종료 시각|입력, 중단, 완료|
++|mode|0 생존, 1 지휘|전환 시험 C|
++|campaignKits / campaignExplosives|전환 직전 수량 복사본|생존→지휘 전환|
++|미네랄 / 가스|생존에서는 진단용 출력. 지휘에서는 생산 자원|표시 어댑터 또는 RTS 경제|
++
++생존 수량의 기준은 kits와 explosives다. 상단 수량을 읽어서 소비 여부를 결정하지 않는다.
++생존 모드는 매 프레임 기준 수량을 Set Resources로 복사한다.
++이 숫자 투영은 최종 UI가 아니다. 남아 있는 광물·가스 그림은 실패 항목이다.
++
++## W 계약
++
++해금·생존·주인공·상호 배제·키트·쿨타임·정지 조건을 검사한다.
++3초 시전 뒤 체력 25 회복을 적용한다. 체력은 최대값을 넘지 않는다.
++정상 완료 시 kits를 한 번 감소시킨다. 이후 wReady를 40초 뒤로 설정한다.
++이동·좌표 변경·5 이상 피해·강제 제어는 시전을 취소한다.
++중단은 키트와 쿨타임을 소비하지 않는다.
++Q의 기존 효과·종료 계약은 유지한다. R 시전 중에도 공통 시전 잠금을 적용한다.
++
++## R 시험 계약
++
++R 또는 L 입력은 정지 상태에서 3초 설치 시험을 시작한다.
++설치가 완료되면 explosives를 한 번 감소시킨다. rReady는 60초 뒤가 된다.
++시전 중 자원은 예약·차감하지 않는다.
++이동·좌표 변경·사망·강제 제어는 설치를 취소한다. 중단 시 차감과 쿨타임은 없다.
++보유량 0은 재사용을 차단한다. 음수 수량과 중복 설치를 방지한다.
++R 시험은 설치 횟수만 기록한다. 폭발·범위 피해·아군 피해·장애물 파괴는 미구현이다.
++지형·설치 거리·안전거리·기폭 순서는 최종 R 작업에서 검증한다.
++
++## 체크포인트
++
++F9는 kits=3, explosives=2와 모든 스킬 쿨타임을 복원한다.
++현재 시전과 R 시험 설치 횟수를 초기화한다.
++살아 있는 해병은 유지하고 안전 구역으로 이동한다.
++사망 복구는 유닛 생성 후 다음 프레임에 참조를 다시 찾는다.
++기존 원본 소스와 맵은 보존했다. 이 변경은 새 UI 시험 소스에만 적용했다.
++현재 체크포인트는 고정 시험값이다. 전체 캠페인 저장값의 직렬화는 미구현이다.
++
++## M01~M05 표시 정책
++
++M01~M03은 생존 모드를 사용한다. 생산과 자동 채취는 이 모드에서 활성화하지 않는다.
++M04는 소모품 스냅샷을 먼저 만든다. 이후 표시 어댑터의 소유권을 지휘 모드로 넘긴다.
++M05의 미네랄·가스는 생산 자원이다. 소모품은 CampaignState.inventory에 별도로 보존한다.
++두 상태는 같은 변수에 저장하지 않는다.
++UI PoC의 C는 500 미네랄·250 가스로 전환하는 시험 명령이다.
++이후 생존 어댑터는 생산 자원을 덮어쓰지 않는다. 생존 스킬 입력도 차단한다.
++실제 생산·건설·전투 지휘는 이 시험 맵의 구현 범위에 포함하지 않았다.
++다음 맵으로 보낼 때 manual code payload에 medicalKits와 explosives를 별도 필드로 배정한다.
++버전·범위·체크값을 검사한 후에만 복원한다. 코드 인코더·입력 UI는 후속 작업이다.
++일반 Death Counter가 맵 사이에 자동 전달된다고 가정하지 않는다.
++
++## 표시와 툴팁
++
++현재 한국어 명칭과 소비 안내는 ui.lines의 진단 텍스트다.
++실제 W/R 버튼과 네이티브 툴팁은 생성·변경하지 않았다.
++최종 W 툴팁은 `응급처치 키트 1개 / 치료 성공 시 소비`를 표시해야 한다.
++최종 R 툴팁은 `전술 폭약 1개 / 설치 성공 시 소비`를 표시해야 한다.
++현재 화면은 의료 키트·폭약 그림을 제공하지 않는다. 미네랄·가스 그림도 남는다.
++실게임에서 텍스트 중복과 전환 직후 이전 수량 잔류를 관찰했다.
++따라서 현재 패널을 동등한 직관성의 대안으로 승인하지 않는다.
++
++## 시험 조작
++
++1. 유즈맵 설정으로 RESOURCE_UI_POC.scx를 시작한다.
++2. Q/F7로 기존 방어 자세를 검사한다.
++3. W/F8로 지혈을 검사한다.
++4. R/L로 설치 소비 시험을 실행한다.
++5. D로 시험 체력을 10으로 설정한다.
++6. F9로 고정 체크포인트를 복원한다.
++7. C로 RTS 자원 분리 시험을 실행한다.
++
++F4~F6는 고정 컴파일러가 지원하지 않아 채택하지 않았다.
++단발 자동 입력 누락이 남아 있어 실게임 일부 검사는 반복 입력으로 수행했다.
+--- /dev/null
++++ b/WO-UI-01/RESOURCE_UI_FEASIBILITY.md
+@@ -0,0 +1,80 @@
++# WO-UI-01 자원 UI 기술 검증
++
++기준일: 2026-11-03. 대상: StarCraft: Remastered 1.23.10.13515.
++현재 판정: **BLOCKED**. 조사한 맵 전용 경로에서 아이콘·상단 명칭 교체를 검증하지 못했다.
++승인된 동등 대안도 없다. 숫자 연동 PoC를 UI 완료로 판정하지 않는다.
++이 판정은 조사한 도구와 실행 환경에 한정한다. 모든 미래 도구의 불가능성을 뜻하지 않는다.
++
++## 1. 경로 비교
++
++|경로|확인한 근거|아이콘·명칭|배포·제약|판정|
++|---|---|---|---|---|
++|SCX 표준 데이터|CHK 섹션 목록, UNIx 설정, STRx 문자열, 자원 트리거 소스|수량과 유닛 이름은 설정 가능. 상단 자원 그림·제목 바인딩 필드는 확인되지 않음|맵 한 개. 파일 내 이미지 첨부만으로 UI가 그림을 읽는다는 근거 없음|아이콘·명칭 경로 미확보|
++|TrigScript EUD|고정 4.1.0의 tables.ts, declarations.ts, jsx.ts|자원 수량과 텍스트 지원. 조사한 API에는 상단 그림·명칭 교체 필드가 없음|기존 툴체인 사용. 검증된 고수준 API만 적용|수량 PoC 구현. 전체 요구 실패|
++|독립 맵 패널|ui.lines, Screen, Snake 제작자 예제|ui.lines는 게임 텍스트 영역. Screen은 유닛 픽셀을 지도·미니맵에 표시|미니맵·전장 공간과 유닛 예산을 소비. 상단 슬롯 대체와 다름|동등성 미검증·미승인|
++|기존 UI 가림|조사한 공개 API에 자원 영역만 가리는 기능 없음|텍스트·지형으로 고정 상단 UI를 덮는 경로 미확보|좌표·배율 의존 외부 오버레이는 별도 프로그램 필요|채택 안 함|
++|클라이언트 자산·플러그인|Animosity 제작자 문서, samase_plugin 선언|그래픽 파일 변환과 렌더러·대화상자 훅은 별도 클라이언트 계층|설치·버전·HD/HD2/SD 자산 검증 필요. 현재 게임 호환성 NOT TESTED|사용자 승인 전 필수화 안 함|
++
++표의 API 부재는 소스 조사 결과다. 모든 EUD 조합의 불가능성을 증명한 결과는 아니다.
++현재 상단 슬롯은 원래 광물·가스 그림을 유지한다. 스크린샷 01~04에서 확인한다.
++한국어 명칭은 별도 텍스트 영역에만 보인다. 요구한 상단 이름·군수품 그림은 구현되지 않았다.
++
++## 2. 공식 문서와 도구 소스
++
++Blizzard는 EUD를 에뮬레이터로 지원한다고 설명했다.
++해당 발표는 모든 과거 기능과 그래픽 조작을 지원한다는 보장을 하지 않는다.
++따라서 알려지지 않은 UI 주소에 쓰는 방식은 시험 맵에 넣지 않았다.
++[Blizzard EUD 지원 발표](https://news.blizzard.com/en-us/article/21313396/patch-1-21-0-the-return-of-eud-maps)
++
++TrigScript UI 문서는 텍스트 영역을 구성하는 Panel, Meter, MenuList 등을 설명한다.
++현재 로컬 선언도 ui.lines를 플레이어 텍스트 줄로 정의한다.
++JSX 요소는 line, span, cell, bar다. 이미지 요소와 상단 자원 슬롯 위젯은 없다.
++[UI 문서](https://docs.scmjs.dev/trigscript-library/ui/)
++[고정 버전 선언](https://github.com/scm-js/plugin-trigscript/blob/40243398aeb04fcf2893aabb420a3cba92f0d3ac/compiler/declarations.ts)
++[고정 버전 JSX 소스](https://github.com/scm-js/plugin-trigscript/blob/40243398aeb04fcf2893aabb420a3cba92f0d3ac/compiler/jsx.ts)
++
++scmJS의 api.ui.overlay와 DOM 패널은 편집기 UI다.
++이 API를 게임 안의 UI로 간주하지 않았다.
++[편집기 화면 API](https://docs.scmjs.dev/plugins/putting-things-on-screen/)
++[CHK 소스](https://github.com/scm-js/scm-js/blob/f4fe24e7519096c2cdd9c1af887f9340317d7af7/docs/chk-format.md)
++
++eudplib의 f_settbl은 게임 문자열을 수정하는 구현을 갖는다.
++이것만으로 상단 자원 이름·아이콘을 모두 바꾸는 경로가 성립하지 않는다.
++본 작업에서는 해당 문자열 API의 현재 게임 호환성을 실행 검사하지 않았다.
++[eudplib tblprint.py](https://github.com/armoha/eudplib/blob/main/src/eudplib/string/tblprint.py)
++
++## 3. 제작 사례의 구분
++
++TrigScript 제작자의 Snake는 Screen으로 유닛 픽셀을 미니맵에 그리는 실제 코드 사례다.
++Screen 문서도 같은 구현을 설명한다. 이 사례는 상단 UI 이미지 주입의 증거가 아니다.
++[Snake 소스](https://github.com/scm-js/plugin-trigscript/blob/40243398aeb04fcf2893aabb420a3cba92f0d3ac/probes/snake.tsx)
++[Screen 문서](https://docs.scmjs.dev/trigscript-library/screen/)
++
++Animosity는 SC:R 그래픽 변환 도구다. 제작자 문서는 dds.grp와 해상도별 자산 작업을 설명한다.
++samase_plugin에는 렌더러·파일 읽기·대화상자 훅 선언이 있다.
++이들은 맵 트리거와 다른 설치·실행 경로다. 현재 클라이언트에서 실행하지 않았다.
++[Animosity 제작자 문서](https://github.com/neivv/animosity/blob/master/Readme.md)
++[samase_plugin 소스](https://github.com/neivv/samase_plugin/blob/master/src/lib.rs)
++
++SC2의 SC2Interface, Assets.txt, Frame XML 예제는 SC1의 구현 근거에서 제외했다.
++일반 웹 검색 결과의 SC2 자료도 채택하지 않았다.
++
++## 4. 클라이언트 모드 검토
++
++설치안은 별도 프로필과 자산 묶음, 호환되는 로더를 요구할 수 있다. 정확한 로더는 미선정이다.
++배포안은 자체 제작 의료 키트·폭약 그림과 필요한 설정만 포함해야 한다.
++게임 원본 자산을 묶어 배포하는 방식은 채택하지 않았다.
++업데이트는 UI 파일 구조와 플러그인 ABI를 바꿀 수 있다.
++HD, HD2, SD 및 한국어·다른 언어의 UI 파일을 함께 검사해야 한다.
++외부 실행 파일과 DLL은 출처·서명·무결성·업데이트 정책 검토가 필요하다.
++프로세스 훅은 충돌과 외부 보안 도구의 탐지를 일으킬 수 있다. 현재 발생 여부는 NOT TESTED다.
++가설적 위험만으로 NO-GO를 확정하지 않았다.
++클라이언트 변경·로더 설치·보안 설정 변경은 수행하지 않았다.
++
++## 5. 다음 결정
++
++맵 전용의 문서화된 그래픽 UI 경로가 발견되면 별도 소형 PoC로 먼저 검사한다.
++대안은 두 종류의 군수품 그림, 한국어 이름, 수량을 동시에 제시해야 한다.
++대안은 기존 광물·가스 그림의 의미 혼동을 해결해야 한다.
++실게임의 동등 직관성과 사용자 승인이 모두 있어야 CONDITIONAL GO를 검토한다.
++현재 텍스트·숫자 PoC는 승인 요청용 완성 대안이 아니다.
+--- /dev/null
++++ b/WO-UI-01/RESOURCE_UI_TEST_RESULTS.md
+@@ -0,0 +1,69 @@
++# WO-UI-01 시험 결과
++
++최종 판정: **BLOCKED**. 소비 로직은 부분 검증했다. 필수 그래픽 UI는 미충족이다.
++
++## 자동 검사
++
++|대상|명령|관찰 결과|종료 코드|
++|---|---|---|---|
++|기존 기준선|node outputs/The-Last-Marine/tools/build.mjs|두 맵 각각 15 PASS / 0 FAIL. SCX 재열기 성공|0|
++|새 UI PoC|node outputs/The-Last-Marine/tools/build-resource-ui.mjs|26 PASS / 0 FAIL. 328060 bytes. SCX 재열기 성공|0|
++|복원된 별도 복사본|node outputs/The-Last-Marine/tools/build-resource-ui.mjs work/resource-ui-rollback-test.ts|15 PASS / 0 FAIL. SCX 재열기 성공|0|
++
++명령 실행 위치는 이 프로젝트의 상위 작업 폴더다. 절대 경로와 출력 원문은 VERIFICATION.txt에 있다.
++새 PoC의 26건은 기존 15건과 신규 11건이다. 동일 검사·조건부 검사도 포함한다.
++26개 독립 기능 또는 실게임 26건 통과를 뜻하지 않는다.
++검사 원문은 ../reports/RESOURCE_UI_POC.tests.json에 있다.
++자원 복사, 소비 시점, 중복 입력, 부족 차단, 중단, 체크포인트, 모드 분리를 검사했다.
++R은 전투 효과가 없는 설치 소비 시험이다.
++
++## 실제 리마스터 검사
++
++환경: 설치 버전 1.23.10.13515. 로컬 프로필 tlmpoc. 게임 유형: 유즈맵 설정.
++그림은 Computer Use가 반환한 실제 게임 화면이다. 합성·아이콘 합성·표시 수정은 하지 않았다.
++저장된 화면은 2048×1152다. 이 값은 캡처 크기다. 모든 게임 해상도·배율의 검증을 뜻하지 않는다.
++초기 단발 입력에서 누락이 있었다. 일부 동작은 5~10회 반복 입력으로 관찰했다.
++반복 입력의 키 간격과 정확한 시전 경과시간은 측정하지 않았다.
++
++|요구 번호|검사|실게임 판정|증거와 한계|
++|---|---|---|---|
++|1|응급처치 키트 그림|FAIL|01~07에 광물 그림 유지. 군용 의료 키트 그림 없음|
++|2|응급처치 키트 명칭|FAIL: 상단 슬롯 / PARTIAL: 텍스트|한국어는 텍스트 영역에서만 보임. 상단 명칭 교체 안 됨|
++|3|전술 폭약 그림|FAIL|01~07에 가스 그림 유지. 군용 폭약 그림 없음|
++|4|전술 폭약 명칭|FAIL: 상단 슬롯 / PARTIAL: 텍스트|텍스트 영역에서만 표시|
++|5|정확한 수량 감소|PASS: 관찰한 정상 완료|01 3/2 → 02 W 완료 2/2 → 03 R 설치 완료 2/1|
++|6|자원 부족 차단|PARTIAL|06에서 폭약 0, 설치 2회 유지와 no tactical explosives 확인. W 0개 실게임은 NOT RUN|
++|7|체크포인트 뒤 수량 일치|PARTIAL|04에서 상단 3/2와 살아 있는 해병 확인. 텍스트에는 이전 2/1이 일시 잔류|
++|8|해상도·UI 배율 안정성|NOT RUN|다중 해상도·배율 조합은 검사하지 않음|
++|9|한국어·겹침|PARTIAL / FAIL: 지속 표시|한국어 판독 가능. 01 텍스트 중복, 04 이전 값 잔류, 07 텍스트 소실 관찰|
++|10|추가 클라이언트 변경 없이 실행|PASS: 이번 실행 경로|SCX 한 개 복사 후 기존 게임에서 실행. 모드 설치·게임 자산 변경 없음|
++
++추가 관찰: C 전환 뒤 상단은 500/250으로 안정됐다. 소모품 기준값은 별도로 유지된다.
++07은 상단 500/250을 보여준다. 같은 화면에서 진단 텍스트 소실도 확인된다.
++분리된 캠페인 스냅샷 값은 자동 검사로 확인했다. 실게임 화면만으로 내부 변수를 증명하지 않는다.
++원본 Q/W 소스는 동일 해시를 유지했다. 새 PoC의 Q/W 회귀 검사는 통과했다.
++새 PoC의 Q 실제 방어력·W 중단·사망 복구·실제 툴팁은 실게임 NOT RUN이다.
++기존 실행 결과를 새 소스의 모든 실게임 통과로 승격하지 않았다.
++
++## 화면 목록
++
++|파일|내용|
++|---|---|
++|01_initial_3_2.jpg|한국어 이름과 3/2 수량. 원래 아이콘과 텍스트 중복|
++|02_w_completed_2_2.jpg|W completed, 키트 2개, 상단 2/2|
++|03_r_installed_2_1.jpg|R 시험 설치 완료, 폭약 1개, 상단 2/1|
++|04_checkpoint_transition_stale_text.jpg|상단 3/2 복원. 이전 텍스트 값 2/1 잔류. 해병 생존|
++|05_r_two_installations_3_0.jpg|복원 후 R 두 번 설치, 폭약 0개, 상단 3/0|
++|06_r_empty_blocked_3_0.jpg|폭약 부족 차단, 설치 2회·수량 0 유지|
++|07_rts_500_250_text_flicker.jpg|생산 자원 500/250. 진단 패널 소실|
++
++화면은 LIVE_RESOURCE_UI_SCREENSHOTS/에 저장했다. SHA256은 SCREENSHOTS_MANIFEST.json에 있다.
++마지막 게임 상태는 F10 메뉴가 열린 일시정지 상태다.
++
++## 통과로 처리하지 않은 항목
++
++숫자·텍스트 진단은 그림·명칭 UI의 대체 완료가 아니다.
++텍스트의 소비 안내는 네이티브 스킬 버튼 툴팁이 아니다.
++R 소비 시험은 최종 폭약 전투 효과가 아니다.
++가설적인 클라이언트 모드 경로는 실제 호환성 검증이 아니다.
++동등 대안의 승인 없이 CONDITIONAL GO를 부여하지 않는다.

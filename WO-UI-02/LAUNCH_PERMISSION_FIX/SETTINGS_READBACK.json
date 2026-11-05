@@ -1,0 +1,21 @@
+{
+  "target": "C:\\Program Files (x86)\\StarCraft\\x86_64\\StarCraft.exe",
+  "layers": [
+    {
+      "key": "HKCU:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers",
+      "flags": null
+    },
+    {
+      "key": "HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers",
+      "flags": null
+    }
+  ],
+  "sha256": "CE3AB05DC9A6AA35418947E5D95E19651AD6FBCD5E2C1856CD729C5B7C31281C",
+  "processes": [
+    {
+      "Id": 7176,
+      "ProcessName": "StarCraft",
+      "Responding": true
+    }
+  ]
+}

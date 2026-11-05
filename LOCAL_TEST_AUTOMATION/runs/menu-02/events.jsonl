@@ -1,0 +1,22 @@
+{"time": "2026-11-04T16:20:38.523929+00:00", "case": "menu-open", "op": "key", "request": {"op": "key", "key": "F10"}}
+{"time": "2026-11-04T16:20:38.707207+00:00", "case": "menu-open", "op": "wait", "request": {"op": "wait", "expect": ["메뉴", "임무.*종료", "돌아가기"], "timeout": 6}}
+{"time": "2026-11-04T16:20:40.397355+00:00", "case": "menu-open", "op": "observation", "file": "001-menu-open.bmp", "ocr": {"lines": ["十3", "계임 메뉴", "불러오기 [니", "실성 [미", "도움말 [비", "임무 목표 [비", "임무 종료 [티", "계임으로 돌아가기 [Esc)"], "language": "ko", "text": "十3 계임 메뉴 불러오기 [니 실성 [미 도움말 [비 임무 목표 [비 임무 종료 [티 계임으로 돌아가기 [Esc)"}}
+{"time": "2026-11-04T16:20:40.399532+00:00", "case": "menu-open", "op": "assertion", "status": "PASS", "expect": ["메뉴", "임무.*종료", "돌아가기"], "elapsed_s": 1.691081699973438, "observations": 1}
+{"time": "2026-11-04T16:20:40.400421+00:00", "case": "menu-open", "op": "case_result", "started_utc": "2026-11-04T16:20:38.523887+00:00", "status": "PASS", "ended_utc": "2026-11-04T16:20:40.400382+00:00", "elapsed_s": 1.8765}
+{"time": "2026-11-04T16:20:40.401106+00:00", "case": "menu-close", "op": "key", "request": {"op": "key", "key": "ESC"}}
+{"time": "2026-11-04T16:20:40.581354+00:00", "case": "menu-close", "op": "wait", "request": {"op": "wait", "rect": [0.77, 0, 0.23, 0.09], "expect": ["3", "2"], "timeout": 6}}
+{"time": "2026-11-04T16:20:40.869166+00:00", "case": "menu-close", "op": "observation", "file": "002-menu-close.bmp", "ocr": {"lines": ["따3"], "language": "ko", "text": "따3"}}
+{"time": "2026-11-04T16:20:41.346476+00:00", "case": "menu-close", "op": "observation", "file": "003-menu-close.bmp", "ocr": {"lines": ["따3"], "language": "ko", "text": "따3"}}
+{"time": "2026-11-04T16:20:41.869223+00:00", "case": "menu-close", "op": "observation", "file": "004-menu-close.bmp", "ocr": {"lines": ["따3"], "language": "ko", "text": "따3"}}
+{"time": "2026-11-04T16:20:42.333798+00:00", "case": "menu-close", "op": "observation", "file": "005-menu-close.bmp", "ocr": {"lines": ["따3"], "language": "ko", "text": "따3"}}
+{"time": "2026-11-04T16:20:42.798179+00:00", "case": "menu-close", "op": "observation", "file": "006-menu-close.bmp", "ocr": {"lines": ["따3"], "language": "ko", "text": "따3"}}
+{"time": "2026-11-04T16:20:43.282638+00:00", "case": "menu-close", "op": "observation", "file": "007-menu-close.bmp", "ocr": {"lines": ["따3"], "language": "ko", "text": "따3"}}
+{"time": "2026-11-04T16:20:43.784222+00:00", "case": "menu-close", "op": "observation", "file": "008-menu-close.bmp", "ocr": {"lines": ["따3"], "language": "ko", "text": "따3"}}
+{"time": "2026-11-04T16:20:44.277355+00:00", "case": "menu-close", "op": "observation", "file": "009-menu-close.bmp", "ocr": {"lines": ["따3"], "language": "ko", "text": "따3"}}
+{"time": "2026-11-04T16:20:44.751883+00:00", "case": "menu-close", "op": "observation", "file": "010-menu-close.bmp", "ocr": {"lines": ["따3"], "language": "ko", "text": "따3"}}
+{"time": "2026-11-04T16:20:45.252526+00:00", "case": "menu-close", "op": "observation", "file": "011-menu-close.bmp", "ocr": {"lines": ["따3"], "language": "ko", "text": "따3"}}
+{"time": "2026-11-04T16:20:45.742525+00:00", "case": "menu-close", "op": "observation", "file": "012-menu-close.bmp", "ocr": {"lines": ["따3"], "language": "ko", "text": "따3"}}
+{"time": "2026-11-04T16:20:46.231306+00:00", "case": "menu-close", "op": "observation", "file": "013-menu-close.bmp", "ocr": {"lines": ["따3"], "language": "ko", "text": "따3"}}
+{"time": "2026-11-04T16:20:46.703161+00:00", "case": "menu-close", "op": "observation", "file": "014-menu-close.bmp", "ocr": {"lines": ["따3"], "language": "ko", "text": "따3"}}
+{"time": "2026-11-04T16:20:46.759144+00:00", "case": "menu-close-failure", "op": "observation", "file": "015-menu-close-failure.bmp", "ocr": null}
+{"time": "2026-11-04T16:20:46.760254+00:00", "case": "menu-close", "op": "case_result", "started_utc": "2026-11-04T16:20:40.401062+00:00", "status": "FAIL", "reason": "State assertion timed out: ['3', '2']", "ended_utc": "2026-11-04T16:20:46.760203+00:00", "elapsed_s": 6.3591}

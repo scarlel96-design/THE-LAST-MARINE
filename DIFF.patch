@@ -1,0 +1,1810 @@
+--- a/assets/manifests/ASSETS.md
++++ b/assets/manifests/ASSETS.md
+@@ -0,0 +1,11 @@
++# 자산 목록
++
++|자산|출처|사용 조건|수정|
++|---|---|---|---|
++|tlm-blast.wav|본 작업의 고정 난수·감쇠 합성|프로젝트 제작 자산, 외부 녹음 없음|신규 생성|
++|맵 지형·유닛 ID|기본 StarCraft 엔진|설치된 게임 데이터를 런타임에 사용|게임 파일 재배포 없음|
++|scmJS|공식 저장소|MIT 및 ATTRIBUTION.md 개별 조건|원본 유지|
++|TrigScript|공식 v4.1.0 저장소|MIT 및 vendor별 조건|원본 유지|
++
++ScmDraft 2 배포 조건과 euddraft 구성요소 조건은 추가 검토 대상이다.
++이번 패키지에 해당 바이너리와 Blizzard 게임 데이터는 포함하지 않았다.
+--- a/assets/manifests/SCMJS_ATTRIBUTION.md
++++ b/assets/manifests/SCMJS_ATTRIBUTION.md
+@@ -0,0 +1,333 @@
++# Attribution and third-party notices
++
++Where the code, algorithms, reference tables, format knowledge, game data, artwork and
++dependencies in scmJS come from, and on what terms. Checked against the repository on
++2026-09-23.
++
++Attribution and permission are different things. A credit here does not grant a license
++the owner has not granted, and the project's [MIT license](LICENSE) covers only original
++project code and the assets the project has the right to license.
++
++## scmJS
++
++- **scmJS** is maintained by Jeany and released under the [MIT license](LICENSE).
++- The commit history is the contributor record. Parts of the code were written with AI
++  coding assistants: GitHub Copilot's coding agent produced the initial React scaffold
++  and the first splash screen (pull requests 1 to 4, committed as `copilot-swe-agent`),
++  and later work carries `Co-Authored-By` trailers naming the Claude model used. All of it
++  was directed, reviewed and is maintained by Jeany, who is responsible for it.
++- **Artwork.** `public/icon.png`, `public/favicon.svg`, `public/icon-oauth.svg` (and the
++  `icon-512.png` / `icon-120.png` rendered from it for the OAuth providers' consoles), the
++  app logo component and the splash screen's wireframe globe are one original drawing, made
++  for this project.
++- **Screenshots.** The pictures in `docs/images/` show the editor with Blizzard's own
++  maps open (Big Game Hunters, Binary Burghs, Crescent Moon and Ground Zero, from the
++  game's Maps folder), so they contain Blizzard's terrain and unit art. They document the
++  editor and are not offered as reusable assets.
++- **Related repositories** under [github.com/scm-js](https://github.com/scm-js), each with
++  its own LICENSE:
++  - the plugins (`plugin-*`, MIT, copyright scmJS): the ten defaults (eudplib, Image to
++    Terrain, Paint, Repair, scmjs.dev, scmscx.com, Stamp Library, TrigEdit, TrigScript and
++    Walkability) and the others (Aftermath, API Playground, Magenta, Melee Wizard,
++    Section Explorer, Timelapse, Hello World and the older AI plugin);
++  - `plugin-api` (the published typings), `registry` (the plugin index) and `.github` (the
++    shared plugin workflow and the organisation profile);
++  - `site` (scmjs.dev), and `docs` and `nightly` (deploy targets);
++  - private: `ai-server` (the scmjs.dev account, AI and shared-map server),
++    `cloudflare-blizzard-forwarder` (the game-data download forwarder),
++    `cloudflare-link-previews` (preview cards for editor links) and
++    `cloudflare-scm-scx-forwarder` (the scmscx.com plugin's forwarder).
++
++  A plugin that adapts outside work records it in its own repository: the Walkability
++  plugin's analysis follows the method of the BWEM library (Brood War Easy Map, by Igor
++  Dimitrijevic), and the eudplib plugin carries eudplib, euddraft and Pyodide (see
++  [Plugin runtimes](#plugin-runtimes) below).
++
++## StarCraft and Brood War data
++
++StarCraft, StarCraft: Brood War, StarEdit, their names and terminology, and the game data
++described below belong to Blizzard Entertainment or their respective rights holders. None
++of it is licensed by this project's MIT license. This project is not affiliated with or
++endorsed by Blizzard Entertainment.
++
++**The repository tracks no Blizzard data.** The editor's graphics are read out of the
++game's own archives, `StarDat.mpq` and `BrooDat.mpq`, on the user's machine, by one of
++three routes, all of which produce the same files:
++
++- `npm run extract`, for a source checkout, writes them into `public/` (gitignored, see
++  [its README](public/README.md)).
++- Help ▸ Game Data… extracts from archives the user picks, or the desktop app finds, into
++  the browser's private storage or the app's data folder.
++- Help ▸ Game Data… can also download Blizzard's own free StarEdit package from
++  Blizzard's server and extract the two archives it carries. The request goes through a
++  Cloudflare Worker at `gamedata.scmjs.dev` because Blizzard's server sends no
++  cross-origin header; the worker forwards range requests and stores nothing.
++
++| Generated paths | What they are |
++| --- | --- |
++| `public/tileset/*.{cv5,vf4,vr4,vx4,wpe}` | tileset groups, flags, minitiles, megatiles and palettes |
++| `public/tileset/*.pcx`, `*.dddata.bin`, `stat_txt.tbl` | effect colour remaps, the doodad placement table, the game's name strings |
++| `public/arr/*.dat`, `images.tbl` | the unit, weapon, upgrade and technology tables and the image lookup chain |
++| `public/game/tunit.pcx`, `public/scripts/iscript.bin` | team colours and the animation scripts |
++| `public/unit/**/*.grp`, `*.lo?` | sprite frames and overlay positions |
++| `public/**/manifest.json` | inventories written by the extraction (project-generated, listing Blizzard's files) |
++
++The extraction code is the project's own; running it does not change who owns its
++output. It is meant for data from a StarCraft installation the user is entitled to use.
++The Blizzard maps and archives used by the tests live in `fixtures/`, gitignored for the
++same reason.
++
++**Distribution.** This file cannot supply permission to redistribute Blizzard's data. No
++build, installer, container image or hosted site of this project carries the extracted
++files or the archives, and a fork, release or hosted build must keep it that way unless
++its maintainer has independently confirmed the right to do otherwise. The container
++image's web server answers 404 for the data paths for this reason.
++
++**Game facts written into the source.** Some of Blizzard's data is reproduced as
++constants so the editor works without the extracted files:
++
++- `src/formats/chk/sections/vcod.ts` holds the 1040-byte `VCOD` verification table
++  StarEdit writes into every map it creates. The game refuses a map without one, so an
++  editor that creates maps has to write it, as every open-source editor does.
++- `DEFAULT_UPGRADE_MAX` in `src/formats/chk/sections/settings.ts` is the `maxRepeats`
++  column of `upgrades.dat`, so a new map carries StarEdit's defaults.
++- `src/data/gameNames.ts` pins the unit, weapon, upgrade and technology names from
++  `stat_txt.tbl` where they differ from StarEdit's, so a mod's renames can be told apart.
++- `FOG_TINT` in `src/components/viewport/fog.ts` is one colour per tileset averaged from
++  the game's `dark.pcx` remap.
++- The names and vocabulary in `src/data/units.ts`, `weapons.ts`, `sprites.ts`,
++  `players.ts`, `tilesets.ts` and `triggerDefs.ts` are StarEdit's terminology and the
++  mapping community's names for the game's concepts.
++
++## Adapted code and reference tables
++
++### Chkdraft
++
++[Chkdraft](https://github.com/TheNitesWhoSay/Chkdraft) is an open-source StarCraft map
++editor by Justin Forsberg (`jjf28`, now `TheNitesWhoSay`), MIT-licensed, copyright
++2015-2026 Justin Forsberg. It is the one project whose code this editor adapts, in these
++places, each carrying a provenance comment:
++
++| In scmJS | From Chkdraft |
++| --- | --- |
++| `src/editor/isom.ts` | The isometric terrain brush: a TypeScript port of Chkdraft's reverse-engineering of StarEdit's isometric behaviour and its shape and link model. |
++| `src/data/isomTables.ts` | The per-tileset ISOM terrain numbering and adjacency lists, copied from `mapping_core/sc.h` and transformed. |
++| `src/formats/tileset/cycle.ts` | The palette-cycling band tables per tileset, from Chkdraft's colour cycler. The renderer and the game-frame timing are this project's. |
++| `src/data/tilesets.ts` | The terrain names per tileset, checked against the extracted files in `tests/palette.test.ts`. |
++
++The relevant upstream files are in Chkdraft's
++[`src/mapping_core/`](https://github.com/TheNitesWhoSay/Chkdraft/tree/master/src/mapping_core)
++(`sc.h`, `sc.cpp`, `scenario.h`, `scenario.cpp`). Chkdraft's MIT notice is reproduced at
++the end of this file.
++
++### iscript
++
++`src/formats/dat/iscript.ts` is the project's own decoder and animator for the game's
++animation bytecode. Its opcode names, animation slot order and argument layouts follow
++the community's disassemblers, none of whose code is included:
++
++- [PyMS](https://github.com/poiuyqwert/PyMS) by Zach Zahos (`poiuyqwert`), an
++  MIT-licensed Brood War modding suite; its PyICE component is the iscript reference.
++- [IceCC](https://github.com/andreas-volz/icecc), by Jeff Pang (2000-2002) with
++  modifications by ShadowFlare (2006-2007), GPL-2.0. A reference only.
++
++### Format references
++
++The file formats are decoded independently in `src/formats/`, from these public
++descriptions:
++
++- [Staredit Network's `scenario.chk` reference](https://wiki.staredit.net/wiki/Scenario.chk):
++  the CHK sections, their records and sizes, and how the game treats repeated sections.
++- [Staredit Network's terrain format reference](https://wiki.staredit.net/wiki/Terrain_Format):
++  CV5, VF4, VX4 and VX4EX, VR4, WPE and `dddata.bin`.
++- [Staredit Network's colour code table](https://wiki.staredit.net/wiki/Color): the text
++  control bytes and what the game draws for each, in `src/editor/textColors.ts`.
++- **SCMDraft 2's TrigEdit syntax** is the text trigger format `src/formats/triggers/text.ts`
++  prints and parses, and `src/data/triggerDefs.ts` orders arguments the same way, so
++  triggers move between the two editors as text. The `.trg` import and export are
++  SCMDraft's raw record format.
++- The deaths-table address the EUD helpers use (`DEATHS_TABLE_ADDRESS` in
++  `src/data/triggerDefs.ts`) is the community's published figure for 1.16.1. The game
++  table addresses TrigScript's `stats()` reads and writes, and the ones Magenta uses, are
++  the same community figures (the offsets eudplib is built on), each checked by playing a
++  probe map in StarCraft: Remastered, which emulates 1.16.1's memory layout.
++- `src/formats/wav.ts` follows the RIFF/WAVE container and the IMA and Microsoft ADPCM
++  specifications as published; the codecs are original.
++- PyMS, above, is also the compatibility reference for the DAT, GRP, PCX, TBL and LO
++  decoders.
++- Maps written by StarEdit and Blizzard's own maps are the ground truth the tests
++  re-encode byte for byte. They stay in the gitignored `fixtures/`.
++
++## Editors this one learns from
++
++Design and behaviour references only; no code from them is used:
++
++- **StarEdit** (Blizzard Entertainment, 1998), the official editor whose file output and
++  isometric brush this editor reproduces.
++- **SCMDraft 2**, by Suicidal Insanity with community collaborators including
++  DarkWizzard, at [Stormcoast Fortress](https://www.stormcoast-fortress.net/): the layer
++  organisation, the non-isometric terrain modes, placement options, brush shortcuts, the
++  undo depth and the text trigger syntax.
++- **StarForge**, by Heimdal, with the later StarForge:Ultimate work by Heimdal, Clokr and
++  zergstain: the raw tile browsing workflow.
++- **Chkdraft**, by Justin Forsberg, as a behaviour reference beyond the code listed above.
++
++## Software dependencies
++
++Exact versions and license identifiers are in `package-lock.json`. Each package keeps its
++own license; being listed here does not relicense it.
++
++### In the web bundle
++
++| Project | Use | License |
++| --- | --- | --- |
++| [React](https://github.com/facebook/react) and React DOM | the interface | MIT, Meta Platforms, Inc. and affiliates |
++| [Jotai](https://github.com/pmndrs/jotai) | application state | MIT, copyright 2020 Poimandres |
++| [Radix UI](https://github.com/radix-ui/primitives) | menus, tabs, tooltips, popovers, context menus | MIT, copyright 2022 WorkOS |
++| [Lucide](https://github.com/lucide-icons/lucide), through `lucide-react` | the interface icons | ISC, Lucide Icons and Contributors; some icons derive from Feather Icons, MIT, copyright Cole Bemis |
++| [mopaq](https://github.com/jeany55/mopaq) | reading and writing MPQ archives, including PKWARE DCL | MIT, copyright 2026 Jeany |
++| [kascade](https://github.com/jeany55/kascade) | reading files out of a StarCraft: Remastered installation (CASC storage) | MIT, copyright 2026 Jeany |
++| [TypeScript](https://github.com/microsoft/TypeScript) | transpiling `.ts` plugins in the browser, in a worker | Apache-2.0, Microsoft Corporation |
++| The ten default plugins | compiled into the bundle from their repositories at the tags pinned in `src/plugins/defaults.ts` | MIT, copyright scmJS |
++
++The build writes the license text of every one of these into `THIRD-PARTY-NOTICES.txt`
++at the root of the bundle (`scripts/lib/notices.mjs`, run from `vite.config.ts`), so the
++web zip, the installers, the hosted sites and the container image all carry them. The
++list is read from `package.json`'s dependencies and from the vendored plugins rather than
++kept by hand, and a dependency with no license file fails the build.
++
++### Plugin runtimes
++
++Two default plugins load large parts of themselves at run time instead of compiling them
++into the bundle. The hosted editor fetches them from jsDelivr on first use; the desktop app
++and the container image carry the eudplib runtime in `plugin-runtime/` so they work
++offline (`scripts/bundle-plugin-runtimes.mjs`), and add its license files to their
++`THIRD-PARTY-NOTICES.txt`.
++
++| Project | Use | License |
++| --- | --- | --- |
++| [eudplib](https://github.com/armoha/eudplib) | the EUD trigger compiler behind the eudplib plugin, built for Pyodide with a build-configuration patch; its Python is unchanged | MIT, trgk and Armoha |
++| [euddraft](https://github.com/armoha/euddraft) | its plugin loader and eight bundled plugins (MSQC among them), unchanged, driving eudplib as euddraft does | MIT, copyright 2014-2017 trgk; its notice also carries BlackBone's (MIT, copyright 2015 DarthTon) |
++| [Pyodide](https://github.com/pyodide/pyodide) | CPython compiled to WebAssembly, which runs eudplib in a worker; redistributed unchanged | MPL-2.0, Pyodide contributors; CPython and its standard library under the PSF License |
++| [typing_extensions](https://github.com/python/typing_extensions) | a dependency of eudplib, as Pyodide publishes it | PSF-2.0 |
++| [Monaco Editor](https://github.com/microsoft/monaco-editor) | the TrigScript code editor, the plugin's own build of it served from jsDelivr at a tag of `plugin-trigscript`; not carried by any build | MIT, Microsoft Corporation |
++
++### In the desktop app
++
++| Project | Use | License |
++| --- | --- | --- |
++| [Electron](https://github.com/electron/electron) | the application shell; it bundles Chromium and Node.js, whose notices ship inside the Electron distribution | MIT, Electron contributors |
++| [electron-updater](https://github.com/electron-userland/electron-builder) | in-app updates | MIT, copyright 2015 Loopline Systems |
++
++### Build and development only
++
++| Project | Use | License |
++| --- | --- | --- |
++| [Vite](https://github.com/vitejs/vite) and [`@vitejs/plugin-react`](https://github.com/vitejs/vite-plugin-react) | bundling | MIT, VoidZero Inc. and Vite contributors; Yuxi (Evan) You and Vite contributors |
++| [Vitest](https://github.com/vitest-dev/vitest) | tests | MIT, VoidZero Inc. and Vitest contributors |
++| [Oxlint](https://github.com/oxc-project/oxc) | linting | MIT, VoidZero Inc. and contributors |
++| [electron-builder](https://github.com/electron-userland/electron-builder) | packaging the desktop app | MIT, copyright 2015 Loopline Systems |
++| [dts-bundle-generator](https://github.com/timocov/dts-bundle-generator) | bundling the plugin typings | MIT, copyright 2017 Evgeniy Timokhov |
++| [marked](https://github.com/markedjs/marked) | rendering the documentation site | MIT, MarkedJS |
++| [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) type packages | React and Node types | MIT, Microsoft Corporation and contributors |
++| [Playwright](https://github.com/microsoft/playwright) and [sharp](https://github.com/lovell/sharp) | the guide's screenshots; installed ad hoc, not dependencies | Apache-2.0, Microsoft Corporation; Apache-2.0, Lovell Fuller and contributors |
++
++### Services and infrastructure
++
++- **GitHub** hosts the repositories, the releases, the Actions builds (`actions/checkout`,
++  `setup-node`, `upload-artifact`, `download-artifact`, `upload-pages-artifact`,
++  `deploy-pages`, and `docker/setup-buildx-action`, `login-action`, `metadata-action`,
++  `build-push-action`), GitHub Pages for the hosted editor and the docs, and the GitHub
++  Container Registry for the image.
++- The **container image** is built on `nginx:alpine` (nginx, BSD-2-Clause; Alpine Linux
++  packages under their own licenses).
++- **npm** publishes `@scm-js/plugin-api`.
++- **Cloudflare** serves `scmjs.dev` (the site and the editor at `scmjs.dev/editor`) and runs the Workers for the game-data
++  download, the scmscx.com plugin and editor link previews. The hosted editor (`scmjs.dev/editor` and its nightly) and the
++  documentation load Cloudflare Web Analytics, which counts page views without cookies; a
++  desktop app or container build does not load it.
++- **scmjs.dev** accounts, the AI assistant and shared maps are served by the project's
++  `ai-server`, which signs people in through Discord, Google or Battle.net, stores saved
++  maps on Google Cloud Storage and sends assistant requests to Anthropic's API. Only the
++  scmjs.dev plugin talks to it.
++- **jsDelivr** serves plugins' run-time files (Monaco, Pyodide, the eudplib wheel) to the
++  hosted editor.
++- **scmscx.com**, the community map archive, is what the scmscx.com plugin searches,
++  through the routes its own site uses. It is not affiliated with this project.
++
++## Maintenance rule
++
++When adding an external resource:
++
++1. Put a short provenance comment beside copied or adapted algorithms and tables.
++2. Add the project, author or maintainer, source URL, exact use and license here.
++3. Preserve any required copyright and license notice.
++4. Record the source and license of every imported image, sound, font, map or data file.
++5. Keep Blizzard's archives, extracted data and maps out of git unless redistribution
++   permission has been established.
++
++## MIT notice for Chkdraft and MIT-licensed dependencies
++
++The copyright holders of each MIT-licensed project are named above. The shipped code and
++adapted material under this notice carry these copyrights:
++
++- Copyright (c) 2015-2026 Justin Forsberg (Chkdraft)
++- Copyright (c) Meta Platforms, Inc. and affiliates (React and React DOM)
++- Copyright (c) 2020 Poimandres (Jotai)
++- Copyright (c) 2022 WorkOS (Radix UI)
++- Copyright (c) 2026 Jeany (mopaq, kascade)
++- Copyright (c) 2026 scmJS (the default plugins)
++- Copyright (c) 2013-present Cole Bemis (Feather-derived Lucide icons)
++- Copyright (c) Electron contributors (Electron, desktop app)
++- Copyright (c) 2015 Loopline Systems (electron-updater, desktop app)
++- Copyright (c) 2014-2017 trgk (euddraft; eudplib by trgk and Armoha, plugin runtime)
++- Copyright (c) Microsoft Corporation (Monaco Editor, fetched by TrigScript)
++
++> MIT License
++>
++> Permission is hereby granted, free of charge, to any person obtaining a copy of this
++> software and associated documentation files (the "Software"), to deal in the Software
++> without restriction, including without limitation the rights to use, copy, modify,
++> merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
++> permit persons to whom the Software is furnished to do so, subject to the following
++> conditions:
++>
++> The above copyright notice and this permission notice shall be included in all copies
++> or substantial portions of the Software.
++>
++> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
++> INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
++> PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
++> HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
++> CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
++> THE USE OR OTHER DEALINGS IN THE SOFTWARE.
++
++## ISC notice for Lucide
++
++Copyright (c) 2026 Lucide Icons and Contributors
++
++> Permission to use, copy, modify, and/or distribute this software for any purpose with
++> or without fee is hereby granted, provided that the above copyright notice and this
++> permission notice appear in all copies.
++>
++> THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD
++> TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN
++> NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
++> DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER
++> IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
++> CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
++
++## Apache-2.0 notice for TypeScript
++
++TypeScript is copyright Microsoft Corporation and licensed under the Apache License,
++Version 2.0. The full license is at
++[apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0), in
++`node_modules/typescript/LICENSE.txt`, and in the bundle's `THIRD-PARTY-NOTICES.txt`.
++
++## MPL-2.0 notice for Pyodide
++
++Pyodide is licensed under the Mozilla Public License, Version 2.0. Builds that carry it
++(the desktop app and the container image) include its files unmodified, its license text in
++`plugin-runtime/eudplib/<version>/licenses/pyodide-LICENSE` and in `THIRD-PARTY-NOTICES.txt`,
++and its source is available at [github.com/pyodide/pyodide](https://github.com/pyodide/pyodide).
++The full license is at [mozilla.org/MPL/2.0](https://www.mozilla.org/MPL/2.0/).
+--- a/ASTRA_REVIEW_PROMPT.md
++++ b/ASTRA_REVIEW_PROMPT.md
+@@ -0,0 +1,14 @@
++# Astra 심사 준비용 프롬프트
++
++```text
++STARCRAFT: THE LAST MARINE의 Phase 1 자료를 검토하라.
++docs/WORK_ORDER.md와 docs/design/GDD.md를 먼저 읽어라.
++reports의 빌드·시험 결과와 실제 게임 증거를 구분하라.
++NOT RUN을 PASS로 바꾸지 마라.
++P0 위험, 시네마틱 상태, Q/W 자원 계약, 전용 타입 사용을 점검하라.
++미션 연표, 전공 심사, 임관, 지휘 전환의 인과를 검토하라.
++두 맵 전달과 8~12분 수직 슬라이스의 미완료 상태를 확인하라.
++진입 게이트가 충족되지 않으면 최종 아키텍처를 승인하지 마라.
++핵심 경험을 바꾸는 대안에는 근거와 별도 승인 항목을 작성하라.
++GO / CONDITIONAL GO / REWORK / NO-GO 판정과 구체적인 다음 작업을 작성하라.
++```
+--- a/docs/architecture/API_COMPATIBILITY.md
++++ b/docs/architecture/API_COMPATIBILITY.md
+@@ -0,0 +1,24 @@
++# API 호환성
++
++DOC는 문서 근거다. COMPILE은 컴파일 증거다. SIM은 시뮬레이터 증거다.
++GAME은 해당 게임 버전의 실제 실행 증거다. 각 증거는 다른 증거를 대신하지 않는다.
++
++|기능|사용 API|DOC|COMPILE/SIM|GAME|대안 또는 조건|
++|---|---|---|---|---|---|
++|Q/W 입력|keyPressed(P1, key)|확인|테스트 보고서|NOT RUN|F7/F8 병행|
++|쿨타임|now(), SECOND|확인|테스트 보고서|NOT RUN|Fastest 기준|
++|방어 강화|stats(JimRaynorMarine).armor|소스 확인|테스트 보고서|NOT RUN|해당 타입은 주인공 전용|
++|이동 중단|speed, orderId, x/y 읽기|확인|테스트 보고서|NOT RUN|직접 위치 쓰기 금지|
++|치료|Unit.heal(25)|확인|테스트 보고서|NOT RUN|완료 시 키트 소비|
++|아군 이동|Unit.order('move', location)|확인|컴파일·명령 생성|NOT RUN|길 찾기 실게임 시험|
++|적 교전|Unit.order('attack', location)|확인|컴파일·명령 생성|NOT RUN|유한한 사전 배치 병력|
++|시설 파괴|Unit.kill(), killUnitAt|확인|스킵 상태 시험|NOT RUN|정상 장면은 시설 피해 확인|
++|카메라|centerView(location)|확인|상태·명령 시험|NOT RUN|단일 소유자, 1초 종료|
++|효과음|playWav, MPQ WAV 멤버|확인|컴파일·아카이브 재열기|NOT RUN|실제 청취 필요|
++|체크포인트|createUnit, moveUnit, 상태 초기화|확인|재구성 시험|NOT RUN|PoC의 정규 상태만 지원|
++|E 공격주기|후보 조사 단계|미확정|NOT RUN|NOT RUN|효과 변경은 승인 필요|
++|R 범위 피해|후보 조사 단계|미확정|NOT RUN|NOT RUN|아군 피해 포함 검증|
++|미션 간 저장|고정 시작 A|설계|NOT RUN|NOT RUN|수동 코드 B 검증 전까지 A|
++
++`matrix`는 250 보호막을 제공하므로 Q 대안으로 채택하지 않았다.
++그 효과는 초반 해병의 생존 위협을 크게 바꾼다.
+--- a/docs/architecture/DECISIONS.md
++++ b/docs/architecture/DECISIONS.md
+@@ -0,0 +1,10 @@
++# 임시 결정 기록
++
++- D01: Phase 1은 scmJS 0.8.5와 고정 TrigScript 4.1.0으로 시험한다.
++- D02: 전체 캠페인 구현은 Astra 승인 후 시작한다.
++- D03: Q는 전용 해병 타입의 방어력을 일시 변경한다. 무적·Matrix 대안은 채택하지 않는다.
++- D04: W는 정상 완료 시에만 자원과 쿨타임을 적용한다.
++- D05: 지형·단위 배치·타이밍은 64×64 실험값이다. 최종 설계값이 아니다.
++- D06: 미션 간 전달은 검증 전까지 A다. B가 권장 후보라는 원문 원칙을 유지한다.
++- D07: 110초 복구는 RECOVERED다. 전투 성공으로 승격하지 않는다.
++- D08: 월일과 임시 권한은 창작 설계값이다. 공식 확인과 구분한다.
+--- a/docs/architecture/EVENT_CONTRACTS.md
++++ b/docs/architecture/EVENT_CONTRACTS.md
+@@ -0,0 +1,14 @@
++# 이벤트 계약 초안
++
++각 사건은 고유 ID와 한 명의 상태 소유자를 가진다.
++MissionDirector만 목표 완료를 확정한다. CinematicDirector는 장면 결과를 반환한다.
++IDLE → PREPARED → RUNNING → COMPLETED / SKIPPED / RECOVERED 순서를 사용한다.
++완료한 ID는 같은 체크포인트 구간에서 다시 완료하지 않는다.
++스킵·사망·복구는 동일한 정리 함수를 통과한다. 카메라와 시전 효과를 먼저 해제한다.
++RECOVERED는 전투 성공과 다르다. 복구 원인을 로그에 남긴다.
++감시 타이머는 이동 명령을 재발급한 후 복구 가능성을 검사한다.
++복구 종료는 점수나 선택 전공을 지급하지 않는다.
++
++PoC 숫자 상태: 1 PREPARED, 2 RUNNING, 3 COMPLETED, 4 SKIPPED, 5 RECOVERED.
++IDLE은 아직 시작하지 않은 외부 미션 관리자의 상태로 예약한다.
++PoC는 한 프로그램이 카메라와 스킬 상태를 소유한다. Phase 3 모듈 구조의 최종 승인이 아니다.
+--- a/docs/architecture/RISK_REGISTER.md
++++ b/docs/architecture/RISK_REGISTER.md
+@@ -0,0 +1,22 @@
++# Astra 심사용 위험 목록
++
++|ID|등급|위험|검증·대응|현재 상태|
++|---|---|---|---|---|
++|R01|P0|실게임 맵 실행 증거 없음|1.23.10.13515에서 SCX 로드 및 완료 영상 확보|OPEN|
++|R02|P0|새 TrigScript 백엔드의 EUD 호환|Q/W·카메라·입력 조합별 실제 실행|OPEN|
++|R03|P0|기본 단축키·게임 속도 충돌|기본 설정과 사용자 설정, Fastest·Normal 비교|OPEN|
++|R04|P0|타입 단위 방어력 변경이 다른 유닛에 전파|주인공 타입을 독점하고 생성 목록 검사|조건부 대응|
++|R05|P0|시전과 사망·스킵 동시 발생|소비·복원 순서와 단일 완료 테스트|SIM 범위 검증|
++|R06|P0|개체 포위와 경로 막힘|실게임 비정상 경로 시험, 110초 복구 상태 표시|OPEN|
++|R07|P0|체크포인트 악용·중복 보급|완전한 적·전공·상자 상태 스냅샷 계약 필요|PoC 이후 확장|
++|R08|P0|미션 간 상태 전달 미검증|A 유지, WO-06에서 두 독립 맵 검증|OPEN|
++|R09|P1|음향 누락·중복·언어 표시|실제 청취와 한국어 텍스트 표시 시험|OPEN|
++|R10|P1|맵 저장 후 소스와 런타임 불일치|생성 맵 직접 편집 금지, 빌드 해시 기록|자동 검사|
++|R11|P1|반복 전역 유닛 스캔 비용|현재 프레임별 주인공 캐시, 장면 전환 시만 전체 검사|실게임 측정 필요|
++|R12|P1|90초 장면이 110초로 복구 종료|정상은 90초 목표, 110초는 RECOVERED만 허용|OPEN|
++|R13|P1|고정 지형 PoC가 최종 지형 품질로 오인|64×64 평지 실험만 배포, 최종 맵과 분리|명시|
++|R14|P0|공식 연표의 세부 월일 근거 부족|사건의 상대 순서 유지, 정확한 날짜 승인 보류|OPEN|
++|R15|P1|도구·자산 라이선스 혼합|각 도구 LICENSE 보존, Blizzard 데이터 재배포 제외|검토 진행|
++
++Q를 무적이나 과도한 보호막으로 변경하지 않는다. B 대신 C를 임의 채택하지 않는다.
++맵 크기·성장 수치·장면 길이는 실게임 결과와 Astra 심사로 확정한다.
+--- a/docs/architecture/TOOLCHAIN_RESEARCH.md
++++ b/docs/architecture/TOOLCHAIN_RESEARCH.md
+@@ -0,0 +1,45 @@
++# WO-01 제작 도구 조사
++
++## 실행한 경로
++
++scmJS와 scmJS가 고정한 TrigScript v4.1.0을 작업 폴더에 확보했다.
++`createScenario`로 기본 맵을 생성한다. `compileScript`로 스크립트와 시뮬레이터 테스트를 검사한다.
++`resolveStrings`로 문자열을 적용한다. `buildOwnMap`으로 Remastered용 프로그램을 CHK에 배치한다.
++`saveMap`으로 MPQ SCX를 저장한다. `loadMap`과 `parseScenario`로 결과를 다시 읽는다.
++이 경로는 upstream `scripts/build-fixture.mts`의 빌드 절차를 따른다.
++전체 편집기 UI의 프로덕션 빌드는 이번 검사에 포함하지 않았다.
++
++## 제약
++
++`trigger()`는 일반 트리거다. `program()`은 Remastered가 필요한 런타임 코드다.
++이번 PoC는 `program()`을 사용하므로 Brood War 1.16.1 호환을 보장하지 않는다.
++시뮬레이터는 자원·유닛·조건·스위치와 프로그램 상태를 다룬다.
++시뮬레이터는 이동·충돌·전투·실제 음향을 재현하지 않는다.
++실제 게임에서 실행하지 않은 항목은 NOT RUN으로 기록한다.
++공식 EUD 지원은 모든 메모리 접근의 지원을 의미하지 않는다.
++키 입력은 동기화 지연을 가진다. 기본 게임 단축키도 함께 작동한다.
++F2~F6는 입력 API에서 사용할 수 없다. F7/F8을 대체 키로 시험한다.
++24프레임을 1초로 계산한다. Fastest 이외의 속도에서는 벽시계 시간이 달라진다.
++
++## 보조·대체 도구
++
++ScmDraft 2는 지형·배치·기본 트리거의 수동 편집 후보로 둔다.
++공식 사이트의 구버전 안내와 0.9.10 배포 목록이 일치하지 않는다.
++실제 설치본과 라이선스 조건은 미확인이다. 설치 후 버전을 다시 기록한다.
++eudplib은 Python 기반 맵·트리거 라이브러리다. epScript는 그 안의 별도 언어 컴파일러다.
++euddraft는 실행 가능한 배포와 플러그인 조합을 제공한다.
++대체 경로는 별도 가상환경에서 동일한 P0 시험을 통과해야 한다.
++제작 도구 전환은 Astra 설계 심사 대상이다.
++
++## 출처
++
++- [scmJS 공식 저장소](https://github.com/scm-js/scm-js)
++- [TrigScript 공식 저장소 v4.1.0](https://github.com/scm-js/plugin-trigscript/tree/v4.1.0)
++- [공식 키 입력 문서](https://docs.scmjs.dev/trigscript-language/keys-the-mouse-and-chat/)
++- [공식 타이머 문서](https://docs.scmjs.dev/trigscript-library/timers/)
++- [공식 시네마틱 문서](https://docs.scmjs.dev/trigscript-library/cutscenes/)
++- [공식 시뮬레이터 범위](https://docs.scmjs.dev/trigscript/testing-and-simulate/)
++- [블리자드 EUD 지원 발표](https://news.blizzard.com/ko-kr/article/21313396/1-21-0-eud)
++- [ScmDraft 2 공식 배포](https://www.stormcoast-fortress.net/downloads/scmdraft2/)
++- [eudplib 공식 저장소](https://github.com/armoha/eudplib)
++- [euddraft 공식 릴리스](https://github.com/armoha/euddraft/releases)
+--- a/docs/architecture/VERSION_MATRIX.md
++++ b/docs/architecture/VERSION_MATRIX.md
+@@ -0,0 +1,21 @@
++# 버전 매트릭스
++
++조사일: 2026-11-03. 설치 버전과 온라인 최신 버전을 구분한다.
++
++|도구|확인값|근거|실행 상태|
++|---|---|---|---|
++|StarCraft x86 / x86_64|1.23.10.13515|설치 EXE FileVersion과 `.build.info`|게임 창 검증 진행; 자동 시작 결과 미확정|
++|scmJS|0.8.5|package.json|맵 생성·읽기·저장 실행|
++|scmJS 커밋|f4fe24e7519096c2cdd9c1af887f9340317d7af7|로컬 Git HEAD|고정|
++|TrigScript|4.1.0|scmJS 기본 플러그인 태그|실제 컴파일러·백엔드 실행|
++|TrigScript 커밋|40243398aeb04fcf2893aabb420a3cba92f0d3ac|v4.1.0 태그가 가리키는 커밋|고정|
++|Node.js|24.16.0|node --version|실행 확인|
++|npm|12.2.1|npm --version|실행 확인|
++|Python|3.14.7|python --version|문서·자산·해시 작업 실행|
++|ScmDraft 2|공식 배포 목록 0.9.10|공식 다운로드 페이지|설치·실행 NOT RUN|
++|euddraft|공식 릴리스 v0.11.0.0|공식 Releases|설치·빌드 NOT RUN|
++|eudplib|euddraft 릴리스가 0.81.0을 명시|공식 Releases|설치·빌드 NOT RUN|
++|epScript|eudplib 내 컴파일러|공식 README|설치·빌드 NOT RUN|
++
++Node의 기본 타입 제거는 upstream `private declare()` 메서드에서 구문 오류를 냈다.
++프로젝트 빌드 로더는 TypeScript transpileModule을 사용한다. upstream 소스는 수정하지 않았다.
+--- a/docs/design/CAMPAIGN_STATE.md
++++ b/docs/design/CAMPAIGN_STATE.md
+@@ -0,0 +1,26 @@
++# 캠페인 상태와 전달
++
++```text
++CampaignState(schemaVersion, missionId, checkpointId)
++  hero(weaponTier, armorTier, experienceTier, unlockedSkills)
++  inventory(materials, specialParts, medicalKits, explosives)
++  records(milestoneFlags, optionalMissionFlags, commendationTier)
++  command(rank, authorityLevel, supportUnlocks)
++  metadata(difficulty, completionFlags)
++```
++
++이 구조는 논리 명세다. 엔진 저장 형식이 아니다.
++
++|방식|장점|필수 검증|현 상태|
++|---|---|---|---|
++|A 고정 시작|독립 맵으로 재현 가능|미션별 최소 장비·대사 정합성|현재 개발 기준|
++|B 수동 코드|핵심 장비·전공을 전달|버전·미션·값 범위·체크값·재입력·두 맵 복원|권장 후보, NOT RUN|
++|C 외부 런처|큰 데이터 저장 가능|설치·파일 접근·버전·오류 복구|확장 후보, NOT RUN|
++
++Death Counter와 Switch가 맵 사이에서 자동 전달된다고 가정하지 않는다.
++기본 게임 저장을 EUD 필수 저장 수단으로 사용하지 않는다.
++수동 코드의 체크값은 입력 오류 검출용이다. 보안 기능으로 설명하지 않는다.
++M04는 검증된 작전 ID와 본인 보고를 구분한다. 필수 심사는 선택 점수에 관계없이 진행한다.
++맵 내부 체크포인트는 위치, 장비, 소모품, 임무 플래그를 복원한다.
++필요한 적·아군, 시설 파괴, 연출 상태도 함께 재구성한다.
++이번 PoC는 하나의 생존 정규 상태만 복구한다. WO-06의 캠페인 전달 완료를 의미하지 않는다.
+--- a/docs/design/CHARACTER_BIBLE.md
++++ b/docs/design/CHARACTER_BIBLE.md
+@@ -0,0 +1,14 @@
++# 인물 초안
++
++아래 인물은 창작안이다. 사용자 승인 전까지 이름과 세부 이력을 확정하지 않는다.
++
++|인물|역할|행동과 갈등|등장|
++|---|---|---|---|
++|주인공, 이름 미정|일반 해병→소위|살아남기 위한 판단이 동료 생존 책임으로 바뀜|M01~M05|
++|마라 베일 하사|초소 책임자|초기 후퇴를 지시, 생존 여부는 선택 분기 후보|M01|
++|이언 렌 기술병|군수시설 담당|시설 기록과 복구 절차를 남김|기록·무전|
++|셀린 워드 중위|정찰부대 지휘관|주인공을 의심하나 물증으로 평가를 수정|M03~M04|
++|노아 케슬러 소령|심사·작전 책임자|조직 명령과 병력 생존의 충돌을 보여줌|M04~M05|
++
++M04는 전공량으로 인격과 계급을 결정하지 않는다.
++워드는 검증 자료와 본인 진술을 구분한다. 케슬러는 현장 지휘 평가를 별도로 실시한다.
+--- a/docs/design/CINEMATIC_BIBLE.md
++++ b/docs/design/CINEMATIC_BIBLE.md
+@@ -0,0 +1,11 @@
++# 시네마틱 바이블
++
++실제 공격받은 방어선이 무너진다. 병력은 교전과 명령에 반응해 이동한다.
++폭발 원인은 공격받은 군수시설로 제시한다. 적 병력은 유한하게 사전 배치한다.
++플레이어 앞의 즉시 생성은 사용하지 않는다. 증원에는 시야 검사가 필요하다.
++카메라는 사건을 짧게 보여준 후 플레이어에게 돌아온다.
++주인공을 연출 경로로 강제로 걷게 하지 않는다. 위험 신호와 대체 동선을 제공한다.
++중요 NPC 사망 시 무전 호출부호와 다음 목표를 대체한다.
++음향은 환경음·전장음·무전·강조음으로 구분한다. 무전 중 경쟁 효과음을 줄인다.
++기본 게임 전투음은 엔진이 재생한다. 추가 폭발음은 직접 만든 합성 소리를 사용한다.
++현 PoC에는 실제 음성 녹음과 믹싱을 넣지 않았다. 무전은 화면 텍스트다.
+--- a/docs/design/ECONOMY_DESIGN.md
++++ b/docs/design/ECONOMY_DESIGN.md
+@@ -0,0 +1,11 @@
++# 보급 경제 초안
++
++군수자재는 무기·방어복·시설의 공통 재료다. 특수부품은 고급 복구에 사용한다.
++키트와 폭약은 소모품이다. 같은 상자 ID는 한 번만 획득한다.
++선택 보급품을 얻지 않아도 필수 목표의 최소 장비를 확보한다.
++필수 시설 앞에는 부족한 필수 재료만 보충하는 대체 경로를 둔다.
++폭약 필수 목표에는 1개 이상의 보장 폭약을 둔다. 경로 재진입으로 무한 지급하지 않는다.
++체크포인트는 획득 플래그와 소비 후 재고를 함께 복원한다.
++재시작은 해당 체크포인트 이후의 전공·보상·적 상태를 동일하게 되돌린다.
++개량 가격과 총 공급량은 아직 확정하지 않았다. WO-18 전투 측정 전에는 숫자를 고정하지 않는다.
++현재 PoC에는 키트 3개만 구현했다. F9 재시작의 3개 복구는 시험용 계약이다.
+--- a/docs/design/GDD.md
++++ b/docs/design/GDD.md
+@@ -0,0 +1,86 @@
++# 전체 설계도 V1.0 — 작업용 기준선 정리
++
++사용자가 채팅으로 제공한 전체 설계도 V1.0을 정리했다. 원문 전체를 재전사한 문서는 아니다.
++수치와 날짜는 원문과 동일한 기획 목표다. Astra 승인을 의미하지 않는다.
++
++## 비전과 제작 원칙
++
++평범한 연합군 해병이 침공에서 생존한다. 그는 베스퍼 VII에서 장비를 확보하고 시설을 복구한다.
++그는 작전 성과를 인정받아 분대를 통솔한다. 마지막에는 부대의 생존을 책임지는 장교가 된다.
++실제 전장 행동으로 사건의 원인과 결과를 보여준다. 플레이어의 조작권을 유지한다.
++전술적 이유를 가진 유한한 전투를 배치한다. 장비와 스킬의 효과를 전투로 확인한다.
++안정성과 원작 정합성을 우선한다. 미검증 기능을 필수 구현으로 확정하지 않는다.
++
++## 캠페인
++
++|미션|제목|크기 목표|시간 목표|변화|
++|---|---|---|---|---|
++|M01|마지막 생존자|192×192|60~90분|기지 붕괴 → 단독 생존|
++|M02|고립된 전선|224×224|90~120분|보급 → 복구 → 거점 방어|
++|M03|한 사람의 전쟁|256×256|100~140분|게릴라 → 군락 공격 → 구조 신호|
++|M04|귀환한 망령|256×256|90~130분|전공 검증 → 임시 지휘 → 임관|
++|M05|전설의 지휘관|256×256|120~160분|교두보 → 생산시설 → 최종 작전 → 철수|
++
++원문 전체 목표는 약 8~11시간이다. 미션별 합계는 460~640분, 약 7시간 40분~10시간 40분이다.
++최소 구간의 차이를 반올림 차이로 기록한다. 실제 플레이 시간으로 확정한다.
++맵 크기는 목표다. 이동 시간과 구역 밀도는 플레이테스트로 검증한다.
++일반 난이도를 먼저 제작한다. 대상은 StarCraft: Remastered의 `.scx` UMS다.
++
++## 세계관
++
++시기는 2499년 말~2500년 초다. 베스퍼 VII과 주인공 부대는 창작 설정이다.
++M01은 2499년 12월이다. M02는 2499년 12월~2500년 1월이다.
++M03은 2500년 1월이다. M04는 1월 말이며 M05는 2월이다.
++세부 날짜는 공식 근거 확인 전까지 잠정값으로 유지한다.
++소위 임관을 기본안으로 한다. 대위급 권한은 임시 보직으로 설명한다.
++연합을 일방적으로 찬양하거나 부정하지 않는다. 결말은 연합 붕괴 후 병력 생존과 재편성으로 연결한다.
++
++## 성장
++
++|단계|체력|공격력|방어력|
++|---|---:|---:|---:|
++|일반|40|6|0|
++|숙련|55|7|1|
++|베테랑|75|9|2|
++|정예|100|12|3|
++|전설|130|14|4|
++
++모든 수치는 임시값이다. 장비 성장과 작전 경험을 구분한다.
++반복 처치로 최고 단계에 도달하지 않는다. 포위와 중장갑 적의 위협을 유지한다.
++소총, 전투복, 통신장치, 의료 모듈, 폭약 장비를 사용한다.
++
++## 스킬·경제·전공
++
++Q는 18초 쿨타임과 최대 6초 지속시간을 가진다. 이동하면 해제한다.
++W는 3초 시전 후 25 체력을 회복한다. 완료할 때 키트 1개와 40초 쿨타임을 적용한다.
++E는 30초 쿨타임과 4초 지속시간을 가진다. 공격 주기 변경은 기술 검증 대상이다.
++R은 3초 설치와 60초 쿨타임을 가진다. 폭약 1개를 사용한다.
++R은 설치, 안전거리 확보, 폭발을 구분한다. 자신과 아군의 피해 가능성을 유지한다.
++마나를 사용하지 않는다. 입력과 자원 처리는 `SKILL_DESIGN.md`를 따른다.
++군수자재, 특수부품, 의료 키트, 폭약을 구분한다. 선택 보급품 없이도 필수 목표를 진행할 수 있어야 한다.
++필수 개량과 폭약에는 대체 보급 경로를 둔다. 획득 ID와 전공 ID는 한 번만 기록한다.
++전공은 전투, 작전, 지휘 기록으로 구분한다. M04 필수 진행은 선택 전공량에 의존하지 않는다.
++
++## 연출과 상태
++
++M01 프롤로그 목표는 8~12분이다. 정상 근무, 이상 징후, 최초 접전, 전면 공격을 연결한다.
++철수 실패, 수송선 추락, 탄약고 폭발, 의식 회복을 연결한다.
++IDLE, PREPARED, RUNNING, COMPLETED, SKIPPED, RECOVERED 상태를 사용한다.
++카메라와 조작 제한에는 소유자를 둔다. 스킵 후 필수 시설과 플래그를 확정한다.
++환경음, 전장음, 무전, 강조음을 구분한다. 중요한 무전과 경쟁하는 효과음을 줄인다.
++
++## 데이터·아키텍처·검증
++
++논리 상태는 hero, inventory, records, command, metadata와 버전·미션·체크포인트를 포함한다.
++미션 간 Death Counter 자동 전달을 가정하지 않는다. EUD 기본 저장을 전제로 하지 않는다.
++고정 시작 A, 수동 코드 B, 외부 런처 C를 비교한다. B의 입력·복원 검증 전까지 A를 유지한다.
++체크포인트는 유효한 세계를 재구성한다. 모든 전투 상태의 정확한 복제는 요구하지 않는다.
++GameState, MissionDirector, CinematicDirector, CombatSystem, EconomySystem을 분리한다.
++전공, 지휘, 데이터 전달, 진단 모듈을 분리한다. 상태 변경 책임자는 하나로 제한한다.
++구역별 활성화, 유닛 상한, 스캔 예산을 적용한다. 대규모 성능은 실게임에서 측정한다.
++외부 자산의 출처와 라이선스를 기록한다.
++P0는 빌드·실행, 입력, 쿨타임·중단, 능력치, 카메라·스킵, 저장, 체크포인트다.
++P1은 폭약 범위 피해, 전공, HUD, 생성·정리, 지휘 전환, 오디오다.
++P2는 상세 보상, 동적 UI, 분기 대사, 추가 난이도, 런처다.
++진행 불가, 연출 중복, 필수 보급 소실, 중복 소비, 복구 실패, 맵 실행 실패는 출시 시 0건이어야 한다.
++모든 필수 실게임 항목을 검증한 후 Astra가 제작 경로를 확정한다.
+--- a/docs/design/LORE_COMPATIBILITY.md
++++ b/docs/design/LORE_COMPATIBILITY.md
+@@ -0,0 +1,10 @@
++# 공식 설정 정합성
++
++공식 확인: 저그의 테란 식민지 공격, 멩스크의 타소니스 유인 작전, 연합 몰락을 사건 순서의 기준으로 삼는다.
++[블리자드 Story Primer](https://news.blizzard.com/en-us/article/23331587/starcraft-story-primer)를 확인했다.
++이 자료만으로 2499년 12월~2500년 2월의 모든 세부 날짜가 입증되지는 않는다.
++원문 미션별 월일은 잠정 창작 배치로 유지한다. 역사적 확정값이라고 표기하지 않는다.
++베스퍼 VII, 창작 부대, 심사관, 개별 작전은 창작 설정이다.
++M04까지 연합 지휘체계가 작동한다. M05 종료 이후 붕괴 통신을 수신한다.
++연합 붕괴를 저지하거나 타소니스 전투 결과를 바꾸지 않는다.
++전시 소위 임관과 임시 상위 보직은 서사 설계안이다. 공식 계급 규정의 사실로 제시하지 않는다.
+--- a/docs/design/SKILL_DESIGN.md
++++ b/docs/design/SKILL_DESIGN.md
+@@ -0,0 +1,19 @@
++# WO-04 전술 스킬 계약
++
++입력 → 해금 → 생존·조작 상태 → 상호 배제 → 자원 → 쿨타임 → 시전 → 중단 → 효과 → 소비 순서를 적용한다.
++동일 프레임 Q/W 입력은 Q를 먼저 처리한다. 한 개의 스킬만 활성화한다.
++실제 게임 일시 정지는 게임 프레임 진행을 멈춘다. 프로그램은 벽시계 타이머를 사용하지 않는다.
++
++|스킬|조건|성공|중단|자원·쿨타임|
++|---|---|---|---|---|
++|Q/F7 방어 자세|해금·생존·정지·18초 경과|방어력 +2, 최대 6초|이동 명령·이동·사망·강제 이벤트|발동 시 18초, 중단해도 유지|
++|W/F8 긴급 지혈|해금·생존·정지·키트·40초 경과|3초 후 최대 체력까지 25 회복|이동·위치 변화·누적 5 체력 피해·사망·강제 이벤트|완료 시 키트 1개와 40초, 중단은 소비 없음|
++|E|M02 해금|4초 공격주기 감소 목표|이동·사망·종료|30초 목표, 구현 미확정|
++|R|M03 해금·폭약·유효 지형|3초 설치 후 별도 지연 폭발|설치 중 이동·사망|60초 목표, 설치 완료 소비안 검토|
++
++Q는 전용 Jim Raynor Marine 타입을 사용한다. 일반 Marine 동료의 방어력을 바꾸지 않는다.
++타입 방어력은 원래 값을 저장하고 복구한다. 최고 능력치 성장 경로는 아직 확정하지 않았다.
++SKILL_POC는 Q/W를 처음부터 연다. COLLAPSE_POC는 생존 구간 진입 후 W를 연다.
++HUD는 5초마다 이름·키·쿨타임·키트를 표시한다. 거절 입력은 현재 차단 이유를 출력한다.
++미출력 상태도 항상 보이는 최종 HUD는 별도 P1 작업이다.
++초기 40 체력과 6 공격력은 원문 기획값이다. 시험 맵은 치료 시험을 위해 현재 체력을 30으로 시작한다.
+--- a/docs/design/STORY_BIBLE.md
++++ b/docs/design/STORY_BIBLE.md
+@@ -0,0 +1,13 @@
++# 스토리 바이블 초안
++
++베스퍼 VII은 변방 항로의 군수·통신 중계지다. 전략적 중요성은 창작 설정이다.
++고립의 원인은 중계망 파괴와 전선 분산이다. 구조 지연은 무한한 적 증원으로 표현하지 않는다.
++M01에서 주인공은 최초 접전과 통신 기록을 확보한다.
++M02에서 군수기지를 복구하고 유한한 세 차례 공격을 방어한다.
++M03에서 저그 연결시설을 파괴하고 구조 신호와 작전 자료를 전송한다.
++M04에서 정찰대가 신원과 기록을 대조한다. 지휘관 부상 후 주인공이 임시 지휘를 맡는다.
++M05에서 주인공은 개인 경험으로 군수·증원로 문제를 해결한다.
++최종 군락 무력화 후 철수와 지휘 기록을 완료한다. 이후 연합 붕괴 소식을 받는다.
++명예 퇴역으로 마치지 않는다. 부대 재편성과 생존 책임이 다음 목표다.
++전공 심사와 임관은 별개다. 소위 임관 후 대위급 권한은 전시 임시 보직으로 설명한다.
++공식 인물의 전투 성과를 주인공에게 이전하지 않는다.
+--- a/docs/missions/AUDIO_CUE_LIST.md
++++ b/docs/missions/AUDIO_CUE_LIST.md
+@@ -0,0 +1,12 @@
++# 오디오 목록
++
++|ID|레이어|조건|자산|검증|
++|---|---|---|---|---|
++|AUD.BASE|환경|기지 정상 근무|후속 자산 검토|NOT RUN|
++|AUD.CONTACT|전장|실제 유닛 사격|기본 게임 효과음|실게임 NOT RUN|
++|AUD.RADIO|무전|각 사건 시작|화면 텍스트, 음성 미제작|표시 테스트만|
++|AUD.BLAST|강조|Relay 폭발|tlm-blast.wav, 직접 합성|아카이브 포함 검사, 청취 NOT RUN|
++|AUD.SILENCE|환경 전환|생존 구간|전투 유닛 정리, 추가 효과 재생 중지|상태 시험만|
++
++tlm-blast.wav는 고정 난수와 감쇠 진동으로 만든 0.75초 PCM 효과음이다.
++상업 음원이나 게임 음성 파일을 추출하지 않았다.
+--- a/docs/missions/CAMERA_SHOT_LIST.md
++++ b/docs/missions/CAMERA_SHOT_LIST.md
+@@ -0,0 +1,13 @@
++# 카메라 목록
++
++|ID|대상|기간 목표|소유자|해제|
++|---|---|---|---|---|
++|CAM.P00|Home, 조작 시작|초기 1회|장면 제어기|즉시|
++|CAM.P05|피해받은 Relay 폭발|PoC 1초|cameraOwner=1|다음 프레임 기준 1초 후 hero Focus|
++|CAM.END|Safe 체크포인트|종료 시 1회|장면 제어기|즉시|
++|CAM.FLIGHT|수송선 피격|후속 설계 2초|장면 제어기|스킵·사망·타임아웃|
++
++정상 진행 중 상시 카메라 잠금을 사용하지 않는다.
++카메라를 가진 다른 장면은 새 샷을 시작하지 않는다.
++주인공이 사망하면 카메라 소유권을 해제하고 Safe로 복구한다.
++후속 pan·shake 라이브러리는 문서 확인만 완료했다. 현 PoC에 구현했다고 기록하지 않는다.
+--- a/docs/missions/M01.md
++++ b/docs/missions/M01.md
+@@ -0,0 +1,32 @@
++# M01 — 마지막 생존자
++
++상태: 상세화 초안. 전체 미션 구현 NOT RUN.
++크기 목표: 192×192. 목표 시간: 60~90분.
++
++## 시작과 종료
++
++시작 조건: 정상 근무 중 침공 발생.
++진행 순서: 경계 근무 → 최초 대응 → 후퇴 → 폭발 생존 → 의료시설 → 키트 → 정착지 → 통신 기록 → 보급시설.
++종료 조건: 보급시설 확보와 다음 거점 확인.
++
++## 구역과 전술
++
++주요 구역: 막사·무기고, 중앙 통제, 외곽 초소, 정비구역, 의료시설, 정착지, 통신중계소, 보급시설.
++폭발·사망·스킵 뒤 의식 회복 상태를 재구성한다.
++각 구역은 진입, 목표 완료, 안전지대 확보의 체크포인트 후보를 가진다.
++적 병력은 조우별 고정 예산을 가진다. 플레이어 체류 시간으로 무한 생성하지 않는다.
++필수 목표에는 선택 자원과 독립된 최소 보급 경로를 둔다.
++
++## 성장과 기록
++
++해금: Q, W, 조사·수집.
++필수 전공: 생존 확인; 통신중계소 조사.
++선택 전공: 자료 회수; 군수품; 제한 구역.
++기록 ID는 `M01.RECORD.<목표>` 형식으로 고정한다.
++목표 완료와 보상은 하나의 트랜잭션으로 적용한다.
++
++## 검증
++
++필수 경로, 선택 목표 생략, 자원 고갈, 반복 사망, 스킵, 경로 이탈을 각각 시험한다.
++미션 시간과 전투 난이도는 실제 플레이로 측정한다.
++지도 전체와 적 배치는 Astra 승인 후 제작한다.
+--- a/docs/missions/M01_EVENT_TABLE.md
++++ b/docs/missions/M01_EVENT_TABLE.md
+@@ -0,0 +1,24 @@
++# WO-05 90초 붕괴 사건 표
++
++64×64 Badlands 평지 시험 맵이다. 최종 M01 지형과 다르다.
++P1은 주인공 타입 20 하나를 소유한다. P3은 동료와 시설을 소유한다.
++P2는 저글링 20과 히드라 5를 사전 배치한다. 추가 생성은 없다.
++Home은 중앙 대기 구역이다. Outer는 북부 벙커다. Relay는 남부 군수시설이다.
++Safe는 남서쪽 보급 피난처다. Spawn은 북동쪽 적 준비 구역이다.
++
++|ID|목표 시점|시작 조건|행동·종료 조건|이탈·복구|
++|---|---|---|---|---|
++|M01.P00|0~15초|RUNNING, stage=0|P3 해병이 Outer로 이동, stage=1|NPC 없어도 통제소 무전 유지|
++|M01.P01|15~30초|stage=1, 360프레임|초소 교신 단절 무전, stage=2|주인공 위치는 제한하지 않음|
++|M01.P02|30~45초|stage=2, 720프레임|P2가 Outer를 공격, stage=3|자연 교전은 실게임 검증|
++|M01.P03|45~65초|stage=3, 1080프레임, 벙커 피해 또는 소실|P3는 Safe로 후퇴, P2는 Relay 공격|60초까지 피해 없으면 공격 재지시, recovery=1|
++|M01.P04|65~80초|stage=4, 1560프레임|군수시설 화재 무전, stage=5|필수 NPC 사망과 독립|
++|M01.P05|80~90초|stage=5, 1920프레임, 군수시설 피해 또는 소실|시설 폭발·효과음·1초 카메라, stage=6|피해 없으면 성공 처리하지 않음|
++|M01.P06|90초|stage>=6, 2160프레임|정규 생존 상태로 전환, 완료 횟수+1|110초까지 미진행하면 RECOVERED|
++|M01.SKIP|장면 중|Escape 입력|시설·수송선 파괴, 잔여 전투 병력 정리, Safe 이동|SKIPPED, 완료 횟수는 1|
++|M01.DEATH|장면 중|주인공 소실|효과 정리·RECOVERED, 3초 후 재생성|실패 전공 지급 없음|
++
++스킵과 정상 종료는 같은 필수 파괴·재고·해금·위치 상태를 만든다.
++사망 후 재생성 위치는 Safe다. 현재 체력 30, 키트 3, 쿨타임 0으로 복구한다.
++자연 진행과 복구 종료는 서로 다른 상태로 기록한다.
++현재 수송선 추락은 종료 시 파괴 상태만 보장한다. 비행·피격·추락 장면은 후속 작업이다.
+--- a/docs/missions/M01_PROLOGUE_STORYBOARD.md
++++ b/docs/missions/M01_PROLOGUE_STORYBOARD.md
+@@ -0,0 +1,17 @@
++# WO-03 M01 프롤로그 스토리보드
++
++목표 8~12분. WO-07에서 구현할 설계안이다. 현재 90초 PoC와 구분한다.
++
++|구간|플레이 행동|전장 원인과 결과|대사|스킵 후 필수 상태|
++|---|---|---|---|---|
++|00:00~02:00|막사→무기고→북부 순찰|SCV 정비, 경계조 교대|베일: 북부 경계부터 확인해.|경계 임무 수신|
++|02:00~03:30|초소 접근·조사|센서 단절, 잔여 경계병 후퇴|초소: 지하에서 올라온다.|초소 손실 플래그|
++|03:30~05:30|직접 사격·엄폐 이동|측면 저글링, 방어선 교전|베일: 벙커 옆 사선을 지켜.|최초 접전 기록|
++|05:30~07:30|후방 통로로 전투 후퇴|외곽 붕괴, 중계시설 피해|통제소: 정비구역으로 철수.|대체 통로 개방|
++|07:30~09:30|정비구역→대피로 선택|수송선 접근→피격→추락|조종사: 착륙 불가, 고도를 잃는다.|수송선 파괴|
++|09:30~10:30|탄약고에서 안전거리 확보|저그가 연료·탄약시설 타격|기술병: 탄약고가 탄다. 물러서!|폭발 완료·주인공 생존|
++|이후|의료시설 탐색|전장 소음 종료, 구조 응답 없음|주인공: 응답하라. 누구든.|의식 회복 체크포인트|
++
++강제 비조작 연출은 개별 3초 이하를 목표로 한다. 입력 허용 구간에서 주요 사건을 재생한다.
++플레이어가 위험 구역에 머물면 대피 경고와 대체 경로를 먼저 제공한다.
++장면 순서는 임무 조건으로 진행한다. 표의 시간은 편집 기준이며 시간만으로 성공을 확정하지 않는다.
+--- a/docs/missions/M02.md
++++ b/docs/missions/M02.md
+@@ -0,0 +1,32 @@
++# M02 — 고립된 전선
++
++상태: 상세화 초안. 전체 미션 구현 NOT RUN.
++크기 목표: 224×224. 목표 시간: 90~120분.
++
++## 시작과 종료
++
++시작 조건: M01 종료 또는 고정 최소 장비.
++진행 순서: 군수 복구 → 보급 탐색 → 이동로 정찰 → 3회 방어 → 전초 반격.
++종료 조건: 군수기지 생존과 북부 접근로 확보.
++
++## 구역과 전술
++
++주요 구역: 군수기지, 정비시설, 장갑차 집결지, 광물시설, 지하 이동로, 북부 감시시설, 전초 군락.
++봉쇄는 공격 방향을 바꾼다. 감시는 경고 시점을 앞당긴다.
++각 구역은 진입, 목표 완료, 안전지대 확보의 체크포인트 후보를 가진다.
++적 병력은 조우별 고정 예산을 가진다. 플레이어 체류 시간으로 무한 생성하지 않는다.
++필수 목표에는 선택 자원과 독립된 최소 보급 경로를 둔다.
++
++## 성장과 기록
++
++해금: E, 무기 2~3단계, 전투복, 감시·방어.
++필수 전공: 군수기지 방어.
++선택 전공: 이동로 봉쇄; 감시시설 복구; 추가 군수품.
++기록 ID는 `M02.RECORD.<목표>` 형식으로 고정한다.
++목표 완료와 보상은 하나의 트랜잭션으로 적용한다.
++
++## 검증
++
++필수 경로, 선택 목표 생략, 자원 고갈, 반복 사망, 스킵, 경로 이탈을 각각 시험한다.
++미션 시간과 전투 난이도는 실제 플레이로 측정한다.
++지도 전체와 적 배치는 Astra 승인 후 제작한다.
+--- a/docs/missions/M03.md
++++ b/docs/missions/M03.md
+@@ -0,0 +1,32 @@
++# M03 — 한 사람의 전쟁
++
++상태: 상세화 초안. 전체 미션 구현 NOT RUN.
++크기 목표: 256×256. 목표 시간: 100~140분.
++
++## 시작과 종료
++
++시작 조건: M02 북부 접근로 확보.
++진행 순서: 정찰·우회 → 폭약 → 증원로 차단 → 시설 파괴 → 울트라 1개체 → 통신탑.
++종료 조건: 연결시설 파괴와 연합군 응답, 전공 전송.
++
++## 구역과 전술
++
++주요 구역: 북부 오염지대, 감시초소, 지하 이동로, 폭약시설, 전초 군락, 연결시설, 고출력 통신탑.
++울트라는 장애물·방어시설·이동로를 요구한다. 체력만 늘리지 않는다.
++각 구역은 진입, 목표 완료, 안전지대 확보의 체크포인트 후보를 가진다.
++적 병력은 조우별 고정 예산을 가진다. 플레이어 체류 시간으로 무한 생성하지 않는다.
++필수 목표에는 선택 자원과 독립된 최소 보급 경로를 둔다.
++
++## 성장과 기록
++
++해금: R, 최종 개인 무기, 강화복, 정예 단계.
++필수 전공: 연결시설 파괴; 구조 신호.
++선택 전공: 우회로; 보급 회수; 정예 적 격파.
++기록 ID는 `M03.RECORD.<목표>` 형식으로 고정한다.
++목표 완료와 보상은 하나의 트랜잭션으로 적용한다.
++
++## 검증
++
++필수 경로, 선택 목표 생략, 자원 고갈, 반복 사망, 스킵, 경로 이탈을 각각 시험한다.
++미션 시간과 전투 난이도는 실제 플레이로 측정한다.
++지도 전체와 적 배치는 Astra 승인 후 제작한다.
+--- a/docs/missions/M04.md
++++ b/docs/missions/M04.md
+@@ -0,0 +1,32 @@
++# M04 — 귀환한 망령
++
++상태: 상세화 초안. 전체 미션 구현 NOT RUN.
++크기 목표: 256×256. 목표 시간: 90~130분.
++
++## 시작과 종료
++
++시작 조건: M03 구조 신호 응답.
++진행 순서: 신원 확인 → 물증 심사 → 습격 → 임시 지휘 → 분대 구조 → 방어 → 평가.
++종료 조건: 착륙지대 생존과 현장 지휘 인정, 임관 절차.
++
++## 구역과 전술
++
++주요 구역: 정찰대 접촉점, 신원심사소, 착륙지대, 고립분대, 방어선.
++선택 점수가 낮아도 스토리를 진행한다. 물증과 본인 보고를 분리한다.
++각 구역은 진입, 목표 완료, 안전지대 확보의 체크포인트 후보를 가진다.
++적 병력은 조우별 고정 예산을 가진다. 플레이어 체류 시간으로 무한 생성하지 않는다.
++필수 목표에는 선택 자원과 독립된 최소 보급 경로를 둔다.
++
++## 성장과 기록
++
++해금: 분대 선택, 재집결, 집중 화력, 임시 지휘.
++필수 전공: 착륙지대 방어; 지휘 평가.
++선택 전공: 구조 인원; 검증된 추가 전공.
++기록 ID는 `M04.RECORD.<목표>` 형식으로 고정한다.
++목표 완료와 보상은 하나의 트랜잭션으로 적용한다.
++
++## 검증
++
++필수 경로, 선택 목표 생략, 자원 고갈, 반복 사망, 스킵, 경로 이탈을 각각 시험한다.
++미션 시간과 전투 난이도는 실제 플레이로 측정한다.
++지도 전체와 적 배치는 Astra 승인 후 제작한다.
+--- a/docs/missions/M05.md
++++ b/docs/missions/M05.md
+@@ -0,0 +1,32 @@
++# M05 — 전설의 지휘관
++
++상태: 상세화 초안. 전체 미션 구현 NOT RUN.
++크기 목표: 256×256. 목표 시간: 120~160분.
++
++## 시작과 종료
++
++시작 조건: 임관과 임시 작전 지휘권.
++진행 순서: 교두보 → 구조 → 방어 안정화 → 생산시설 → 포병 → 증원로 차단 → 군락 공격 → 철수.
++종료 조건: 주요 군락 무력화, 생존 병력 철수, 지휘 기록 확정.
++
++## 구역과 전술
++
++주요 구역: 전방 교두보, 고립부대, 군수·생산시설, 포병진지, 증원로, 최종 군락, 철수지.
++연합 붕괴 통신 이후 부대 생존과 재편성 책임을 남긴다.
++각 구역은 진입, 목표 완료, 안전지대 확보의 체크포인트 후보를 가진다.
++적 병력은 조우별 고정 예산을 가진다. 플레이어 체류 시간으로 무한 생성하지 않는다.
++필수 목표에는 선택 자원과 독립된 최소 보급 경로를 둔다.
++
++## 성장과 기록
++
++해금: 긴급 보급, 제한 포병, 지휘 통합.
++필수 전공: 교두보 방어; 최종 작전 성공.
++선택 전공: 생존 병력; 보급 효율.
++기록 ID는 `M05.RECORD.<목표>` 형식으로 고정한다.
++목표 완료와 보상은 하나의 트랜잭션으로 적용한다.
++
++## 검증
++
++필수 경로, 선택 목표 생략, 자원 고갈, 반복 사망, 스킵, 경로 이탈을 각각 시험한다.
++미션 시간과 전투 난이도는 실제 플레이로 측정한다.
++지도 전체와 적 배치는 Astra 승인 후 제작한다.
+--- a/docs/qa/PLAYTEST_REPORT.md
++++ b/docs/qa/PLAYTEST_REPORT.md
+@@ -0,0 +1,47 @@
++# 실제 게임 재시도 결과
++
++기준일: 2026-11-03. 상태: PARTIAL.
++기존 Escape 중지 응답은 이번 세션에서 해제됐다.
++기록은 Computer Use 화면 관찰에 근거한다. 자동 시험 결과와 구분한다.
++
++## 환경과 진입
++
++StarCraft: Remastered 1.23.10.13515에서 실행했다.
++로컬 프로필 tlmpoc를 사용했다. 게임 유형은 유즈맵 설정이다.
++SKILL_POC.scx를 시작하고 Last Marine 선택과 이동을 확인했다.
++초기 체력은 30/40이다. HUD는 Q 0s, W unlocked 0s, kits 3을 표시했다.
++기본 섬멸전 진입은 종료한 뒤 유즈맵 설정으로 다시 진입했다.
++게임 속도 설정과 정확한 경과시간은 별도로 측정하지 않았다.
++
++## 관찰 결과
++
++|항목|입력과 화면 결과|판정|
++|---|---|---|
++|창 조작|해병 선택, 우클릭 이동, F10 메뉴 열기, 버튼으로 게임 복귀|PASS|
++|Q 발동|q 반복 입력 뒤 `Q active | armor +2 | movement cancels` 표시|PASS: 발동 메시지|
++|Q 종료|추가 이동 명령 전 `Q ended | base armor restored`와 Q 8s 표시|PASS: 종료 메시지|
++|Q 실제 방어력|능력치 툴팁과 피격 피해량은 검사하지 않음|UNVERIFIED|
++|W 치료|F8 반복 입력 뒤 시전 메시지, 체력 30/40 → 40/40|PASS: 회복 결과|
++|W 자원|치료 뒤 HUD `W/F8 first aid unlocked 29s | kits 2` 표시|PASS: 1개 소비와 쿨타임|
++|W 재사용|F8 재입력 뒤 `BLOCKED: W cooldown` 표시. 체력 40/40과 kits 2 유지|PASS|
++|F9 초기화|반복 입력 뒤 CHECKPOINT 메시지, Q 0s, W 0s, kits 3 표시|PARTIAL|
++|F9 해병 유지|초기 미니맵 점이 이후 관찰에서 사라짐. 해병의 지속 유지와 체력 복원은 미확인|UNCONFIRMED: 재현 필요|
++
++초기 단발 Q/W/F7/F8 입력에서는 발동 화면을 확인하지 못했다.
++반복 입력에서 Q와 F8이 감지됐다. 입력 누락 원인은 아직 확정하지 않았다.
++한 번의 누름에 대한 안정성과 입력 지연은 통과로 판정하지 않는다.
++Q 방어력 +2는 화면 메시지의 주장이다. 실제 수치 검증과 동일하지 않다.
++Q 종료는 다음 이동 명령 전에 관찰했다. 이동 중단 시험으로 합산하지 않는다.
++W 회복은 최대 체력 제한에 도달했다. 25 전체 회복량 검증은 별도로 필요하다.
++F9 반복 입력은 개별 복원 횟수의 증거가 아니다.
++마지막 화면은 F10 메뉴가 열린 일시정지 상태다.
++
++## 남은 검사
++
++Q 이동 중단과 피격 피해량을 검사한다.
++W 이동·피해 중단과 정확한 시전시간을 검사한다.
++단발 입력과 F7 대체 입력을 재검사한다.
++F9 해병 유지 문제를 단발 입력으로 재현한다.
++COLLAPSE_90S_POC 정상 진행, 스킵, 카메라와 음향을 검사한다.
++실게임 사망 복구와 전체 체크포인트 검사는 NOT RUN이다.
++WO-04와 Phase 1 전체 완료 게이트는 아직 충족하지 않았다.
+--- a/docs/qa/TEST_MATRIX.md
++++ b/docs/qa/TEST_MATRIX.md
+@@ -0,0 +1,20 @@
++# 시험 매트릭스
++
++|ID|검사|자동 검사 범위|실게임|
++|---|---|---|---|
++|T01|Q 효과·정상 종료|시간·상태·복원 메시지|PARTIAL: 발동·종료 메시지 확인. 수치 미검증|
++|T02|Q 연속 입력|종료시각 불변·상호 배제|NOT RUN|
++|T03|Q 쿨타임|재사용 거절|NOT RUN|
++|T04|Q 이동 중단|유닛 속도 주입|NOT RUN|
++|T05|W 완료·단일 소비|체력·키트·쿨타임|PASS: 30→40, kits 3→2, 쿨타임 거절. 시간 미측정|
++|T06|W 이동 중단|위치 변경 주입|NOT RUN|
++|T07|W 피해 중단|체력 피해 주입|NOT RUN|
++|T08|사망·체크포인트|효과 정리·재생성|PARTIAL: HUD 초기화 확인. 해병 유지 UNCONFIRMED|
++|T09|스킵 중복 방지|단일 완료·시설·적 정리|NOT RUN|
++|T10|NPC 소실·경로 이탈|이탈 뒤 스킵 복구|NOT RUN|
++|T11|감시 타이머|RECOVERED 구분|NOT RUN|
++|T12|F7/F8|대체 입력|PARTIAL: F8 감지. F7 미확인|
++
++실제 결과와 추가 검사는 `reports/*.tests.json`을 기준으로 갱신한다.
++
++실게임 판정의 한계와 반복 입력 조건은 reports/LIVE_UI_RETRY.md에 기록했다.
+--- a/docs/qa/TEST_PLAN.md
++++ b/docs/qa/TEST_PLAN.md
+@@ -0,0 +1,27 @@
++# Phase 1 시험 계획
++
++## 자동 검사
++
++고정 버전의 공식 컴파일러로 두 빌드 변형을 검사한다.
++시전·쿨타임·중단·사망·스킵·감시 복구를 독립 시험한다.
++완성 SCX를 다시 읽어 크기, 주인공, 트리거, 추가 자산을 확인한다.
++소스와 SCX의 SHA256을 기록한다. 같은 소스의 재빌드가 같은 결과를 만드는지 비교한다.
++시뮬레이터의 유닛 피해·이동 주입은 시험 데이터다. 실제 교전 증거로 사용하지 않는다.
++
++## 실게임
++
++설치 버전 1.23.10.13515, UMS, Fastest에서 검사한다.
++맵 선택, 로딩, 주인공 선택, 이동과 사격을 확인한다.
++Q 방어력 증가와 종료·이동 중단·재사용 거절을 확인한다.
++W 회복량·시전시간·차감·중단·쿨타임을 확인한다.
++시작 직후와 각 단계에서 Escape를 입력한다.
++정상 90초 진행에서 실제 아군·적군 이동과 시설 피해를 확인한다.
++NPC 선행 사망, 주인공 이탈, 주인공 사망과 F9 재시작을 확인한다.
++효과음을 청취한다. 기본 키 설정과 대체 키 설정을 각각 확인한다.
++결과에 시작 시간, 맵 해시, 재현 절차, 화면 또는 영상을 첨부한다.
++110초 RECOVERED를 정상 90초 PASS로 기록하지 않는다.
++
++## 승인 게이트
++
++실게임 필수 항목이 NOT RUN이면 WO-04와 WO-05는 완료가 아니다.
++WO-06 두 맵 전달과 WO-07 수직 슬라이스가 남아 있으면 Phase 2 진입은 보류한다.
+--- a/docs/WORK_ORDER.md
++++ b/docs/WORK_ORDER.md
+@@ -6,7 +6,7 @@
+ 작업 범위: 5개 대형 시네마틱 스토리 미션  
+ 기준 문서: 전체 설계도 V1.0  
+ 개발 방식: AI 주도 · 단계별 검증 · Git 버전 관리  
+-현재 단계: Phase 1 시작 전
++현재 단계: Phase 1 기술 검증 중
+ 
+ ---
+ 
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1,35 @@
++# STARCRAFT: THE LAST MARINE
++
++Phase 1 / WO-01~WO-05. 기준일: 2026-11-03. 상태: 기술 검증 중.
++
++본 폴더는 기초 설계, 실제 TrigScript 소스, 시험용 SCX 두 개를 포함한다.
++전체 캠페인과 Phase 2 승인 산출물은 아직 제작하지 않았다.
++`reports/WO-01_05_REPORT.md`에서 현재 판정과 실게임 검증 상태를 확인한다.
++
++## 실행
++
++1. `maps/poc/SKILL_POC.scx`를 스타크래프트 맵 선택 화면에서 연다.
++2. 게임 유형을 Use Map Settings로 설정한다.
++3. 게임 속도를 Fastest로 설정한다.
++4. Q 또는 F7로 방어 자세를 사용한다.
++5. W 또는 F8로 긴급 지혈을 사용한다.
++6. `COLLAPSE_90S_POC.scx`에서 Escape로 장면을 건너뛴다.
++7. 생존 구간에서 F9로 체크포인트를 다시 구성한다.
++
++실게임 실행 성공은 별도 보고서의 증거가 있어야 인정한다.
++시험 맵의 무전과 HUD는 컴파일 및 실행 진단을 위해 영어로 작성했다.
++최종 캠페인의 한국어 대사와 HUD는 별도 검증 대상이다.
++
++## 재빌드
++
++작업 폴더의 `work/scm-js`와 `work/plugin-trigscript`를 사용한다.
++각 저장소에서 `npm ci --ignore-scripts --no-audit --no-fund`를 실행한다.
++프로젝트 상위 작업 폴더에서 다음 명령을 실행한다.
++
++```powershell
++node outputs/The-Last-Marine/tools/build.mjs
++```
++
++고정 커밋과 버전은 `docs/architecture/VERSION_MATRIX.md`를 확인한다.
++소스 맵과 배포용 맵은 각기 다른 폴더에 둔다.
++`maps/release`는 출시 게이트 통과 전까지 비워 둔다.
+--- a/reports/LIVE_UI_RETRY.md
++++ b/reports/LIVE_UI_RETRY.md
+@@ -0,0 +1,47 @@
++# 실제 게임 재시도 결과
++
++기준일: 2026-11-03. 상태: PARTIAL.
++기존 Escape 중지 응답은 이번 세션에서 해제됐다.
++기록은 Computer Use 화면 관찰에 근거한다. 자동 시험 결과와 구분한다.
++
++## 환경과 진입
++
++StarCraft: Remastered 1.23.10.13515에서 실행했다.
++로컬 프로필 tlmpoc를 사용했다. 게임 유형은 유즈맵 설정이다.
++SKILL_POC.scx를 시작하고 Last Marine 선택과 이동을 확인했다.
++초기 체력은 30/40이다. HUD는 Q 0s, W unlocked 0s, kits 3을 표시했다.
++기본 섬멸전 진입은 종료한 뒤 유즈맵 설정으로 다시 진입했다.
++게임 속도 설정과 정확한 경과시간은 별도로 측정하지 않았다.
++
++## 관찰 결과
++
++|항목|입력과 화면 결과|판정|
++|---|---|---|
++|창 조작|해병 선택, 우클릭 이동, F10 메뉴 열기, 버튼으로 게임 복귀|PASS|
++|Q 발동|q 반복 입력 뒤 `Q active | armor +2 | movement cancels` 표시|PASS: 발동 메시지|
++|Q 종료|추가 이동 명령 전 `Q ended | base armor restored`와 Q 8s 표시|PASS: 종료 메시지|
++|Q 실제 방어력|능력치 툴팁과 피격 피해량은 검사하지 않음|UNVERIFIED|
++|W 치료|F8 반복 입력 뒤 시전 메시지, 체력 30/40 → 40/40|PASS: 회복 결과|
++|W 자원|치료 뒤 HUD `W/F8 first aid unlocked 29s | kits 2` 표시|PASS: 1개 소비와 쿨타임|
++|W 재사용|F8 재입력 뒤 `BLOCKED: W cooldown` 표시. 체력 40/40과 kits 2 유지|PASS|
++|F9 초기화|반복 입력 뒤 CHECKPOINT 메시지, Q 0s, W 0s, kits 3 표시|PARTIAL|
++|F9 해병 유지|초기 미니맵 점이 이후 관찰에서 사라짐. 해병의 지속 유지와 체력 복원은 미확인|UNCONFIRMED: 재현 필요|
++
++초기 단발 Q/W/F7/F8 입력에서는 발동 화면을 확인하지 못했다.
++반복 입력에서 Q와 F8이 감지됐다. 입력 누락 원인은 아직 확정하지 않았다.
++한 번의 누름에 대한 안정성과 입력 지연은 통과로 판정하지 않는다.
++Q 방어력 +2는 화면 메시지의 주장이다. 실제 수치 검증과 동일하지 않다.
++Q 종료는 다음 이동 명령 전에 관찰했다. 이동 중단 시험으로 합산하지 않는다.
++W 회복은 최대 체력 제한에 도달했다. 25 전체 회복량 검증은 별도로 필요하다.
++F9 반복 입력은 개별 복원 횟수의 증거가 아니다.
++마지막 화면은 F10 메뉴가 열린 일시정지 상태다.
++
++## 남은 검사
++
++Q 이동 중단과 피격 피해량을 검사한다.
++W 이동·피해 중단과 정확한 시전시간을 검사한다.
++단발 입력과 F7 대체 입력을 재검사한다.
++F9 해병 유지 문제를 단발 입력으로 재현한다.
++COLLAPSE_90S_POC 정상 진행, 스킵, 카메라와 음향을 검사한다.
++실게임 사망 복구와 전체 체크포인트 검사는 NOT RUN이다.
++WO-04와 Phase 1 전체 완료 게이트는 아직 충족하지 않았다.
+--- a/reports/SKILL_API_EVIDENCE.md
++++ b/reports/SKILL_API_EVIDENCE.md
+@@ -0,0 +1,12 @@
++# WO-04 API 증거
++
++고정 TrigScript 커밋: 40243398aeb04fcf2893aabb420a3cba92f0d3ac.
++`compiler/api.ts`는 `killUnitAt(player, unit, count, location)` 인수를 정의한다.
++`moveUnit`는 player, unit, count, from, to를 받는다.
++`wav` 인수는 Sound, Clip, string을 받는다.
++`stdlib/timers.ts`는 게임 프레임을 읽는다. SECOND는 24다.
++`docs/trigscript-language.md`는 hp·armor·speed·orderId의 쓰기 가능 범위를 설명한다.
++Q는 stats(type).armor를 사용한다. W는 Unit.heal(25)를 사용한다.
++keyPressed의 Q/W와 F7/F8은 실제 공식 컴파일러와 시뮬레이터로 검사했다.
++시뮬레이터 피해·속도 주입은 시험 데이터 변경이다. 실게임 API 호출을 대신하지 않는다.
++실게임 EUD 허용 여부, 기본 키 충돌, 조작 지연은 NOT RUN이다.
+--- a/reports/SKILL_TEST_RESULTS.md
++++ b/reports/SKILL_TEST_RESULTS.md
+@@ -0,0 +1,11 @@
++# WO-04 시험 결과
++
++두 변형에서 각각 15개 시험이 통과했다. 총 결과는 30 PASS / 0 FAIL이다.
++동일 소스의 변형을 각각 검사했다. 30개 독립 기능의 검증을 의미하지 않는다.
++원시 결과는 각 `*.tests.json`에 있다.
++빌드와 SCX 재열기를 통과했다. 실게임 관찰은 LIVE_UI_RETRY.md에 별도로 기록했다.
++실제 전투·입력 지연·음향은 검증하지 않았다.
++강제 조작 제한 상태에서 입력 거절 분기는 코드에 있다. 해당 분기의 전용 시험은 NOT RUN이다.
++체크포인트의 완전한 적·보급·전공 복원은 후속 구현 대상이다.
++실게임 Q 발동·종료 메시지, W 회복·키트 소비·쿨타임 거절을 확인했다.
++Q 실제 방어력, 단발 입력 안정성, 중단과 복원은 추가 검사 대상이다. WO-04는 PARTIAL이다.
+--- a/reports/WO-01_05_REPORT.md
++++ b/reports/WO-01_05_REPORT.md
+@@ -0,0 +1,85 @@
++# STARCRAFT: THE LAST MARINE 작업 보고서
++
++작업 번호: WO-01~WO-05.
++담당 단계: Phase 1.
++현재 상태: PARTIAL. 호스트 빌드·시뮬레이터 검사는 PASS다. 실게임 재시도는 부분 검증했다.
++
++## 1. 구현 내용
++
++scmJS와 TrigScript 고정 버전을 확보했다. 64×64 시험 맵 두 개를 빌드했다.
++Q 방어 자세와 W 지혈, HUD, 대체 키, 사망·체크포인트 복구를 구현했다.
++유한한 사전 배치 적과 아군의 공격·후퇴 명령을 구현했다.
++시설 피해 조건과 스킵·110초 감시 복구를 구현했다.
++5개 미션의 설계 초안과 시네마틱 사건 표를 작성했다.
++
++## 2. 수정 및 생성 파일
++
++README, docs, src/poc/main.ts, tests/poc.test.ts, tools/build.mjs를 생성했다.
++maps/source는 미컴파일 원본 맵이다. maps/poc는 런타임을 포함한 생성 맵이다.
++assets/audio/tlm-blast.wav는 직접 합성했다. 원본 작업 지시서는 baseline에 보존했다.
++docs/WORK_ORDER.md의 현재 단계만 기술 검증 중으로 변경했다.
++DIFF.patch, VERIFICATION.txt, ROLLBACK.sh와 ROLLBACK.ps1을 작성했다.
++
++## 3. 사용한 제작 도구와 버전
++
++StarCraft 1.23.10.13515 설치를 확인했다. scmJS 0.8.5와 TrigScript 4.1.0을 실행했다.
++Node.js 24.16.0, npm 12.2.1, Python 3.14.7을 사용했다.
++ScmDraft 2와 대체 euddraft 경로는 조사 단계다.
++
++## 4. 빌드 결과
++
++COLLAPSE_90S_POC.scx: 246883 bytes. SKILL_POC.scx: 246068 bytes.
++두 SCX를 실제 MPQ 리더로 다시 읽었다. 각각 64×64와 67개 시작 트리거 레코드를 확인했다.
++67은 EUD payload 내부 트리거 총수가 아니다. 실제 payload 통계는 build.json에 있다.
++전체 편집기 UI 빌드는 NOT RUN이다.
++
++## 5. 자동화 테스트 결과
++
++node outputs/The-Last-Marine/tools/build.mjs: exit 0.
++COLLAPSE_90S_POC: 15 PASS / 0 FAIL.
++SKILL_POC: 15 PASS / 0 FAIL.
++입력 반복, 쿨타임, 소비, 중단, 사망, 초기·중간 스킵, NPC 소실, 감시 복구를 검사했다.
++동일 시험의 두 변형을 합산한 30건이다. 시험 범위는 TEST_MATRIX와 원시 JSON을 확인한다.
++별도 복사본에서 PowerShell과 Bash 복구를 검사했다. 원본 SHA256과 일치했다.
++초기 제한 실행의 Bash 오류는 추가 실행에서 복구했다. 실패 이력은 VERIFICATION.txt에 남겼다.
++
++## 6. 실제 스타크래프트 테스트 결과
++
++창 조작을 복구하고 SKILL_POC를 유즈맵 설정으로 실행했다.
++해병 선택·이동, Q 발동·종료 메시지, W 체력 회복을 확인했다.
++키트 3→2 소비와 쿨타임 중 재사용 거절을 확인했다.
++단발 입력 누락과 F9 복원 후 해병 유지에는 추가 검사가 필요하다.
++Q 실제 방어력, 실제 교전, 효과음, 카메라, 정상 90초 완료는 미검증이다.
++상세 입력과 관찰 결과는 LIVE_UI_RETRY.md를 확인한다.
++
++## 7. 확인된 문제
++
++정상 장면의 자연 전투 타이밍은 미확정이다. 110초 복구를 90초 정상 완료로 인정하지 않는다.
++현재 수송선은 파괴된 최종 상태만 보장한다. 전체 피격·추락 연출은 미구현이다.
++음성 무전과 완전한 HUD는 미구현이다. 시험 무전은 영어 텍스트다.
++Node 기본 타입 제거의 구문 문제는 프로젝트 로더에서 TypeScript 변환으로 해결했다.
++
++## 8. 미검증 항목
++
++강제 제어·일시정지의 실게임 입력, 한국어 렌더링, 전용 타입의 실제 능력치, 성능은 NOT RUN이다.
++WO-06 두 독립 맵 데이터 전달, WO-07 수직 슬라이스는 아직 구현하지 않았다.
++전체 체크포인트·상자·전공 중복 방지와 E/R 스킬은 후속 작업이다.
++WO-02/03 문서는 초안이다. 전체 연표와 최종 지형을 확정하지 않았다.
++
++## 9. 설계 변경 여부
++
++프로젝트 정체성과 Phase 2 승인 순서를 유지했다.
++전용 영웅 타입, Q 방어력 +2, Fastest 기준은 PoC 한정 구현안이다.
++세부 날짜와 최종 제작 도구는 아직 확정하지 않았다.
++
++## 10. 커밋 및 기준 버전
++
++로컬 Git의 codex/phase1-poc 브랜치에 산출물을 기록한다.
++패키지의 BUILD_PROVENANCE.json에 기준 커밋과 맵 해시를 기록한다.
++GitHub 원격 게시와 정식 출시는 수행하지 않았다.
++
++## 11. 다음 작업
++
++단발 입력과 F9 해병 유지 문제를 먼저 재현한다.
++Q 실제 방어력과 중단 동작을 검사한다. 정상 90초 장면과 스킵 증거를 확보한다.
++WO-06과 WO-07을 완료한 뒤 Phase 1 → Phase 2 게이트를 다시 평가한다.
+--- a/ROLLBACK.ps1
++++ b/ROLLBACK.ps1
+@@ -0,0 +1,9 @@
++param([string]$Target)
++$ErrorActionPreference = 'Stop'
++if (-not $Target) { $Target = Join-Path $PSScriptRoot 'docs\WORK_ORDER.md' }
++$Original = Join-Path $PSScriptRoot 'baseline\WORK_ORDER.md'
++Copy-Item -LiteralPath $Original -Destination $Target -Force
++if ((Get-FileHash -LiteralPath $Original).Hash -ne (Get-FileHash -LiteralPath $Target).Hash) {
++    throw 'Rollback hash mismatch'
++}
++Write-Output 'ROLLBACK: original bytes restored'
+--- a/ROLLBACK.sh
++++ b/ROLLBACK.sh
+@@ -0,0 +1,7 @@
++#!/usr/bin/env bash
++set -euo pipefail
++root="$(cd -- "$(dirname -- "$0")" && pwd)"
++target="${1:-$root/docs/WORK_ORDER.md}"
++cp -- "$root/baseline/WORK_ORDER.md" "$target"
++cmp -- "$root/baseline/WORK_ORDER.md" "$target"
++printf '%s\n' 'ROLLBACK: original bytes restored'
+--- a/src/poc/main.ts
++++ b/src/poc/main.ts
+@@ -0,0 +1,204 @@
++import { program, first, unitsOf, createUnit, killUnitAt, moveUnit, centerView,
++  print, keyPressed, nextFrame, stats, units, orders, playWav, P1, P2, P3, locations } from "trigscript";
++import { now, SECOND } from "trigscript/timers";
++
++// Build variants replace this constant before compilation.
++const SKILL_LAB = false;
++
++program(async () => {
++  let sceneState = 1;
++  let checkpoint = 0;
++  let stage = 0;
++  let completed = 0;
++  let recovery = 0;
++  let cameraOwner = 0;
++  let forced = false;
++  let paused = false;
++  let qUnlocked = true;
++  let wUnlocked = SKILL_LAB;
++  let kits = 3;
++  let qUntil = 0;
++  let qReady = 0;
++  let wUntil = 0;
++  let wReady = 0;
++  let castHp = 0;
++  let castX = 0;
++  let castY = 0;
++  let baseArmor = 0;
++  let retryAt = 0;
++  let hudAt = 0;
++  let epoch = now();
++  let hero = first({ owner: P1, type: units.JimRaynorMarine });
++  stats(units.JimRaynorMarine).armor = 0;
++  stats(units.JimRaynorMarine).maxHp = 40;
++  if (hero) hero.hp = 30;
++  baseArmor = stats(units.JimRaynorMarine).armor;
++  sceneState = SKILL_LAB ? 3 : 2;
++  if (SKILL_LAB) checkpoint = 1;
++  centerView(locations.Home);
++  print("THE LAST MARINE | Q/F7: brace | W/F8: first aid | ESC: skip | F9: checkpoint");
++
++  while (true) {
++    const frame = now();
++    const qPress = keyPressed(P1, "Q") || keyPressed(P1, "F7");
++    const wPress = keyPressed(P1, "W") || keyPressed(P1, "F8");
++    const skip = keyPressed(P1, "Escape");
++    const retry = keyPressed(P1, "F9");
++    const elapsed = frame - epoch;
++
++    // A dead unit reference never identifies its reused engine slot.
++    if (!hero) {
++      if (retryAt == 0) {
++        qUntil = 0;
++        wUntil = 0;
++        stats(units.JimRaynorMarine).armor = baseArmor;
++        cameraOwner = 0;
++        forced = false;
++        retryAt = frame + 3 * SECOND;
++        print("HERO DOWN | checkpoint recovery in 3 seconds");
++      }
++    }
++    if ((!hero && retryAt > 0 && frame >= retryAt) || (retry && checkpoint == 1)) {
++      if (hero) hero.remove();
++      createUnit(P1, units.JimRaynorMarine, 1, locations.Safe);
++      hero = first({ owner: P1, type: units.JimRaynorMarine });
++      if (hero) hero.hp = 30;
++      kits = 3;
++      qUntil = 0;
++      wUntil = 0;
++      qReady = 0;
++      wReady = 0;
++      retryAt = 0;
++      stats(units.JimRaynorMarine).armor = baseArmor;
++      if (checkpoint == 0) recovery = 1;
++      print("CHECKPOINT | canonical inventory and skill state restored");
++    }
++
++    if (!SKILL_LAB && sceneState == 2) {
++      if (stage == 0) {
++        for (const ally of unitsOf(P3, { type: units.TerranMarine })) ally.order("move", locations.Outer);
++        print("[00] CONTROL: Routine watch. Check the northern perimeter.");
++        stage = 1;
++      }
++      if (stage == 1 && elapsed >= 15 * SECOND) {
++        print("[15] OUTPOST: Movement beyond the wire... signal lost.");
++        stage = 2;
++      }
++      if (stage == 2 && elapsed >= 30 * SECOND) {
++        for (const foe of unitsOf(P2)) foe.order("attack", locations.Outer);
++        print("[30] CONTROL: Northern contact. Hold the bunker approach.");
++        stage = 3;
++      }
++      if (stage == 3 && elapsed >= 45 * SECOND) {
++        const bunker = first({ owner: P3, type: units.TerranBunker });
++        if (!bunker || bunker.hp < bunker.maxHp) {
++          print("[45] CONTROL: The outer line is breached. Fall back south.");
++          for (const ally of unitsOf(P3, { type: units.TerranMarine })) ally.order("move", locations.Safe);
++          for (const foe of unitsOf(P2)) foe.order("attack", locations.Relay);
++          stage = 4;
++        } else if (elapsed >= 60 * SECOND) {
++          recovery = 1;
++          for (const foe of unitsOf(P2)) foe.order("attack", locations.Outer);
++        }
++      }
++      if (stage == 4 && elapsed >= 65 * SECOND) {
++        print("[65] ENGINEER: Relay hit. Ammunition storage is burning.");
++        stage = 5;
++      }
++      if (stage == 5 && elapsed >= 80 * SECOND) {
++        const depot = first({ owner: P3, type: units.TerranSupplyDepot });
++        if (!depot || depot.hp < depot.maxHp) {
++          if (depot) depot.kill();
++          cameraOwner = 1;
++          centerView(locations.Relay);
++          print("[80] CONTROL: Storage detonation. Take cover!");
++          playWav("staredit\\wav\\tlm-blast.wav", 750);
++          stage = 6;
++        }
++      }
++      if (cameraOwner == 1 && elapsed >= 81 * SECOND) {
++        if (hero) { hero.locate(locations.Focus); centerView(locations.Focus); }
++        cameraOwner = 0;
++      }
++      if (skip || (elapsed >= 90 * SECOND && stage >= 6) || elapsed >= 110 * SECOND || !hero) {
++        const normal = stage >= 6 && recovery == 0 && !!hero;
++        sceneState = skip ? 4 : normal ? 3 : 5;
++        // Every ending uses the same canonical world transition exactly once.
++        killUnitAt(P3, units.TerranBunker, 0, locations.Anywhere);
++        killUnitAt(P3, units.TerranSupplyDepot, 0, locations.Anywhere);
++        killUnitAt(P3, units.TerranDropship, 0, locations.Anywhere);
++        for (const foe of unitsOf(P2)) foe.remove();
++        for (const ally of unitsOf(P3, { type: units.TerranMarine })) ally.remove();
++        if (hero) moveUnit(P1, units.JimRaynorMarine, 1, locations.Anywhere, locations.Safe);
++        qUntil = 0;
++        wUntil = 0;
++        qReady = 0;
++        wReady = 0;
++        kits = 3;
++        stats(units.JimRaynorMarine).armor = baseArmor;
++        wUnlocked = true;
++        cameraOwner = 0;
++        forced = false;
++        checkpoint = 1;
++        completed++;
++        centerView(locations.Safe);
++        print(`SURVIVAL READY | scene=${sceneState} completions=${completed}`);
++        print("Recover at the supply refuge. W/F8 is now unlocked.");
++      }
++    }
++
++    if (hero && qUntil > 0 && (frame >= qUntil || hero.speed > 0 || hero.orderId == orders.Move || forced)) {
++      stats(units.JimRaynorMarine).armor = baseArmor;
++      qUntil = 0;
++      print("Q ended | base armor restored");
++    }
++    if (hero && wUntil > 0) {
++      if (hero.speed > 0 || hero.orderId == orders.Move || hero.x != castX || hero.y != castY || castHp - hero.hp >= 5 || forced) {
++        wUntil = 0;
++        print("W interrupted | no kit or cooldown consumed");
++      } else if (frame >= wUntil) {
++        hero.heal(25);
++        kits--;
++        wReady = frame + 40 * SECOND;
++        wUntil = 0;
++        print(`W completed | kits=${kits}`);
++      }
++    }
++    if (qPress || wPress) {
++      if (!hero || retryAt > 0) print("BLOCKED: hero unavailable");
++      else if (paused || forced) print("BLOCKED: forced cinematic control");
++      else if (qUntil > 0 || wUntil > 0) print("BLOCKED: another skill active");
++      else if (qPress) {
++        if (!qUnlocked) print("BLOCKED: Q locked");
++        else if (frame < qReady) print("BLOCKED: Q cooldown");
++        else if (hero.speed > 0 || hero.orderId == orders.Move) print("BLOCKED: stop moving before Q");
++        else {
++          stats(units.JimRaynorMarine).armor = baseArmor + 2;
++          qUntil = frame + 6 * SECOND;
++          qReady = frame + 18 * SECOND;
++          print("Q active | armor +2 | movement cancels");
++        }
++      } else {
++        if (!wUnlocked) print("BLOCKED: W locked");
++        else if (kits < 1) print("BLOCKED: no medical kits");
++        else if (frame < wReady) print("BLOCKED: W cooldown");
++        else if (hero.hp >= hero.maxHp) print("BLOCKED: full health");
++        else if (hero.speed > 0 || hero.orderId == orders.Move) print("BLOCKED: stop moving before W");
++        else {
++          castHp = hero.hp;
++          castX = hero.x;
++          castY = hero.y;
++          wUntil = frame + 3 * SECOND;
++          print("W casting | 3 seconds | movement or 5 damage interrupts");
++        }
++      }
++    }
++    if (frame >= hudAt) {
++      const qLeft = Math.max(0, Math.ceil((qReady - frame) / SECOND));
++      const wLeft = Math.max(0, Math.ceil((wReady - frame) / SECOND));
++      print(`Q/F7 brace ${qLeft}s | W/F8 first aid ${wUnlocked ? "unlocked" : "locked"} ${wLeft}s | kits ${kits}`);
++      hudAt = frame + 5 * SECOND;
++    }
++    await nextFrame();
++  }
++}, { owner: P1, name: "poc" });
+--- a/tests/poc.test.ts
++++ b/tests/poc.test.ts
+@@ -0,0 +1,131 @@
++import { test, expect } from 'trigscript';
++
++test('Q grants armor and restores it after six seconds',sim=>{
++ sim.frames(5).press('Q').frames(2);
++ expect(sim.program('poc').qUntil).toBeGreaterThan(0);
++ sim.frames(145);
++ expect(sim.program('poc').qUntil).toBe(0);
++ expect(sim).toHavePrinted('Q ended | base armor restored');
++});
++test('Q repeated input does not restart the active skill',sim=>{
++ sim.frames(5).press('Q').frames(2);
++ const until=sim.program('poc').qUntil;
++ sim.press('Q').frames(2);
++ expect(sim.program('poc').qUntil).toBe(until);
++ expect(sim).toHavePrinted('BLOCKED: another skill active');
++});
++test('Q cooldown rejects a second use',sim=>{
++ sim.frames(5).press('Q').frames(150).press('Q').frames(2);
++ expect(sim).toHavePrinted('BLOCKED: Q cooldown');
++});
++test('movement cancels brace',sim=>{
++ sim.frames(5).press('Q').frames(2);
++ const hero:any=sim.units({owner:0,type:20})[0];
++ hero.speed=2;
++ sim.frames(2);
++ expect(sim.program('poc').qUntil).toBe(0);
++});
++test('W unlock and successful heal consume exactly one kit',sim=>{
++ sim.frames(5);
++ if(sim.program('poc').checkpoint===0)sim.press('Escape').frames(2);
++ const hero:any=sim.units({owner:0,type:20})[0];
++ hero.hp=10;
++ sim.press('W').frames(76);
++ expect(hero.hp).toBe(35);
++ expect(sim.program('poc').kits).toBe(2);
++ sim.press('W').frames(2);
++ expect(sim.program('poc').kits).toBe(2);
++ expect(sim).toHavePrinted('BLOCKED: W cooldown');
++});
++test('movement interrupts W without resource or cooldown loss',sim=>{
++ sim.frames(5);
++ if(sim.program('poc').checkpoint===0)sim.press('Escape').frames(2);
++ sim.press('W').frames(10);
++ sim.move(sim.units({owner:0,type:20})[0],{x:600,y:1500}).frames(2);
++ expect(sim.program('poc').kits).toBe(3);
++ expect(sim.program('poc').wReady).toBe(0);
++ expect(sim.program('poc').wUntil).toBe(0);
++});
++test('five damage interrupts W without consuming a kit',sim=>{
++ sim.frames(5);
++ if(sim.program('poc').checkpoint===0)sim.press('Escape').frames(2);
++ sim.press('W').frames(10);
++ const hero:any=sim.units({owner:0,type:20})[0];
++ hero.hp-=5;
++ sim.frames(2);
++ expect(sim.program('poc').wUntil).toBe(0);
++ expect(sim.program('poc').kits).toBe(3);
++});
++test('death clears effects and reconstructs checkpoint',sim=>{
++ sim.frames(5).press('Q').frames(2);
++ sim.kill(sim.units({owner:0,type:20})[0]).frames(2);
++ expect(sim.program('poc').qUntil).toBe(0);
++ sim.frames(75);
++ expect(sim.count(0,20)).toBe(1);
++ expect(sim.program('poc').kits).toBe(3);
++});
++test('scene skip finalizes once and releases the camera',sim=>{
++ sim.frames(5);
++ const inScene=sim.program('poc').checkpoint===0;
++ sim.press('Escape').frames(3).press('Escape').frames(3);
++ expect(sim.program('poc').completed).toBe(inScene?1:0);
++ expect(sim.program('poc').cameraOwner).toBe(0);
++ if(inScene){expect(sim.count(2,125)).toBe(0);expect(sim.count(2,109)).toBe(0);expect(sim.count(1,37)).toBe(0);}
++});
++test('missing NPC and off-route hero do not prevent skip recovery',sim=>{
++ sim.frames(5);
++ for(const u of sim.units({owner:2}))sim.kill(u);
++ sim.move(sim.units({owner:0,type:20})[0],{x:1800,y:1800});
++ sim.press('Escape').frames(3);
++ expect(sim.program('poc').checkpoint).toBe(1);
++ expect(sim.program('poc').cameraOwner).toBe(0);
++});
++test('watchdog reports recovery instead of successful combat',sim=>{
++ sim.frames(5);
++ const inScene=sim.program('poc').checkpoint===0;
++ sim.frames(2700);
++ if(inScene){expect(sim.program('poc').sceneState).toBe(5);expect(sim.program('poc').completed).toBe(1);}
++ expect(sim.program('poc').checkpoint).toBe(1);
++});
++test('F7 and F8 provide alternative skill keys',sim=>{
++ sim.frames(5).press('F7').frames(2);
++ expect(sim.program('poc').qUntil).toBeGreaterThan(0);
++ sim.frames(146);
++ if(sim.program('poc').checkpoint===0)sim.press('Escape').frames(2);
++ sim.press('F8').frames(2);
++ expect(sim.program('poc').wUntil).toBeGreaterThan(0);
++});
++test('W remains locked before the survival transition',sim=>{
++ sim.frames(5);
++ if(sim.program('poc').checkpoint===0){
++   sim.press('W').frames(2);
++   expect(sim).toHavePrinted('BLOCKED: W locked');
++   expect(sim.program('poc').kits).toBe(3);
++   expect(sim.program('poc').wUntil).toBe(0);
++ }else expect(sim.program('poc').wUnlocked).toBe(true);
++});
++test('empty inventory rejects W without underflow',sim=>{
++ sim.frames(5);
++ if(sim.program('poc').checkpoint===0)sim.press('Escape').frames(2);
++ // These writes inject simulator damage. They do not reproduce engine combat.
++ const hero:any=sim.units({owner:0,type:20})[0];
++ for(let i=0;i<3;i++){
++   hero.hp=10;
++   sim.press('W').frames(76).frames(961);
++ }
++ expect(sim.program('poc').kits).toBe(0);
++ hero.hp=10;
++ sim.press('W').frames(2);
++ expect(sim).toHavePrinted('BLOCKED: no medical kits');
++ expect(sim.program('poc').kits).toBe(0);
++});
++test('midpoint skip uses the same canonical state',sim=>{
++ sim.frames(1000);
++ const inScene=sim.program('poc').checkpoint===0;
++ sim.press('Escape').frames(3);
++ expect(sim.program('poc').checkpoint).toBe(1);
++ expect(sim.program('poc').kits).toBe(3);
++ expect(sim.program('poc').qUntil).toBe(0);
++ expect(sim.program('poc').wUntil).toBe(0);
++ if(inScene){expect(sim.program('poc').sceneState).toBe(4);expect(sim.program('poc').completed).toBe(1);}
++});
+--- a/tools/build.mjs
++++ b/tools/build.mjs
+@@ -0,0 +1,98 @@
++import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
++import { resolve, join } from 'node:path';
++import { pathToFileURL } from 'node:url';
++import { registerHooks, createRequire } from 'node:module';
++const root = resolve(import.meta.dirname, '..');
++const workspace = resolve(root, '../..');
++const editor = join(workspace, 'work/scm-js');
++const plugin = join(workspace, 'work/plugin-trigscript');
++await import(pathToFileURL(join(editor, 'scripts/lib/load-ts.mjs')));
++const require = createRequire(join(plugin, 'package.json'));
++const ts = require('typescript');
++registerHooks({load(url,context,next){
++ const result=next(url,context);
++ if(url.endsWith('.ts') && result.source) return {format:'module',source:ts.transpileModule(String(result.source),{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext}}).outputText};
++ return result;
++}});
++const load = (p) => import(pathToFileURL(p));
++const {compileScript} = await load(join(plugin,'compiler/compiler.ts'));
++const {scriptNames} = await load(join(plugin,'compiler/names.ts'));
++const {buildOwnMap,isRefused} = await load(join(plugin,'compiler/backend/build.ts'));
++const {defaultLib} = await load(join(plugin,'bundle/lib.mjs'));
++const {resolveStrings} = await load(join(plugin,'script.ts'));
++const {createScenario} = await load(join(editor,'src/formats/chk/create.ts'));
++const {serializeScenario,parseScenario,setMapVersion} = await load(join(editor,'src/formats/chk/scenario.ts'));
++const {saveMap,loadMap} = await load(join(editor,'src/formats/mpq/scm.ts'));
++const {internString} = await load(join(editor,'src/editor/settings.ts'));
++const {flatTerrain} = await load(join(editor,'src/formats/tileset/terrain.ts'));
++const {makeUnit} = await load(join(editor,'src/editor/units.ts'));
++const locations = [
++  ['Home',700,700,1100,1000], ['Outer',1100,400,1500,700],
++  ['Relay',1000,1000,1400,1300], ['Safe',500,1400,800,1600],
++  ['Focus',500,500,564,564], ['Spawn',1600,300,1850,600]
++];
++const names = scriptNames({locations:locations.map(([name],index)=>({index,name}))});
++const source = readFileSync(join(root,'src/poc/main.ts'),'utf8');
++const testsPath = join(root,'tests/poc.test.ts');
++const testsText = readFileSync(testsPath,'utf8');
++const world = {
++ players:[0,1,2],computers:[1,2],forces:{0:0,1:1,2:0},
++ locations:Object.fromEntries(locations.map(([,left,top,right,bottom],i)=>[i+1,{left,top,right,bottom}])),
++ units:[{owner:0,type:20,x:900,y:800,hp:30,maxHp:40},{owner:2,type:125,x:1300,y:550,hp:350,maxHp:350},{owner:2,type:109,x:1200,y:1150,hp:250,maxHp:250},{owner:2,type:11,x:850,y:1250},{owner:2,type:0,x:1000,y:800},{owner:1,type:37,x:1700,y:450}],
++ unitStats:{20:{hp:40},125:{hp:350},109:{hp:250}}
++};
++let failures=0;
++for (const skillLab of [false,true]) {
++ const code=source.replace('const SKILL_LAB = false;',`const SKILL_LAB = ${skillLab};`);
++ const r=compileScript(ts,{'main.ts':code,'poc.test.ts':testsText},names,{lib:defaultLib(),tests:{world}});
++ const label=skillLab?'SKILL_POC':'COLLAPSE_90S_POC';
++ mkdirSync(join(root,'reports'),{recursive:true});
++ writeFileSync(join(root,`reports/${label}.tests.json`),JSON.stringify({variant:label,diagnostics:r.diagnostics,tests:r.tests},null,2));
++ if(r.diagnostics.length){ console.error(JSON.stringify(r.diagnostics,null,2)); failures++;continue; }
++ const testFailures=r.tests?.results.filter(t=>t.status!=='passed')??[];
++ console.log(`${label}: ${r.tests?.results.filter(t=>t.status==='passed').length??0} PASS / ${testFailures.length} FAIL`);
++ for(const t of testFailures)console.error(`${t.id}: ${t.message}`);
++ if(testFailures.length){failures++;continue;}
++ const fill=flatTerrain(64,64,{id:2,group:2},null,()=>0,0);
++ const scn=createScenario({width:64,height:64,era:0,name:`TLM ${label}`,description:'Phase 1 technical proof. Use Map Settings. Fastest. Q/F7 W/F8 Escape.',...fill});
++ setMapVersion(scn,'remastered');
++ scn.playerTypes=[6,5,5,0,0,0,0,0,7,7,7,7];
++ scn.editorPlayerTypes=[...scn.playerTypes];
++ scn.playerRaces=[1,0,1,7,7,7,7,7,4,4,4,4];
++ scn.forces.playerForce=[0,1,0,2,2,2,2,2];
++ scn.forces.flags=[14,0,0,0];
++ for(const [i,[name,left,top,right,bottom]] of locations.entries())scn.locations[i]={nameIndex:internString(scn,name),left,top,right,bottom,elevationFlags:0};
++ let serial=1;
++ const place=(type,owner,x,y)=>scn.units.push(makeUnit(null,type,owner,x,y,serial++));
++ place(214,0,900,800);place(20,0,900,800);
++ if(!skillLab){
++   place(125,2,1300,550);place(109,2,1200,1150);place(11,2,850,1250);
++   place(111,2,600,650);place(112,2,600,950);
++   for(let i=0;i<5;i++)place(0,2,1000+i*32,800);
++   for(let i=0;i<20;i++)place(37,1,1650+(i%5)*32,350+Math.floor(i/5)*32);
++   for(let i=0;i<5;i++)place(38,1,1850,350+i*48);
++ }
++ scn.unitSettings.useDefault[20]=0;
++ scn.unitSettings.hitPoints[20]=40*256;
++ scn.unitSettings.armor[20]=0;
++ scn.unitSettings.weaponDamage[0]=6;
++ scn.unitSettings.weaponDamage[1]=6;
++ scn.unitSettings.nameIndex[20]=internString(scn,'Last Marine');
++ scn.triggers=resolveStrings(r,t=>internString(scn,t));
++ const chk=serializeScenario(scn);
++ const built=buildOwnMap({chk,compiled:{...r,triggers:[]},maps:true});
++ if(isRefused(built)){console.error(built.refused);failures++;continue;}
++ const extras=new Map([['trigscript\\main.ts',new TextEncoder().encode(code)],['staredit\\wav\\tlm-blast.wav',new Uint8Array(readFileSync(join(root,'assets/audio/tlm-blast.wav')))]]);
++ mkdirSync(join(root,'maps/source'),{recursive:true});
++ writeFileSync(join(root,`maps/source/${label}.scx`),await saveMap(chk,{extras,compress:'pkware',listfile:true}));
++ const bytes=await saveMap(built.chk,{extras,compress:'pkware',listfile:true});
++ mkdirSync(join(root,'maps/poc'),{recursive:true});
++ const out=join(root,`maps/poc/${label}.scx`);
++ writeFileSync(out,bytes);
++ const reopened=await loadMap(new Uint8Array(readFileSync(out)));
++ const parsed=parseScenario(reopened.chk);
++ if(parsed.width!==64||parsed.height!==64||!parsed.units.some(u=>u.unitId===20)||parsed.triggers.length===0)throw Error('SCX read-back failed');
++ writeFileSync(join(root,`reports/${label}.build.json`),JSON.stringify({stats:built.stats,lines:built.lines,warnings:built.warnings,bytes:bytes.length,readBack:{width:parsed.width,height:parsed.height,units:parsed.units.length,triggers:parsed.triggers.length}},null,2));
++ console.log(`${label}: BUILT ${bytes.length} bytes; SCX reopened; ${parsed.triggers.length} trigger records`);
++}
++process.exitCode=failures?1:0;
+--- a/tools/check-state.py
++++ b/tools/check-state.py
+@@ -0,0 +1,6 @@
++from pathlib import Path
++import sys
++
++text = Path(sys.argv[1]).read_text(encoding='utf-8-sig')
++line = next(line for line in text.splitlines() if line.startswith('현재 단계:'))
++print('PHASE=NOT_STARTED' if line.endswith('Phase 1 시작 전') else 'PHASE=TECHNICAL_VALIDATION' if line.endswith('Phase 1 기술 검증 중') else 'PHASE=UNKNOWN')
+--- a/tools/setup.ps1
++++ b/tools/setup.ps1
+@@ -0,0 +1,27 @@
++$ErrorActionPreference = 'Stop'
++$Workspace = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..\..'))
++$Repositories = @(
++    @('scm-js', 'https://github.com/scm-js/scm-js.git', 'f4fe24e7519096c2cdd9c1af887f9340317d7af7'),
++    @('plugin-trigscript', 'https://github.com/scm-js/plugin-trigscript.git', '40243398aeb04fcf2893aabb420a3cba92f0d3ac')
++)
++foreach ($Repository in $Repositories) {
++    $Destination = Join-Path $Workspace ('work\' + $Repository[0])
++    if (-not (Test-Path -LiteralPath $Destination)) {
++        New-Item -ItemType Directory -Path $Destination -Force | Out-Null
++        git -C $Destination init
++        if ($LASTEXITCODE) { throw 'Repository initialization failed' }
++        git -C $Destination remote add origin $Repository[1]
++        if ($LASTEXITCODE) { throw 'Remote configuration failed' }
++        git -C $Destination fetch --depth 1 origin $Repository[2]
++        if ($LASTEXITCODE) { throw 'Pinned source fetch failed' }
++        git -C $Destination checkout --detach FETCH_HEAD
++        if ($LASTEXITCODE) { throw 'Pinned source checkout failed' }
++    }
++    $Actual = git -C $Destination rev-parse HEAD
++    if ($Actual -ne $Repository[2]) { throw 'Pinned source mismatch' }
++    Push-Location -LiteralPath $Destination
++    try {
++        npm ci --ignore-scripts --no-audit --no-fund
++        if ($LASTEXITCODE) { throw 'Dependency installation failed' }
++    } finally { Pop-Location }
++}

@@ -1,0 +1,35 @@
+{
+  "status": "PARTIAL",
+  "old_game_exit": {
+    "pid": 7176,
+    "result": "GAME_EXIT: PID 7176 terminated; process absent",
+    "exit_status": 0
+  },
+  "launch_attempts": [
+    {
+      "method": "cua.computer.launch_app",
+      "result": "computer-use request timed out: launch_app; pending elevation dialog appeared",
+      "pending_consent_pid": 27152
+    },
+    {
+      "method": "ProcessStartInfo; UseShellExecute=false; no arguments",
+      "pid": 24552,
+      "result": "Battle.net launcher error dialog; instance terminated before retry"
+    },
+    {
+      "method": "ProcessStartInfo; UseShellExecute=false; Arguments=-launch",
+      "pid": 66192,
+      "result": "Brood War window 13308556; main menu displayed; MEDIUM integrity RID 8192",
+      "exit_status": 0
+    }
+  ],
+  "pending_prompt_cancel": {
+    "cua_result": "failed to activate captured window",
+    "process_cleanup_result": "Stop-Process consent (27152): access denied",
+    "exit_status": 1
+  },
+  "manifest": "requestedExecutionLevel=asInvoker; uiAccess=false",
+  "compatibility": "RUNASADMIN absent in HKCU/HKLM; Registry32 and Registry64 views",
+  "runtime_inputs": "NOT RUN: old elevation confirmation remains over the new game",
+  "next": "Dismiss old elevation request with No; test the new MEDIUM game menu and UI02 map"
+}

@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "name": "native-card",
+  "environment": "offline-local",
+  "cases": [
+    {
+      "id": "checkpoint-before-card",
+      "steps": [
+        {
+          "op": "key",
+          "key": "F9"
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "canonical inventory",
+            "restored"
+          ],
+          "timeout": 5
+        }
+      ]
+    },
+    {
+      "id": "select-marine",
+      "steps": [
+        {
+          "op": "click",
+          "xy": [
+            0.505,
+            0.5
+          ],
+          "hold": 0.3
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "Last Marine"
+          ],
+          "timeout": 5
+        },
+        {
+          "op": "capture"
+        }
+      ]
+    },
+    {
+      "id": "Q-native-hotkey",
+      "steps": [
+        {
+          "op": "key",
+          "key": "Q"
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "active",
+            "movement cancels"
+          ],
+          "timeout": 5
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "ended",
+            "base",
+            "restored"
+          ],
+          "timeout": 12
+        }
+      ]
+    },
+    {
+      "id": "W-native-hotkey",
+      "steps": [
+        {
+          "op": "key",
+          "key": "F9"
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "CHECKPOINT"
+          ],
+          "timeout": 5
+        },
+        {
+          "op": "key",
+          "key": "D"
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "HP=[1I][0O]"
+          ],
+          "timeout": 5
+        },
+        {
+          "op": "key",
+          "key": "W"
+        },
+        {
+          "op": "wait",
+          "expect": [
+            "completed",
+            "k[il]ts=2"
+          ],
+          "timeout": 8
+        }
+      ]
+    }
+  ]
+}
