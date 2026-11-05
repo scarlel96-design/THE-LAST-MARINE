@@ -1,5 +1,19 @@
 # STARCRAFT: THE LAST MARINE
 
+## 최신 제작 패키지 — ASTRA-PROD-01
+
+2026-11-06: M01 군사기지 재설계와 M01~M05 상세 배치 명세를 추가했다.
+현재 판정은 **PARTIAL**이다. 실게임 검증은 **NOT RUN**이다.
+
+- [실행용 M01 재설계 맵](ASTRA-PROD-01/maps/M01_NORTH_RIDGE_ASTRA.scx)
+- [편집용 M01](ASTRA-PROD-01/maps/M01_NORTH_RIDGE_ASTRA_SOURCE.scx)
+- [통합 보고서와 남은 항목](ASTRA-PROD-01/README.md)
+- [전체 캠페인 상세 맵 명세](docs/maps/README.md)
+
+기존 M01·M02와 검증 자료는 보존한다. 아래 Phase 1 안내는 초기 프로토타입의 기록이다.
+
+## 초기 프로토타입 안내
+
 Phase 1 / WO-01~WO-05. 기준일: 2026-11-03. 상태: 기술 검증 중.
 
 본 폴더는 기초 설계, 실제 TrigScript 소스, 시험용 SCX 두 개를 포함한다.

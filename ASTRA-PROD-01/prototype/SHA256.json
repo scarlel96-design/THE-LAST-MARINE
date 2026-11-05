@@ -1,0 +1,12 @@
+{
+  "src/m01/layout.mjs": "4098669d3fd4cbd42820e81c7559d3cc9e0acc8ba4d4f71cf9d39dc55ab462ca",
+  "src/m01/main.ts": "54a85431e70374a167dcdc5f3ee3486d51b355abc9fd14eec6f28bca45e6d319",
+  "src/m01/content.json": "d9e5c36e8ab20cd521b165b5846b1c5e9074584a4bf19626b2b6645f1a1edde4",
+  "src/m01/campaign-transfer.mjs": "2f7fe20783a3deadc32031d7d772406dec4ea95a029356e7e717155f22ef76ad",
+  "src/campaign/terrain.mjs": "1a4603f1d6dbf033fe4fb87d53c3d6e63741c1750486f3966e8b88bdd4b009e6",
+  "tools/build-production.mjs": "ccbc90d3d4fad36d29181f89fda943983730c02e52fa8f83d7039332ccc9a90a",
+  "tests/m01.test.ts": "c6cac11e9c30dda31ea818baa2ddfea8e755142880a2dbe9068161dd8452adcf",
+  "tests/m01-prod02.append.ts": "c90e359561291894b8c8c124815e78ae94cb576d2bde1a58fb6469b87ea9e2a0",
+  "WO-PROD-02-HOTFIX/maps/M01_NORTH_RIDGE_START_FIX.scx": "46ad3e3fcc8b8876263ab8e5b3569f74db6784f0ed9e665bc4039e3941457f91",
+  "WO-PROD-02-HOTFIX/maps/M01_NORTH_RIDGE_START_FIX_SOURCE.scx": "a9bec95f4696f2be3f9abc7258c9b5545e30efcf30018efc35194e38cf7f9b42"
+}

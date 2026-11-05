@@ -1,0 +1,16 @@
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {resolve,dirname,join} from 'node:path';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+const root=resolve(import.meta.dirname,'..');
+const target=resolve(process.argv[2]??'');
+const allowed=join(root,'ASTRA-PROD-01/rollback-check/main.ts');
+assert.equal(target,allowed,'Use only ASTRA-PROD-01/rollback-check/main.ts');
+const original=readFileSync(join(root,'ASTRA-PROD-01/prototype/src/m01/main.ts'));
+const sha=b=>createHash('sha256').update(b).digest('hex');
+const manifest=JSON.parse(readFileSync(join(root,'ASTRA-PROD-01/prototype/SHA256.json')));
+assert.equal(sha(original),manifest['src/m01/main.ts']);
+mkdirSync(dirname(target),{recursive:true});
+writeFileSync(target,original);
+assert.equal(sha(readFileSync(target)),manifest['src/m01/main.ts']);
+console.log('ROLLBACK PASS: copied runtime restored; SHA256 '+sha(original));

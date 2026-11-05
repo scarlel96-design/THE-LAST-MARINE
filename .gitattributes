@@ -19,3 +19,8 @@ src/m02/content.json text eol=lf
 WO-PROD-02-HOTFIX/baseline/*.ts -text
 WO-PROD-02-HOTFIX/reports/rollback-copy.ts -text
 WO-PROD-02-HOTFIX/DIFF.patch text eol=lf
+
+# Preserve the prototype bytes used by the snapshot manifest.
+ASTRA-PROD-01/prototype/** -text
+# Keep the source bytes matched by the ASTRA build report.
+src/m01-astra/** -text
